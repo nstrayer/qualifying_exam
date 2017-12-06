@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Continuous Classification using Deep Neural Networks</title>
+  <meta name="description" content="Continuous Classification using Deep Neural Networks">
+  <meta name="generator" content="bookdown 0.5 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Continuous Classification using Deep Neural Networks" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Continuous Classification using Deep Neural Networks" />
+  
+  
+  
+
+<meta name="author" content="Nick Strayer">
+
+
+<meta name="date" content="2017-12-05">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="index.html">
+<link rel="next" href="neuralnetworks.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Report Layout</a></li>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a><ul>
+<li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#continuous-classification"><i class="fa fa-check"></i><b>2.1</b> Continuous Classification</a></li>
+<li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#potential-applications-of-continuous-classification-models"><i class="fa fa-check"></i><b>2.2</b> Potential applications of continuous classification models</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="intro.html"><a href="intro.html#activity-prediction"><i class="fa fa-check"></i><b>2.2.1</b> Activity Prediction</a></li>
+<li class="chapter" data-level="2.2.2" data-path="intro.html"><a href="intro.html#ehr-monitoring"><i class="fa fa-check"></i><b>2.2.2</b> EHR monitoring</a></li>
+<li class="chapter" data-level="2.2.3" data-path="intro.html"><a href="intro.html#hospital-automation"><i class="fa fa-check"></i><b>2.2.3</b> Hospital Automation</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="intro.html"><a href="intro.html#history-of-methods"><i class="fa fa-check"></i><b>2.3</b> History of methods</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="intro.html"><a href="intro.html#windowed-regression"><i class="fa fa-check"></i><b>2.3.1</b> Windowed regression</a></li>
+<li class="chapter" data-level="2.3.2" data-path="intro.html"><a href="intro.html#transformation-methods"><i class="fa fa-check"></i><b>2.3.2</b> Transformation methods</a></li>
+<li class="chapter" data-level="2.3.3" data-path="intro.html"><a href="intro.html#hidden-markov-models"><i class="fa fa-check"></i><b>2.3.3</b> Hidden Markov Models</a></li>
+<li class="chapter" data-level="2.3.4" data-path="intro.html"><a href="intro.html#advantages-of-deep-learning-methods"><i class="fa fa-check"></i><b>2.3.4</b> Advantages of deep learning methods</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="neuralnetworks.html"><a href="neuralnetworks.html"><i class="fa fa-check"></i><b>3</b> Neural Networks</a><ul>
+<li class="chapter" data-level="3.1" data-path="neuralnetworks.html"><a href="neuralnetworks.html#history"><i class="fa fa-check"></i><b>3.1</b> History</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="neuralnetworks.html"><a href="neuralnetworks.html#biological-inspirations"><i class="fa fa-check"></i><b>3.1.1</b> Biological Inspirations</a></li>
+<li class="chapter" data-level="3.1.2" data-path="neuralnetworks.html"><a href="neuralnetworks.html#geometric-interpretation"><i class="fa fa-check"></i><b>3.1.2</b> Geometric Interpretation</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="neuralnetworks.html"><a href="neuralnetworks.html#the-computation-graph"><i class="fa fa-check"></i><b>3.2</b> The Computation Graph</a></li>
+<li class="chapter" data-level="3.3" data-path="neuralnetworks.html"><a href="neuralnetworks.html#mathematical-operations"><i class="fa fa-check"></i><b>3.3</b> Mathematical Operations</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="neuralnetworks.html"><a href="neuralnetworks.html#terminology"><i class="fa fa-check"></i><b>3.3.1</b> Terminology</a></li>
+<li class="chapter" data-level="3.3.2" data-path="neuralnetworks.html"><a href="neuralnetworks.html#forward-propagation"><i class="fa fa-check"></i><b>3.3.2</b> Forward Propagation</a></li>
+<li class="chapter" data-level="3.3.3" data-path="neuralnetworks.html"><a href="neuralnetworks.html#back-propigation"><i class="fa fa-check"></i><b>3.3.3</b> Back Propigation</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="neuralnetworks.html"><a href="neuralnetworks.html#training"><i class="fa fa-check"></i><b>3.4</b> Training</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="neuralnetworks.html"><a href="neuralnetworks.html#gradient-descent"><i class="fa fa-check"></i><b>3.4.1</b> Gradient Descent</a></li>
+<li class="chapter" data-level="3.4.2" data-path="neuralnetworks.html"><a href="neuralnetworks.html#gradient-descent-modifications"><i class="fa fa-check"></i><b>3.4.2</b> Gradient Descent Modifications</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="architectures.html"><a href="architectures.html"><i class="fa fa-check"></i><b>4</b> Further Architectures</a><ul>
+<li class="chapter" data-level="4.0.1" data-path="architectures.html"><a href="architectures.html#mathematical-operations-1"><i class="fa fa-check"></i><b>4.0.1</b> Mathematical Operations</a></li>
+<li class="chapter" data-level="4.0.2" data-path="architectures.html"><a href="architectures.html#mathematical-operations-2"><i class="fa fa-check"></i><b>4.0.2</b> Mathematical Operations</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Continuous Classification using Deep Neural Networks</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="intro" class="section level1">
+<h1><span class="header-section-number">Chapter 2</span> Introduction</h1>
+<div id="continuous-classification" class="section level2">
+<h2><span class="header-section-number">2.1</span> Continuous Classification</h2>
+<p>Imagine you are watching a movie. A friend walks in late and asks “what did I miss?” You tell him that the main character has just escaped from a nasty predicament and has defeated the antagonist. What you have done is classification of a sequence. The sequence in this case is the frames of the movie and your classification was what was occurring in the movie at that moment. You could have given the same answer if you just saw a single frame, but most likely your assessment of the state of the movie depended on events you saw before and the context in which they placed the most recent frame.</p>
+<p>What continuous classification in the context of statistics and machine learning is is an attempt to train computers to watch data like you watched the movie and be able to report the status of the generating system at any given point. Sometimes seeing the most recent data is all that is needed, but more interesting and challenging problems need the algorithm to be able to make decisions about a current time while leveraging context from previous history to do so.</p>
+<p>This report is a brief run through past attempts at continuous classification and a deeper explanation of the current state of the art methods.</p>
+</div>
+<div id="potential-applications-of-continuous-classification-models" class="section level2">
+<h2><span class="header-section-number">2.2</span> Potential applications of continuous classification models</h2>
+<p>The following are just a few examples of biomedical applications made possible with effective continuous classification models.</p>
+<div id="activity-prediction" class="section level3">
+<h3><span class="header-section-number">2.2.1</span> Activity Prediction</h3>
+<p>With the advent of wearable devises such as fitbits and apple watches the amount of high temporal resolution data we have streaming from individuals is exploding and showing no sign of letting up.</p>
+<p>Continuous classification models could be used to to assess the state of the wearer at any moment. Simple applications of this could be for things like detecting different exercise types (e.g. running vs. weightlifting) which is implemented by unpublished methods internally by companies such as fitbit.</p>
+<p>More advanced and potentially impactful methods could be extended to predicting more subtle but medically relevant states such as dehydration or sleep apnea (sleep apnea citation). Preliminary work in these areas has shown surprising success with data as limited as heart-rate and motion indication being enough to predict sleep apnea and various cardiovascular risk states with ___ accuracy compared to invasive gold standards.</p>
+</div>
+<div id="ehr-monitoring" class="section level3">
+<h3><span class="header-section-number">2.2.2</span> EHR monitoring</h3>
+<p>With more and more information on patients being accrued in governmental and hospital databases we have a clearer than ever picture of a patient’s health over long periods of time. Unfortunately, due to a combination of overwhelming quantities and noise levels in the data our ability to make use of these data has not kept up with their quantity.</p>
+<p>Sequential models can help ease the burden on health practitioners in making use of these data. For instance, a model could be trained on a patient’s records to predict the likelihood of cardiovascular events. This model could then alert a doctor of potential risk in order to facilitate timely interventions. This could be especially helpful in large clinical settings where personal doctor-patient relationships may not be common.</p>
+<p>(Insert reference to applications on these data already performed)</p>
+</div>
+<div id="hospital-automation" class="section level3">
+<h3><span class="header-section-number">2.2.3</span> Hospital Automation</h3>
+<p>Patient monitoring systems already have alarms to alert staff of occurring anomaly for a patient. Continuous classification methods could extend these methods to more subtle actions (patient is experiencing pain and needs a change in the medications administered by their IV) or to give staff more heads-up time before an event occurs (model predicts patient has a high change of going into afribulation in the next five mins). These methods, if successfully implemented could help hospitals more efficiently allocate resources and potentially save lives.</p>
+<hr />
+</div>
+</div>
+<div id="history-of-methods" class="section level2">
+<h2><span class="header-section-number">2.3</span> History of methods</h2>
+<p>While sources of data to perform it on have recently greatly expanded, the interest in performing continuous classification is not a new topic. Many methods have been proposed for the task to varying degrees of success. Below is a brief review of some of the more successful methods and their advantages and limitations.</p>
+<div id="windowed-regression" class="section level3">
+<h3><span class="header-section-number">2.3.1</span> Windowed regression</h3>
+<p>Perhaps the most intuitive approach to the problem of incorperating context from previous time points into your prediction is to use a windowed approach. Broadly, in these approaches a window of some width (in previous observation numbers or time length) is sequentially run over the data and then the model uses information from within that window to predict.</p>
+<p>The data obtained from the window may have some form of summary applied to it. This could be a mean, median, or any other function which is then used to predict with. By summarizing the multiple datapoints into a single (or few) values noisy data can be made slightly cleaner but at the cost of potentially throwing away useful information captured by the interval (such as trajectory.)</p>
+<p>If the data are kept intact mode advanced methods are available. These include dynamic time warping (Time warping citation) or kernel methods (see next section). This allows much more information to be retained in the sample but at the cost of setting a limit on how far back your model can learn dependencies in the data. For instance if your window is one hour long but an activity lasts two hours your model will have a very hard time recognizing it. This is equivalent to an infinitely strong prior on the interaction timeline (window prior assumptions citation).</p>
+</div>
+<div id="transformation-methods" class="section level3">
+<h3><span class="header-section-number">2.3.2</span> Transformation methods</h3>
+<p>As mentioned before, when a window is scanned across the time dimension of data, one of the ways of extracting information is by performing some transformation on the data. Common examples include wavelet or Fourier transforms. These methods attempt to separate the data into separate components. For instance, Fourier transforms applied to accelerometer data from an individuals wrist can be used to detect the frequencies associated with walking and running(Transformed accelerometer citation). These methods have also been used extensively in electrical systems and signal processing to help determine the state of the system.</p>
+<p>/Fourier transform equation/</p>
+<p>A few limitations are imposed by these methods. First, as mentioned before, they are still subject to the windowing constraints. Secondly, they rely on the data to be periodic or oscillatory in nature. For instance, the accelerometer data oscillated back and forth as the individual’s arms moved in their gate and electrical systems are inherently oscillatory. Data such as heart-rate or step counts as produced by devices like apple watches and fitbits is a rather stable signal (although before output it may not be) and thus transformation methods are unable to separate them into frequency domains at reasonable time scales. In addition, these methods are unable to deal with non-numeric data which severally limits them in heterogenous data domains such as EHR data.</p>
+</div>
+<div id="hidden-markov-models" class="section level3">
+<h3><span class="header-section-number">2.3.3</span> Hidden Markov Models</h3>
+<p>In an attempt to deal with the fact that in most scenarios the classification of time point <span class="math inline">\(t\)</span> is dependent on that of previous time points, hidden makov models (or HMMs) model data as a series of observations generated by a system transitioning between some unobserved (or latent) states. This is done by constructing a transition matrix that denotes the probability of transitioning from one state to another and conditioning it on whatever observed data you have.</p>
+<p><span class="math display">\[P(s_a -&gt; s_b | x_t) = ...\]</span></p>
+<p>This allows the model to learn time dependencies in the data. For instance, if a person is running now their next state is probably going to be walking rather than sitting or swimming.</p>
+<p>HMMs were the state of the art models on continuous classification problems until very recently (HMM state of art citation), and are still very valuable for many problems. However, their greatest advantage is also their greatest disadvantage.</p>
+<p>The Markov property (or the first ‘M’ in HMM) states that the next state of the system being modeled depends exclusively on the current state. This means that the model is ‘memoryless.’ For instance, returning to our running example, say an individual had been running in the previous time point, the model will most likely pick walking as their next state (ignoring any conditional data for simplicity) but what if before they were running they were swimming? This fact from multiple time-steps before would strongly hint that the next state would in fact be biking and not walking (they are running a triathlon.)</p>
+<p>There are ways to fix this (extending hmms past a single time step citation), however the number of parameters needed to estimate transition probabilities for <span class="math inline">\(m\)</span> previous time steps is (# of classes) to the <span class="math inline">\(k^{th}\)</span> power, which rapidly becomes untenable. In addition, we have to a-priori decide the number of time steps in the past that matter.</p>
+<hr />
+</div>
+<div id="advantages-of-deep-learning-methods" class="section level3">
+<h3><span class="header-section-number">2.3.4</span> Advantages of deep learning methods</h3>
+<p>Before we dive into the mathematical underpinnings of deep learning methods for continuous classification we will go over how they solve many of the aforementioned issues from traditional methods.</p>
+<p><em>Less Domain Knowledge Needed</em> One of the ways that it helps to think about deep learning is as a computer program that learns what to do. In his popular blog post _Software 2.0) Andrej Karapathy makes the argument that deep learning is powerful because it helps avoid traditional tediums like explicitly defining cases for the computer to deal with. One of the ways this is applicable to our problems is the ability for most data to be a kind-of ‘plug-and-play’ process.</p>
+<p>This can be seen in the context of the input data form. If you had data from say an accelerometer it would go into the same neural network as data from a more static heart-rate sensor would. The models are flexible enough to learn how to deal with these input patterns without requiring the researcher to explicitly define a transformation based on the data. This allows the same methods to be applied to many domains and further reduces the amount of analyst decisions to be made, which has the potential to make performance assessments more accurate (Frank’s automate as much of the model as possible citation).</p>
+<p><em>Can find and deal with arbitrary time dependencies</em> Deep learning models are theoretically capable of learning time dependencies of infinite length and strength (Universal approximation theorem). While obviously it is impossible to supply a network with enough data to fit enough parameters to do so, the fact remains that deep learning methods are capable of handling time dependencies (even of very long length (stateful LSTM citation) ). In addition to being able to model these dependencies they do so without any need for explicitly telling the model the length of the dependencies and also using substantially fewer parameters than an extended hidden markov model (RNN textbook citation).</p>
+<p>For example, an recurrent neural network (RNN) can automatically learn that if a person swims and then runs, they will most likely be biking next, but it could also remember that a patient was given a flu vaccine three months prior and thus their symptoms most likely don’t indicate the flu but a cold. The power of this flexibility to automatically learn arbitrary time dependency patterns is powerful in not only its ability to create accurate models, but potentially for exploration of causal patterns.</p>
+<p><em>Multiple architectures for solving traditional problems</em> In a similar vein, one of the decisions that does need to be made with deep learning: which network architecture to use, conveniently is rather robust to the problem of continuous classification. For instance: convolutional neural networks that have achieved great success in computer vision were actually originally designed for time series data, and recent advanced such as dilated convolutions allow for them to search as far back in the time-series as needed to find valuable information for classification. Recurrent neural networks (which will be elaborated on in the following sections) are also fantastic for time-series data, as they explicitly model the autocorrelation found in the data via a recurrent cycle in their computation graph. This allows them to read data much like one reads a book, selectively remembering past events that have applicability to the current state.</p>
+<p><em>Downsides</em> As a result of being so flexible deep learning models require a lot of data to properly tune all their parameters without over fitting. This results in not only more data being needed (with some exceptions such as bayesian methods) but also, when combined with their non-convexity, requires a large amount of computation power.</p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="neuralnetworks.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/01-intro.Rmd",
+"text": "Edit"
+},
+"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(script.src))
+      script.src  = script.src.replace(/^https?:/, '');
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

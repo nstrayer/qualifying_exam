@@ -1,0 +1,33 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+### Mathematical Operations
+
+The basic operations that one does on a neural network really fall into two categories. Forward propagation, or the passing of data into and through subsequent layers of the model to arrive at an output, and back-propagation, or the calculation of the gradient of each parameter in the model by stepping back through the model from the loss function to the input. 
+
+#### Forward Propagation
+
+Let a neural network with $l$ layers and $k$ dimensional input $X$ and $m$ dimensional output $\hat{y}$ attempting to predict the true target $y$. Each layer is composed of $s_i, i \in \{1, 2, ...,l\}$ neurons and has respective non-linear activation function $f_i$. Layer activation vectors $\underline{a_i}$ and post-activation function outputs $\underline{o_i}$. The weights into neuron $j$ in layer $i$ is given by $w_{(i,j)}$ which is a vector of size $s_{i -1}$. We can thus view the weights into the $i^{\text{th}}$ layer as a matrix $W_i$ of of size $s_{i -1} \times s_i$. Finally the network has a differntiable with respect to $\hat{y}$ loss function: $L(\hat{y}, y)$. 
+
+Forward propigation then proceeds as follows. 
+
+1. Input $X$ $(1 \times k$) is multiplied by $W_1$ (size $(k\times s_i)$ ) to acheive the _activation values_ of the first hidden layer. 
+    - $X \cdot W_1 = \underline{a_1}$
+2. The $(1 \times s_1)$ activation vector of the first layer is then run element-wise though the first layer's non-linear activation function to acheive the output of layer 1. 
+    - $\underline{o_1} = f_1(\underline{a}_1)$
+3. This series of opperations is then repetaed through all the layers, (using the subsequent layers output vector as the input to the next layer,) until the final layer is reached.
+    - $\underline{o_i} = f_i(\underline{o_{(i - 1)}} \cdot W_i)$
+4. Finally, the loss is calculated from the output of our final layer.
+    - $L_n = L(\underline{o_l}, y) = L(\hat{y}, y)$
+  
+  
+While not strictly neccesary for forward propigation, the intermediate layer activation and output vectors are kept stored so they can be used in the later calculation of the gradient via back propigation.
+
+#### Loss Function
+
+Like all machine learning algorithms, neural networks have a loss function that helps them guage how well they fit their training data. For most neural network applications we want to choose a loss function that has easy to calculate derivatives for our models output $\hat{y}$. This is because training is most commonly done via gradient descent and for a gradient to be calculable we must have a differentiable loss $L(\hat{y}, y)$. 
+
+
+

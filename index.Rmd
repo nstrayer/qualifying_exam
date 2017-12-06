@@ -1,0 +1,86 @@
+--- 
+title: "Continuous Classification using Deep Neural Networks"
+author: "Nick Strayer"
+date: "`r Sys.Date()`"
+site: bookdown::tufte_html_book
+output:
+  bookdown::tufte_html_book:
+    toc: yes
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+github-repo: rstudio/bookdown-demo
+---
+
+Nicholas Strayer | n.strayer@vanderbilt.edu
+
+/Department of Biostatistics, Vanderbilt University/
+
+
+# Report Layout
+
+
+__Introduction__ 
+
+- Continuous classification
+    - What is it?
+
+- Potential applications of continuous classification models
+    - Activity Prediction
+    - EHR monitoring
+    - Hospital automation
+
+- History of methods
+    - Windowed regression
+    - Transformation methods
+    - Hidden Markov Models
+
+- Advantages of deep learning methods
+    - Multiple architectures for solving traditional problems
+    - Feature learning
+
+__Deep Learning Models__
+
+- Neural Networks
+    - Overview
+    - What they do
+    - Computation Graph
+    - Optimization
+        - Back-Propigation
+        - Stochastic Gradient Descent
+    - Universal Approximation Theorem
+
+- Convolutional Neural Networks
+    - Application to spatially correlated data
+    - Successes in computer vision
+    - Convolution as a kernel method
+    - Weight sharing
+    - Transformation invariance
+
+- Recurrent Neural Networks
+    - Applications with sequential data
+    - Successes in natural language processing
+		    - Abstracts Example
+    - Cyclical Computation Graph
+    - Weight sharing
+    - Exploding and vanishing gradients
+    - Modern Extensions
+		    - LSTM
+		    - GRU
+    - Computational costs
+
+__Challenges and Future Directions__
+
+- Computational Hurdles
+    - Model parameter numbers
+		    - Data requirments
+		    - Runtime on traditional hardware
+
+- Inference
+    - "Black Box" issue
+    - Causality problems
+    
+- Missing or small data*
+    - Missing data methods
+    - Semi-supervised methods

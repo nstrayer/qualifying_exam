@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1512495081320.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "7F20BF5B",
+    "lastKnownWriteTime" : 1512527158,
+    "last_content_update" : 1512527158030,
+    "path" : "~/quals/report/02-deep_learning.Rmd",
+    "project_path" : "02-deep_learning.Rmd",
+    "properties" : {
+        "cursorPosition" : "159,1",
+        "scrollLine" : "146"
+    },
+    "relative_order" : 6,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

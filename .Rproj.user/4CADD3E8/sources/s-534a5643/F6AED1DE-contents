@@ -1,0 +1,27 @@
+# Further Architectures {#architectures}
+
+heyo
+
+<!-- *  Optimization -->
+<!-- 		*  Back-Propigation -->
+<!-- 		*  Stochastic Gradient Descent -->
+<!-- 	*  Universal Approximation Theorem -->
+
+<!-- *Convolutional Neural Networks* -->
+<!-- 	*  Application to spatially correlated data -->
+<!-- 	*  Successes in computer vision -->
+<!-- 	*  Convolution as a kernel method -->
+<!-- 	*  Weight sharing -->
+<!-- 	*  Transformation invariance -->
+
+<!-- *Recurrent Neural Networks* -->
+<!-- 	*  Applications with sequential data -->
+<!-- 	*  Successes in natural language processing -->
+<!-- 		*  Abstracts Example -->
+<!-- 	*  Cyclical Computation Graph -->
+<!-- 	*  Weight sharing -->
+<!-- 	*  Exploding and vanishing gradients -->
+<!-- 	*  Modern Extensions -->
+<!-- 		*  LSTM -->
+<!-- 		*  GRU -->
+<!-- 	*  Computational costs -->

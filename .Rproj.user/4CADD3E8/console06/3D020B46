@@ -1,0 +1,182 @@
+]0;/home/nick/quals/report]0;nick@compooper: ~/quals/report[01;32mnick@compooper[00m:[01;34m~/quals/report[00m$ [K]0;nick@compooper: ~/quals/report[01;32mnick@compooper[00m:[01;34m~/quals/report[00m$ cd ..
+]0;/home/nick/quals]0;nick@compooper: ~/quals[01;32mnick@compooper[00m:[01;34m~/quals[00m$ git clone git@github.com:rstudio/bookdown-demo.git
+Cloning into 'bookdown-demo'...
+remote: Counting objects: 422, done.[K
+Receiving objects:   0% (1/422)   Receiving objects:   1% (5/422)   Receiving objects:   2% (9/422)   Receiving objects:   3% (13/422)   Receiving objects:   4% (17/422)   Receiving objects:   5% (22/422)   Receiving objects:   6% (26/422)   Receiving objects:   7% (30/422)   Receiving objects:   8% (34/422)   Receiving objects:   9% (38/422)   Receiving objects:  10% (43/422)   Receiving objects:  11% (47/422)   Receiving objects:  12% (51/422)   Receiving objects:  13% (55/422)   Receiving objects:  14% (60/422)   Receiving objects:  15% (64/422)   Receiving objects:  16% (68/422)   Receiving objects:  17% (72/422)   Receiving objects:  18% (76/422)   Receiving objects:  19% (81/422)   Receiving objects:  20% (85/422)   Receiving objects:  21% (89/422)   Receiving objects:  22% (93/422)   Receiving objects:  23% (98/422)   Receiving objects:  24% (102/422)   Receiving objects:  25% (106/422)   Receiving objects:  26% (110/422)   Receiving objects:  27% (114/422)   Receiving objects:  28% (119/422)   Receiving objects:  29% (123/422)   Receiving objects:  30% (127/422)   Receiving objects:  31% (131/422)   Receiving objects:  32% (136/422)   Receiving objects:  33% (140/422)   Receiving objects:  34% (144/422)   Receiving objects:  35% (148/422)   Receiving objects:  36% (152/422)   Receiving objects:  37% (157/422)   Receiving objects:  38% (161/422)   Receiving objects:  39% (165/422)   Receiving objects:  40% (169/422)   Receiving objects:  41% (174/422)   Receiving objects:  42% (178/422)   Receiving objects:  43% (182/422)   Receiving objects:  44% (186/422)   Receiving objects:  45% (190/422)   Receiving objects:  46% (195/422)   Receiving objects:  47% (199/422)   Receiving objects:  48% (203/422)   Receiving objects:  49% (207/422)   Receiving objects:  50% (211/422)   Receiving objects:  51% (216/422)   Receiving objects:  52% (220/422)   Receiving objects:  53% (224/422)   Receiving objects:  54% (228/422)   Receiving objects:  55% (233/422)   Receiving objects:  56% (237/422)   Receiving objects:  57% (241/422)   Receiving objects:  58% (245/422)   Receiving objects:  59% (249/422)   Receiving objects:  60% (254/422)   Receiving objects:  61% (258/422)   Receiving objects:  62% (262/422)   Receiving objects:  63% (266/422)   Receiving objects:  64% (271/422)   Receiving objects:  65% (275/422)   Receiving objects:  66% (279/422)   Receiving objects:  67% (283/422)   Receiving objects:  68% (287/422)   Receiving objects:  69% (292/422)   Receiving objects:  70% (296/422)   remote: Total 422 (delta 0), reused 0 (delta 0), pack-reused 422[K
+Receiving objects:  71% (300/422)   Receiving objects:  72% (304/422)   Receiving objects:  73% (309/422)   Receiving objects:  74% (313/422)   Receiving objects:  75% (317/422)   Receiving objects:  76% (321/422)   Receiving objects:  77% (325/422)   Receiving objects:  78% (330/422)   Receiving objects:  79% (334/422)   Receiving objects:  80% (338/422)   Receiving objects:  81% (342/422)   Receiving objects:  82% (347/422)   Receiving objects:  83% (351/422)   Receiving objects:  84% (355/422)   Receiving objects:  85% (359/422)   Receiving objects:  86% (363/422)   Receiving objects:  87% (368/422)   Receiving objects:  88% (372/422)   Receiving objects:  89% (376/422)   Receiving objects:  90% (380/422)   Receiving objects:  91% (385/422)   Receiving objects:  92% (389/422)   Receiving objects:  93% (393/422)   Receiving objects:  94% (397/422)   Receiving objects:  95% (401/422)   Receiving objects:  96% (406/422)   Receiving objects:  97% (410/422)   Receiving objects:  98% (414/422)   Receiving objects:  99% (418/422)   Receiving objects: 100% (422/422)   Receiving objects: 100% (422/422), 426.63 KiB | 0 bytes/s, done.
+Resolving deltas:   0% (0/196)   Resolving deltas:   3% (6/196)   Resolving deltas:   4% (9/196)   Resolving deltas:   5% (10/196)   Resolving deltas:   6% (12/196)   Resolving deltas:   7% (14/196)   Resolving deltas:   8% (16/196)   Resolving deltas:  12% (25/196)   Resolving deltas:  23% (47/196)   Resolving deltas:  25% (49/196)   Resolving deltas:  26% (51/196)   Resolving deltas:  27% (54/196)   Resolving deltas:  34% (68/196)   Resolving deltas:  43% (85/196)   Resolving deltas:  51% (101/196)   Resolving deltas:  58% (114/196)   Resolving deltas:  64% (126/196)   Resolving deltas:  65% (128/196)   Resolving deltas:  69% (136/196)   Resolving deltas:  75% (147/196)   Resolving deltas:  78% (153/196)   Resolving deltas:  79% (156/196)   Resolving deltas:  80% (157/196)   Resolving deltas:  82% (161/196)   Resolving deltas:  87% (172/196)   Resolving deltas:  88% (173/196)   Resolving deltas:  89% (175/196)   Resolving deltas:  91% (180/196)   Resolving deltas:  98% (193/196)   Resolving deltas:  99% (195/196)   Resolving deltas: 100% (196/196)   Resolving deltas: 100% (196/196), done.
+Checking connectivity... done.
+]0;/home/nick/quals]0;nick@compooper: ~/quals[01;32mnick@compooper[00m:[01;34m~/quals[00m$ ls
+total 16K
+drwxr-xr-x  4 nick nick 4.0K Dec  5 11:11 [0m[01;34m.[0m
+drwxr-xr-x 46 nick nick 4.0K Dec  5 11:11 [01;34m..[0m
+drwxr-xr-x  3 nick nick 4.0K Dec  5 11:11 [01;34mbookdown-demo[0m
+drwxr-xr-x  3 nick nick 4.0K Dec  5 10:38 [01;34mreport[0m
+]0;/home/nick/quals]0;nick@compooper: ~/quals[01;32mnick@compooper[00m:[01;34m~/quals[00m$ cd report/
+]0;/home/nick/quals/report]0;nick@compooper: ~/quals/report[01;32mnick@compooper[00m:[01;34m~/quals/report[00m$ ls
+total 1.6M
+drwxr-xr-x 3 nick nick 4.0K Dec  5 10:38 [0m[01;34m.[0m
+drwxr-xr-x 4 nick nick 4.0K Dec  5 11:11 [01;34m..[0m
+-rw-r--r-- 1 nick nick 767K Dec  4 16:31 report.html
+-rw-r--r-- 1 nick nick 778K Dec  4 17:31 reportother.nb.html
+-rw-r--r-- 1 nick nick 2.6K Dec  4 17:31 reportother.Rmd
+-rw-r--r-- 1 nick nick  688 Dec  4 16:32 report.Rmd
+-rw-r--r-- 1 nick nick  205 Dec  5 10:38 report.Rproj
+drwxr-xr-x 4 nick nick 4.0K Dec  4 16:29 [01;34m.Rproj.user[0m
+]0;/home/nick/quals/report]0;nick@compooper: ~/quals/report[01;32mnick@compooper[00m:[01;34m~/quals/report[00m$ rm -[K.gi[K[K[K[K[K[Kc [Kd ..
+]0;/home/nick/quals]0;nick@compooper: ~/quals[01;32mnick@compooper[00m:[01;34m~/quals[00m$ ls
+total 16K
+drwxr-xr-x  4 nick nick 4.0K Dec  5 11:11 [0m[01;34m.[0m
+drwxr-xr-x 46 nick nick 4.0K Dec  5 11:11 [01;34m..[0m
+drwxr-xr-x  3 nick nick 4.0K Dec  5 11:11 [01;34mbookdown-demo[0m
+drwxr-xr-x  3 nick nick 4.0K Dec  5 10:38 [01;34mreport[0m
+]0;/home/nick/quals]0;nick@compooper: ~/quals[01;32mnick@compooper[00m:[01;34m~/quals[00m$ cd bookdown-demo/
+]0;/home/nick/quals/bookdown-demo]0;nick@compooper: ~/quals/bookdown-demo[01;32mnick@compooper[00m:[01;34m~/quals/bookdown-demo[00m$ ls
+total 100K
+drwxr-xr-x 3 nick nick 4.0K Dec  5 11:11 [0m[01;34m.[0m
+drwxr-xr-x 4 nick nick 4.0K Dec  5 11:11 [01;34m..[0m
+-rw-r--r-- 1 nick nick 1.1K Dec  5 11:11 01-intro.Rmd
+-rw-r--r-- 1 nick nick   52 Dec  5 11:11 02-literature.Rmd
+-rw-r--r-- 1 nick nick   52 Dec  5 11:11 03-method.Rmd
+-rw-r--r-- 1 nick nick  114 Dec  5 11:11 04-application.Rmd
+-rw-r--r-- 1 nick nick   45 Dec  5 11:11 05-summary.Rmd
+-rw-r--r-- 1 nick nick   53 Dec  5 11:11 06-references.Rmd
+-rw-r--r-- 1 nick nick  268 Dec  5 11:11 book.bib
+-rw-r--r-- 1 nick nick  277 Dec  5 11:11 bookdown-demo.Rproj
+-rw-r--r-- 1 nick nick  101 Dec  5 11:11 _bookdown.yml
+-rw-r--r-- 1 nick nick   80 Dec  5 11:11 _build.sh
+-rwxr-xr-x 1 nick nick  398 Dec  5 11:11 [01;32m_deploy.sh[0m
+-rw-r--r-- 1 nick nick  115 Dec  5 11:11 DESCRIPTION
+drwxr-xr-x 8 nick nick 4.0K Dec  5 11:11 [01;34m.git[0m
+-rw-r--r-- 1 nick nick   72 Dec  5 11:11 .gitignore
+-rw-r--r-- 1 nick nick 1.1K Dec  5 11:11 index.Rmd
+-rw-r--r-- 1 nick nick 6.5K Dec  5 11:11 LICENSE
+-rw-r--r-- 1 nick nick  501 Dec  5 11:11 _output.yml
+-rw-r--r-- 1 nick nick  161 Dec  5 11:11 preamble.tex
+-rw-r--r-- 1 nick nick  291 Dec  5 11:11 README.md
+-rw-r--r-- 1 nick nick  172 Dec  5 11:11 style.css
+-rw-r--r-- 1 nick nick 2.4K Dec  5 11:11 toc.css
+-rw-r--r-- 1 nick nick  162 Dec  5 11:11 .travis.yml
+]0;/home/nick/quals/bookdown-demo]0;nick@compooper: ~/quals/bookdown-demo[01;32mnick@compooper[00m:[01;34m~/quals/bookdown-demo[00m$ rm -rf .git
+]0;/home/nick/quals/bookdown-demo]0;nick@compooper: ~/quals/bookdown-demo[01;32mnick@compooper[00m:[01;34m~/quals/bookdown-demo[00m$ ls
+total 96K
+drwxr-xr-x 2 nick nick 4.0K Dec  5 11:11 [0m[01;34m.[0m
+drwxr-xr-x 4 nick nick 4.0K Dec  5 11:11 [01;34m..[0m
+-rw-r--r-- 1 nick nick 1.1K Dec  5 11:11 01-intro.Rmd
+-rw-r--r-- 1 nick nick   52 Dec  5 11:11 02-literature.Rmd
+-rw-r--r-- 1 nick nick   52 Dec  5 11:11 03-method.Rmd
+-rw-r--r-- 1 nick nick  114 Dec  5 11:11 04-application.Rmd
+-rw-r--r-- 1 nick nick   45 Dec  5 11:11 05-summary.Rmd
+-rw-r--r-- 1 nick nick   53 Dec  5 11:11 06-references.Rmd
+-rw-r--r-- 1 nick nick  268 Dec  5 11:11 book.bib
+-rw-r--r-- 1 nick nick  277 Dec  5 11:11 bookdown-demo.Rproj
+-rw-r--r-- 1 nick nick  101 Dec  5 11:11 _bookdown.yml
+-rw-r--r-- 1 nick nick   80 Dec  5 11:11 _build.sh
+-rwxr-xr-x 1 nick nick  398 Dec  5 11:11 [01;32m_deploy.sh[0m
+-rw-r--r-- 1 nick nick  115 Dec  5 11:11 DESCRIPTION
+-rw-r--r-- 1 nick nick   72 Dec  5 11:11 .gitignore
+-rw-r--r-- 1 nick nick 1.1K Dec  5 11:11 index.Rmd
+-rw-r--r-- 1 nick nick 6.5K Dec  5 11:11 LICENSE
+-rw-r--r-- 1 nick nick  501 Dec  5 11:11 _output.yml
+-rw-r--r-- 1 nick nick  161 Dec  5 11:11 preamble.tex
+-rw-r--r-- 1 nick nick  291 Dec  5 11:11 README.md
+-rw-r--r-- 1 nick nick  172 Dec  5 11:11 style.css
+-rw-r--r-- 1 nick nick 2.4K Dec  5 11:11 toc.css
+-rw-r--r-- 1 nick nick  162 Dec  5 11:11 .travis.yml
+]0;/home/nick/quals/bookdown-demo]0;nick@compooper: ~/quals/bookdown-demo[01;32mnick@compooper[00m:[01;34m~/quals/bookdown-demo[00m$ rm book0d[K[K-deno[K[Kmo.Rproj
+rm: cannot remove 'book-demo.Rproj': No such file or directory
+]0;/home/nick/quals/bookdown-demo]0;nick@compooper: ~/quals/bookdown-demo[01;32mnick@compooper[00m:[01;34m~/quals/bookdown-demo[00m$ rm book-demo.Rprojls[Krm book-demo.Rproj[Cd-demo.Rproji-demo.Rprojw-demo.Rprojb-demo.Rproj[1P-demo.Rproj[1P-demo.Rproj[1P-demo.Rprojo-demo.Rprojw-demo.Rprojn-demo.Rproj
+]0;/home/nick/quals/bookdown-demo]0;nick@compooper: ~/quals/bookdown-demo[01;32mnick@compooper[00m:[01;34m~/quals/bookdown-demo[00m$ ls
+total 92K
+drwxr-xr-x 2 nick nick 4.0K Dec  5 11:11 [0m[01;34m.[0m
+drwxr-xr-x 4 nick nick 4.0K Dec  5 11:11 [01;34m..[0m
+-rw-r--r-- 1 nick nick 1.1K Dec  5 11:11 01-intro.Rmd
+-rw-r--r-- 1 nick nick   52 Dec  5 11:11 02-literature.Rmd
+-rw-r--r-- 1 nick nick   52 Dec  5 11:11 03-method.Rmd
+-rw-r--r-- 1 nick nick  114 Dec  5 11:11 04-application.Rmd
+-rw-r--r-- 1 nick nick   45 Dec  5 11:11 05-summary.Rmd
+-rw-r--r-- 1 nick nick   53 Dec  5 11:11 06-references.Rmd
+-rw-r--r-- 1 nick nick  268 Dec  5 11:11 book.bib
+-rw-r--r-- 1 nick nick  101 Dec  5 11:11 _bookdown.yml
+-rw-r--r-- 1 nick nick   80 Dec  5 11:11 _build.sh
+-rwxr-xr-x 1 nick nick  398 Dec  5 11:11 [01;32m_deploy.sh[0m
+-rw-r--r-- 1 nick nick  115 Dec  5 11:11 DESCRIPTION
+-rw-r--r-- 1 nick nick   72 Dec  5 11:11 .gitignore
+-rw-r--r-- 1 nick nick 1.1K Dec  5 11:11 index.Rmd
+-rw-r--r-- 1 nick nick 6.5K Dec  5 11:11 LICENSE
+-rw-r--r-- 1 nick nick  501 Dec  5 11:11 _output.yml
+-rw-r--r-- 1 nick nick  161 Dec  5 11:11 preamble.tex
+-rw-r--r-- 1 nick nick  291 Dec  5 11:11 README.md
+-rw-r--r-- 1 nick nick  172 Dec  5 11:11 style.css
+-rw-r--r-- 1 nick nick 2.4K Dec  5 11:11 toc.css
+-rw-r--r-- 1 nick nick  162 Dec  5 11:11 .travis.yml
+]0;/home/nick/quals/bookdown-demo]0;nick@compooper: ~/quals/bookdown-demo[01;32mnick@compooper[00m:[01;34m~/quals/bookdown-demo[00m$ cd ..
+]0;/home/nick/quals]0;nick@compooper: ~/quals[01;32mnick@compooper[00m:[01;34m~/quals[00m$ cd re[K[K[K[K[Kcp -r bookdown-demo/* report/
+]0;/home/nick/quals]0;nick@compooper: ~/quals[01;32mnick@compooper[00m:[01;34m~/quals[00m$ ls
+total 16K
+drwxr-xr-x  4 nick nick 4.0K Dec  5 11:11 [0m[01;34m.[0m
+drwxr-xr-x 46 nick nick 4.0K Dec  5 11:11 [01;34m..[0m
+drwxr-xr-x  2 nick nick 4.0K Dec  5 11:11 [01;34mbookdown-demo[0m
+drwxr-xr-x  3 nick nick 4.0K Dec  5 11:12 [01;34mreport[0m
+]0;/home/nick/quals]0;nick@compooper: ~/quals[01;32mnick@compooper[00m:[01;34m~/quals[00m$ cd report/
+]0;/home/nick/quals/report]0;nick@compooper: ~/quals/report[01;32mnick@compooper[00m:[01;34m~/quals/report[00m$ ls
+total 1.7M
+drwxr-xr-x 3 nick nick 4.0K Dec  5 11:12 [0m[01;34m.[0m
+drwxr-xr-x 4 nick nick 4.0K Dec  5 11:11 [01;34m..[0m
+-rw-r--r-- 1 nick nick 1.1K Dec  5 11:12 01-intro.Rmd
+-rw-r--r-- 1 nick nick   52 Dec  5 11:12 02-literature.Rmd
+-rw-r--r-- 1 nick nick   52 Dec  5 11:12 03-method.Rmd
+-rw-r--r-- 1 nick nick  114 Dec  5 11:12 04-application.Rmd
+-rw-r--r-- 1 nick nick   45 Dec  5 11:12 05-summary.Rmd
+-rw-r--r-- 1 nick nick   53 Dec  5 11:12 06-references.Rmd
+-rw-r--r-- 1 nick nick  268 Dec  5 11:12 book.bib
+-rw-r--r-- 1 nick nick  101 Dec  5 11:12 _bookdown.yml
+-rw-r--r-- 1 nick nick   80 Dec  5 11:12 _build.sh
+-rwxr-xr-x 1 nick nick  398 Dec  5 11:12 [01;32m_deploy.sh[0m
+-rw-r--r-- 1 nick nick  115 Dec  5 11:12 DESCRIPTION
+-rw-r--r-- 1 nick nick 1.1K Dec  5 11:12 index.Rmd
+-rw-r--r-- 1 nick nick 6.5K Dec  5 11:12 LICENSE
+-rw-r--r-- 1 nick nick  501 Dec  5 11:12 _output.yml
+-rw-r--r-- 1 nick nick  161 Dec  5 11:12 preamble.tex
+-rw-r--r-- 1 nick nick  291 Dec  5 11:12 README.md
+-rw-r--r-- 1 nick nick 767K Dec  4 16:31 report.html
+-rw-r--r-- 1 nick nick 778K Dec  4 17:31 reportother.nb.html
+-rw-r--r-- 1 nick nick 2.6K Dec  4 17:31 reportother.Rmd
+-rw-r--r-- 1 nick nick  688 Dec  4 16:32 report.Rmd
+-rw-r--r-- 1 nick nick  205 Dec  5 10:38 report.Rproj
+drwxr-xr-x 4 nick nick 4.0K Dec  4 16:29 [01;34m.Rproj.user[0m
+-rw-r--r-- 1 nick nick  172 Dec  5 11:12 style.css
+-rw-r--r-- 1 nick nick 2.4K Dec  5 11:12 toc.css
+]0;/home/nick/quals/report]0;nick@compooper: ~/quals/report[01;32mnick@compooper[00m:[01;34m~/quals/report[00m$ [K]0;nick@compooper: ~/quals/report[01;32mnick@compooper[00m:[01;34m~/quals/report[00m$ ls[K[Kgit i[K[K[K[K[K[K]0;nick@compooper: ~/quals/report[01;32mnick@compooper[00m:[01;34m~/quals/report[00m$ ls
+total 1.7M
+drwxr-xr-x 6 nick nick 4.0K Dec  5 20:25 [0m[01;34m.[0m
+drwxr-xr-x 4 nick nick 4.0K Dec  5 11:11 [01;34m..[0m
+-rw-r--r-- 1 nick nick  13K Dec  5 11:29 01-intro.Rmd
+-rw-r--r-- 1 nick nick  17K Dec  5 20:25 02-deep_learning.Rmd
+-rw-r--r-- 1 nick nick  827 Dec  5 13:17 03-architectures.Rmd
+drwxr-xr-x 4 nick nick 4.0K Dec  5 20:25 [01;34m_book[0m
+-rw-r--r-- 1 nick nick 2.6K Dec  5 20:25 book.bib
+drwxr-xr-x 3 nick nick 4.0K Dec  5 20:25 [01;34m_bookdown_files[0m
+-rw-r--r-- 1 nick nick  101 Dec  5 11:12 _bookdown.yml
+-rw-r--r-- 1 nick nick   80 Dec  5 11:12 _build.sh
+-rwxr-xr-x 1 nick nick  398 Dec  5 11:12 [01;32m_deploy.sh[0m
+-rw-r--r-- 1 nick nick  115 Dec  5 11:12 DESCRIPTION
+drwxr-xr-x 2 nick nick 4.0K Dec  5 17:08 [01;34mfigures[0m
+-rw-r--r-- 1 nick nick 1.9K Dec  5 11:48 index.Rmd
+-rw-r--r-- 1 nick nick 6.5K Dec  5 11:12 LICENSE
+-rw-r--r-- 1 nick nick  501 Dec  5 11:12 _output.yml
+-rw-r--r-- 1 nick nick 1.1K Dec  5 11:28 packages.bib
+-rw-r--r-- 1 nick nick  161 Dec  5 11:12 preamble.tex
+-rw-r--r-- 1 nick nick  291 Dec  5 11:12 README.md
+-rw-r--r-- 1 nick nick 767K Dec  4 16:31 report.html
+-rw-r--r-- 1 nick nick 778K Dec  4 17:31 reportother.nb.html
+-rw-r--r-- 1 nick nick 2.6K Dec  4 17:31 reportother.Rmd
+-rw-r--r-- 1 nick nick  688 Dec  4 16:32 report.Rmd
+-rw-r--r-- 1 nick nick  225 Dec  5 11:13 report.Rproj
+drwxr-xr-x 4 nick nick 4.0K Dec  4 16:29 [01;34m.Rproj.user[0m
+-rw-r--r-- 1 nick nick  172 Dec  5 11:12 style.css
+-rw-r--r-- 1 nick nick 2.4K Dec  5 11:12 toc.css
+]0;/home/nick/quals/report]0;nick@compooper: ~/quals/report[01;32mnick@compooper[00m:[01;34m~/quals/report[00m$ [K]0;nick@compooper: ~/quals/report[01;32mnick@compooper[00m:[01;34m~/quals/report[00m$ git init
+Initialized empty Git repository in /home/nick/quals/report/.git/
+]0;/home/nick/quals/report]0;nick@compooper: ~/quals/report[01;32mnick@compooper[00m:[01;34m~/quals/report[00m$ git remote add origin git@github.com:nstrayer/quali fying_exam.git
+]0;/home/nick/quals/report]0;nick@compooper: ~/quals/report[01;32mnick@compooper[00m:[01;34m~/quals/report[00m$ lgit "added fi[K[K[K[K[K[K[K[K[K[Kbook[K[K[K[K[K "[K[Kt "bookdown skeleton for report"

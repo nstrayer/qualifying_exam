@@ -1,0 +1,94 @@
+@Book{xie2015,
+  title = {Dynamic Documents with {R} and knitr},
+  author = {Yihui Xie},
+  publisher = {Chapman and Hall/CRC},
+  address = {Boca Raton, Florida},
+  year = {2015},
+  edition = {2nd},
+  note = {ISBN 978-1498716963},
+  url = {http://yihui.name/knitr/},
+}
+
+@book{goodfellow_DL,
+  title={Deep learning},
+  author={Goodfellow, Ian and Bengio, Yoshua and Courville, Aaron},
+  year={2016},
+  publisher={MIT press}
+}
+
+
+@article{mcculloch_neuron,
+  title={A logical calculus of the ideas immanent in nervous activity},
+  author={McCulloch, Warren S and Pitts, Walter},
+  journal={The bulletin of mathematical biophysics},
+  volume={5},
+  number={4},
+  pages={115--133},
+  year={1943},
+  publisher={Springer}
+}
+
+@article{rosenblatt_perceptron,
+  title={The perceptron: A probabilistic model for information storage and organization in the brain.},
+  author={Rosenblatt, Frank},
+  journal={Psychological review},
+  volume={65},
+  number={6},
+  pages={386},
+  year={1958},
+  publisher={American Psychological Association}
+}
+
+@book{minsky_perceptrons,
+  title={Perceptrons: An introduction to computational geometry},
+  author={Minsky, Marvin and Papert, Seymour A and Bottou, L{\'e}on},
+  year={1969},
+  publisher={MIT press}
+}
+
+@article{backprop_1986,
+  title={Learning representations by back-propagating errors},
+  author={Rumelhart, David E and Hinton, Geoffrey E and Williams, Ronald J},
+  journal={nature},
+  volume={323},
+  number={6088},
+  pages={533--536},
+  year={1986},
+  publisher={Nature Publishing Group}
+}
+
+@inproceedings{imagenet_2012,
+  title={Imagenet classification with deep convolutional neural networks},
+  author={Krizhevsky, Alex and Sutskever, Ilya and Hinton, Geoffrey E},
+  booktitle={Advances in neural information processing systems},
+  pages={1097--1105},
+  year={2012}
+}
+
+@article{evostrat,
+author = {Salimans, Tim and Ho, Jonathan and Chen, Xi and Sidor, Szymon and Sutskever, Ilya},
+title = {{Evolution Strategies as a Scalable Alternative to Reinforcement Learning}},
+journal = {arXiv.org},
+year = {2017},
+eprint = {1703.03864v2},
+eprinttype = {arxiv},
+eprintclass = {stat.ML},
+month = mar
+}
+
+@article{momentum,
+  author = {Goh, Gabriel},
+  title = {Why Momentum Really Works},
+  journal = {Distill},
+  year = {2017},
+  url = {http://distill.pub/2017/momentum},
+  doi = {10.23915/distill.00006}
+}
+
+@inproceedings{relu_paper,
+  title={Rectified linear units improve restricted boltzmann machines},
+  author={Nair, Vinod and Hinton, Geoffrey E},
+  booktitle={Proceedings of the 27th international conference on machine learning (ICML-10)},
+  pages={807--814},
+  year={2010}
+}
