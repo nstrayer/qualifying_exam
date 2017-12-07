@@ -232,16 +232,28 @@ Figure 4.3: Unrolled view of the RNN shown in previous figure. Each timestep has
 <p>While these methods do successfully allow RNNs to learn longer time dependencies, they are rather restrictive (forcing weights to have gradients near one can slow down training and inflate importance of some features and skip connections eliminate the benefit of the network learning the dependency lengths on its own). Next, we will introduce two methods to deal with the problems of learning long-term dependencies that have gained wide-spread adoption and generally dominate the techniques used.</p>
 <div id="long-short-term-memory-networks" class="section level4">
 <h4><span class="header-section-number">4.2.6.1</span> Long short term memory networks</h4>
-<p>A way of controlling how an RNN keeps track of different dependencies over time is to make that control flow part of the model itself to be learned. This is the concept that long short term memory (LSTM) networks (<span class="citation">Hochreiter and Schmidhuber (<a href="#ref-lstm_intro">1997</a>)</span>) use. In the broadest sense, LSTM networks augment the traditional RNN architecture by adding a series of ‘gates’ that control which parts of the hidden state are remembered and used from time-step to time-step.</p>
-<div class="figure"><span id="fig:unnamed-chunk-2"></span>
-<img src="figures/lstm_cell.png" alt="The internal structure of an LSTM hidden unit. The gates are all fed by the input at time _t_, the whole hidden unit at time (_t - 1_), and the hidden units internal state from time (_t 0 1_). The gates themselves are linear combinations of the input that are then transformed by sigmoid activation functions." height="320" />
+<p>A way of controlling how an RNN keeps track of different dependencies over time is to make that control flow part of the model itself and allow it to be learned. This is the concept that long short term memory (LSTM) networks (<span class="citation">Hochreiter and Schmidhuber (<a href="#ref-lstm_intro">1997</a>)</span>) use. In the broadest sense, LSTM networks augment the traditional RNN architecture by adding a series of ‘gates’ that control which parts of the hidden state are remembered and used from time-step to time-step.</p>
+<div class="figure"><span id="fig:lstmdiagram"></span>
+<img src="figures/lstm_cell.png" alt="The internal structure of an LSTM hidden unit. The gates are all fed by the input at time _t_, the whole hidden unit at time (_t - 1_), and the hidden units internal state from time (_t - 1_). The gates themselves are linear combinations of the input that are then transformed by sigmoid activation functions." width="400" />
 <p class="caption">
-Figure 4.4: The internal structure of an LSTM hidden unit. The gates are all fed by the input at time <em>t</em>, the whole hidden unit at time (<em>t - 1</em>), and the hidden units internal state from time (<em>t 0 1</em>). The gates themselves are linear combinations of the input that are then transformed by sigmoid activation functions.
+Figure 4.4: The internal structure of an LSTM hidden unit. The gates are all fed by the input at time <em>t</em>, the whole hidden unit at time (<em>t - 1</em>), and the hidden units internal state from time (<em>t - 1</em>). The gates themselves are linear combinations of the input that are then transformed by sigmoid activation functions.
 </p>
 </div>
+<p>It is important to note that an LSTM network is really just an RNN that has had the neurons a hidden layer replaced by a more complicated cell that controls its inputs and outputs along with having a secondary internal recrurrence to an internal state. See figure <a href="architectures.html#fig:lstmdiagram">4.4</a> for the details of this internal cell.</p>
+<p>These gates are themselves simple little neurons that take linear combination of the input at time <span class="math inline">\(t\)</span>, the hidden state at <span class="math inline">\((t - 1)\)</span> and the lstm cell’s internal state at <span class="math inline">\((t - 1)\)</span> and produce an output that is squashed between zero (closed) and one (open) by a sigmoid activation function. The input gate will control what information makes it through to the unit internal state, the forget gate decides which information from the interal state gets recycled for the next time point, and the output gate decides what of the internal state is important to the next layer.</p>
+<p>While LSTMs are conceptually more complicated, their improvements in performance over standard RNNs is drastic (<span class="citation">Hochreiter and Schmidhuber (<a href="#ref-lstm_intro">1997</a>)</span>). The network can now learn what features are important to it’s given outcome at any given time, while at the same time filtering out information that it finds unneccesary in context. To give intuition to this we can imagine a basebal scenario. Say the batter hits a foul ball, that foul has different implications on the outcome of the at bat depending on how many strikes the player has when it occured. A traditional RNN would always choose to remember a foul the same, whereas an LSTM network could learn this contextual frame for importance.</p>
+<p>The major issue with LSTMs is how many parameters there are to learn. The number of parameter’s associated with a neuron in a hidden layer jumps roughly 3 times over a standard RNN due to the weights neccesary for the gates. Due to this, LSTM’s require a very large amount of data to effectively train and not overfit. In practice, these complications, combined with the recovery of some degrees of freedom through regularization, are worth it and LSTMs are by far the most common RNN-based architecture used today. However, some other approaches using similar methodologies have proven successful while reducing the number of parameters needed.</p>
 </div>
 <div id="gated-recurrent-units" class="section level4">
 <h4><span class="header-section-number">4.2.6.2</span> Gated recurrent units</h4>
+<p>Introduced relatively recently (2014), Gated recurrent units (GRU)(<span class="citation">Cho et al. (<a href="#ref-gru_intro">2014</a>)</span>), like LSTM, use gates to help control information flow through time, but it omits the extra recurrence step of the internal step from the LSTM and also sets the update and forget gates to be complements of eachother, thus accomplishing the task with a single gate. This is paired with a reset gate that controls how much of the hidden state from the previous timepoint makes it into the hidden state’s input vector.</p>
+<div class="figure"><span id="fig:grudiagram"></span>
+<img src="figures/gru_cell.png" alt="The internal structure of an GRU hidden unit. Unlike the LSTM there are only two gates, with the update and forget get tasks being taken care of by a single gate that controls what proportion to remember and what to forget. In addition, a reset gate controls how much of the hidden state from the previous step to bring into the current." width="400" />
+<p class="caption">
+Figure 4.5: The internal structure of an GRU hidden unit. Unlike the LSTM there are only two gates, with the update and forget get tasks being taken care of by a single gate that controls what proportion to remember and what to forget. In addition, a reset gate controls how much of the hidden state from the previous step to bring into the current.
+</p>
+</div>
+<p>While the GRU has fewer parameters to train, and does appear to perform better in lower data scenarios (<span class="citation">Graves and others (<a href="#ref-graves_rnn">2012</a>)</span>), in many cases the increased expressiveness of the LSTM allows for better performance. A recent large-scale survey of RNN architectures (<span class="citation">Melis, Dyer, and Blunsom (<a href="#ref-rnn_survey">2017</a>)</span>) found that on all benchmarks LSTM networks outperformed GRUs when using a systematic hyperparameter search.</p>
 </div>
 </div>
 <div id="computational-hurdles" class="section level3">
@@ -314,6 +326,12 @@ Figure 4.4: The internal structure of an LSTM hidden unit. The gates are all fed
 </div>
 <div id="ref-lstm_intro">
 <p>Hochreiter, Sepp, and Jürgen Schmidhuber. 1997. “Long Short-Term Memory.” <em>Neural Computation</em> 9 (8). MIT Press: 1735–80.</p>
+</div>
+<div id="ref-gru_intro">
+<p>Cho, Kyunghyun, Bart Van Merriënboer, Dzmitry Bahdanau, and Yoshua Bengio. 2014. “On the Properties of Neural Machine Translation: Encoder-Decoder Approaches.” <em>arXiv Preprint arXiv:1409.1259</em>.</p>
+</div>
+<div id="ref-rnn_survey">
+<p>Melis, Gábor, Chris Dyer, and Phil Blunsom. 2017. “On the State of the Art of Evaluation in Neural Language Models.” <em>arXiv.org</em>, July. <a href="http://arxiv.org/abs/1707.05589v2" class="uri">http://arxiv.org/abs/1707.05589v2</a>.</p>
 </div>
 </div>
 <div class="footnotes">
