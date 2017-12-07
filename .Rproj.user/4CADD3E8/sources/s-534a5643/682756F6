@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1512596311473.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "448929814",
+    "id" : "682756F6",
+    "lastKnownWriteTime" : 1512605979,
+    "last_content_update" : 1512605979232,
+    "path" : "~/quals/report/03-architectures.Rmd",
+    "project_path" : "03-architectures.Rmd",
+    "properties" : {
+        "cursorPosition" : "56,0",
+        "scrollLine" : "44",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

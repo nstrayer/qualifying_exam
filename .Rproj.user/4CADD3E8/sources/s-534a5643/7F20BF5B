@@ -7,13 +7,13 @@
     "folds" : "",
     "hash" : "0",
     "id" : "7F20BF5B",
-    "lastKnownWriteTime" : 1512527158,
-    "last_content_update" : 1512527158030,
+    "lastKnownWriteTime" : 1512596886,
+    "last_content_update" : 1512596886658,
     "path" : "~/quals/report/02-deep_learning.Rmd",
     "project_path" : "02-deep_learning.Rmd",
     "properties" : {
-        "cursorPosition" : "159,1",
-        "scrollLine" : "146"
+        "cursorPosition" : "149,38",
+        "scrollLine" : "143"
     },
     "relative_order" : 6,
     "source_on_save" : false,

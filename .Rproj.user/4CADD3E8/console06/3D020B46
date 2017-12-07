@@ -180,3 +180,172 @@ drwxr-xr-x 4 nick nick 4.0K Dec  4 16:29 [01;34m.Rproj.user[0m
 Initialized empty Git repository in /home/nick/quals/report/.git/
 ]0;/home/nick/quals/report]0;nick@compooper: ~/quals/report[01;32mnick@compooper[00m:[01;34m~/quals/report[00m$ git remote add origin git@github.com:nstrayer/quali fying_exam.git
 ]0;/home/nick/quals/report]0;nick@compooper: ~/quals/report[01;32mnick@compooper[00m:[01;34m~/quals/report[00m$ lgit "added fi[K[K[K[K[K[K[K[K[K[Kbook[K[K[K[K[K "[K[Kt "bookdown skeleton for report"
+[master (root-commit) 3f96d16] bookdown skeleton for report
+ 98 files changed, 5186 insertions(+)
+ create mode 100644 .Rproj.user/4CADD3E8/build_options
+ create mode 100644 .Rproj.user/4CADD3E8/console06/3D020B46
+ create mode 100644 .Rproj.user/4CADD3E8/console06/3D020B46.env
+ create mode 100644 .Rproj.user/4CADD3E8/console06/INDEX001
+ create mode 100644 .Rproj.user/4CADD3E8/pcs/files-pane.pper
+ create mode 100644 .Rproj.user/4CADD3E8/pcs/source-pane.pper
+ create mode 100644 .Rproj.user/4CADD3E8/pcs/windowlayoutstate.pper
+ create mode 100644 .Rproj.user/4CADD3E8/pcs/workbench-pane.pper
+ create mode 100644 .Rproj.user/4CADD3E8/persistent-state
+ create mode 100644 .Rproj.user/4CADD3E8/saved_source_markers
+ create mode 100644 .Rproj.user/4CADD3E8/sources/prop/1E8B24F6
+ create mode 100644 .Rproj.user/4CADD3E8/sources/prop/22B5DB25
+ create mode 100644 .Rproj.user/4CADD3E8/sources/prop/2AB6C637
+ create mode 100644 .Rproj.user/4CADD3E8/sources/prop/2CAB7BFD
+ create mode 100644 .Rproj.user/4CADD3E8/sources/prop/2D7B7DC3
+ create mode 100644 .Rproj.user/4CADD3E8/sources/prop/34EB1E76
+ create mode 100644 .Rproj.user/4CADD3E8/sources/prop/47CD67CC
+ create mode 100644 .Rproj.user/4CADD3E8/sources/prop/6F5279A7
+ create mode 100644 .Rproj.user/4CADD3E8/sources/prop/7DF8F1C7
+ create mode 100644 .Rproj.user/4CADD3E8/sources/prop/9BFB65B
+ create mode 100644 .Rproj.user/4CADD3E8/sources/prop/A2803BED
+ create mode 100644 .Rproj.user/4CADD3E8/sources/prop/DC321D24
+ create mode 100644 .Rproj.user/4CADD3E8/sources/prop/INDEX
+ create mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/2FA1B995-contents
+ create mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/3E3214B1
+ create mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/3E3214B1-contents
+ create mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/6A417AB0-contents
+ create mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/7809327B-contents
+ create mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/7F20BF5B
+ create mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/7F20BF5B-contents
+ create mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/8626EDFE-contents
+ create mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/BD4C9B13-contents
+ create mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/C012BC11-contents
+ create mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/C31F18BC-contents
+ create mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/CF1B2F7D-contents
+ create mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/EABF8429-contents
+ create mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/F41D4404-contents
+ create mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/F6AED1DE-contents
+ create mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/lock_file
+ create mode 100644 .Rproj.user/shared/notebooks/3D89CDA7-reportother/1/s/chunks.json
+ create mode 100644 .Rproj.user/shared/notebooks/534F4818-index/1/s/chunks.json
+ create mode 100644 .Rproj.user/shared/notebooks/7A7899BE-report/1/s/chunks.json
+ create mode 100644 .Rproj.user/shared/notebooks/89230BD-03-architectures/1/s/chunks.json
+ create mode 100644 .Rproj.user/shared/notebooks/B4887F3E-02-deep_learning/1/4CADD3E8534a5643/chunks.json
+ create mode 100644 .Rproj.user/shared/notebooks/B4887F3E-02-deep_learning/1/s/chunks.json
+ create mode 100644 .Rproj.user/shared/notebooks/B4887F3E-02-deep_learning/1/s/cvwnuz9urqnpq/000002.csv
+ create mode 100644 .Rproj.user/shared/notebooks/B4887F3E-02-deep_learning/1/s/cvwnuz9urqnpq/000003.png
+ create mode 100644 .Rproj.user/shared/notebooks/EA93BA34-01-intro/1/s/chunks.json
+ create mode 100644 .Rproj.user/shared/notebooks/EDBEA361-03-deep_learning/1/4CADD3E8534a5643/chunks.json
+ create mode 100644 .Rproj.user/shared/notebooks/EDBEA361-03-deep_learning/1/s/chunks.json
+ create mode 100644 .Rproj.user/shared/notebooks/patch-chunk-names
+ create mode 100644 .Rproj.user/shared/notebooks/paths
+ create mode 100644 01-intro.Rmd
+ create mode 100644 02-deep_learning.Rmd
+ create mode 100644 03-architectures.Rmd
+ create mode 100644 DESCRIPTION
+ create mode 100644 LICENSE
+ create mode 100644 README.md
+ create mode 100644 _book/architectures.html
+ create mode 100644 _book/figures/backprop.png
+ create mode 100644 _book/index.html
+ create mode 100644 _book/intro.html
+ create mode 100644 _book/libs/gitbook-2.6.7/css/fontawesome/fontawesome-webfont.ttf
+ create mode 100644 _book/libs/gitbook-2.6.7/css/plugin-bookdown.css
+ create mode 100644 _book/libs/gitbook-2.6.7/css/plugin-fontsettings.css
+ create mode 100644 _book/libs/gitbook-2.6.7/css/plugin-highlight.css
+ create mode 100644 _book/libs/gitbook-2.6.7/css/plugin-search.css
+ create mode 100644 _book/libs/gitbook-2.6.7/css/style.css
+ create mode 100644 _book/libs/gitbook-2.6.7/js/app.min.js
+ create mode 100644 _book/libs/gitbook-2.6.7/js/jquery.highlight.js
+ create mode 100644 _book/libs/gitbook-2.6.7/js/lunr.js
+ create mode 100644 _book/libs/gitbook-2.6.7/js/plugin-bookdown.js
+ create mode 100644 _book/libs/gitbook-2.6.7/js/plugin-fontsettings.js
+ create mode 100644 _book/libs/gitbook-2.6.7/js/plugin-search.js
+ create mode 100644 _book/libs/gitbook-2.6.7/js/plugin-sharing.js
+ create mode 100644 _book/libs/jquery-2.2.3/jquery.min.js
+ create mode 100644 _book/neuralnetworks.html
+ create mode 100644 _book/placeholder-1.html
+ create mode 100644 _book/placeholder.html
+ create mode 100644 _book/search_index.json
+ create mode 100644 _book/style.css
+ create mode 100644 _bookdown.yml
+ create mode 100644 _bookdown_files/bookdown-demo_files/figure-html/nice-fig-1.png
+ create mode 100644 _build.sh
+ create mode 100755 _deploy.sh
+ create mode 100644 _output.yml
+ create mode 100644 book.bib
+ create mode 100644 figures/backprop.png
+ create mode 100644 index.Rmd
+ create mode 100644 packages.bib
+ create mode 100644 preamble.tex
+ create mode 100644 report.Rmd
+ create mode 100644 report.Rproj
+ create mode 100644 report.html
+ create mode 100644 reportother.Rmd
+ create mode 100644 reportother.nb.html
+ create mode 100644 style.css
+ create mode 100644 toc.css
+Counting objects: 124, done.
+Delta compression using up to 8 threads.
+Compressing objects:   1% (1/94)   Compressing objects:   2% (2/94)   Compressing objects:   3% (3/94)   Compressing objects:   4% (4/94)   Compressing objects:   5% (5/94)   Compressing objects:   6% (6/94)   Compressing objects:   7% (7/94)   Compressing objects:   8% (8/94)   Compressing objects:   9% (9/94)   Compressing objects:  10% (10/94)   Compressing objects:  11% (11/94)   Compressing objects:  12% (12/94)   Compressing objects:  13% (13/94)   Compressing objects:  14% (14/94)   Compressing objects:  15% (15/94)   Compressing objects:  17% (16/94)   Compressing objects:  18% (17/94)   Compressing objects:  19% (18/94)   Compressing objects:  20% (19/94)   Compressing objects:  21% (20/94)   Compressing objects:  22% (21/94)   Compressing objects:  23% (22/94)   Compressing objects:  24% (23/94)   Compressing objects:  25% (24/94)   Compressing objects:  26% (25/94)   Compressing objects:  27% (26/94)   Compressing objects:  28% (27/94)   Compressing objects:  29% (28/94)   Compressing objects:  30% (29/94)   Compressing objects:  31% (30/94)   Compressing objects:  32% (31/94)   Compressing objects:  34% (32/94)   Compressing objects:  35% (33/94)   Compressing objects:  36% (34/94)   Compressing objects:  37% (35/94)   Compressing objects:  38% (36/94)   Compressing objects:  39% (37/94)   Compressing objects:  40% (38/94)   Compressing objects:  41% (39/94)   Compressing objects:  42% (40/94)   Compressing objects:  43% (41/94)   Compressing objects:  44% (42/94)   Compressing objects:  45% (43/94)   Compressing objects:  46% (44/94)   Compressing objects:  47% (45/94)   Compressing objects:  48% (46/94)   Compressing objects:  50% (47/94)   Compressing objects:  51% (48/94)   Compressing objects:  52% (49/94)   Compressing objects:  53% (50/94)   Compressing objects:  54% (51/94)   Compressing objects:  55% (52/94)   Compressing objects:  56% (53/94)   Compressing objects:  57% (54/94)   Compressing objects:  58% (55/94)   Compressing objects:  59% (56/94)   Compressing objects:  60% (57/94)   Compressing objects:  61% (58/94)   Compressing objects:  62% (59/94)   Compressing objects:  63% (60/94)   Compressing objects:  64% (61/94)   Compressing objects:  65% (62/94)   Compressing objects:  67% (63/94)   Compressing objects:  68% (64/94)   Compressing objects:  69% (65/94)   Compressing objects:  70% (66/94)   Compressing objects:  71% (67/94)   Compressing objects:  72% (68/94)   Compressing objects:  73% (69/94)   Compressing objects:  74% (70/94)   Compressing objects:  75% (71/94)   Compressing objects:  76% (72/94)   Compressing objects:  77% (73/94)   Compressing objects:  78% (74/94)   Compressing objects:  79% (75/94)   Compressing objects:  80% (76/94)   Compressing objects:  81% (77/94)   Compressing objects:  82% (78/94)   Compressing objects:  84% (79/94)   Compressing objects:  85% (80/94)   Compressing objects:  86% (81/94)   Compressing objects:  87% (82/94)   Compressing objects:  88% (83/94)   Compressing objects:  89% (84/94)   Compressing objects:  90% (85/94)   Compressing objects:  91% (86/94)   Compressing objects:  92% (87/94)   Compressing objects:  93% (88/94)   Compressing objects:  94% (89/94)   Compressing objects:  95% (90/94)   Compressing objects:  96% (91/94)   Compressing objects:  97% (92/94)   Compressing objects:  98% (93/94)   Compressing objects: 100% (94/94)   Compressing objects: 100% (94/94), done.
+Writing objects:   0% (1/124)   Writing objects:   1% (2/124)   Writing objects:   2% (3/124)   Writing objects:   3% (4/124)   Writing objects:   4% (5/124)   Writing objects:   5% (7/124)   Writing objects:   6% (8/124)   Writing objects:   7% (9/124)   Writing objects:   8% (10/124)   Writing objects:   9% (12/124)   Writing objects:  10% (13/124)   Writing objects:  11% (14/124)   Writing objects:  12% (15/124)   Writing objects:  13% (17/124)   Writing objects:  14% (18/124)   Writing objects:  15% (19/124)   Writing objects:  16% (20/124)   Writing objects:  17% (22/124)   Writing objects:  18% (23/124)   Writing objects:  19% (24/124)   Writing objects:  20% (25/124)   Writing objects:  21% (27/124)   Writing objects:  22% (28/124)   Writing objects:  23% (29/124)   Writing objects:  24% (30/124)   Writing objects:  25% (31/124)   Writing objects:  26% (33/124)   Writing objects:  28% (35/124)   Writing objects:  29% (36/124)   Writing objects:  30% (38/124)   Writing objects:  31% (39/124)   Writing objects:  32% (40/124)   Writing objects:  33% (41/124)   Writing objects:  34% (43/124)   Writing objects:  35% (44/124)   Writing objects:  36% (45/124)   Writing objects:  37% (46/124)   Writing objects:  38% (48/124)   Writing objects:  39% (49/124)   Writing objects:  40% (50/124)   Writing objects:  41% (51/124)   Writing objects:  42% (53/124)   Writing objects:  43% (54/124)   Writing objects:  44% (55/124)   Writing objects:  45% (56/124)   Writing objects:  46% (58/124)   Writing objects:  47% (59/124)   Writing objects:  48% (60/124)   Writing objects:  49% (61/124)   Writing objects:  50% (62/124)   Writing objects:  51% (64/124)   Writing objects:  52% (65/124)   Writing objects:  53% (66/124)   Writing objects:  54% (67/124)   Writing objects:  55% (69/124)   Writing objects:  56% (70/124)   Writing objects:  57% (71/124)   Writing objects:  58% (72/124)   Writing objects:  59% (74/124)   Writing objects:  60% (75/124)   Writing objects:  61% (76/124)   Writing objects:  62% (77/124)   Writing objects:  63% (79/124)   Writing objects:  64% (80/124)   Writing objects:  65% (81/124)   Writing objects:  66% (82/124)   Writing objects:  67% (84/124)   Writing objects:  68% (85/124)   Writing objects:  69% (86/124)   Writing objects:  70% (87/124)   Writing objects:  71% (89/124)   Writing objects:  72% (90/124)   Writing objects:  73% (91/124)   Writing objects:  74% (92/124)   Writing objects:  75% (93/124)   Writing objects:  76% (95/124)   Writing objects:  77% (96/124)   Writing objects:  78% (97/124)   Writing objects:  79% (98/124)   Writing objects:  80% (100/124)   Writing objects:  81% (101/124)   Writing objects:  82% (102/124)   Writing objects:  83% (103/124)   Writing objects:  84% (105/124)   Writing objects:  85% (106/124)   Writing objects:  86% (107/124)   Writing objects:  87% (108/124)   Writing objects:  88% (110/124)   Writing objects:  89% (111/124)   Writing objects:  90% (112/124)   Writing objects:  91% (113/124)   Writing objects:  92% (115/124)   Writing objects:  93% (116/124)   Writing objects:  94% (117/124)   Writing objects:  95% (118/124)   Writing objects:  96% (120/124)   Writing objects:  97% (121/124)   Writing objects:  98% (122/124)   Writing objects:  99% (123/124)   Writing objects: 100% (124/124)   Writing objects: 100% (124/124), 898.68 KiB | 0 bytes/s, done.
+Total 124 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas:   0% (0/2)   [Kremote: Resolving deltas: 100% (2/2)   [Kremote: Resolving deltas: 100% (2/2), done.[K
+To git@github.com:nstrayer/qualifying_exam.git
+ * [new branch]      master -> master
+]0;/home/nick/quals/report]0;nick@compooper: ~/quals/report[01;32mnick@compooper[00m:[01;34m~/quals/report[00m$ [K]0;nick@compooper: ~/quals/report[01;32mnick@compooper[00m:[01;34m~/quals/report[00m$ ls
+total 1.7M
+drwxr-xr-x 7 nick nick 4.0K Dec  6 18:19 [0m[01;34m.[0m
+drwxr-xr-x 4 nick nick 4.0K Dec  5 11:11 [01;34m..[0m
+-rw-r--r-- 1 nick nick  13K Dec  5 11:29 01-intro.Rmd
+-rw-r--r-- 1 nick nick  23K Dec  6 15:48 02-deep_learning.Rmd
+-rw-r--r-- 1 nick nick 6.2K Dec  6 18:19 03-architectures.Rmd
+drwxr-xr-x 5 nick nick 4.0K Dec  6 18:19 [01;34m_book[0m
+-rw-r--r-- 1 nick nick 5.6K Dec  6 18:07 book.bib
+drwxr-xr-x 3 nick nick 4.0K Dec  6 18:19 [01;34m_bookdown_files[0m
+-rw-r--r-- 1 nick nick  101 Dec  5 11:12 _bookdown.yml
+-rw-r--r-- 1 nick nick   80 Dec  5 11:12 _build.sh
+-rwxr-xr-x 1 nick nick  398 Dec  5 11:12 [01;32m_deploy.sh[0m
+-rw-r--r-- 1 nick nick  115 Dec  5 11:12 DESCRIPTION
+drwxr-xr-x 2 nick nick 4.0K Dec  6 18:02 [01;34mfigures[0m
+drwxr-xr-x 8 nick nick 4.0K Dec  5 20:27 [01;34m.git[0m
+-rw-r--r-- 1 nick nick 1.9K Dec  5 11:48 index.Rmd
+-rw-r--r-- 1 nick nick 6.5K Dec  5 11:12 LICENSE
+-rw-r--r-- 1 nick nick  501 Dec  5 11:12 _output.yml
+-rw-r--r-- 1 nick nick 1.1K Dec  5 11:28 packages.bib
+-rw-r--r-- 1 nick nick  161 Dec  5 11:12 preamble.tex
+-rw-r--r-- 1 nick nick  291 Dec  5 11:12 README.md
+-rw-r--r-- 1 nick nick 767K Dec  4 16:31 report.html
+-rw-r--r-- 1 nick nick 778K Dec  4 17:31 reportother.nb.html
+-rw-r--r-- 1 nick nick 2.6K Dec  4 17:31 reportother.Rmd
+-rw-r--r-- 1 nick nick  688 Dec  4 16:32 report.Rmd
+-rw-r--r-- 1 nick nick  225 Dec  5 11:13 report.Rproj
+drwxr-xr-x 4 nick nick 4.0K Dec  4 16:29 [01;34m.Rproj.user[0m
+-rw-r--r-- 1 nick nick  172 Dec  5 11:12 style.css
+-rw-r--r-- 1 nick nick 2.4K Dec  5 11:12 toc.css
+]0;/home/nick/quals/report]0;nick@compooper: ~/quals/report[01;32mnick@compooper[00m:[01;34m~/quals/report[00m$ [K]0;nick@compooper: ~/quals/report[01;32mnick@compooper[00m:[01;34m~/quals/report[00m$ ls
+total 1.7M
+drwxr-xr-x 7 nick nick 4.0K Dec  6 18:19 [0m[01;34m.[0m
+drwxr-xr-x 4 nick nick 4.0K Dec  5 11:11 [01;34m..[0m
+-rw-r--r-- 1 nick nick  13K Dec  5 11:29 01-intro.Rmd
+-rw-r--r-- 1 nick nick  23K Dec  6 15:48 02-deep_learning.Rmd
+-rw-r--r-- 1 nick nick 6.2K Dec  6 18:19 03-architectures.Rmd
+drwxr-xr-x 5 nick nick 4.0K Dec  6 18:19 [01;34m_book[0m
+-rw-r--r-- 1 nick nick 5.6K Dec  6 18:07 book.bib
+drwxr-xr-x 3 nick nick 4.0K Dec  6 18:19 [01;34m_bookdown_files[0m
+-rw-r--r-- 1 nick nick  101 Dec  5 11:12 _bookdown.yml
+-rw-r--r-- 1 nick nick   80 Dec  5 11:12 _build.sh
+-rwxr-xr-x 1 nick nick  398 Dec  5 11:12 [01;32m_deploy.sh[0m
+-rw-r--r-- 1 nick nick  115 Dec  5 11:12 DESCRIPTION
+drwxr-xr-x 2 nick nick 4.0K Dec  6 18:02 [01;34mfigures[0m
+drwxr-xr-x 8 nick nick 4.0K Dec  5 20:27 [01;34m.git[0m
+-rw-r--r-- 1 nick nick 1.9K Dec  5 11:48 index.Rmd
+-rw-r--r-- 1 nick nick 6.5K Dec  5 11:12 LICENSE
+-rw-r--r-- 1 nick nick  501 Dec  5 11:12 _output.yml
+-rw-r--r-- 1 nick nick 1.1K Dec  5 11:28 packages.bib
+-rw-r--r-- 1 nick nick  161 Dec  5 11:12 preamble.tex
+-rw-r--r-- 1 nick nick  291 Dec  5 11:12 README.md
+-rw-r--r-- 1 nick nick 767K Dec  4 16:31 report.html
+-rw-r--r-- 1 nick nick 778K Dec  4 17:31 reportother.nb.html
+-rw-r--r-- 1 nick nick 2.6K Dec  4 17:31 reportother.Rmd
+-rw-r--r-- 1 nick nick  688 Dec  4 16:32 report.Rmd
+-rw-r--r-- 1 nick nick  225 Dec  5 11:13 report.Rproj
+drwxr-xr-x 4 nick nick 4.0K Dec  4 16:29 [01;34m.Rproj.user[0m
+-rw-r--r-- 1 nick nick  172 Dec  5 11:12 style.css
+-rw-r--r-- 1 nick nick 2.4K Dec  5 11:12 toc.css
+]0;/home/nick/quals/report]0;nick@compooper: ~/quals/report[01;32mnick@compooper[00m:[01;34m~/quals/report[00m$ lgit "lots of updates, chap[K[K[K[K[K nn chapter done deent headway [K[K[K[K[K[K[K[K[K[K[K[K[Kc[Kecent headway on RNNs"

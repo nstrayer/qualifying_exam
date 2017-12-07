@@ -29,6 +29,11 @@ The word 'neural' in the name is reference to the fact that these models derive 
 Another way of thinking of how neural networks work is as a building up a series of successive transformations of the data-space that attempt to eventually let the data be linearly seperable. 
 In this intepretation each layer can be seen as a shift and rotation of the data (the linear transformation), followed by a warping of the new space (the activation function). In his excelent blogpost: [Neural Networks, Manifolds, and Topology](http://colah.github.io/posts/2014-03-NN-Manifolds-Topology/), Chris Olah gives an excelent visual demonstration of this.
 
+
+## Universal Approximation Theorem 
+One powerful theoretical result from neural networks is that they are universal approximators (@universal_approximators). A neural network with a single hidden layer and non-linear activations functions on that layer can represent _any_ borel-measurable function. This result means that there are no theoretical limits on the capabilities of neural networks. Obviously, in real-world situations this is not the case. We can not have infinite width hidden layers, infinite parameters requires infinite data, and even more limiting are our inefficient learning methods. All constraints considered though, the universal approximation theorem does provide confidence that, as long as they are properly constructed and trained, neural networks are amazingly flexible models. 
+
+
 ## The Computation Graph
 While the building blocks of neural networks are simple, very often complete models are composed of many blocks and thus reasoning about them becomes difficult. A method of dealing with this complexity, along with also helping in the intuition of many other properties, is to represent the networks as a 'computation graph.'
 
@@ -151,36 +156,93 @@ One of the most common additions to simple gradient descent is the addition of m
 
 ## Activation Functions
 
-There are many different possible activation functions. One of the simplest being the sigmoid function $f(x) = e(x)/(1 + e(x))$ which simply squashes the neuron's activation to between 0 and 1. Newer and extremely common is the Relu function (@relu_paper).
+There are many different possible activation functions. One of the simplest being the sigmoid function which simply squashes the neuron's activation from all real numbers to between 0 and 1. A newer and extremely common choice is the rectified linear unit (Relu) function (@relu_paper).
+
+```{definition, label = "sigmoid", name="sigmoid activation function"}
+$$f(x) = e(x)/(1 + e(x))$$
+```
+
+
+```{definition, label = "relu", name="Rectified Linear Unit activation function"}
+$$f(x) = \text{max}(0,x)$$
+```
+
+
+```{r, echo = F, fig.cap = 'Comparison of the relu and sigmoid activation functions.'}
+library(tidyverse)
+
+relu <- function(x) ifelse( x > 0, x, 0)
+sigmoid <- function(x) exp(x)/(1 + exp(x))
+x_range <- seq(-5,5, length.out = 100)
+
+dplyr::data_frame(
+  x = x_range,
+  relu = relu(x),
+  sigmoid = sigmoid(x)
+) %>% 
+  gather(func, value, -x) %>% 
+  ggplot(aes(x = x, y = value)) +
+  geom_line() +
+  labs(y = 'f(x)') +
+  facet_grid(func~., scales = "free_y")
+```
+
+Another, popular loss function that is used on the output layer when predicting categories is the softmax function. Unlike the previously mentioned loss functions this one takes a vector $\textbf{o}$ of length $m$ representing the output of each of the layer's neurons. 
+
+
+```{definition, label = "softmax", name="Softmax activation function."}
+$$f(\textbf{o})_i = \frac{\text{exp}(o_i)}{\sum_{j = 1}^m \text{exp}(o_j)}$$
+```
+
+This function serves to turn the output of a layer into a multivariate probability vector. The $m$ outputs of the softmax sum to 1. It is important to note that, while the values sum to one, it's not a true probability output, but will help indicate which class is most likely and roughly by what magnitude over other potential class choices. 
+
 
 ## Loss functions
 
-Regression loss functions
-
-Classification loss functions
+Like any machine learning model, neural networks have a loss function (sometimes called a cost function), or a function that helps the model know how close it is to performing as desired.  As previously mentioned, in the case of neural networks we almost always want our loss function to be differentiable with respect to our model's output $\hat{\textbf{y}}$ as the derivative is needed for calculating the gradient on which the model is trained. 
 
 
 
-<!-- *  Optimization -->
-<!-- 		*  Back-Propigation -->
-<!-- 		*  Stochastic Gradient Descent -->
-<!-- 	*  Universal Approximation Theorem -->
+Almost always the loss function is derived from the model's likelihood and thus we can view our model training as a form of maximum likelihood estimation.
+If we let $\theta$ represent the parameters (weights) of our model with input $\textbf{x}$ and output $\textbf{y}$. The negative log-likelihood of our model is minimized when the kulbak liebler divergence between our estimated model and the truth is minimized. Thus we can view training as traversing the space of $\theta$ in an attempt to find values that return the lowest value to this function. 
 
-<!-- *Convolutional Neural Networks* -->
-<!-- 	*  Application to spatially correlated data -->
-<!-- 	*  Successes in computer vision -->
-<!-- 	*  Convolution as a kernel method -->
-<!-- 	*  Weight sharing -->
-<!-- 	*  Transformation invariance -->
+```{definition, label = "negloglik", name="General maximum likelihood loss function"}
+$$J(\theta) = - \mathbb{E}_{x,y \sim \hat{p} \text{ data}} \log{{p_{\text{model}}(\textbf{y} |\textbf{x} })}$$
+```
 
-<!-- *Recurrent Neural Networks* -->
-<!-- 	*  Applications with sequential data -->
-<!-- 	*  Successes in natural language processing -->
-<!-- 		*  Abstracts Example -->
-<!-- 	*  Cyclical Computation Graph -->
-<!-- 	*  Weight sharing -->
-<!-- 	*  Exploding and vanishing gradients -->
-<!-- 	*  Modern Extensions -->
-<!-- 		*  LSTM -->
-<!-- 		*  GRU -->
-<!-- 	*  Computational costs -->
+Of course, the precise form of the maximum likelihood loss function will change depending on the model. Here we will briefly introduce the two classes of loss functions: regression and classification, and the most commonly used functions within those classes. 
+
+### Regression loss functions
+
+When fitting a neural network who's outcome is a single real numbered variable $\hat{y}$ the most common loss function used is the mean square error. 
+
+```{definition, label = "mse", name="Mean squared error loss"}
+$$\text{MSE}(\theta) = -\frac{1}{n} \sum_{i = 1}^{n} (\hat{y}^{(i)} - y^{(i)})^2$$
+  
+Where $y_i$ represents the outcome of the $i^{\text{th}}$ observation of $n$ training observations.
+```
+
+Minimizing the mean squared error can be shown to be equivalent to maximizing the likelihood function (@goodfellow_DL chapter 5.5) and is thus a maximum likelihood method. 
+
+
+### Classification loss functions
+
+There are two seperate instances of classification that need to be considered. The binary case, where we are classifying a yes or no answer for a single class, or a categorical case, where we have more than two possible classes to choose from and need to place our data into one of them. 
+
+In the single outcome case the approach to assume the outcome is a bernouli distribution over outcome $y$ conditioned on the input $x$. The resultant loss function is commonly refered to as 'binary cross entropy.'^[It is interesting to note that while we typically only use the term 'cross entropy' for categorical outcomes, any time we are minimizing KL or maximizing the likelihood we are minimizing the cross entropy. So technically we could also call the mean squared error the 'continuous cross entropy loss.']
+
+```{definition, label = "crossentropy", name="Binary cross entropy loss"}
+$$L(\theta) = -\frac{1}{n}\sum_{i = 1}^n\left[ y_i\log(\hat{y}_i) + (1 - y_i)\log(1 - \hat{y}_i)\right]$$
+```
+
+This can be generalized into the multivariate case by swapping a multinormial model as the conditional distribution and thus adding more terms to the internal summation representing each possible class and it's assigned probability. 
+
+```{definition, label = "catcrossentropy", name="Categorical cross entropy loss"}
+$$L(\theta) = -\frac{1}{n}\sum_{i = 1}^n\sum_{j = 1}^k y_{i,j}\log(\hat{y}_{i,j})$$
+
+Where $y_{i,j}$ represents the $i^{\text{th}}$ observation's value for the $k^{\text{th}}$ category (dummy encoded). 
+```
+
+### Other loss functions
+
+While it is possible to use other loss functions in neural networks it is commonly not advised as the maximum-likelihood methods perform just as well and usually results in a more robust fit to the data. As deep learning situations usually have a large number of training observations the Cramer-Rao lower bound property, that a maximum likelihood estimator has the lowest variance of any consistant estimator, is particularly relevent. For a more thorough overview of the common loss functions used in deep learning see @goodfellow_DL chapter six.

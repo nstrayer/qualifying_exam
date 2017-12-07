@@ -92,3 +92,99 @@ month = mar
   pages={807--814},
   year={2010}
 }
+
+@article{universal_approximators,
+  title={Multilayer feedforward networks are universal approximators},
+  author={Hornik, Kurt and Stinchcombe, Maxwell and White, Halbert},
+  journal={Neural networks},
+  volume={2},
+  number={5},
+  pages={359--366},
+  year={1989},
+  publisher={Elsevier}
+}
+
+@article{rnn_intro,
+  title={A learning algorithm for continually running fully recurrent neural networks},
+  author={Williams, Ronald J and Zipser, David},
+  journal={Neural computation},
+  volume={1},
+  number={2},
+  pages={270--280},
+  year={1989},
+  publisher={MIT Press}
+}
+
+@article{cnn_intro,
+  title={Generalization and network design strategies},
+  author={LeCun, Yann and others},
+  journal={Connectionism in perspective},
+  pages={143--155},
+  year={1989},
+  publisher={Zurich, Switzerland: Elsevier}
+}
+
+@article{cnn_cont,
+  title={Convolutional networks for images, speech, and time series},
+  author={LeCun, Yann and Bengio, Yoshua and others},
+  journal={The handbook of brain theory and neural networks},
+  volume={3361},
+  number={10},
+  pages={1995},
+  year={1995}
+}
+
+
+@article{rnn_captions,
+  title={Deep captioning with multimodal recurrent neural networks (m-rnn)},
+  author={Mao, Junhua and Xu, Wei and Yang, Yi and Wang, Jiang and Huang, Zhiheng and Yuille, Alan},
+  journal={arXiv preprint arXiv:1412.6632},
+  year={2014}
+}
+
+
+@article{google_translate,
+  title={Google's neural machine translation system: Bridging the gap between human and machine translation},
+  author={Wu, Yonghui and Schuster, Mike and Chen, Zhifeng and Le, Quoc V and Norouzi, Mohammad and Macherey, Wolfgang and Krikun, Maxim and Cao, Yuan and Gao, Qin and Macherey, Klaus and others},
+  journal={arXiv preprint arXiv:1609.08144},
+  year={2016}
+}
+
+
+@article{rnn_regression,
+  title={Time series prediction with recurrent neural networks trained by a hybrid PSO--EA algorithm},
+  author={Cai, Xindi and Zhang, Nian and Venayagamoorthy, Ganesh K and Wunsch, Donald C},
+  journal={Neurocomputing},
+  volume={70},
+  number={13},
+  pages={2342--2353},
+  year={2007},
+  publisher={Elsevier}
+}
+
+@inproceedings{rnn_speach,
+  title={Speech recognition with deep recurrent neural networks},
+  author={Graves, Alex and Mohamed, Abdel-rahman and Hinton, Geoffrey},
+  booktitle={Acoustics, speech and signal processing (icassp), 2013 ieee international conference on},
+  pages={6645--6649},
+  year={2013},
+  organization={IEEE}
+}
+
+@inproceedings{rnn_handwriting,
+  title={Unconstrained on-line handwriting recognition with recurrent neural networks},
+  author={Graves, Alex and Liwicki, Marcus and Bunke, Horst and Schmidhuber, J{\"u}rgen and Fern{\'a}ndez, Santiago},
+  booktitle={Advances in Neural Information Processing Systems},
+  pages={577--584},
+  year={2008}
+}
+
+@inproceedings{word2vec,
+  title={Distributed representations of words and phrases and their compositionality},
+  author={Mikolov, Tomas and Sutskever, Ilya and Chen, Kai and Corrado, Greg S and Dean, Jeff},
+  booktitle={Advances in neural information processing systems},
+  pages={3111--3119},
+  year={2013}
+}
+
+
