@@ -253,3 +253,51 @@ eprintclass = {cs.CL},
 month = jul
 }
 
+@article{hinton_cnn,
+  title={Phoneme recognition using time-delay neural networks},
+  author={Waibel, Alex and Hanazawa, Toshiyuki and Hinton, Geoffrey and Shikano, Kiyohiro and Lang, Kevin J},
+  journal={IEEE transactions on acoustics, speech, and signal processing},
+  volume={37},
+  number={3},
+  pages={328--339},
+  year={1989},
+  publisher={IEEE}
+}
+
+@article{cnn_vis,
+  author = {Olah, Chris and Mordvintsev, Alexander and Schubert, Ludwig},
+  title = {Feature Visualization},
+  journal = {Distill},
+  year = {2017},
+  note = {https://distill.pub/2017/feature-visualization},
+  doi = {10.23915/distill.00007}
+}
+@article{trunc_bptt,
+  title={An efficient gradient-based algorithm for on-line training of recurrent network trajectories},
+  author={Williams, Ronald J and Peng, Jing},
+  journal={Neural computation},
+  volume={2},
+  number={4},
+  pages={490--501},
+  year={1990},
+  publisher={MIT Press}
+}
+
+@article{cnn_animals,
+  title={Deep networks can resemble human feed-forward vision in invariant object recognition},
+  author={Kheradpisheh, Saeed Reza and Ghodrati, Masoud and Ganjtabesh, Mohammad and Masquelier, Timoth{\'e}e},
+  journal={Scientific reports},
+  volume={6},
+  pages={32672},
+  year={2016},
+  publisher={Nature Publishing Group}
+}
+
+@inproceedings{capsnet,
+  title={Dynamic Routing Between Capsules},
+  author={Sabour, Sara and Frosst, Nicholas and Hinton, Geoffrey E},
+  booktitle={Advances in Neural Information Processing Systems},
+  pages={3857--3867},
+  year={2017}
+}
+

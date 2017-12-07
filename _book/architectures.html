@@ -117,10 +117,9 @@
 </ul></li>
 <li class="chapter" data-level="4.3" data-path="architectures.html"><a href="architectures.html#convolutional-neural-networks"><i class="fa fa-check"></i><b>4.3</b> Convolutional Neural Networks</a><ul>
 <li class="chapter" data-level="4.3.1" data-path="architectures.html"><a href="architectures.html#application-to-spatially-correlated-data"><i class="fa fa-check"></i><b>4.3.1</b> Application to spatially correlated data</a></li>
-<li class="chapter" data-level="4.3.2" data-path="architectures.html"><a href="architectures.html#successes-in-computer-vision"><i class="fa fa-check"></i><b>4.3.2</b> Successes in computer vision</a></li>
-<li class="chapter" data-level="4.3.3" data-path="architectures.html"><a href="architectures.html#convolution-as-a-kernel-method"><i class="fa fa-check"></i><b>4.3.3</b> Convolution as a kernel method</a></li>
-<li class="chapter" data-level="4.3.4" data-path="architectures.html"><a href="architectures.html#weight-sharing-1"><i class="fa fa-check"></i><b>4.3.4</b> Weight sharing</a></li>
-<li class="chapter" data-level="4.3.5" data-path="architectures.html"><a href="architectures.html#transformation-invariance"><i class="fa fa-check"></i><b>4.3.5</b> Transformation invariance</a></li>
+<li class="chapter" data-level="4.3.2" data-path="architectures.html"><a href="architectures.html#feature-learning"><i class="fa fa-check"></i><b>4.3.2</b> Feature Learning</a></li>
+<li class="chapter" data-level="4.3.3" data-path="architectures.html"><a href="architectures.html#weight-sharing-1"><i class="fa fa-check"></i><b>4.3.3</b> Weight sharing</a></li>
+<li class="chapter" data-level="4.3.4" data-path="architectures.html"><a href="architectures.html#translation-invariance"><i class="fa fa-check"></i><b>4.3.4</b> Translation invariance</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="placeholder.html"><a href="placeholder.html"><i class="fa fa-check"></i><b>5</b> Placeholder</a><ul>
@@ -258,24 +257,46 @@ Figure 4.5: The internal structure of an GRU hidden unit. Unlike the LSTM there 
 </div>
 <div id="computational-hurdles" class="section level3">
 <h3><span class="header-section-number">4.2.7</span> Computational Hurdles</h3>
+<p>The complications caused by RNNs propigating values/errors over many time steps is also the cause of the biggest computational hurdle associated with RNNs. When forward propigating or back propigating, we need to do it all in one sequential set of calculations. It is very common for neural network training to be multi-threaded using graphics processing units (GPUs). The reason this is effective is most of the calculations involved are simple and only depend on a few sequential layers, and thus it is very easy to run many training samples through the network at once to calculate their gradients and then aggregate those to a gradient descent step. However, with RNNs we must processes each sequence all the way though its (potentially very numerous) time steps. As a result, RNNs train much slower than other neural network architectures.</p>
+<p>There are a few general approaches to solving this. The simplest is to just stop back propigation at a certian number of steps, regardless of if the sequence has been fully processesed yet. This is known as truncated back propigation through time (<span class="citation">Williams and Peng (<a href="#ref-trunc_bptt">1990</a>)</span>) and does often substantially speed up training, but at the obvious cost of limiting the length of time the network is able to look back in.</p>
+<p>Another technique is to modify the architecture of the RNN such that the hidden state recieves input not from itself at the previous time point but the output at the previous timepoint. This allows the model to be trained one time point at a time because the output from the next time step can be substituted with the observed value at that time step. While this approach massively speeds up training, as mentioned previously, it throughs away some potentially valuable latent-space information that the model has learned. This approach has gained very little traction.</p>
+<div class="figure"><span id="fig:outputrnn"></span>
+<img src="figures/output_rnn.png" alt="An RNN where the recurrent connection is made between the previous timepoint's output and the hidden unit. This model is less expressive than the traditional hidden - hidden architecture but is much easier to train." width="300" />
+<p class="caption">
+Figure 4.6: An RNN where the recurrent connection is made between the previous timepoint’s output and the hidden unit. This model is less expressive than the traditional hidden - hidden architecture but is much easier to train.
+</p>
+</div>
+<p>As both the number of observations as well as the number of time points grows the RNN architecture becomes increasingly strained and researchers have begun looking at other potential ways of modeling sequential data that allow for dynamic learning of temporal dependencies while training in reasonable amounts of time. The most promising approach thus far has been using convolutional neural networks.</p>
 </div>
 </div>
 <div id="convolutional-neural-networks" class="section level2">
 <h2><span class="header-section-number">4.3</span> Convolutional Neural Networks</h2>
+<p>While CNNs have garnered a great amount of attention in recent years for their successes in the computer-vision world they were infact originally introduced as a method for modeling time-series data (<span class="citation">Waibel et al. (<a href="#ref-hinton_cnn">1989</a>)</span>)[^Although at the time they were called time-delay neural networks.]. A convolutional neural network is one where a convolution, or window that detects features such as edges, is run over the spacially connected dimensions of the data in order to map where the given feature is located.</p>
 <div id="application-to-spatially-correlated-data" class="section level3">
 <h3><span class="header-section-number">4.3.1</span> Application to spatially correlated data</h3>
+<p>In the context of image recognition this means scanning a two-dimensional block of pixels over the range of the picture to detect important features in the data. In time-series data this window is one dimensional (e.g. a five minute window) and it scans exclusively along the sequence detecting some feature.</p>
 </div>
-<div id="successes-in-computer-vision" class="section level3">
-<h3><span class="header-section-number">4.3.2</span> Successes in computer vision</h3>
+<div id="feature-learning" class="section level3">
+<h3><span class="header-section-number">4.3.2</span> Feature Learning</h3>
+<p>The power of neural networks comes in with the fact that these feature recognizers are learned. This is in contrast with traditional approaches where the features to be extracted had to be manually curated. Usually some number of convolution’s are initialized for a given model and are allowed to learn the patterns that help them best minimize the loss function. Interestingly, in the case of computer-vision sometimes fascinating patterns are learned that mimic what one might expect, but are much more complicated than those manually created by humans (<span class="citation">Olah, Mordvintsev, and Schubert (<a href="#ref-cnn_vis">2017</a>)</span>).</p>
+<p>Interestingly, neuroscience research has shown that CNNs mimic how the first stages of the animal visual perception system works (<span class="citation">Kheradpisheh et al. (<a href="#ref-cnn_animals">2016</a>)</span>) and has in many cases surpased human level performance on basic tasks.</p>
+<div class="figure"><span id="fig:cnnexplain"></span>
+<img src="figures/convolutional_explainer.jpeg" alt="A diagram of how a convolutions are applied to sequential data." width="100%" />
+<p class="caption">
+Figure 4.7: A diagram of how a convolutions are applied to sequential data.
+</p>
 </div>
-<div id="convolution-as-a-kernel-method" class="section level3">
-<h3><span class="header-section-number">4.3.3</span> Convolution as a kernel method</h3>
 </div>
 <div id="weight-sharing-1" class="section level3">
-<h3><span class="header-section-number">4.3.4</span> Weight sharing</h3>
+<h3><span class="header-section-number">4.3.3</span> Weight sharing</h3>
+<p>Like RNNs, a CNN can be thought of in the context of a traditional feed forward neural network. A convolution operation is simply the sharing of weights between grouped blocks of the hidden layers. For instance, if we had two convolutions of length three that were reading in sequential data in the hidden layer neurons (1,2,3) would correspond to convolution one on the first timepoint of the input, neurons (4,5,6) would correspond to convolution two on the first time point, neurons (7,8,9) to convolution one on timepoint two, and so on. See <a href="architectures.html#fig:cnnexplain">4.7</a> for a visual treatment of this.</p>
 </div>
-<div id="transformation-invariance" class="section level3">
-<h3><span class="header-section-number">4.3.5</span> Transformation invariance</h3>
+<div id="translation-invariance" class="section level3">
+<h3><span class="header-section-number">4.3.4</span> Translation invariance</h3>
+<p>After the first convolutional layer has produced a map of the location of certian features on the input, subsequent layers can perform what is known as a ‘pooling’ operation to both reduce the dimensionality of the latent space and also to make the feature detection translation invariant.</p>
+<p>A pooling layer acts similarly to a convolutional layer in that it scans sequentially over its input, however in the case of a pooling layer the input is the output of a convolutional layer. In addition, instead of applying some learned linear transformatino to its inputs it performs a predesignated pooling operation such as finding the maximum, or average of the input values for its window and then returning that singular value. By taking steps larger than one between each application of the filter (also known as the stride), this serves to create an indicator for if a feature was see in the region, but it does not care about where in that region it was seen.</p>
+<p>This can be beneficial in many scenarios. For instance, if you were trying to identify the waveform of the word “dog”, one feature detector may be to find the pattern corresponding to the “d” phoneme, and one to the “au” phoneme. Depending on the speaker they may say the word faster or slower, and so in one instance the “d” phoneme might appear two tenths of a second before the “au” one, and for another one tenth. By pooling we avoid the model from getting confused in this case, because it just looks for the “au” phoneme to occur in a flexable window after the “d” one.</p>
+<p>Translation invariance does also have it’s downsides too. Geoffrey Hinton, coincidentally the inventor of CNNs has been very open about how he thinks <a href="www.youtube.com%2Fwatch%3Fv%3DrTawFwUvnLE&amp;usg=AOvVaw3CKtrHEhfBZkXdd7xgJ1PM">they are bad models</a>. His main complaint rests with the fact that pooling layers through away large chunks of information in ways that animal vision systems do not. Recently he published a paper with co-authors Sara Sabour and Nicholas Frosst that introduces a new arcitecture called the “capsule network” (<span class="citation">Sabour, Frosst, and Hinton (<a href="#ref-capsnet">2017</a>)</span>) which acts similarly to a convolutional network with pooling, but it perserves information about the translation of the feature.</p>
 
 </div>
 </div>
@@ -332,6 +353,21 @@ Figure 4.5: The internal structure of an GRU hidden unit. Unlike the LSTM there 
 </div>
 <div id="ref-rnn_survey">
 <p>Melis, Gábor, Chris Dyer, and Phil Blunsom. 2017. “On the State of the Art of Evaluation in Neural Language Models.” <em>arXiv.org</em>, July. <a href="http://arxiv.org/abs/1707.05589v2" class="uri">http://arxiv.org/abs/1707.05589v2</a>.</p>
+</div>
+<div id="ref-trunc_bptt">
+<p>Williams, Ronald J, and Jing Peng. 1990. “An Efficient Gradient-Based Algorithm for on-Line Training of Recurrent Network Trajectories.” <em>Neural Computation</em> 2 (4). MIT Press: 490–501.</p>
+</div>
+<div id="ref-hinton_cnn">
+<p>Waibel, Alex, Toshiyuki Hanazawa, Geoffrey Hinton, Kiyohiro Shikano, and Kevin J Lang. 1989. “Phoneme Recognition Using Time-Delay Neural Networks.” <em>IEEE Transactions on Acoustics, Speech, and Signal Processing</em> 37 (3). IEEE: 328–39.</p>
+</div>
+<div id="ref-cnn_vis">
+<p>Olah, Chris, Alexander Mordvintsev, and Ludwig Schubert. 2017. “Feature Visualization.” <em>Distill</em>. doi:<a href="https://doi.org/10.23915/distill.00007">10.23915/distill.00007</a>.</p>
+</div>
+<div id="ref-cnn_animals">
+<p>Kheradpisheh, Saeed Reza, Masoud Ghodrati, Mohammad Ganjtabesh, and Timothée Masquelier. 2016. “Deep Networks Can Resemble Human Feed-Forward Vision in Invariant Object Recognition.” <em>Scientific Reports</em> 6. Nature Publishing Group: 32672.</p>
+</div>
+<div id="ref-capsnet">
+<p>Sabour, Sara, Nicholas Frosst, and Geoffrey E Hinton. 2017. “Dynamic Routing Between Capsules.” In <em>Advances in Neural Information Processing Systems</em>, 3857–67.</p>
 </div>
 </div>
 <div class="footnotes">

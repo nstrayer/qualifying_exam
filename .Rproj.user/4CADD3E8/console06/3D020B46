@@ -395,3 +395,16 @@ remote: Resolving deltas:   0% (0/18)   [Kremote: Resolving deltas:   5% (1/18
 To git@github.com:nstrayer/qualifying_exam.git
    6ca90f4..0ab449c  master -> master
 ]0;/home/nick/quals/report]0;nick@compooper: ~/quals/report[01;32mnick@compooper[00m:[01;34m~/quals/report[00m$ lgit "gru section almost done"
+[master 92a1354] gru section almost done
+ 13 files changed, 122 insertions(+), 24 deletions(-)
+ create mode 100644 _book/figures/gru_cell.png
+ create mode 100644 figures/gru_cell.png
+Counting objects: 20, done.
+Delta compression using up to 8 threads.
+Compressing objects:   5% (1/20)   Compressing objects:  10% (2/20)   Compressing objects:  15% (3/20)   Compressing objects:  20% (4/20)   Compressing objects:  25% (5/20)   Compressing objects:  30% (6/20)   Compressing objects:  35% (7/20)   Compressing objects:  40% (8/20)   Compressing objects:  45% (9/20)   Compressing objects:  50% (10/20)   Compressing objects:  55% (11/20)   Compressing objects:  60% (12/20)   Compressing objects:  65% (13/20)   Compressing objects:  70% (14/20)   Compressing objects:  75% (15/20)   Compressing objects:  80% (16/20)   Compressing objects:  85% (17/20)   Compressing objects:  90% (18/20)   Compressing objects:  95% (19/20)   Compressing objects: 100% (20/20)   Compressing objects: 100% (20/20), done.
+Writing objects:   5% (1/20)   Writing objects:  10% (2/20)   Writing objects:  15% (3/20)   Writing objects:  20% (4/20)   Writing objects:  25% (5/20)   Writing objects:  30% (6/20)   Writing objects:  35% (7/20)   Writing objects:  40% (8/20)   Writing objects:  45% (9/20)   Writing objects:  50% (10/20)   Writing objects:  55% (11/20)   Writing objects:  60% (12/20)   Writing objects:  65% (13/20)   Writing objects:  70% (14/20)   Writing objects:  75% (15/20)   Writing objects:  80% (16/20)   Writing objects:  85% (17/20)   Writing objects:  90% (18/20)   Writing objects:  95% (19/20)   Writing objects: 100% (20/20)   Writing objects: 100% (20/20), 125.73 KiB | 0 bytes/s, done.
+Total 20 (delta 13), reused 0 (delta 0)
+remote: Resolving deltas:   0% (0/13)   [Kremote: Resolving deltas:   7% (1/13)   [Kremote: Resolving deltas:  15% (2/13)   [Kremote: Resolving deltas:  23% (3/13)   [Kremote: Resolving deltas:  30% (4/13)   [Kremote: Resolving deltas:  38% (5/13)   [Kremote: Resolving deltas:  46% (6/13)   [Kremote: Resolving deltas:  53% (7/13)   [Kremote: Resolving deltas:  61% (8/13)   [Kremote: Resolving deltas:  76% (10/13)   [Kremote: Resolving deltas:  84% (11/13)   [Kremote: Resolving deltas:  92% (12/13)   [Kremote: Resolving deltas: 100% (13/13)   [Kremote: Resolving deltas: 100% (13/13), completed with 12 local objects.[K
+To git@github.com:nstrayer/qualifying_exam.git
+   0ab449c..92a1354  master -> master
+]0;/home/nick/quals/report]0;nick@compooper: ~/quals/report[01;32mnick@compooper[00m:[01;34m~/quals/report[00m$ [K]0;nick@compooper: ~/quals/report[01;32mnick@compooper[00m:[01;34m~/quals/report[00m$ l[K]0;nick@compooper: ~/quals/report[01;32mnick@compooper[00m:[01;34m~/quals/report[00m$ lgit "done with architectures chapet[K[K[Kpter"
