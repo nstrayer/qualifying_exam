@@ -25,7 +25,7 @@
 <meta name="author" content="Nick Strayer">
 
 
-<meta name="date" content="2017-12-06">
+<meta name="date" content="2017-12-07">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -104,7 +104,7 @@
 <li class="chapter" data-level="3.7.3" data-path="neuralnetworks.html"><a href="neuralnetworks.html#other-loss-functions"><i class="fa fa-check"></i><b>3.7.3</b> Other loss functions</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="architectures.html"><a href="architectures.html"><i class="fa fa-check"></i><b>4</b> Further Architectures</a><ul>
+<li class="chapter" data-level="4" data-path="architectures.html"><a href="architectures.html"><i class="fa fa-check"></i><b>4</b> Architectures For Sequence Learning</a><ul>
 <li class="chapter" data-level="4.1" data-path="architectures.html"><a href="architectures.html#terminology-1"><i class="fa fa-check"></i><b>4.1</b> Terminology</a></li>
 <li class="chapter" data-level="4.2" data-path="architectures.html"><a href="architectures.html#recurrent-neural-networks"><i class="fa fa-check"></i><b>4.2</b> Recurrent Neural Networks</a><ul>
 <li class="chapter" data-level="4.2.1" data-path="architectures.html"><a href="architectures.html#applications-to-sequential-data"><i class="fa fa-check"></i><b>4.2.1</b> Applications to sequential data</a></li>
@@ -150,7 +150,7 @@
 
             <section class="normal" id="section-">
 <div id="architectures" class="section level1">
-<h1><span class="header-section-number">Chapter 4</span> Further Architectures</h1>
+<h1><span class="header-section-number">Chapter 4</span> Architectures For Sequence Learning</h1>
 <p>In the previous chapter we described the general neural network architecture. This is usually called a dense-neural feed-forward networks. ‘Dense’ refers to the fact that all neurons of a given layer are connected to all nuerons of the successive layer. ‘Feed-forward’ refers to the fact that data flows into the network and straight to the output, traveling only forward through the layers. In this section we will expand upon this general model with different architectures: the recurrent neural network (RNN) (<span class="citation">Williams and Zipser (<a href="#ref-rnn_intro">1989</a>)</span>) and the convolutional nueral net (CNN) (<span class="citation">LeCun and others (<a href="#ref-cnn_intro">1989</a>)</span>).</p>
 <p>It is important to note that while these models are in fact sub-models of the dense feed-forward networks from the last chapter, just with restrictions placed on weights in the form of deleting connections (setting weight to 0) or sharing weights between multiple connections.</p>
 <p>These restrictions applied to standard neural networks allow the models to more efficiently model tasks related to sequential data by reducing the number of parameters that need to be fit or, in some cases, helping with the propigation of the gradients for efficient training.</p>
@@ -195,17 +195,50 @@ Figure 4.2: Example of an RNN’s output for recognizing characters in handwritt
 Figure 4.3: Unrolled view of the RNN shown in previous figure. Each timestep has two outputs, the timesteps predictions and its hidden state. The next time step subsequently has two inputs: the data at the timepoint and the previous timepoint’s hidden state.
 </p>
 </div>
+<p>So in fact, we still satisfy the requirement of a directed acylic computation graph, just it is convenient to represent the unique layers in the graph in a single cyclical diagram.</p>
 </div>
 <div id="weight-sharing" class="section level3">
 <h3><span class="header-section-number">4.2.4</span> Weight sharing</h3>
+<p>A recurrent neural network is actually a very large neural network with a bunch of outputs, so it should be hard to train, correct? The secret to RNNs having maintainable parameter quantities is weight sharing. In the unrolled graph every layer has the same weights. This means that the hidden layer always parses the input data with the same affinine function and combines it with the previous hidden state in the same way; likewise, with the same hidden state activations, the model output will always be the same.</p>
+<p>In order to calculate gradients, first an initial hidden state is defined (usually all zeros) and then forward propigation is carried out through all <span class="math inline">\(t\)</span> timepoints of the input. Then, back propigation starts from the last output and proceeds all the way back through the computation graph. The resulting gradient descent updates are a function of the average of all of the gradients calculated. This procedure, although technically no different from plain back propigation is known as the <em>back-propigation through time</em> (BPTT) algorithm. For a thorough overview of the form of the gradient equations for BPTT see <span class="citation">Goodfellow, Bengio, and Courville (<a href="#ref-goodfellow_DL">2016</a>)</span> chapter 10.2.2.</p>
 </div>
 <div id="problems-with-exploding-and-vanishing-gradients" class="section level3">
 <h3><span class="header-section-number">4.2.5</span> Problems with exploding and vanishing gradients</h3>
+<p>One way to think of an RNN is a series of function compositions over time. Much like a ‘deep’ neural network is a series of function compositions through it’s layers, the unrolled computation graph of the RNN is ‘deep’ in time. While a traditional feed forward network typically have somewhere between two and ten layers of this composition, RNNs can have hundreds of steps of this composition as sequences are commonly very long (e.g. time series data collected every second for a day: <span class="math inline">\(t= 86,400\)</span>). When this many compositions are performed negative side effects tend to accumulate. This largest being the problem of the exploading and vanishing gradients (<span class="citation">Hochreiter et al. (<a href="#ref-vanishing_gradient">2001</a>)</span>, <span class="citation">Bengio and Frasconi (<a href="#ref-bengio_gradient">1994</a>)</span>).</p>
+<p>To illustrate this problem we can think of an extremely simple RNN. One that has no input, a single hidden layer <span class="math inline">\(\textbf{h}^{(i)}, i \in \{1, ..., t\}\)</span>, and no non-linear activation functions. We will denote the weights for mapping <span class="math inline">\(\textbf{h}^{(i)} \to \textbf{h}^{(i + 1)}\)</span> with <span class="math inline">\(\textbf{W}\)</span>. We also assume that <span class="math inline">\(\textbf{W}\)</span> can be eigendecomposed to <span class="math inline">\(\textbf{Q}\Lambda\textbf{Q}&#39;\)</span> where <span class="math inline">\(\textbf{Q}\)</span> is orthogonal and <span class="math inline">\(\Lambda\)</span> is the eigen matrix. This is obviously a functionally useless model, but it serves well to illustrate our problem.</p>
+<p>We can thus think of each step of our RNN through time in terms of matrix multiplication.</p>
+<span class="math display" id="eq:simplernn1">\[\begin{equation} 
+  \textbf{h}^{(t)} = \textbf{W}&#39; \textbf{h}^{(t - 1)}
+  \tag{4.1}
+\end{equation}\]</span>
+<p>We can see that this equation can be simplified to a function of only the weight matrix and the first hidden state using the power method.</p>
+<span class="math display" id="eq:simplernn2">\[\begin{equation} 
+  \textbf{h}^{(t)} = \left[\textbf{W}^t\right]&#39; \textbf{h}^{(0)}
+  \tag{4.2}
+\end{equation}\]</span>
+<p>Next we just need to substitute the eigendecomposition of <span class="math inline">\(\textbf{W}\)</span>.</p>
+<span class="math display" id="eq:simplernn3">\[\begin{align} 
+  \textbf{h}^{(t)} &amp;= \left[(\textbf{Q}\Lambda\textbf{Q})^t\right]&#39; \textbf{h}^{(0)} \\
+                    &amp;= \textbf{Q}&#39;\Lambda^t \textbf{Q} \textbf{h}^{(0)} \\
+  \tag{4.3}
+\end{align}\]</span>
+<p>From the form of the function composition in <a href="architectures.html#eq:simplernn3">(4.3)</a> allows us to see that while the eigen matrix is continuouly being raised to the <span class="math inline">\(t\)</span> power, it will cause it’s eigenvalues with magnitude greater than one to diverge to infinity and those with magnitude less than one to converge to zero.</p>
+<p>This observation leads to the problem that, over any long term sequence our model will have a very hard time keeping track of dependencies. When applied to back propigation this is essentially means that the gradients associated with parameters linked to longer term dependencies will either vanish (go to zero) or expload (go to infinity).</p>
+<p>Due to the problems caused by this repeated function composition plain RNNs have generally proved unable to learn dependencies longer than a few time-steps<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>, and when they do, they are outweighed by those closer in time, simply due to mathematical inconvenciences and not neccesarily information importance (<span class="citation">Bengio and Frasconi (<a href="#ref-bengio_gradient">1994</a>)</span>, <span class="citation">Graves and others (<a href="#ref-graves_rnn">2012</a>)</span>).</p>
 </div>
 <div id="modern-extensions" class="section level3">
 <h3><span class="header-section-number">4.2.6</span> Modern Extensions</h3>
+<p>There have been many proposed solutions to solving the problems associated with plain RNN’s inability to learn long term dependencies. Some of them focus on forcing gradient’s into good behavior by trying to constrain them close to one (<span class="citation">Sussillo (<a href="#ref-bounded_gradient_rnn">2014</a>)</span>) and others on adding ‘skip connections’ between times further apart than a single step (<span class="citation">Lin et al. (<a href="#ref-skip_connections">1998</a>)</span>).</p>
+<p>While these methods do successfully allow RNNs to learn longer time dependencies, they are rather restrictive (forcing weights to have gradients near one can slow down training and inflate importance of some features and skip connections eliminate the benefit of the network learning the dependency lengths on its own). Next, we will introduce two methods to deal with the problems of learning long-term dependencies that have gained wide-spread adoption and generally dominate the techniques used.</p>
 <div id="long-short-term-memory-networks" class="section level4">
 <h4><span class="header-section-number">4.2.6.1</span> Long short term memory networks</h4>
+<p>A way of controlling how an RNN keeps track of different dependencies over time is to make that control flow part of the model itself to be learned. This is the concept that long short term memory (LSTM) networks (<span class="citation">Hochreiter and Schmidhuber (<a href="#ref-lstm_intro">1997</a>)</span>) use. In the broadest sense, LSTM networks augment the traditional RNN architecture by adding a series of ‘gates’ that control which parts of the hidden state are remembered and used from time-step to time-step.</p>
+<div class="figure"><span id="fig:unnamed-chunk-2"></span>
+<img src="figures/lstm_cell.png" alt="The internal structure of an LSTM hidden unit. The gates are all fed by the input at time _t_, the whole hidden unit at time (_t - 1_), and the hidden units internal state from time (_t 0 1_). The gates themselves are linear combinations of the input that are then transformed by sigmoid activation functions." height="320" />
+<p class="caption">
+Figure 4.4: The internal structure of an LSTM hidden unit. The gates are all fed by the input at time <em>t</em>, the whole hidden unit at time (<em>t - 1</em>), and the hidden units internal state from time (<em>t 0 1</em>). The gates themselves are linear combinations of the input that are then transformed by sigmoid activation functions.
+</p>
+</div>
 </div>
 <div id="gated-recurrent-units" class="section level4">
 <h4><span class="header-section-number">4.2.6.2</span> Gated recurrent units</h4>
@@ -261,6 +294,33 @@ Figure 4.3: Unrolled view of the RNN shown in previous figure. Each timestep has
 <div id="ref-word2vec">
 <p>Mikolov, Tomas, Ilya Sutskever, Kai Chen, Greg S Corrado, and Jeff Dean. 2013. “Distributed Representations of Words and Phrases and Their Compositionality.” In <em>Advances in Neural Information Processing Systems</em>, 3111–9.</p>
 </div>
+<div id="ref-goodfellow_DL">
+<p>Goodfellow, Ian, Yoshua Bengio, and Aaron Courville. 2016. <em>Deep Learning</em>. MIT press.</p>
+</div>
+<div id="ref-vanishing_gradient">
+<p>Hochreiter, Sepp, Yoshua Bengio, Paolo Frasconi, Jürgen Schmidhuber, and others. 2001. “Gradient Flow in Recurrent Nets: The Difficulty of Learning Long-Term Dependencies.” A field guide to dynamical recurrent neural networks. IEEE Press.</p>
+</div>
+<div id="ref-bengio_gradient">
+<p>Bengio, Yoshua, and Paolo Frasconi. 1994. “Credit Assignment Through Time: Alternatives to Backpropagation.” In <em>Advances in Neural Information Processing Systems</em>, 75–82.</p>
+</div>
+<div id="ref-graves_rnn">
+<p>Graves, Alex, and others. 2012. <em>Supervised Sequence Labelling with Recurrent Neural Networks</em>. Vol. 385. Springer.</p>
+</div>
+<div id="ref-bounded_gradient_rnn">
+<p>Sussillo, David. 2014. “RANDOM Walks: TRAINING Very Deep Nonlin-Ear Feed-Forward Networks with Smart Ini.” <em>arXiv Preprint arXiv</em> 1412.</p>
+</div>
+<div id="ref-skip_connections">
+<p>Lin, Tsungnan, Bill G Horne, Peter Tino, and C Lee Giles. 1998. “Learning Long-Term Dependencies Is Not as Difficult with Narx Recurrent Neural Networks.”</p>
+</div>
+<div id="ref-lstm_intro">
+<p>Hochreiter, Sepp, and Jürgen Schmidhuber. 1997. “Long Short-Term Memory.” <em>Neural Computation</em> 9 (8). MIT Press: 1735–80.</p>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p><span class="citation">Bengio and Frasconi (<a href="#ref-bengio_gradient">1994</a>)</span> showed that after only 10-20 steps the probability of successfully learning a dependency was effectively zero.<a href="architectures.html#fnref1">↩</a></p></li>
+</ol>
 </div>
             </section>
 

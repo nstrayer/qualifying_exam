@@ -187,4 +187,52 @@ month = mar
   year={2013}
 }
 
+@misc{vanishing_gradient,
+  title={Gradient flow in recurrent nets: the difficulty of learning long-term dependencies},
+  author={Hochreiter, Sepp and Bengio, Yoshua and Frasconi, Paolo and Schmidhuber, J{\"u}rgen and others},
+  year={2001},
+  publisher={A field guide to dynamical recurrent neural networks. IEEE Press}
+}
+
+@inproceedings{bengio_gradient,
+  title={Credit assignment through time: Alternatives to backpropagation},
+  author={Bengio, Yoshua and Frasconi, Paolo},
+  booktitle={Advances in Neural Information Processing Systems},
+  pages={75--82},
+  year={1994}
+}
+
+@book{graves_rnn,
+  title={Supervised sequence labelling with recurrent neural networks},
+  author={Graves, Alex and others},
+  volume={385},
+  year={2012},
+  publisher={Springer}
+}
+
+@article{bounded_gradient_rnn,
+  title={RANDOM WALKS: TRAINING VERY DEEP NONLIN-EAR FEED-FORWARD NETWORKS WITH SMART INI},
+  author={Sussillo, David},
+  journal={arXiv preprint arXiv},
+  volume={1412},
+  year={2014}
+}
+
+@techreport{skip_connections,
+  title={Learning long-term dependencies is not as difficult with NARX recurrent neural networks},
+  author={Lin, Tsungnan and Horne, Bill G and Tino, Peter and Giles, C Lee},
+  year={1998}
+}
+
+@article{lstm_intro,
+  title={Long short-term memory},
+  author={Hochreiter, Sepp and Schmidhuber, J{\"u}rgen},
+  journal={Neural computation},
+  volume={9},
+  number={8},
+  pages={1735--1780},
+  year={1997},
+  publisher={MIT Press}
+}
+
 

@@ -1,4 +1,4 @@
-# Further Architectures {#architectures}
+# Architectures For Sequence Learning {#architectures}
 
 In the previous chapter we described the general neural network architecture. This is usually called a dense-neural feed-forward networks. 'Dense' refers to the fact that all neurons of a given layer are connected to all nuerons of the successive layer. 'Feed-forward' refers to the fact that data flows into the network and straight to the output, traveling only forward through the layers. In this section we will expand upon this general model with different architectures: the recurrent neural network (RNN) (@rnn_intro) and the convolutional nueral net (CNN) (@cnn_intro). 
 
@@ -51,16 +51,63 @@ A natural question that arrises from the cyclical computational graph shown in f
 knitr::include_graphics("figures/rnn_unrolled.png")
 ```
 
+So in fact, we still satisfy the requirement of a directed acylic computation graph, just it is convenient to represent the unique layers in the graph in a single cyclical diagram.
 
 ### Weight sharing
 
+A recurrent neural network is actually a very large neural network with a bunch of outputs, so it should be hard to train, correct? The secret to RNNs having maintainable parameter quantities is weight sharing. In the unrolled graph every layer has the same weights. This means that the hidden layer always parses the input data with the same affinine function and combines it with the previous hidden state in the same way; likewise, with the same hidden state activations, the model output will always be the same. 
 
+In order to calculate gradients, first an initial hidden state is defined (usually all zeros) and then forward propigation is carried out through all $t$ timepoints of the input. Then, back propigation starts from the last output and proceeds all the way back through the computation graph. The resulting gradient descent updates are a function of the average of all of the gradients calculated. This procedure, although technically no different from plain back propigation is known as the _back-propigation through time_ (BPTT) algorithm. For a thorough overview of the form of the gradient equations for BPTT see @goodfellow_DL chapter 10.2.2.
 
 ### Problems with exploding and vanishing gradients
 
+One way to think of an RNN is a series of function compositions over time. Much like a 'deep' neural network is a series of function compositions through it's layers, the unrolled computation graph of the RNN is 'deep' in time. While a traditional feed forward network typically have somewhere between two and ten layers of this composition, RNNs can have hundreds of steps of this composition as sequences are commonly very long (e.g. time series data collected every second for a day: $t= 86,400$). When this many compositions are performed negative side effects tend to accumulate. This largest being the problem of the exploading and vanishing gradients (@vanishing_gradient, @bengio_gradient). 
+
+To illustrate this problem we can think of an extremely simple RNN. One that has no input, a single hidden layer $\textbf{h}^{(i)}, i \in \{1, ..., t\}$, and no non-linear activation functions. We will denote the weights for mapping $\textbf{h}^{(i)} \to \textbf{h}^{(i + 1)}$ with $\textbf{W}$. We also assume that $\textbf{W}$ can be eigendecomposed to $\textbf{Q}\Lambda\textbf{Q}'$ where $\textbf{Q}$ is orthogonal and $\Lambda$ is the eigen matrix. This is obviously a functionally useless model, but it serves well to illustrate our problem. 
+
+We can thus think of each step of our RNN through time in terms of matrix multiplication. 
+
+\begin{equation} 
+  \textbf{h}^{(t)} = \textbf{W}' \textbf{h}^{(t - 1)}
+  (\#eq:simplernn1)
+\end{equation} 
+
+We can see that this equation can be simplified to a function of only the weight matrix and the first hidden state using the power method. 
+
+\begin{equation} 
+  \textbf{h}^{(t)} = \left[\textbf{W}^t\right]' \textbf{h}^{(0)}
+  (\#eq:simplernn2)
+\end{equation} 
+
+Next we just need to substitute the eigendecomposition of $\textbf{W}$.
+
+\begin{align} 
+  \textbf{h}^{(t)} &= \left[(\textbf{Q}\Lambda\textbf{Q})^t\right]' \textbf{h}^{(0)} \\
+                    &= \textbf{Q}'\Lambda^t \textbf{Q} \textbf{h}^{(0)} \\
+  (\#eq:simplernn3)
+\end{align} 
+
+From the form of the function composition in \@ref(eq:simplernn3) allows us to see that while the eigen matrix is continuouly being raised to the $t$ power, it will cause it's eigenvalues with magnitude greater than one to diverge to infinity and those with magnitude less than one to converge to zero. 
+
+This observation leads to the problem that, over any long term sequence our model will have a very hard time keeping track of dependencies. When applied to back propigation this is essentially means that the gradients associated with parameters linked to longer term dependencies will either vanish (go to zero) or expload (go to infinity). 
+
+Due to the problems caused by this repeated function composition plain RNNs have generally proved unable to learn dependencies longer than a few time-steps^[@bengio_gradient showed that after only 10-20 steps the probability of successfully learning a dependency was effectively zero.], and when they do, they are outweighed by those closer in time, simply due to mathematical inconvenciences and not neccesarily information importance (@bengio_gradient, @graves_rnn). 
+
+
 ### Modern Extensions
 
+There have been many proposed solutions to solving the problems associated with plain RNN's inability to learn long term dependencies. Some of them focus on forcing gradient's into good behavior by trying to constrain them close to one (@bounded_gradient_rnn) and others on adding 'skip connections' between times further apart than a single step (@skip_connections).  
+
+While these methods do successfully allow RNNs to learn longer time dependencies, they are rather restrictive (forcing weights to have gradients near one can slow down training and inflate importance of some features and skip connections eliminate the benefit of the network learning the dependency lengths on its own). Next, we will introduce two methods to deal with the problems of learning long-term dependencies that have gained wide-spread adoption and generally dominate the techniques used. 
+
 #### Long short term memory networks
+
+A way of controlling how an RNN keeps track of different dependencies over time is to make that control flow part of the model itself to be learned. This is the concept that long short term memory (LSTM) networks (@lstm_intro) use. In the broadest sense, LSTM networks augment the traditional RNN architecture by adding a series of 'gates' that control which parts of the hidden state are remembered and used from time-step to time-step. 
+
+```{r,  out.height = 320, echo = FALSE, fig.cap = "The internal structure of an LSTM hidden unit. The gates are all fed by the input at time _t_, the whole hidden unit at time (_t - 1_), and the hidden units internal state from time (_t 0 1_). The gates themselves are linear combinations of the input that are then transformed by sigmoid activation functions."}
+knitr::include_graphics("figures/lstm_cell.png")
+```
+
 
 #### Gated recurrent units
 
