@@ -1,21 +1,21 @@
 {
     "collab_server" : "",
     "contents" : "",
-    "created" : 1512495532125.000,
+    "created" : 1512765264986.000,
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
     "hash" : "0",
-    "id" : "3E3214B1",
-    "lastKnownWriteTime" : 1512757428,
-    "last_content_update" : 1512757428905,
+    "id" : "A0335D69",
+    "lastKnownWriteTime" : 1512768680,
+    "last_content_update" : 1512768680246,
     "path" : "~/quals/report/book.bib",
     "project_path" : "book.bib",
     "properties" : {
-        "cursorPosition" : "386,9",
-        "scrollLine" : "0"
+        "cursorPosition" : "114,9",
+        "scrollLine" : "106"
     },
-    "relative_order" : 4,
+    "relative_order" : 3,
     "source_on_save" : false,
     "source_window" : "",
     "type" : "text"

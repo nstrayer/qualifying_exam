@@ -61,3 +61,1018 @@ drwxr-xr-x 4 nick nick 4.0K Dec  4 16:29 [01;34m.Rproj.user[0m
 -rw-r--r-- 1 nick nick  172 Dec  5 11:12 style.css
 -rw-r--r-- 1 nick nick 2.4K Dec  5 11:12 toc.css
 ]0;/home/nick/quals/report]0;nick@compooper: ~/quals/report[01;32mnick@compooper[00m:[01;34m~/quals/report[00m$ lgit "g[Kspellchecked the intro"
+[master f4596cf] spellchecked the intro
+ 17 files changed, 240 insertions(+), 522 deletions(-)
+ rewrite .Rproj.user/4CADD3E8/console06/3D020B46 (96%)
+ create mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/66427A27
+ create mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/66427A27-contents
+ create mode 100644 .Rproj.user/shared/notebooks/EA93BA34-01-intro/1/4CADD3E8534a5643/chunks.json
+ rewrite _book/search_index.json (99%)
+Counting objects: 32, done.
+Delta compression using up to 8 threads.
+Compressing objects:   3% (1/27)   Compressing objects:   7% (2/27)   Compressing objects:  11% (3/27)   Compressing objects:  14% (4/27)   Compressing objects:  18% (5/27)   Compressing objects:  22% (6/27)   Compressing objects:  25% (7/27)   Compressing objects:  29% (8/27)   Compressing objects:  33% (9/27)   Compressing objects:  37% (10/27)   Compressing objects:  40% (11/27)   Compressing objects:  44% (12/27)   Compressing objects:  48% (13/27)   Compressing objects:  51% (14/27)   Compressing objects:  55% (15/27)   Compressing objects:  59% (16/27)   Compressing objects:  62% (17/27)   Compressing objects:  66% (18/27)   Compressing objects:  70% (19/27)   Compressing objects:  74% (20/27)   Compressing objects:  77% (21/27)   Compressing objects:  81% (22/27)   Compressing objects:  85% (23/27)   Compressing objects:  88% (24/27)   Compressing objects:  92% (25/27)   Compressing objects:  96% (26/27)   Compressing objects: 100% (27/27)   Compressing objects: 100% (27/27), done.
+Writing objects:   3% (1/32)   Writing objects:   6% (2/32)   Writing objects:   9% (3/32)   Writing objects:  12% (4/32)   Writing objects:  15% (5/32)   Writing objects:  18% (6/32)   Writing objects:  21% (7/32)   Writing objects:  25% (8/32)   Writing objects:  28% (9/32)   Writing objects:  31% (10/32)   Writing objects:  34% (11/32)   Writing objects:  37% (12/32)   Writing objects:  40% (13/32)   Writing objects:  43% (14/32)   Writing objects:  46% (15/32)   Writing objects:  50% (16/32)   Writing objects:  53% (17/32)   Writing objects:  56% (18/32)   Writing objects:  59% (19/32)   Writing objects:  62% (20/32)   Writing objects:  65% (21/32)   Writing objects:  68% (22/32)   Writing objects:  71% (23/32)   Writing objects:  75% (24/32)   Writing objects:  78% (25/32)   Writing objects:  81% (26/32)   Writing objects:  84% (27/32)   Writing objects:  87% (28/32)   Writing objects:  90% (29/32)   Writing objects:  93% (30/32)   Writing objects:  96% (31/32)   Writing objects: 100% (32/32)   Writing objects: 100% (32/32), 8.71 KiB | 0 bytes/s, done.
+Total 32 (delta 16), reused 0 (delta 0)
+remote: Resolving deltas:   0% (0/16)   [Kremote: Resolving deltas:   6% (1/16)   [Kremote: Resolving deltas:  12% (2/16)   [Kremote: Resolving deltas:  18% (3/16)   [Kremote: Resolving deltas:  25% (4/16)   [Kremote: Resolving deltas:  31% (5/16)   [Kremote: Resolving deltas:  37% (6/16)   [Kremote: Resolving deltas:  43% (7/16)   [Kremote: Resolving deltas:  50% (8/16)   [Kremote: Resolving deltas:  62% (10/16)   [Kremote: Resolving deltas:  68% (11/16)   [Kremote: Resolving deltas:  75% (12/16)   [Kremote: Resolving deltas:  81% (13/16)   [Kremote: Resolving deltas:  87% (14/16)   [Kremote: Resolving deltas:  93% (15/16)   [Kremote: Resolving deltas: 100% (16/16)   [Kremote: Resolving deltas: 100% (16/16), completed with 14 local objects.[K
+To git@github.com:nstrayer/qualifying_exam.git
+   2927935..f4596cf  master -> master
+]0;/home/nick/quals/report]0;nick@compooper: ~/quals/report[01;32mnick@compooper[00m:[01;34m~/quals/report[00m$ bash _b
+_book/           _bookdown_files/ _bookdown.yml    _build.sh        
+]0;nick@compooper: ~/quals/report[01;32mnick@compooper[00m:[01;34m~/quals/report[00m$ bash _build.sh 
+
+
+processing file: bookdown-demo.Rmd
+  |                                                                         |                                                                 |   0%  |                                                                         |..                                                               |   2%
+   inline R code fragments
+
+  |                                                                         |...                                                              |   5%
+label: fouriertransform (with options) 
+List of 3
+ $ out.height: num 320
+ $ echo      : logi FALSE
+ $ fig.cap   : chr "Example of transforming data from the data-domain to the frequency-domain for time series data. Image courtousy of [Allen D. El"| __truncated__
+
+  |                                                                         |.....                                                            |   7%
+  ordinary text without R code
+
+  |                                                                         |......                                                           |   9%
+label: unnamed-chunk-1 (with options) 
+List of 2
+ $ echo   : logi FALSE
+ $ fig.cap: chr "Example of the XOR problem. Classes encoded by color are not linearly seperable."
+
+  |                                                                         |........                                                         |  12%
+  ordinary text without R code
+
+  |                                                                         |.........                                                        |  14%
+label: unnamed-chunk-2 (with options) 
+List of 2
+ $ echo   : logi FALSE
+ $ fig.cap: chr "How back propigation steps back from the output to the input. To calculate the gradient with respect to the loss of the orange "| __truncated__
+
+  |                                                                         |...........                                                      |  16%
+  ordinary text without R code
+
+  |                                                                         |............                                                     |  19%
+label: unnamed-chunk-3 (with options) 
+List of 4
+ $ echo      : logi FALSE
+ $ out.height: num 300
+ $ out.width : num 300
+ $ fig.cap   : chr "Demonstration of steepest descents limitations on trough like gradient surfaces. Much of each step's progress is wasted on boun"| __truncated__
+
+  |                                                                         |..............                                                   |  21%
+  ordinary text without R code
+
+  |                                                                         |...............                                                  |  23%
+label: sigmoid (with options) 
+List of 2
+ $ name  : chr "sigmoid activation function"
+ $ engine: chr "definition"
+
+  |                                                                         |.................                                                |  26%
+  ordinary text without R code
+
+  |                                                                         |..................                                               |  28%
+label: relu (with options) 
+List of 2
+ $ name  : chr "Rectified Linear Unit activation function"
+ $ engine: chr "definition"
+
+  |                                                                         |....................                                             |  30%
+  ordinary text without R code
+
+  |                                                                         |.....................                                            |  33%
+label: unnamed-chunk-4 (with options) 
+List of 2
+ $ echo   : symbol F
+ $ fig.cap: chr "Comparison of the relu and sigmoid activation functions."
+
+  |                                                                         |.......................                                          |  35%
+  ordinary text without R code
+
+  |                                                                         |........................                                         |  37%
+label: softmax (with options) 
+List of 2
+ $ name  : chr "Softmax activation function."
+ $ engine: chr "definition"
+
+  |                                                                         |..........................                                       |  40%
+  ordinary text without R code
+
+  |                                                                         |...........................                                      |  42%
+label: negloglik (with options) 
+List of 2
+ $ name  : chr "General maximum likelihood loss function"
+ $ engine: chr "definition"
+
+  |                                                                         |.............................                                    |  44%
+  ordinary text without R code
+
+  |                                                                         |..............................                                   |  47%
+label: mse (with options) 
+List of 2
+ $ name  : chr "Mean squared error loss"
+ $ engine: chr "definition"
+
+  |                                                                         |................................                                 |  49%
+  ordinary text without R code
+
+  |                                                                         |.................................                                |  51%
+label: crossentropy (with options) 
+List of 2
+ $ name  : chr "Binary cross entropy loss"
+ $ engine: chr "definition"
+
+  |                                                                         |...................................                              |  53%
+  ordinary text without R code
+
+  |                                                                         |....................................                             |  56%
+label: catcrossentropy (with options) 
+List of 2
+ $ name  : chr "Categorical cross entropy loss"
+ $ engine: chr "definition"
+
+  |                                                                         |......................................                           |  58%
+  ordinary text without R code
+
+  |                                                                         |.......................................                          |  60%
+label: cyclegraph (with options) 
+List of 3
+ $ out.height: num 320
+ $ echo      : logi FALSE
+ $ fig.cap   : chr "A recurrent neural network with a single hidden layer. The hidden layer's values at time $t$ are passed to the hidden layer at "| __truncated__
+
+  |                                                                         |.........................................                        |  63%
+  ordinary text without R code
+
+  |                                                                         |..........................................                       |  65%
+label: unnamed-chunk-5 (with options) 
+List of 3
+ $ out.height: num 320
+ $ echo      : logi FALSE
+ $ fig.cap   : chr "Example of an RNN's output for recognizing characters in handwritten characters. The model scans along one slice at a time of t"| __truncated__
+
+  |                                                                         |............................................                     |  67%
+  ordinary text without R code
+
+  |                                                                         |.............................................                    |  70%
+label: unrolledgraph (with options) 
+List of 3
+ $ out.height: num 320
+ $ echo      : logi FALSE
+ $ fig.cap   : chr "Unrolled view of the RNN shown in previous figure. Each timestep has two outputs, the timesteps predictions and its hidden stat"| __truncated__
+
+  |                                                                         |...............................................                  |  72%
+  ordinary text without R code
+
+  |                                                                         |................................................                 |  74%
+label: lstmdiagram (with options) 
+List of 3
+ $ out.width: num 400
+ $ echo     : logi FALSE
+ $ fig.cap  : chr "The internal structure of an LSTM hidden unit. The gates are all fed by the input at time _t_, the whole hidden unit at time (_"| __truncated__
+
+  |                                                                         |..................................................               |  77%
+  ordinary text without R code
+
+  |                                                                         |...................................................              |  79%
+label: grudiagram (with options) 
+List of 3
+ $ out.width: num 400
+ $ echo     : logi FALSE
+ $ fig.cap  : chr "The internal structure of an GRU hidden unit. Unlike the LSTM there are only two gates, with the update and forget get tasks be"| __truncated__
+
+  |                                                                         |.....................................................            |  81%
+  ordinary text without R code
+
+  |                                                                         |......................................................           |  84%
+label: outputrnn (with options) 
+List of 3
+ $ out.width: num 300
+ $ echo     : logi FALSE
+ $ fig.cap  : chr "An RNN where the recurrent connection is made between the previous timepoint's output and the hidden unit. This model is less e"| __truncated__
+
+  |                                                                         |........................................................         |  86%
+  ordinary text without R code
+
+  |                                                                         |.........................................................        |  88%
+label: cnnexplain (with options) 
+List of 3
+ $ out.width: chr "100%"
+ $ echo     : logi FALSE
+ $ fig.cap  : chr "A diagram of how a convolutions are applied to sequential data."
+
+  |                                                                         |...........................................................      |  91%
+  ordinary text without R code
+
+  |                                                                         |............................................................     |  93%
+label: ganexample (with options) 
+List of 3
+ $ out.height: num 320
+ $ echo      : logi FALSE
+ $ fig.cap   : chr "The output of a generative adversarial network trained on a database of celebrity faces. Both faces seen are entirely generated"| __truncated__
+
+  |                                                                         |..............................................................   |  95%
+  ordinary text without R code
+
+  |                                                                         |...............................................................  |  98%
+label: semisupervised (with options) 
+List of 3
+ $ out.height: num 320
+ $ echo      : logi FALSE
+ $ fig.cap   : chr "Visual example of how adding unlabeled data can provide valuable information about the shape of the data valuable for classific"| __truncated__
+
+  |                                                                         |.................................................................| 100%
+  ordinary text without R code
+
+
+output file: bookdown-demo.knit.md
+
+/usr/lib/rstudio-server/bin/pandoc/pandoc +RTS -K512m -RTS bookdown-demo.utf8.md --to latex --from markdown+autolink_bare_uris+ascii_identifiers+tex_math_single_backslash --output bookdown-demo.tex --table-of-contents --toc-depth 2 --template /home/nick/R/x86_64-pc-linux-gnu-library/3.2/rmarkdown/rmd/latex/default-1.17.0.2.tex --number-sections --highlight-style tango --latex-engine xelatex --natbib --include-in-header preamble.tex --variable graphics=yes --variable 'geometry:margin=1in' --variable tables=yes --standalone 
+sh: 1: xelatex: not found
+Error: Failed to compile bookdown-demo.tex.
+Execution halted
+]0;/home/nick/quals/report]0;nick@compooper: ~/quals/report[01;32mnick@compooper[00m:[01;34m~/quals/report[00m$ sudo apt-get install texlive-xetex
+[sudo] password for nick: 
+Reading package lists... 0%Reading package lists... 100%Reading package lists... Done
+Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 50%Building dependency tree... 50%Building dependency tree       
+Reading state information... 0%Reading state information... 0%Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  linux-headers-4.10.0-28 linux-headers-4.10.0-28-generic linux-image-4.10.0-28-generic linux-image-extra-4.10.0-28-generic
+Use 'sudo apt autoremove' to remove them.
+The following additional packages will be installed:
+  fonts-lato fonts-lmodern fonts-texgyre javascript-common libfile-homedir-perl libfile-which-perl libjs-jquery libpotrace0
+  libptexenc1 libruby2.3 libsynctex1 libtexlua52 libtexluajit2 libzzip-0-13 lmodern preview-latex-style prosper ps2eps rake ruby
+  ruby-did-you-mean ruby-minitest ruby-net-telnet ruby-power-assert ruby-test-unit ruby2.3 rubygems-integration tex-common
+  tex-gyre texlive-base texlive-binaries texlive-extra-utils texlive-font-utils texlive-fonts-recommended
+  texlive-fonts-recommended-doc texlive-generic-recommended texlive-latex-base texlive-latex-base-doc texlive-latex-extra
+  texlive-latex-extra-doc texlive-latex-recommended texlive-latex-recommended-doc texlive-pictures texlive-pictures-doc
+  texlive-pstricks texlive-pstricks-doc tipa
+Suggested packages:
+  apache2 | lighttpd | httpd ri ruby-dev bundler perl-tk dvipng dvidvi xindy fragmaster purifyeps lacheck chktex latexmk
+  latexdiff psutils python-pygments libspreadsheet-parseexcel-perl libtcltk-ruby dot2tex prerex
+The following NEW packages will be installed:
+  fonts-lato fonts-lmodern fonts-texgyre javascript-common libfile-homedir-perl libfile-which-perl libjs-jquery libpotrace0
+  libptexenc1 libruby2.3 libsynctex1 libtexlua52 libtexluajit2 libzzip-0-13 lmodern preview-latex-style prosper ps2eps rake ruby
+  ruby-did-you-mean ruby-minitest ruby-net-telnet ruby-power-assert ruby-test-unit ruby2.3 rubygems-integration tex-common
+  tex-gyre texlive-base texlive-binaries texlive-extra-utils texlive-font-utils texlive-fonts-recommended
+  texlive-fonts-recommended-doc texlive-generic-recommended texlive-latex-base texlive-latex-base-doc texlive-latex-extra
+  texlive-latex-extra-doc texlive-latex-recommended texlive-latex-recommended-doc texlive-pictures texlive-pictures-doc
+  texlive-pstricks texlive-pstricks-doc texlive-xetex tipa
+0 upgraded, 48 newly installed, 0 to remove and 17 not upgraded.
+Need to get 758 MB of archives.
+After this operation, 1,208 MB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+0% [Working]            Get:1 http://us.archive.ubuntu.com/ubuntu xenial/main amd64 fonts-lato all 2.0-1 [2,693 kB]
+0% [1 fonts-lato 13.7 kB/2,693 kB 1%]                                     1% [Working]            Get:2 http://us.archive.ubuntu.com/ubuntu xenial/main amd64 tex-common all 6.04 [545 kB]
+1% [2 tex-common 58.9 kB/545 kB 11%]                                    1% [Waiting for headers]                        Get:3 http://us.archive.ubuntu.com/ubuntu xenial/main amd64 fonts-lmodern all 2.004.5-1 [4,553 kB]
+1% [3 fonts-lmodern 38.1 kB/4,553 kB 1%]                                        2% [Waiting for headers]                        Get:4 http://us.archive.ubuntu.com/ubuntu xenial/universe amd64 fonts-texgyre all 20150923-1 [7,926 kB]
+2% [4 fonts-texgyre 57.2 kB/7,926 kB 1%]                                        3% [Waiting for headers]                        Get:5 http://us.archive.ubuntu.com/ubuntu xenial/main amd64 javascript-common all 11 [6,066 B]
+3% [5 javascript-common 6,066 B/6,066 B 100%]                                             4% [Working]            Get:6 http://us.archive.ubuntu.com/ubuntu xenial/main amd64 libfile-which-perl all 1.19-1 [12.3 kB]
+4% [6 libfile-which-perl 12.3 kB/12.3 kB 100%]                                              4% [Waiting for headers]                        Get:7 http://us.archive.ubuntu.com/ubuntu xenial/main amd64 libfile-homedir-perl all 1.00-1 [46.0 kB]
+4% [7 libfile-homedir-perl 46.0 kB/46.0 kB 100%]                                                5% [Working]            Get:8 http://us.archive.ubuntu.com/ubuntu xenial/main amd64 libjs-jquery all 1.11.3+dfsg-4 [161 kB]
+5% [8 libjs-jquery 10.4 kB/161 kB 6%]                                     5% [Waiting for headers]                        Get:9 http://us.archive.ubuntu.com/ubuntu xenial/main amd64 libpotrace0 amd64 1.13-2 [17.7 kB]
+5% [9 libpotrace0 17.7 kB/17.7 kB 100%]                                       5% [Working]            Get:10 http://us.archive.ubuntu.com/ubuntu xenial/main amd64 libptexenc1 amd64 2015.20160222.37495-1 [34.3 kB]
+5% [10 libptexenc1 27.7 kB/34.3 kB 81%]                                       6% [Working]            Get:11 http://us.archive.ubuntu.com/ubuntu xenial/main amd64 libsynctex1 amd64 2015.20160222.37495-1 [41.7 kB]
+6% [11 libsynctex1 41.7 kB/41.7 kB 100%]                                        6% [Working]            Get:12 http://us.archive.ubuntu.com/ubuntu xenial/main amd64 libtexlua52 amd64 2015.20160222.37495-1 [90.8 kB]
+6% [12 libtexlua52 16.6 kB/90.8 kB 18%]                                       7% [Waiting for headers]                        Get:13 http://us.archive.ubuntu.com/ubuntu xenial/main amd64 libtexluajit2 amd64 2015.20160222.37495-1 [213 kB]
+7% [13 libtexluajit2 56.7 kB/213 kB 27%]                                        7% [Waiting for headers]                        Get:14 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 libzzip-0-13 amd64 0.13.62-3ubuntu0.16.04.1 [25.8 kB]
+7% [14 libzzip-0-13 25.8 kB/25.8 kB 100%]                                         8% [Waiting for headers]                        Get:15 http://us.archive.ubuntu.com/ubuntu xenial/main amd64 lmodern all 2.004.5-1 [9,571 kB]
+8% [15 lmodern 13.6 kB/9,571 kB 0%]                                   9% [Waiting for headers]                        Get:16 http://us.archive.ubuntu.com/ubuntu xenial/main amd64 preview-latex-style all 11.88-1.1ubuntu1 [184 kB]
+9% [16 preview-latex-style 10.7 kB/184 kB 6%]                                             9% [Waiting for headers]                        Get:17 http://us.archive.ubuntu.com/ubuntu xenial/main amd64 texlive-binaries amd64 2015.20160222.37495-1 [7,325 kB]
+9% [17 texlive-binaries 23.0 kB/7,325 kB 0%]                                            11% [Waiting for headers]                         Get:18 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 texlive-base all 2015.20160320-1ubuntu0.1 [18.3 MB]
+11% [18 texlive-base 37.5 kB/18.3 MB 0%]                                        13% [Waiting for headers]                         Get:19 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 texlive-latex-base all 2015.20160320-1ubuntu0.1 [851 kB]
+13% [19 texlive-latex-base 65.5 kB/851 kB 8%]                                             13% [Waiting for headers]                         Get:20 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 texlive-latex-recommended all 2015.20160320-1ubuntu0.1 [12.8 MB]
+13% [20 texlive-latex-recommended 27.4 kB/12.8 MB 0%]                                                     15% [Waiting for headers]                         Get:21 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 texlive-pictures all 2015.20160320-1ubuntu0.1 [3,743 kB]
+15% [21 texlive-pictures 9,598 B/3,743 kB 0%]                                             16% [Waiting for headers]                         Get:22 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 texlive-generic-recommended all 2015.20160320-1ubuntu0.1 [2,853 kB]
+16% [22 texlive-generic-recommended 65.5 kB/2,853 kB 2%]                                                        17% [Working]             Get:23 http://us.archive.ubuntu.com/ubuntu xenial/main amd64 texlive-pstricks all 2015.20160320-1 [26.1 MB]
+17% [23 texlive-pstricks 8,296 B/26.1 MB 0%]18% [23 texlive-pstricks 15.7 MB/26.1 MB 60%]                                             20% [Waiting for headers]                         Get:24 http://us.archive.ubuntu.com/ubuntu xenial/main amd64 prosper all 1.00.4+cvs.2007.05.01-4 [449 kB]
+20% [24 prosper 44.4 kB/449 kB 10%]                                   20% [Working]             Get:25 http://us.archive.ubuntu.com/ubuntu xenial/main amd64 ps2eps amd64 1.68+binaryfree-1 [33.0 kB]
+20% [25 ps2eps 33.0 kB/33.0 kB 100%]                                    21% [Working]             Get:26 http://us.archive.ubuntu.com/ubuntu xenial/main amd64 rubygems-integration all 1.10 [4,966 B]
+21% [26 rubygems-integration 4,966 B/4,966 B 100%]                                                  21% [Working]             Get:27 http://us.archive.ubuntu.com/ubuntu xenial/main amd64 ruby-did-you-mean all 1.0.0-2 [8,390 B]
+21% [27 ruby-did-you-mean 8,390 B/8,390 B 100%]                                               22% [Working]             Get:28 http://us.archive.ubuntu.com/ubuntu xenial/main amd64 ruby-minitest all 5.8.4-2 [36.6 kB]
+22% [28 ruby-minitest 7,017 B/36.6 kB 19%]                                          22% [Working]             Get:29 http://us.archive.ubuntu.com/ubuntu xenial/main amd64 ruby-net-telnet all 0.1.1-2 [12.6 kB]
+22% [29 ruby-net-telnet 12.6 kB/12.6 kB 100%]                                             22% [Working]             Get:30 http://us.archive.ubuntu.com/ubuntu xenial/main amd64 ruby-power-assert all 0.2.7-1 [7,668 B]
+22% [30 ruby-power-assert 7,668 B/7,668 B 100%]                                               23% [Working]             Get:31 http://us.archive.ubuntu.com/ubuntu xenial/main amd64 ruby-test-unit all 3.1.7-2 [60.3 kB]
+23% [31 ruby-test-unit 14.9 kB/60.3 kB 25%]                                           23% [Working]             Get:32 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 libruby2.3 amd64 2.3.1-2~16.04.2 [2,958 kB]
+23% [32 libruby2.3 19.8 kB/2,958 kB 1%]                                       24% [Working]             Get:33 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 ruby2.3 amd64 2.3.1-2~16.04.2 [41.0 kB]
+24% [33 ruby2.3 10.7 kB/41.0 kB 26%]                                    24% [Working]             Get:34 http://us.archive.ubuntu.com/ubuntu xenial/main amd64 ruby all 1:2.3.0+1 [5,530 B]
+24% [34 ruby 5,530 B/5,530 B 100%]                                  25% [Working]             Get:35 http://us.archive.ubuntu.com/ubuntu xenial/main amd64 rake all 10.5.0-2 [48.2 kB]
+25% [35 rake 29.2 kB/48.2 kB 61%]                                 25% [Working]             Get:36 http://us.archive.ubuntu.com/ubuntu xenial/universe amd64 tex-gyre all 20150923-1 [5,048 kB]
+25% [36 tex-gyre 46.2 kB/5,048 kB 1%]                                     26% [Waiting for headers]                         Get:37 http://us.archive.ubuntu.com/ubuntu xenial/main amd64 texlive-extra-utils all 2015.20160320-1 [11.9 MB]
+26% [37 texlive-extra-utils 44.0 kB/11.9 MB 0%]                                               28% [Waiting for headers]                         Get:38 http://us.archive.ubuntu.com/ubuntu xenial/main amd64 texlive-font-utils all 2015.20160320-1 [1,719 kB]
+28% [38 texlive-font-utils 50.6 kB/1,719 kB 3%]                                               29% [Waiting for headers]                         Get:39 http://us.archive.ubuntu.com/ubuntu xenial-updates/universe amd64 texlive-fonts-recommended all 2015.20160320-1ubuntu0.1 [5,697 kB]
+29% [39 texlive-fonts-recommended 35.3 kB/5,697 kB 1%]                                                      30% [Waiting for headers]                         Get:40 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 texlive-fonts-recommended-doc all 2015.20160320-1ubuntu0.1 [2,725 kB]
+30% [40 texlive-fonts-recommended-doc 39.4 kB/2,725 kB 1%]                                                          30% [Waiting for headers]                         Get:41 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 texlive-latex-base-doc all 2015.20160320-1ubuntu0.1 [45.4 MB]
+30% [41 texlive-latex-base-doc 65.5 kB/45.4 MB 0%]33% [41 texlive-latex-base-doc 22.3 MB/45.4 MB 49%]                                                   35% [Waiting for headers]                         Get:42 http://us.archive.ubuntu.com/ubuntu xenial/universe amd64 texlive-latex-extra all 2015.20160320-1 [10.3 MB]
+35% [42 texlive-latex-extra 49.5 kB/10.3 MB 0%]                                               37% [Waiting for headers]                         Get:43 http://us.archive.ubuntu.com/ubuntu xenial/main amd64 texlive-latex-extra-doc all 2015.20160320-1 [338 MB]
+37% [43 texlive-latex-extra-doc 15.9 kB/338 MB 0%]39% [43 texlive-latex-extra-doc 23.8 MB/338 MB 7%]42% [43 texlive-latex-extra-doc 43.8 MB/338 MB 13%]44% [43 texlive-latex-extra-doc 66.5 MB/338 MB 20%]                                                                 41.7 MB/s 12s46% [43 texlive-latex-extra-doc 89.0 MB/338 MB 26%]                                                                 41.7 MB/s 11s49% [43 texlive-latex-extra-doc 111 MB/338 MB 33%]                                                                  41.7 MB/s 11s51% [43 texlive-latex-extra-doc 134 MB/338 MB 40%]                                                                  41.7 MB/s 10s54% [43 texlive-latex-extra-doc 157 MB/338 MB 46%]                                                                  41.7 MB/s 10s56% [43 texlive-latex-extra-doc 179 MB/338 MB 53%]                                                                   41.7 MB/s 9s59% [43 texlive-latex-extra-doc 204 MB/338 MB 61%]                                                                   41.7 MB/s 8s61% [43 texlive-latex-extra-doc 228 MB/338 MB 67%]                                                                   41.7 MB/s 8s63% [43 texlive-latex-extra-doc 250 MB/338 MB 74%]                                                                   41.7 MB/s 7s66% [43 texlive-latex-extra-doc 274 MB/338 MB 81%]                                                                   41.7 MB/s 7s67% [43 texlive-latex-extra-doc 287 MB/338 MB 85%]                                                                   41.7 MB/s 6s70% [43 texlive-latex-extra-doc 311 MB/338 MB 92%]                                                                   41.7 MB/s 6s72% [43 texlive-latex-extra-doc 332 MB/338 MB 98%]                                                                   44.2 MB/s 5s73% [43 texlive-latex-extra-doc 338 MB/338 MB 100%]                                                                  44.2 MB/s 5s73% [43 texlive-latex-extra-doc 338 MB/338 MB 100%]                                                                  44.2 MB/s 5s73% [Waiting for headers]                                                                                            44.2 MB/s 5s                                                                                                                                 Get:44 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 texlive-latex-recommended-doc all 2015.20160320-1ubuntu0.1 [37.2 MB]
+73% [44 texlive-latex-recommended-doc 55.6 kB/37.2 MB 0%]                                                            44.2 MB/s 5s76% [44 texlive-latex-recommended-doc 26.7 MB/37.2 MB 72%]                                                           44.2 MB/s 4s77% [Waiting for headers]                                                                                            44.2 MB/s 4s                                                                                                                                 Get:45 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 texlive-pictures-doc all 2015.20160320-1ubuntu0.1 [100 MB]
+77% [45 texlive-pictures-doc 61.2 kB/100 MB 0%]                                                                      44.2 MB/s 4s80% [45 texlive-pictures-doc 25.5 MB/100 MB 25%]                                                                     44.2 MB/s 3s82% [45 texlive-pictures-doc 48.0 MB/100 MB 48%]                                                                     44.2 MB/s 3s84% [45 texlive-pictures-doc 67.6 MB/100 MB 67%]                                                                     44.2 MB/s 2s87% [45 texlive-pictures-doc 91.5 MB/100 MB 91%]                                                                     44.2 MB/s 2s88% [Waiting for headers]                                                                                            44.2 MB/s 2s                                                                                                                                 Get:46 http://us.archive.ubuntu.com/ubuntu xenial/main amd64 texlive-pstricks-doc all 2015.20160320-1 [85.7 MB]
+88% [46 texlive-pstricks-doc 27.4 kB/85.7 MB 0%]                                                                     44.2 MB/s 2s91% [46 texlive-pstricks-doc 20.5 MB/85.7 MB 24%]                                                                    44.2 MB/s 1s93% [46 texlive-pstricks-doc 43.4 MB/85.7 MB 51%]                                                                    44.2 MB/s 1s95% [46 texlive-pstricks-doc 63.1 MB/85.7 MB 74%]                                                                    44.2 MB/s 0s98% [Waiting for headers]                                                                                            36.3 MB/s 0s                                                                                                                                 Get:47 http://us.archive.ubuntu.com/ubuntu xenial/universe amd64 tipa all 2:1.3-20 [2,978 kB]
+98% [47 tipa 36.9 kB/2,978 kB 1%]                                                                                    36.3 MB/s 0s99% [Waiting for headers]                                                                                            36.3 MB/s 0s                                                                                                                                 Get:48 http://us.archive.ubuntu.com/ubuntu xenial-updates/universe amd64 texlive-xetex all 2015.20160320-1ubuntu0.1 [9,963 kB]
+99% [48 texlive-xetex 25.8 kB/9,963 kB 0%]                                                                           36.3 MB/s 0s100% [Working]                                                                                                       36.3 MB/s 0s                                                                                                                                 Fetched 758 MB in 18s (40.6 MB/s)
+Extracting templates from packages: 62%Extracting templates from packages: 100%
+Preconfiguring packages ...
+Selecting previously unselected package fonts-lato.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 283468 files and directories currently installed.)
+Preparing to unpack .../fonts-lato_2.0-1_all.deb ...
+Unpacking fonts-lato (2.0-1) ...
+Selecting previously unselected package tex-common.
+Preparing to unpack .../tex-common_6.04_all.deb ...
+Unpacking tex-common (6.04) ...
+Selecting previously unselected package fonts-lmodern.
+Preparing to unpack .../fonts-lmodern_2.004.5-1_all.deb ...
+Unpacking fonts-lmodern (2.004.5-1) ...
+Selecting previously unselected package fonts-texgyre.
+Preparing to unpack .../fonts-texgyre_20150923-1_all.deb ...
+Unpacking fonts-texgyre (20150923-1) ...
+Selecting previously unselected package javascript-common.
+Preparing to unpack .../javascript-common_11_all.deb ...
+Unpacking javascript-common (11) ...
+Selecting previously unselected package libfile-which-perl.
+Preparing to unpack .../libfile-which-perl_1.19-1_all.deb ...
+Unpacking libfile-which-perl (1.19-1) ...
+Selecting previously unselected package libfile-homedir-perl.
+Preparing to unpack .../libfile-homedir-perl_1.00-1_all.deb ...
+Unpacking libfile-homedir-perl (1.00-1) ...
+Selecting previously unselected package libjs-jquery.
+Preparing to unpack .../libjs-jquery_1.11.3+dfsg-4_all.deb ...
+Unpacking libjs-jquery (1.11.3+dfsg-4) ...
+Selecting previously unselected package libpotrace0.
+Preparing to unpack .../libpotrace0_1.13-2_amd64.deb ...
+Unpacking libpotrace0 (1.13-2) ...
+Selecting previously unselected package libptexenc1:amd64.
+Preparing to unpack .../libptexenc1_2015.20160222.37495-1_amd64.deb ...
+Unpacking libptexenc1:amd64 (2015.20160222.37495-1) ...
+Selecting previously unselected package libsynctex1:amd64.
+Preparing to unpack .../libsynctex1_2015.20160222.37495-1_amd64.deb ...
+Unpacking libsynctex1:amd64 (2015.20160222.37495-1) ...
+Selecting previously unselected package libtexlua52:amd64.
+Preparing to unpack .../libtexlua52_2015.20160222.37495-1_amd64.deb ...
+Unpacking libtexlua52:amd64 (2015.20160222.37495-1) ...
+Selecting previously unselected package libtexluajit2:amd64.
+Preparing to unpack .../libtexluajit2_2015.20160222.37495-1_amd64.deb ...
+Unpacking libtexluajit2:amd64 (2015.20160222.37495-1) ...
+Selecting previously unselected package libzzip-0-13:amd64.
+Preparing to unpack .../libzzip-0-13_0.13.62-3ubuntu0.16.04.1_amd64.deb ...
+Unpacking libzzip-0-13:amd64 (0.13.62-3ubuntu0.16.04.1) ...
+Selecting previously unselected package lmodern.
+Preparing to unpack .../lmodern_2.004.5-1_all.deb ...
+Unpacking lmodern (2.004.5-1) ...
+Selecting previously unselected package preview-latex-style.
+Preparing to unpack .../preview-latex-style_11.88-1.1ubuntu1_all.deb ...
+Unpacking preview-latex-style (11.88-1.1ubuntu1) ...
+Selecting previously unselected package texlive-binaries.
+Preparing to unpack .../texlive-binaries_2015.20160222.37495-1_amd64.deb ...
+Unpacking texlive-binaries (2015.20160222.37495-1) ...
+Selecting previously unselected package texlive-base.
+Preparing to unpack .../texlive-base_2015.20160320-1ubuntu0.1_all.deb ...
+Unpacking texlive-base (2015.20160320-1ubuntu0.1) ...
+Selecting previously unselected package texlive-latex-base.
+Preparing to unpack .../texlive-latex-base_2015.20160320-1ubuntu0.1_all.deb ...
+Unpacking texlive-latex-base (2015.20160320-1ubuntu0.1) ...
+Selecting previously unselected package texlive-latex-recommended.
+Preparing to unpack .../texlive-latex-recommended_2015.20160320-1ubuntu0.1_all.deb ...
+Unpacking texlive-latex-recommended (2015.20160320-1ubuntu0.1) ...
+Selecting previously unselected package texlive-pictures.
+Preparing to unpack .../texlive-pictures_2015.20160320-1ubuntu0.1_all.deb ...
+Unpacking texlive-pictures (2015.20160320-1ubuntu0.1) ...
+Selecting previously unselected package texlive-generic-recommended.
+Preparing to unpack .../texlive-generic-recommended_2015.20160320-1ubuntu0.1_all.deb ...
+Unpacking texlive-generic-recommended (2015.20160320-1ubuntu0.1) ...
+Selecting previously unselected package texlive-pstricks.
+Preparing to unpack .../texlive-pstricks_2015.20160320-1_all.deb ...
+Unpacking texlive-pstricks (2015.20160320-1) ...
+Selecting previously unselected package prosper.
+Preparing to unpack .../prosper_1.00.4+cvs.2007.05.01-4_all.deb ...
+Unpacking prosper (1.00.4+cvs.2007.05.01-4) ...
+Selecting previously unselected package ps2eps.
+Preparing to unpack .../ps2eps_1.68+binaryfree-1_amd64.deb ...
+Unpacking ps2eps (1.68+binaryfree-1) ...
+Selecting previously unselected package rubygems-integration.
+Preparing to unpack .../rubygems-integration_1.10_all.deb ...
+Unpacking rubygems-integration (1.10) ...
+Selecting previously unselected package ruby-did-you-mean.
+Preparing to unpack .../ruby-did-you-mean_1.0.0-2_all.deb ...
+Unpacking ruby-did-you-mean (1.0.0-2) ...
+Selecting previously unselected package ruby-minitest.
+Preparing to unpack .../ruby-minitest_5.8.4-2_all.deb ...
+Unpacking ruby-minitest (5.8.4-2) ...
+Selecting previously unselected package ruby-net-telnet.
+Preparing to unpack .../ruby-net-telnet_0.1.1-2_all.deb ...
+Unpacking ruby-net-telnet (0.1.1-2) ...
+Selecting previously unselected package ruby-power-assert.
+Preparing to unpack .../ruby-power-assert_0.2.7-1_all.deb ...
+Unpacking ruby-power-assert (0.2.7-1) ...
+Selecting previously unselected package ruby-test-unit.
+Preparing to unpack .../ruby-test-unit_3.1.7-2_all.deb ...
+Unpacking ruby-test-unit (3.1.7-2) ...
+Selecting previously unselected package libruby2.3:amd64.
+Preparing to unpack .../libruby2.3_2.3.1-2~16.04.2_amd64.deb ...
+Unpacking libruby2.3:amd64 (2.3.1-2~16.04.2) ...
+Selecting previously unselected package ruby2.3.
+Preparing to unpack .../ruby2.3_2.3.1-2~16.04.2_amd64.deb ...
+Unpacking ruby2.3 (2.3.1-2~16.04.2) ...
+Selecting previously unselected package ruby.
+Preparing to unpack .../ruby_1%3a2.3.0+1_all.deb ...
+Unpacking ruby (1:2.3.0+1) ...
+Selecting previously unselected package rake.
+Preparing to unpack .../archives/rake_10.5.0-2_all.deb ...
+Unpacking rake (10.5.0-2) ...
+Selecting previously unselected package tex-gyre.
+Preparing to unpack .../tex-gyre_20150923-1_all.deb ...
+Unpacking tex-gyre (20150923-1) ...
+Selecting previously unselected package texlive-extra-utils.
+Preparing to unpack .../texlive-extra-utils_2015.20160320-1_all.deb ...
+Unpacking texlive-extra-utils (2015.20160320-1) ...
+Selecting previously unselected package texlive-font-utils.
+Preparing to unpack .../texlive-font-utils_2015.20160320-1_all.deb ...
+Unpacking texlive-font-utils (2015.20160320-1) ...
+Selecting previously unselected package texlive-fonts-recommended.
+Preparing to unpack .../texlive-fonts-recommended_2015.20160320-1ubuntu0.1_all.deb ...
+Unpacking texlive-fonts-recommended (2015.20160320-1ubuntu0.1) ...
+Selecting previously unselected package texlive-fonts-recommended-doc.
+Preparing to unpack .../texlive-fonts-recommended-doc_2015.20160320-1ubuntu0.1_all.deb ...
+Unpacking texlive-fonts-recommended-doc (2015.20160320-1ubuntu0.1) ...
+Selecting previously unselected package texlive-latex-base-doc.
+Preparing to unpack .../texlive-latex-base-doc_2015.20160320-1ubuntu0.1_all.deb ...
+Unpacking texlive-latex-base-doc (2015.20160320-1ubuntu0.1) ...
+Selecting previously unselected package texlive-latex-extra.
+Preparing to unpack .../texlive-latex-extra_2015.20160320-1_all.deb ...
+Unpacking texlive-latex-extra (2015.20160320-1) ...
+Selecting previously unselected package texlive-latex-extra-doc.
+Preparing to unpack .../texlive-latex-extra-doc_2015.20160320-1_all.deb ...
+Unpacking texlive-latex-extra-doc (2015.20160320-1) ...
+Selecting previously unselected package texlive-latex-recommended-doc.
+Preparing to unpack .../texlive-latex-recommended-doc_2015.20160320-1ubuntu0.1_all.deb ...
+Unpacking texlive-latex-recommended-doc (2015.20160320-1ubuntu0.1) ...
+Selecting previously unselected package texlive-pictures-doc.
+Preparing to unpack .../texlive-pictures-doc_2015.20160320-1ubuntu0.1_all.deb ...
+Unpacking texlive-pictures-doc (2015.20160320-1ubuntu0.1) ...
+Selecting previously unselected package texlive-pstricks-doc.
+Preparing to unpack .../texlive-pstricks-doc_2015.20160320-1_all.deb ...
+Unpacking texlive-pstricks-doc (2015.20160320-1) ...
+Selecting previously unselected package tipa.
+Preparing to unpack .../tipa_2%3a1.3-20_all.deb ...
+Unpacking tipa (2:1.3-20) ...
+Selecting previously unselected package texlive-xetex.
+Preparing to unpack .../texlive-xetex_2015.20160320-1ubuntu0.1_all.deb ...
+Unpacking texlive-xetex (2015.20160320-1ubuntu0.1) ...
+Processing triggers for fontconfig (2.11.94-0ubuntu1.1) ...
+Processing triggers for doc-base (0.10.7) ...
+Processing 3 added doc-base files...
+Processing triggers for man-db (2.7.5-1) ...
+Processing triggers for libc-bin (2.23-0ubuntu9) ...
+Processing triggers for install-info (6.1.0.dfsg.1-5) ...
+Processing triggers for mime-support (3.59ubuntu1) ...
+Setting up fonts-lato (2.0-1) ...
+Setting up tex-common (6.04) ...
+update-language: texlive-base not installed and configured, doing nothing!
+Setting up fonts-lmodern (2.004.5-1) ...
+Setting up fonts-texgyre (20150923-1) ...
+Setting up javascript-common (11) ...
+Setting up libfile-which-perl (1.19-1) ...
+Setting up libfile-homedir-perl (1.00-1) ...
+Setting up libjs-jquery (1.11.3+dfsg-4) ...
+Setting up libpotrace0 (1.13-2) ...
+Setting up libptexenc1:amd64 (2015.20160222.37495-1) ...
+Setting up libsynctex1:amd64 (2015.20160222.37495-1) ...
+Setting up libtexlua52:amd64 (2015.20160222.37495-1) ...
+Setting up libtexluajit2:amd64 (2015.20160222.37495-1) ...
+Setting up libzzip-0-13:amd64 (0.13.62-3ubuntu0.16.04.1) ...
+Setting up lmodern (2.004.5-1) ...
+Setting up preview-latex-style (11.88-1.1ubuntu1) ...
+Setting up texlive-binaries (2015.20160222.37495-1) ...
+update-alternatives: using /usr/bin/xdvi-xaw to provide /usr/bin/xdvi.bin (xdvi.bin) in auto mode
+update-alternatives: using /usr/bin/bibtex.original to provide /usr/bin/bibtex (bibtex) in auto mode
+Setting up ps2eps (1.68+binaryfree-1) ...
+Setting up rubygems-integration (1.10) ...
+Setting up ruby-did-you-mean (1.0.0-2) ...
+Setting up ruby-minitest (5.8.4-2) ...
+Setting up ruby-net-telnet (0.1.1-2) ...
+Setting up ruby-power-assert (0.2.7-1) ...
+Setting up ruby-test-unit (3.1.7-2) ...
+Setting up tex-gyre (20150923-1) ...
+Processing triggers for tex-common (6.04) ...
+texlive-base is not ready, delaying updmap-sys call
+update-language: texlive-base not installed and configured, doing nothing!
+texlive-base is not ready, skipping fmtutil-sys --all call
+Setting up texlive-base (2015.20160320-1ubuntu0.1) ...
+mktexlsr: Updating /var/lib/texmf/ls-R-TEXLIVEDIST... 
+mktexlsr: Updating /var/lib/texmf/ls-R-TEXMFMAIN... 
+mktexlsr: Updating /var/lib/texmf/ls-R... 
+mktexlsr: Done.
+/usr/bin/tl-paper: setting paper size for dvips to a4.
+/usr/bin/tl-paper: setting paper size for dvipdfmx to a4.
+/usr/bin/tl-paper: setting paper size for xdvi to a4.
+/usr/bin/tl-paper: setting paper size for pdftex to a4.
+/usr/bin/tl-paper: setting paper size for dvipdfmx to letter.
+/usr/bin/tl-paper: setting paper size for dvips to letter.
+/usr/bin/tl-paper: setting paper size for pdftex to letter.
+/usr/bin/tl-paper: setting paper size for xdvi to letter.
+Processing triggers for tex-common (6.04) ...
+Running updmap-sys. This may take some time... done.
+Running mktexlsr /var/lib/texmf ... done.
+Building format(s) --all.
+	This may take some time... done.
+Setting up texlive-generic-recommended (2015.20160320-1ubuntu0.1) ...
+Setting up texlive-font-utils (2015.20160320-1) ...
+Setting up texlive-fonts-recommended (2015.20160320-1ubuntu0.1) ...
+Setting up texlive-fonts-recommended-doc (2015.20160320-1ubuntu0.1) ...
+Setting up texlive-latex-base-doc (2015.20160320-1ubuntu0.1) ...
+Setting up texlive-latex-extra-doc (2015.20160320-1) ...
+Setting up texlive-latex-recommended-doc (2015.20160320-1ubuntu0.1) ...
+Setting up texlive-pictures-doc (2015.20160320-1ubuntu0.1) ...
+Setting up texlive-pstricks-doc (2015.20160320-1) ...
+Setting up texlive-latex-base (2015.20160320-1ubuntu0.1) ...
+Processing triggers for tex-common (6.04) ...
+Running updmap-sys. This may take some time... done.
+Running mktexlsr /var/lib/texmf ... done.
+Building format(s) --all.
+	This may take some time... done.
+Setting up texlive-extra-utils (2015.20160320-1) ...
+Setting up tipa (2:1.3-20) ...
+Regenerating '/var/lib/texmf/fmtutil.cnf-DEBIAN'... done.
+Regenerating '/var/lib/texmf/fmtutil.cnf-TEXLIVEDIST'... done.
+update-fmtutil has updated the following file(s):
+	/var/lib/texmf/fmtutil.cnf-DEBIAN
+	/var/lib/texmf/fmtutil.cnf-TEXLIVEDIST
+If you want to activate the changes in the above file(s),
+you should run fmtutil-sys or fmtutil.
+Setting up texlive-latex-recommended (2015.20160320-1ubuntu0.1) ...
+Setting up texlive-pictures (2015.20160320-1ubuntu0.1) ...
+Processing triggers for tex-common (6.04) ...
+Running updmap-sys. This may take some time... done.
+Running mktexlsr /var/lib/texmf ... done.
+Setting up texlive-latex-extra (2015.20160320-1) ...
+Setting up texlive-pstricks (2015.20160320-1) ...
+Setting up prosper (1.00.4+cvs.2007.05.01-4) ...
+Regenerating '/var/lib/texmf/fmtutil.cnf-DEBIAN'... done.
+Regenerating '/var/lib/texmf/fmtutil.cnf-TEXLIVEDIST'... done.
+update-fmtutil has updated the following file(s):
+	/var/lib/texmf/fmtutil.cnf-DEBIAN
+	/var/lib/texmf/fmtutil.cnf-TEXLIVEDIST
+If you want to activate the changes in the above file(s),
+you should run fmtutil-sys or fmtutil.
+Running mktexlsr. This may take some time... done.
+Processing triggers for tex-common (6.04) ...
+Running updmap-sys. This may take some time... done.
+Running mktexlsr /var/lib/texmf ... done.
+Setting up texlive-xetex (2015.20160320-1ubuntu0.1) ...
+Processing triggers for tex-common (6.04) ...
+Building format(s) --all.
+	This may take some time... done.
+Setting up ruby2.3 (2.3.1-2~16.04.2) ...
+Setting up ruby (1:2.3.0+1) ...
+Setting up rake (10.5.0-2) ...
+Setting up libruby2.3:amd64 (2.3.1-2~16.04.2) ...
+Processing triggers for libc-bin (2.23-0ubuntu9) ...
+]0;/home/nick/quals/report]0;nick@compooper: ~/quals/report[01;32mnick@compooper[00m:[01;34m~/quals/report[00m$ sudo apt-get install texlive-xetex[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[19Pbash _build.sh 
+
+
+processing file: bookdown-demo.Rmd
+  |                                                                         |                                                                 |   0%  |                                                                         |..                                                               |   2%
+   inline R code fragments
+
+  |                                                                         |...                                                              |   5%
+label: fouriertransform (with options) 
+List of 3
+ $ out.height: num 320
+ $ echo      : logi FALSE
+ $ fig.cap   : chr "Example of transforming data from the data-domain to the frequency-domain for time series data. Image courtousy of [Allen D. El"| __truncated__
+
+  |                                                                         |.....                                                            |   7%
+  ordinary text without R code
+
+  |                                                                         |......                                                           |   9%
+label: unnamed-chunk-1 (with options) 
+List of 2
+ $ echo   : logi FALSE
+ $ fig.cap: chr "Example of the XOR problem. Classes encoded by color are not linearly seperable."
+
+  |                                                                         |........                                                         |  12%
+  ordinary text without R code
+
+  |                                                                         |.........                                                        |  14%
+label: unnamed-chunk-2 (with options) 
+List of 2
+ $ echo   : logi FALSE
+ $ fig.cap: chr "How back propigation steps back from the output to the input. To calculate the gradient with respect to the loss of the orange "| __truncated__
+
+  |                                                                         |...........                                                      |  16%
+  ordinary text without R code
+
+  |                                                                         |............                                                     |  19%
+label: unnamed-chunk-3 (with options) 
+List of 4
+ $ echo      : logi FALSE
+ $ out.height: num 300
+ $ out.width : num 300
+ $ fig.cap   : chr "Demonstration of steepest descents limitations on trough like gradient surfaces. Much of each step's progress is wasted on boun"| __truncated__
+
+  |                                                                         |..............                                                   |  21%
+  ordinary text without R code
+
+  |                                                                         |...............                                                  |  23%
+label: sigmoid (with options) 
+List of 2
+ $ name  : chr "sigmoid activation function"
+ $ engine: chr "definition"
+
+  |                                                                         |.................                                                |  26%
+  ordinary text without R code
+
+  |                                                                         |..................                                               |  28%
+label: relu (with options) 
+List of 2
+ $ name  : chr "Rectified Linear Unit activation function"
+ $ engine: chr "definition"
+
+  |                                                                         |....................                                             |  30%
+  ordinary text without R code
+
+  |                                                                         |.....................                                            |  33%
+label: unnamed-chunk-4 (with options) 
+List of 2
+ $ echo   : symbol F
+ $ fig.cap: chr "Comparison of the relu and sigmoid activation functions."
+
+  |                                                                         |.......................                                          |  35%
+  ordinary text without R code
+
+  |                                                                         |........................                                         |  37%
+label: softmax (with options) 
+List of 2
+ $ name  : chr "Softmax activation function."
+ $ engine: chr "definition"
+
+  |                                                                         |..........................                                       |  40%
+  ordinary text without R code
+
+  |                                                                         |...........................                                      |  42%
+label: negloglik (with options) 
+List of 2
+ $ name  : chr "General maximum likelihood loss function"
+ $ engine: chr "definition"
+
+  |                                                                         |.............................                                    |  44%
+  ordinary text without R code
+
+  |                                                                         |..............................                                   |  47%
+label: mse (with options) 
+List of 2
+ $ name  : chr "Mean squared error loss"
+ $ engine: chr "definition"
+
+  |                                                                         |................................                                 |  49%
+  ordinary text without R code
+
+  |                                                                         |.................................                                |  51%
+label: crossentropy (with options) 
+List of 2
+ $ name  : chr "Binary cross entropy loss"
+ $ engine: chr "definition"
+
+  |                                                                         |...................................                              |  53%
+  ordinary text without R code
+
+  |                                                                         |....................................                             |  56%
+label: catcrossentropy (with options) 
+List of 2
+ $ name  : chr "Categorical cross entropy loss"
+ $ engine: chr "definition"
+
+  |                                                                         |......................................                           |  58%
+  ordinary text without R code
+
+  |                                                                         |.......................................                          |  60%
+label: cyclegraph (with options) 
+List of 3
+ $ out.height: num 320
+ $ echo      : logi FALSE
+ $ fig.cap   : chr "A recurrent neural network with a single hidden layer. The hidden layer's values at time $t$ are passed to the hidden layer at "| __truncated__
+
+  |                                                                         |.........................................                        |  63%
+  ordinary text without R code
+
+  |                                                                         |..........................................                       |  65%
+label: unnamed-chunk-5 (with options) 
+List of 3
+ $ out.height: num 320
+ $ echo      : logi FALSE
+ $ fig.cap   : chr "Example of an RNN's output for recognizing characters in handwritten characters. The model scans along one slice at a time of t"| __truncated__
+
+  |                                                                         |............................................                     |  67%
+  ordinary text without R code
+
+  |                                                                         |.............................................                    |  70%
+label: unrolledgraph (with options) 
+List of 3
+ $ out.height: num 320
+ $ echo      : logi FALSE
+ $ fig.cap   : chr "Unrolled view of the RNN shown in previous figure. Each timestep has two outputs, the timesteps predictions and its hidden stat"| __truncated__
+
+  |                                                                         |...............................................                  |  72%
+  ordinary text without R code
+
+  |                                                                         |................................................                 |  74%
+label: lstmdiagram (with options) 
+List of 3
+ $ out.width: num 400
+ $ echo     : logi FALSE
+ $ fig.cap  : chr "The internal structure of an LSTM hidden unit. The gates are all fed by the input at time _t_, the whole hidden unit at time (_"| __truncated__
+
+  |                                                                         |..................................................               |  77%
+  ordinary text without R code
+
+  |                                                                         |...................................................              |  79%
+label: grudiagram (with options) 
+List of 3
+ $ out.width: num 400
+ $ echo     : logi FALSE
+ $ fig.cap  : chr "The internal structure of an GRU hidden unit. Unlike the LSTM there are only two gates, with the update and forget get tasks be"| __truncated__
+
+  |                                                                         |.....................................................            |  81%
+  ordinary text without R code
+
+  |                                                                         |......................................................           |  84%
+label: outputrnn (with options) 
+List of 3
+ $ out.width: num 300
+ $ echo     : logi FALSE
+ $ fig.cap  : chr "An RNN where the recurrent connection is made between the previous timepoint's output and the hidden unit. This model is less e"| __truncated__
+
+  |                                                                         |........................................................         |  86%
+  ordinary text without R code
+
+  |                                                                         |.........................................................        |  88%
+label: cnnexplain (with options) 
+List of 3
+ $ out.width: chr "100%"
+ $ echo     : logi FALSE
+ $ fig.cap  : chr "A diagram of how a convolutions are applied to sequential data."
+
+  |                                                                         |...........................................................      |  91%
+  ordinary text without R code
+
+  |                                                                         |............................................................     |  93%
+label: ganexample (with options) 
+List of 3
+ $ out.height: num 320
+ $ echo      : logi FALSE
+ $ fig.cap   : chr "The output of a generative adversarial network trained on a database of celebrity faces. Both faces seen are entirely generated"| __truncated__
+
+  |                                                                         |..............................................................   |  95%
+  ordinary text without R code
+
+  |                                                                         |...............................................................  |  98%
+label: semisupervised (with options) 
+List of 3
+ $ out.height: num 320
+ $ echo      : logi FALSE
+ $ fig.cap   : chr "Visual example of how adding unlabeled data can provide valuable information about the shape of the data valuable for classific"| __truncated__
+
+  |                                                                         |.................................................................| 100%
+  ordinary text without R code
+
+
+output file: bookdown-demo.knit.md
+
+/usr/lib/rstudio-server/bin/pandoc/pandoc +RTS -K512m -RTS bookdown-demo.utf8.md --to latex --from markdown+autolink_bare_uris+ascii_identifiers+tex_math_single_backslash --output bookdown-demo.tex --table-of-contents --toc-depth 2 --template /home/nick/R/x86_64-pc-linux-gnu-library/3.2/rmarkdown/rmd/latex/default-1.17.0.2.tex --number-sections --highlight-style tango --latex-engine xelatex --natbib --include-in-header preamble.tex --variable graphics=yes --variable 'geometry:margin=1in' --variable tables=yes --standalone 
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex)
+ restricted \write18 enabled.
+entering extended mode
+! Unable to load picture or PDF file 'figures/fourier_transform.gif'.
+<to be read again> 
+                   }
+l.247 ...cs[height=320]{figures/fourier_transform}
+                                                   \caption{Example of trans...
+
+Error: Failed to compile bookdown-demo.tex. See bookdown-demo.log for more info.
+Execution halted
+]0;/home/nick/quals/report]0;nick@compooper: ~/quals/report[01;32mnick@compooper[00m:[01;34m~/quals/report[00m$ bash _build.sh sudo apt-get install texlive-xetex[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[19Pbash _build.sh 
+
+
+processing file: bookdown-demo.Rmd
+  |                                                                         |                                                                 |   0%  |                                                                         |..                                                               |   2%
+   inline R code fragments
+
+  |                                                                         |...                                                              |   5%
+label: fouriertransform (with options) 
+List of 3
+ $ out.height: num 320
+ $ echo      : logi FALSE
+ $ fig.cap   : chr "Example of transforming data from the data-domain to the frequency-domain for time series data. Image courtousy of [Allen D. El"| __truncated__
+
+  |                                                                         |.....                                                            |   7%
+  ordinary text without R code
+
+  |                                                                         |......                                                           |   9%
+label: unnamed-chunk-1 (with options) 
+List of 2
+ $ echo   : logi FALSE
+ $ fig.cap: chr "Example of the XOR problem. Classes encoded by color are not linearly seperable."
+
+  |                                                                         |........                                                         |  12%
+  ordinary text without R code
+
+  |                                                                         |.........                                                        |  14%
+label: unnamed-chunk-2 (with options) 
+List of 2
+ $ echo   : logi FALSE
+ $ fig.cap: chr "How back propigation steps back from the output to the input. To calculate the gradient with respect to the loss of the orange "| __truncated__
+
+  |                                                                         |...........                                                      |  16%
+  ordinary text without R code
+
+  |                                                                         |............                                                     |  19%
+label: unnamed-chunk-3 (with options) 
+List of 4
+ $ echo      : logi FALSE
+ $ out.height: num 300
+ $ out.width : num 300
+ $ fig.cap   : chr "Demonstration of steepest descents limitations on trough like gradient surfaces. Much of each step's progress is wasted on boun"| __truncated__
+
+  |                                                                         |..............                                                   |  21%
+  ordinary text without R code
+
+  |                                                                         |...............                                                  |  23%
+label: sigmoid (with options) 
+List of 2
+ $ name  : chr "sigmoid activation function"
+ $ engine: chr "definition"
+
+  |                                                                         |.................                                                |  26%
+  ordinary text without R code
+
+  |                                                                         |..................                                               |  28%
+label: relu (with options) 
+List of 2
+ $ name  : chr "Rectified Linear Unit activation function"
+ $ engine: chr "definition"
+
+  |                                                                         |....................                                             |  30%
+  ordinary text without R code
+
+  |                                                                         |.....................                                            |  33%
+label: unnamed-chunk-4 (with options) 
+List of 2
+ $ echo   : symbol F
+ $ fig.cap: chr "Comparison of the relu and sigmoid activation functions."
+
+  |                                                                         |.......................                                          |  35%
+  ordinary text without R code
+
+  |                                                                         |........................                                         |  37%
+label: softmax (with options) 
+List of 2
+ $ name  : chr "Softmax activation function."
+ $ engine: chr "definition"
+
+  |                                                                         |..........................                                       |  40%
+  ordinary text without R code
+
+  |                                                                         |...........................                                      |  42%
+label: negloglik (with options) 
+List of 2
+ $ name  : chr "General maximum likelihood loss function"
+ $ engine: chr "definition"
+
+  |                                                                         |.............................                                    |  44%
+  ordinary text without R code
+
+  |                                                                         |..............................                                   |  47%
+label: mse (with options) 
+List of 2
+ $ name  : chr "Mean squared error loss"
+ $ engine: chr "definition"
+
+  |                                                                         |................................                                 |  49%
+  ordinary text without R code
+
+  |                                                                         |.................................                                |  51%
+label: crossentropy (with options) 
+List of 2
+ $ name  : chr "Binary cross entropy loss"
+ $ engine: chr "definition"
+
+  |                                                                         |...................................                              |  53%
+  ordinary text without R code
+
+  |                                                                         |....................................                             |  56%
+label: catcrossentropy (with options) 
+List of 2
+ $ name  : chr "Categorical cross entropy loss"
+ $ engine: chr "definition"
+
+  |                                                                         |......................................                           |  58%
+  ordinary text without R code
+
+  |                                                                         |.......................................                          |  60%
+label: cyclegraph (with options) 
+List of 3
+ $ out.height: num 320
+ $ echo      : logi FALSE
+ $ fig.cap   : chr "A recurrent neural network with a single hidden layer. The hidden layer's values at time $t$ are passed to the hidden layer at "| __truncated__
+
+  |                                                                         |.........................................                        |  63%
+  ordinary text without R code
+
+  |                                                                         |..........................................                       |  65%
+label: unnamed-chunk-5 (with options) 
+List of 3
+ $ out.height: num 320
+ $ echo      : logi FALSE
+ $ fig.cap   : chr "Example of an RNN's output for recognizing characters in handwritten characters. The model scans along one slice at a time of t"| __truncated__
+
+  |                                                                         |............................................                     |  67%
+  ordinary text without R code
+
+  |                                                                         |.............................................                    |  70%
+label: unrolledgraph (with options) 
+List of 3
+ $ out.height: num 320
+ $ echo      : logi FALSE
+ $ fig.cap   : chr "Unrolled view of the RNN shown in previous figure. Each timestep has two outputs, the timesteps predictions and its hidden stat"| __truncated__
+
+  |                                                                         |...............................................                  |  72%
+  ordinary text without R code
+
+  |                                                                         |................................................                 |  74%
+label: lstmdiagram (with options) 
+List of 3
+ $ out.width: num 400
+ $ echo     : logi FALSE
+ $ fig.cap  : chr "The internal structure of an LSTM hidden unit. The gates are all fed by the input at time _t_, the whole hidden unit at time (_"| __truncated__
+
+  |                                                                         |..................................................               |  77%
+  ordinary text without R code
+
+  |                                                                         |...................................................              |  79%
+label: grudiagram (with options) 
+List of 3
+ $ out.width: num 400
+ $ echo     : logi FALSE
+ $ fig.cap  : chr "The internal structure of an GRU hidden unit. Unlike the LSTM there are only two gates, with the update and forget get tasks be"| __truncated__
+
+  |                                                                         |.....................................................            |  81%
+  ordinary text without R code
+
+  |                                                                         |......................................................           |  84%
+label: outputrnn (with options) 
+List of 3
+ $ out.width: num 300
+ $ echo     : logi FALSE
+ $ fig.cap  : chr "An RNN where the recurrent connection is made between the previous timepoint's output and the hidden unit. This model is less e"| __truncated__
+
+  |                                                                         |........................................................         |  86%
+  ordinary text without R code
+
+  |                                                                         |.........................................................        |  88%
+label: cnnexplain (with options) 
+List of 3
+ $ out.width: chr "100%"
+ $ echo     : logi FALSE
+ $ fig.cap  : chr "A diagram of how a convolutions are applied to sequential data."
+
+  |                                                                         |...........................................................      |  91%
+  ordinary text without R code
+
+  |                                                                         |............................................................     |  93%
+label: ganexample (with options) 
+List of 3
+ $ out.height: num 320
+ $ echo      : logi FALSE
+ $ fig.cap   : chr "The output of a generative adversarial network trained on a database of celebrity faces. Both faces seen are entirely generated"| __truncated__
+
+  |                                                                         |..............................................................   |  95%
+  ordinary text without R code
+
+  |                                                                         |...............................................................  |  98%
+label: semisupervised (with options) 
+List of 3
+ $ out.height: num 320
+ $ echo      : logi FALSE
+ $ fig.cap   : chr "Visual example of how adding unlabeled data can provide valuable information about the shape of the data valuable for classific"| __truncated__
+
+  |                                                                         |.................................................................| 100%
+  ordinary text without R code
+
+
+output file: bookdown-demo.knit.md
+
+/usr/lib/rstudio-server/bin/pandoc/pandoc +RTS -K512m -RTS bookdown-demo.utf8.md --to latex --from markdown+autolink_bare_uris+ascii_identifiers+tex_math_single_backslash --output bookdown-demo.tex --table-of-contents --toc-depth 2 --template /home/nick/R/x86_64-pc-linux-gnu-library/3.2/rmarkdown/rmd/latex/default-1.17.0.2.tex --number-sections --highlight-style tango --latex-engine xelatex --natbib --include-in-header preamble.tex --variable graphics=yes --variable 'geometry:margin=1in' --variable tables=yes --standalone 
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex)
+ restricted \write18 enabled.
+entering extended mode
+! Illegal unit of measure (pt inserted).
+<to be read again> 
+                   \relax 
+l.247 ...cs[height=320]{figures/fourier_transform}
+                                                   \caption{Example of trans...
+
+Error: Failed to compile bookdown-demo.tex. See bookdown-demo.log for more info.
+Execution halted
+]0;/home/nick/quals/report]0;nick@compooper: ~/quals/report[01;32mnick@compooper[00m:[01;34m~/quals/report[00m$ [K]0;nick@compooper: ~/quals/report[01;32mnick@compooper[00m:[01;34m~/quals/report[00m$ edited [K[K[K[K[K[K[K"lgit "edited[K[K[K[K[K[K[K[K[K[K[K[K[Klgit "edited the first chapter"
