@@ -5,15 +5,15 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "635026954",
+    "hash" : "0",
     "id" : "F02960C9",
     "lastKnownWriteTime" : 1512762993,
     "last_content_update" : 1512762993643,
     "path" : "~/quals/report/02-deep_learning.Rmd",
     "project_path" : "02-deep_learning.Rmd",
     "properties" : {
-        "cursorPosition" : "6,565",
-        "scrollLine" : "0"
+        "cursorPosition" : "12,111",
+        "scrollLine" : "8"
     },
     "relative_order" : 5,
     "source_on_save" : false,

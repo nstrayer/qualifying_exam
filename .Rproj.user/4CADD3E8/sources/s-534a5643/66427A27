@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1512763017119.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "66427A27",
+    "lastKnownWriteTime" : 1512763199,
+    "last_content_update" : 1512763199638,
+    "path" : "~/quals/report/01-intro.Rmd",
+    "project_path" : "01-intro.Rmd",
+    "properties" : {
+        "cursorPosition" : "43,23",
+        "ignored_words" : "accelerometer,fitbits,HMMs,fitbit,afribulation\n",
+        "scrollLine" : "43"
+    },
+    "relative_order" : 6,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

@@ -1,167 +1,51 @@
-]0;/home/nick/quals/report]0;nick@compooper: ~/quals/report[01;32mnick@compooper[00m:[01;34m~/quals/report[00m$ [K]0;nick@compooper: ~/quals/report[01;32mnick@compooper[00m:[01;34m~/quals/report[00m$ cd ..
-]0;/home/nick/quals]0;nick@compooper: ~/quals[01;32mnick@compooper[00m:[01;34m~/quals[00m$ git clone git@github.com:rstudio/bookdown-demo.git
-Cloning into 'bookdown-demo'...
-remote: Counting objects: 422, done.[K
-Receiving objects:   0% (1/422)   Receiving objects:   1% (5/422)   Receiving objects:   2% (9/422)   Receiving objects:   3% (13/422)   Receiving objects:   4% (17/422)   Receiving objects:   5% (22/422)   Receiving objects:   6% (26/422)   Receiving objects:   7% (30/422)   Receiving objects:   8% (34/422)   Receiving objects:   9% (38/422)   Receiving objects:  10% (43/422)   Receiving objects:  11% (47/422)   Receiving objects:  12% (51/422)   Receiving objects:  13% (55/422)   Receiving objects:  14% (60/422)   Receiving objects:  15% (64/422)   Receiving objects:  16% (68/422)   Receiving objects:  17% (72/422)   Receiving objects:  18% (76/422)   Receiving objects:  19% (81/422)   Receiving objects:  20% (85/422)   Receiving objects:  21% (89/422)   Receiving objects:  22% (93/422)   Receiving objects:  23% (98/422)   Receiving objects:  24% (102/422)   Receiving objects:  25% (106/422)   Receiving objects:  26% (110/422)   Receiving objects:  27% (114/422)   Receiving objects:  28% (119/422)   Receiving objects:  29% (123/422)   Receiving objects:  30% (127/422)   Receiving objects:  31% (131/422)   Receiving objects:  32% (136/422)   Receiving objects:  33% (140/422)   Receiving objects:  34% (144/422)   Receiving objects:  35% (148/422)   Receiving objects:  36% (152/422)   Receiving objects:  37% (157/422)   Receiving objects:  38% (161/422)   Receiving objects:  39% (165/422)   Receiving objects:  40% (169/422)   Receiving objects:  41% (174/422)   Receiving objects:  42% (178/422)   Receiving objects:  43% (182/422)   Receiving objects:  44% (186/422)   Receiving objects:  45% (190/422)   Receiving objects:  46% (195/422)   Receiving objects:  47% (199/422)   Receiving objects:  48% (203/422)   Receiving objects:  49% (207/422)   Receiving objects:  50% (211/422)   Receiving objects:  51% (216/422)   Receiving objects:  52% (220/422)   Receiving objects:  53% (224/422)   Receiving objects:  54% (228/422)   Receiving objects:  55% (233/422)   Receiving objects:  56% (237/422)   Receiving objects:  57% (241/422)   Receiving objects:  58% (245/422)   Receiving objects:  59% (249/422)   Receiving objects:  60% (254/422)   Receiving objects:  61% (258/422)   Receiving objects:  62% (262/422)   Receiving objects:  63% (266/422)   Receiving objects:  64% (271/422)   Receiving objects:  65% (275/422)   Receiving objects:  66% (279/422)   Receiving objects:  67% (283/422)   Receiving objects:  68% (287/422)   Receiving objects:  69% (292/422)   Receiving objects:  70% (296/422)   remote: Total 422 (delta 0), reused 0 (delta 0), pack-reused 422[K
-Receiving objects:  71% (300/422)   Receiving objects:  72% (304/422)   Receiving objects:  73% (309/422)   Receiving objects:  74% (313/422)   Receiving objects:  75% (317/422)   Receiving objects:  76% (321/422)   Receiving objects:  77% (325/422)   Receiving objects:  78% (330/422)   Receiving objects:  79% (334/422)   Receiving objects:  80% (338/422)   Receiving objects:  81% (342/422)   Receiving objects:  82% (347/422)   Receiving objects:  83% (351/422)   Receiving objects:  84% (355/422)   Receiving objects:  85% (359/422)   Receiving objects:  86% (363/422)   Receiving objects:  87% (368/422)   Receiving objects:  88% (372/422)   Receiving objects:  89% (376/422)   Receiving objects:  90% (380/422)   Receiving objects:  91% (385/422)   Receiving objects:  92% (389/422)   Receiving objects:  93% (393/422)   Receiving objects:  94% (397/422)   Receiving objects:  95% (401/422)   Receiving objects:  96% (406/422)   Receiving objects:  97% (410/422)   Receiving objects:  98% (414/422)   Receiving objects:  99% (418/422)   Receiving objects: 100% (422/422)   Receiving objects: 100% (422/422), 426.63 KiB | 0 bytes/s, done.
-Resolving deltas:   0% (0/196)   Resolving deltas:   3% (6/196)   Resolving deltas:   4% (9/196)   Resolving deltas:   5% (10/196)   Resolving deltas:   6% (12/196)   Resolving deltas:   7% (14/196)   Resolving deltas:   8% (16/196)   Resolving deltas:  12% (25/196)   Resolving deltas:  23% (47/196)   Resolving deltas:  25% (49/196)   Resolving deltas:  26% (51/196)   Resolving deltas:  27% (54/196)   Resolving deltas:  34% (68/196)   Resolving deltas:  43% (85/196)   Resolving deltas:  51% (101/196)   Resolving deltas:  58% (114/196)   Resolving deltas:  64% (126/196)   Resolving deltas:  65% (128/196)   Resolving deltas:  69% (136/196)   Resolving deltas:  75% (147/196)   Resolving deltas:  78% (153/196)   Resolving deltas:  79% (156/196)   Resolving deltas:  80% (157/196)   Resolving deltas:  82% (161/196)   Resolving deltas:  87% (172/196)   Resolving deltas:  88% (173/196)   Resolving deltas:  89% (175/196)   Resolving deltas:  91% (180/196)   Resolving deltas:  98% (193/196)   Resolving deltas:  99% (195/196)   Resolving deltas: 100% (196/196)   Resolving deltas: 100% (196/196), done.
-Checking connectivity... done.
-]0;/home/nick/quals]0;nick@compooper: ~/quals[01;32mnick@compooper[00m:[01;34m~/quals[00m$ ls
-total 16K
-drwxr-xr-x  4 nick nick 4.0K Dec  5 11:11 [0m[01;34m.[0m
-drwxr-xr-x 46 nick nick 4.0K Dec  5 11:11 [01;34m..[0m
-drwxr-xr-x  3 nick nick 4.0K Dec  5 11:11 [01;34mbookdown-demo[0m
-drwxr-xr-x  3 nick nick 4.0K Dec  5 10:38 [01;34mreport[0m
-]0;/home/nick/quals]0;nick@compooper: ~/quals[01;32mnick@compooper[00m:[01;34m~/quals[00m$ cd report/
-]0;/home/nick/quals/report]0;nick@compooper: ~/quals/report[01;32mnick@compooper[00m:[01;34m~/quals/report[00m$ ls
-total 1.6M
-drwxr-xr-x 3 nick nick 4.0K Dec  5 10:38 [0m[01;34m.[0m
+ls
+total 1.7M
+drwxr-xr-x 7 nick nick 4.0K Dec  8 14:00 [0m[01;34m.[0m
 drwxr-xr-x 4 nick nick 4.0K Dec  5 11:11 [01;34m..[0m
+-rw-r--r-- 1 nick nick  13K Dec  8 13:59 01-intro.Rmd
+-rw-r--r-- 1 nick nick  23K Dec  8 13:56 02-deep_learning.Rmd
+-rw-r--r-- 1 nick nick  23K Dec  8 13:47 03-sequence_architectures.Rmd
+-rw-r--r-- 1 nick nick  15K Dec  8 13:41 04-future_directions.Rmd
+drwxr-xr-x 5 nick nick 4.0K Dec  8 14:00 [01;34m_book[0m
+-rw-r--r-- 1 nick nick  12K Dec  8 12:23 book.bib
+drwxr-xr-x 3 nick nick 4.0K Dec  8 14:00 [01;34m_bookdown_files[0m
+-rw-r--r-- 1 nick nick  101 Dec  5 11:12 _bookdown.yml
+-rw-r--r-- 1 nick nick   80 Dec  5 11:12 _build.sh
+-rwxr-xr-x 1 nick nick  398 Dec  5 11:12 [01;32m_deploy.sh[0m
+-rw-r--r-- 1 nick nick  115 Dec  5 11:12 DESCRIPTION
+drwxr-xr-x 2 nick nick 4.0K Dec  8 12:26 [01;34mfigures[0m
+drwxr-xr-x 8 nick nick 4.0K Dec  8 13:56 [01;34m.git[0m
+-rw-r--r-- 1 nick nick 1.9K Dec  5 11:48 index.Rmd
+-rw-r--r-- 1 nick nick 6.5K Dec  5 11:12 LICENSE
+-rw-r--r-- 1 nick nick  501 Dec  5 11:12 _output.yml
+-rw-r--r-- 1 nick nick 1.1K Dec  5 11:28 packages.bib
+-rw-r--r-- 1 nick nick  161 Dec  5 11:12 preamble.tex
+-rw-r--r-- 1 nick nick  291 Dec  5 11:12 README.md
 -rw-r--r-- 1 nick nick 767K Dec  4 16:31 report.html
 -rw-r--r-- 1 nick nick 778K Dec  4 17:31 reportother.nb.html
 -rw-r--r-- 1 nick nick 2.6K Dec  4 17:31 reportother.Rmd
 -rw-r--r-- 1 nick nick  688 Dec  4 16:32 report.Rmd
--rw-r--r-- 1 nick nick  205 Dec  5 10:38 report.Rproj
+-rw-r--r-- 1 nick nick  225 Dec  5 11:13 report.Rproj
 drwxr-xr-x 4 nick nick 4.0K Dec  4 16:29 [01;34m.Rproj.user[0m
-]0;/home/nick/quals/report]0;nick@compooper: ~/quals/report[01;32mnick@compooper[00m:[01;34m~/quals/report[00m$ rm -[K.gi[K[K[K[K[K[Kc [Kd ..
-]0;/home/nick/quals]0;nick@compooper: ~/quals[01;32mnick@compooper[00m:[01;34m~/quals[00m$ ls
-total 16K
-drwxr-xr-x  4 nick nick 4.0K Dec  5 11:11 [0m[01;34m.[0m
-drwxr-xr-x 46 nick nick 4.0K Dec  5 11:11 [01;34m..[0m
-drwxr-xr-x  3 nick nick 4.0K Dec  5 11:11 [01;34mbookdown-demo[0m
-drwxr-xr-x  3 nick nick 4.0K Dec  5 10:38 [01;34mreport[0m
-]0;/home/nick/quals]0;nick@compooper: ~/quals[01;32mnick@compooper[00m:[01;34m~/quals[00m$ cd bookdown-demo/
-]0;/home/nick/quals/bookdown-demo]0;nick@compooper: ~/quals/bookdown-demo[01;32mnick@compooper[00m:[01;34m~/quals/bookdown-demo[00m$ ls
-total 100K
-drwxr-xr-x 3 nick nick 4.0K Dec  5 11:11 [0m[01;34m.[0m
-drwxr-xr-x 4 nick nick 4.0K Dec  5 11:11 [01;34m..[0m
--rw-r--r-- 1 nick nick 1.1K Dec  5 11:11 01-intro.Rmd
--rw-r--r-- 1 nick nick   52 Dec  5 11:11 02-literature.Rmd
--rw-r--r-- 1 nick nick   52 Dec  5 11:11 03-method.Rmd
--rw-r--r-- 1 nick nick  114 Dec  5 11:11 04-application.Rmd
--rw-r--r-- 1 nick nick   45 Dec  5 11:11 05-summary.Rmd
--rw-r--r-- 1 nick nick   53 Dec  5 11:11 06-references.Rmd
--rw-r--r-- 1 nick nick  268 Dec  5 11:11 book.bib
--rw-r--r-- 1 nick nick  277 Dec  5 11:11 bookdown-demo.Rproj
--rw-r--r-- 1 nick nick  101 Dec  5 11:11 _bookdown.yml
--rw-r--r-- 1 nick nick   80 Dec  5 11:11 _build.sh
--rwxr-xr-x 1 nick nick  398 Dec  5 11:11 [01;32m_deploy.sh[0m
--rw-r--r-- 1 nick nick  115 Dec  5 11:11 DESCRIPTION
-drwxr-xr-x 8 nick nick 4.0K Dec  5 11:11 [01;34m.git[0m
--rw-r--r-- 1 nick nick   72 Dec  5 11:11 .gitignore
--rw-r--r-- 1 nick nick 1.1K Dec  5 11:11 index.Rmd
--rw-r--r-- 1 nick nick 6.5K Dec  5 11:11 LICENSE
--rw-r--r-- 1 nick nick  501 Dec  5 11:11 _output.yml
--rw-r--r-- 1 nick nick  161 Dec  5 11:11 preamble.tex
--rw-r--r-- 1 nick nick  291 Dec  5 11:11 README.md
--rw-r--r-- 1 nick nick  172 Dec  5 11:11 style.css
--rw-r--r-- 1 nick nick 2.4K Dec  5 11:11 toc.css
--rw-r--r-- 1 nick nick  162 Dec  5 11:11 .travis.yml
-]0;/home/nick/quals/bookdown-demo]0;nick@compooper: ~/quals/bookdown-demo[01;32mnick@compooper[00m:[01;34m~/quals/bookdown-demo[00m$ rm -rf .git
-]0;/home/nick/quals/bookdown-demo]0;nick@compooper: ~/quals/bookdown-demo[01;32mnick@compooper[00m:[01;34m~/quals/bookdown-demo[00m$ ls
-total 96K
-drwxr-xr-x 2 nick nick 4.0K Dec  5 11:11 [0m[01;34m.[0m
-drwxr-xr-x 4 nick nick 4.0K Dec  5 11:11 [01;34m..[0m
--rw-r--r-- 1 nick nick 1.1K Dec  5 11:11 01-intro.Rmd
--rw-r--r-- 1 nick nick   52 Dec  5 11:11 02-literature.Rmd
--rw-r--r-- 1 nick nick   52 Dec  5 11:11 03-method.Rmd
--rw-r--r-- 1 nick nick  114 Dec  5 11:11 04-application.Rmd
--rw-r--r-- 1 nick nick   45 Dec  5 11:11 05-summary.Rmd
--rw-r--r-- 1 nick nick   53 Dec  5 11:11 06-references.Rmd
--rw-r--r-- 1 nick nick  268 Dec  5 11:11 book.bib
--rw-r--r-- 1 nick nick  277 Dec  5 11:11 bookdown-demo.Rproj
--rw-r--r-- 1 nick nick  101 Dec  5 11:11 _bookdown.yml
--rw-r--r-- 1 nick nick   80 Dec  5 11:11 _build.sh
--rwxr-xr-x 1 nick nick  398 Dec  5 11:11 [01;32m_deploy.sh[0m
--rw-r--r-- 1 nick nick  115 Dec  5 11:11 DESCRIPTION
--rw-r--r-- 1 nick nick   72 Dec  5 11:11 .gitignore
--rw-r--r-- 1 nick nick 1.1K Dec  5 11:11 index.Rmd
--rw-r--r-- 1 nick nick 6.5K Dec  5 11:11 LICENSE
--rw-r--r-- 1 nick nick  501 Dec  5 11:11 _output.yml
--rw-r--r-- 1 nick nick  161 Dec  5 11:11 preamble.tex
--rw-r--r-- 1 nick nick  291 Dec  5 11:11 README.md
--rw-r--r-- 1 nick nick  172 Dec  5 11:11 style.css
--rw-r--r-- 1 nick nick 2.4K Dec  5 11:11 toc.css
--rw-r--r-- 1 nick nick  162 Dec  5 11:11 .travis.yml
-]0;/home/nick/quals/bookdown-demo]0;nick@compooper: ~/quals/bookdown-demo[01;32mnick@compooper[00m:[01;34m~/quals/bookdown-demo[00m$ rm book0d[K[K-deno[K[Kmo.Rproj
-rm: cannot remove 'book-demo.Rproj': No such file or directory
-]0;/home/nick/quals/bookdown-demo]0;nick@compooper: ~/quals/bookdown-demo[01;32mnick@compooper[00m:[01;34m~/quals/bookdown-demo[00m$ rm book-demo.Rprojls[Krm book-demo.Rproj[Cd-demo.Rproji-demo.Rprojw-demo.Rprojb-demo.Rproj[1P-demo.Rproj[1P-demo.Rproj[1P-demo.Rprojo-demo.Rprojw-demo.Rprojn-demo.Rproj
-]0;/home/nick/quals/bookdown-demo]0;nick@compooper: ~/quals/bookdown-demo[01;32mnick@compooper[00m:[01;34m~/quals/bookdown-demo[00m$ ls
-total 92K
-drwxr-xr-x 2 nick nick 4.0K Dec  5 11:11 [0m[01;34m.[0m
-drwxr-xr-x 4 nick nick 4.0K Dec  5 11:11 [01;34m..[0m
--rw-r--r-- 1 nick nick 1.1K Dec  5 11:11 01-intro.Rmd
--rw-r--r-- 1 nick nick   52 Dec  5 11:11 02-literature.Rmd
--rw-r--r-- 1 nick nick   52 Dec  5 11:11 03-method.Rmd
--rw-r--r-- 1 nick nick  114 Dec  5 11:11 04-application.Rmd
--rw-r--r-- 1 nick nick   45 Dec  5 11:11 05-summary.Rmd
--rw-r--r-- 1 nick nick   53 Dec  5 11:11 06-references.Rmd
--rw-r--r-- 1 nick nick  268 Dec  5 11:11 book.bib
--rw-r--r-- 1 nick nick  101 Dec  5 11:11 _bookdown.yml
--rw-r--r-- 1 nick nick   80 Dec  5 11:11 _build.sh
--rwxr-xr-x 1 nick nick  398 Dec  5 11:11 [01;32m_deploy.sh[0m
--rw-r--r-- 1 nick nick  115 Dec  5 11:11 DESCRIPTION
--rw-r--r-- 1 nick nick   72 Dec  5 11:11 .gitignore
--rw-r--r-- 1 nick nick 1.1K Dec  5 11:11 index.Rmd
--rw-r--r-- 1 nick nick 6.5K Dec  5 11:11 LICENSE
--rw-r--r-- 1 nick nick  501 Dec  5 11:11 _output.yml
--rw-r--r-- 1 nick nick  161 Dec  5 11:11 preamble.tex
--rw-r--r-- 1 nick nick  291 Dec  5 11:11 README.md
--rw-r--r-- 1 nick nick  172 Dec  5 11:11 style.css
--rw-r--r-- 1 nick nick 2.4K Dec  5 11:11 toc.css
--rw-r--r-- 1 nick nick  162 Dec  5 11:11 .travis.yml
-]0;/home/nick/quals/bookdown-demo]0;nick@compooper: ~/quals/bookdown-demo[01;32mnick@compooper[00m:[01;34m~/quals/bookdown-demo[00m$ cd ..
-]0;/home/nick/quals]0;nick@compooper: ~/quals[01;32mnick@compooper[00m:[01;34m~/quals[00m$ cd re[K[K[K[K[Kcp -r bookdown-demo/* report/
-]0;/home/nick/quals]0;nick@compooper: ~/quals[01;32mnick@compooper[00m:[01;34m~/quals[00m$ ls
-total 16K
-drwxr-xr-x  4 nick nick 4.0K Dec  5 11:11 [0m[01;34m.[0m
-drwxr-xr-x 46 nick nick 4.0K Dec  5 11:11 [01;34m..[0m
-drwxr-xr-x  2 nick nick 4.0K Dec  5 11:11 [01;34mbookdown-demo[0m
-drwxr-xr-x  3 nick nick 4.0K Dec  5 11:12 [01;34mreport[0m
-]0;/home/nick/quals]0;nick@compooper: ~/quals[01;32mnick@compooper[00m:[01;34m~/quals[00m$ cd report/
+-rw-r--r-- 1 nick nick  172 Dec  5 11:12 style.css
+-rw-r--r-- 1 nick nick 2.4K Dec  5 11:12 toc.css
 ]0;/home/nick/quals/report]0;nick@compooper: ~/quals/report[01;32mnick@compooper[00m:[01;34m~/quals/report[00m$ ls
 total 1.7M
-drwxr-xr-x 3 nick nick 4.0K Dec  5 11:12 [0m[01;34m.[0m
+drwxr-xr-x 7 nick nick 4.0K Dec  8 14:00 [0m[01;34m.[0m
 drwxr-xr-x 4 nick nick 4.0K Dec  5 11:11 [01;34m..[0m
--rw-r--r-- 1 nick nick 1.1K Dec  5 11:12 01-intro.Rmd
--rw-r--r-- 1 nick nick   52 Dec  5 11:12 02-literature.Rmd
--rw-r--r-- 1 nick nick   52 Dec  5 11:12 03-method.Rmd
--rw-r--r-- 1 nick nick  114 Dec  5 11:12 04-application.Rmd
--rw-r--r-- 1 nick nick   45 Dec  5 11:12 05-summary.Rmd
--rw-r--r-- 1 nick nick   53 Dec  5 11:12 06-references.Rmd
--rw-r--r-- 1 nick nick  268 Dec  5 11:12 book.bib
+-rw-r--r-- 1 nick nick  13K Dec  8 13:59 01-intro.Rmd
+-rw-r--r-- 1 nick nick  23K Dec  8 13:56 02-deep_learning.Rmd
+-rw-r--r-- 1 nick nick  23K Dec  8 13:47 03-sequence_architectures.Rmd
+-rw-r--r-- 1 nick nick  15K Dec  8 13:41 04-future_directions.Rmd
+drwxr-xr-x 5 nick nick 4.0K Dec  8 14:00 [01;34m_book[0m
+-rw-r--r-- 1 nick nick  12K Dec  8 12:23 book.bib
+drwxr-xr-x 3 nick nick 4.0K Dec  8 14:00 [01;34m_bookdown_files[0m
 -rw-r--r-- 1 nick nick  101 Dec  5 11:12 _bookdown.yml
 -rw-r--r-- 1 nick nick   80 Dec  5 11:12 _build.sh
 -rwxr-xr-x 1 nick nick  398 Dec  5 11:12 [01;32m_deploy.sh[0m
 -rw-r--r-- 1 nick nick  115 Dec  5 11:12 DESCRIPTION
--rw-r--r-- 1 nick nick 1.1K Dec  5 11:12 index.Rmd
--rw-r--r-- 1 nick nick 6.5K Dec  5 11:12 LICENSE
--rw-r--r-- 1 nick nick  501 Dec  5 11:12 _output.yml
--rw-r--r-- 1 nick nick  161 Dec  5 11:12 preamble.tex
--rw-r--r-- 1 nick nick  291 Dec  5 11:12 README.md
--rw-r--r-- 1 nick nick 767K Dec  4 16:31 report.html
--rw-r--r-- 1 nick nick 778K Dec  4 17:31 reportother.nb.html
--rw-r--r-- 1 nick nick 2.6K Dec  4 17:31 reportother.Rmd
--rw-r--r-- 1 nick nick  688 Dec  4 16:32 report.Rmd
--rw-r--r-- 1 nick nick  205 Dec  5 10:38 report.Rproj
-drwxr-xr-x 4 nick nick 4.0K Dec  4 16:29 [01;34m.Rproj.user[0m
--rw-r--r-- 1 nick nick  172 Dec  5 11:12 style.css
--rw-r--r-- 1 nick nick 2.4K Dec  5 11:12 toc.css
-]0;/home/nick/quals/report]0;nick@compooper: ~/quals/report[01;32mnick@compooper[00m:[01;34m~/quals/report[00m$ [K]0;nick@compooper: ~/quals/report[01;32mnick@compooper[00m:[01;34m~/quals/report[00m$ ls[K[Kgit i[K[K[K[K[K[K]0;nick@compooper: ~/quals/report[01;32mnick@compooper[00m:[01;34m~/quals/report[00m$ ls
-total 1.7M
-drwxr-xr-x 6 nick nick 4.0K Dec  5 20:25 [0m[01;34m.[0m
-drwxr-xr-x 4 nick nick 4.0K Dec  5 11:11 [01;34m..[0m
--rw-r--r-- 1 nick nick  13K Dec  5 11:29 01-intro.Rmd
--rw-r--r-- 1 nick nick  17K Dec  5 20:25 02-deep_learning.Rmd
--rw-r--r-- 1 nick nick  827 Dec  5 13:17 03-architectures.Rmd
-drwxr-xr-x 4 nick nick 4.0K Dec  5 20:25 [01;34m_book[0m
--rw-r--r-- 1 nick nick 2.6K Dec  5 20:25 book.bib
-drwxr-xr-x 3 nick nick 4.0K Dec  5 20:25 [01;34m_bookdown_files[0m
--rw-r--r-- 1 nick nick  101 Dec  5 11:12 _bookdown.yml
--rw-r--r-- 1 nick nick   80 Dec  5 11:12 _build.sh
--rwxr-xr-x 1 nick nick  398 Dec  5 11:12 [01;32m_deploy.sh[0m
--rw-r--r-- 1 nick nick  115 Dec  5 11:12 DESCRIPTION
-drwxr-xr-x 2 nick nick 4.0K Dec  5 17:08 [01;34mfigures[0m
+drwxr-xr-x 2 nick nick 4.0K Dec  8 12:26 [01;34mfigures[0m
+drwxr-xr-x 8 nick nick 4.0K Dec  8 13:56 [01;34m.git[0m
 -rw-r--r-- 1 nick nick 1.9K Dec  5 11:48 index.Rmd
 -rw-r--r-- 1 nick nick 6.5K Dec  5 11:12 LICENSE
 -rw-r--r-- 1 nick nick  501 Dec  5 11:12 _output.yml
@@ -176,303 +60,4 @@ drwxr-xr-x 2 nick nick 4.0K Dec  5 17:08 [01;34mfigures[0m
 drwxr-xr-x 4 nick nick 4.0K Dec  4 16:29 [01;34m.Rproj.user[0m
 -rw-r--r-- 1 nick nick  172 Dec  5 11:12 style.css
 -rw-r--r-- 1 nick nick 2.4K Dec  5 11:12 toc.css
-]0;/home/nick/quals/report]0;nick@compooper: ~/quals/report[01;32mnick@compooper[00m:[01;34m~/quals/report[00m$ [K]0;nick@compooper: ~/quals/report[01;32mnick@compooper[00m:[01;34m~/quals/report[00m$ git init
-Initialized empty Git repository in /home/nick/quals/report/.git/
-]0;/home/nick/quals/report]0;nick@compooper: ~/quals/report[01;32mnick@compooper[00m:[01;34m~/quals/report[00m$ git remote add origin git@github.com:nstrayer/quali fying_exam.git
-]0;/home/nick/quals/report]0;nick@compooper: ~/quals/report[01;32mnick@compooper[00m:[01;34m~/quals/report[00m$ lgit "added fi[K[K[K[K[K[K[K[K[K[Kbook[K[K[K[K[K "[K[Kt "bookdown skeleton for report"
-[master (root-commit) 3f96d16] bookdown skeleton for report
- 98 files changed, 5186 insertions(+)
- create mode 100644 .Rproj.user/4CADD3E8/build_options
- create mode 100644 .Rproj.user/4CADD3E8/console06/3D020B46
- create mode 100644 .Rproj.user/4CADD3E8/console06/3D020B46.env
- create mode 100644 .Rproj.user/4CADD3E8/console06/INDEX001
- create mode 100644 .Rproj.user/4CADD3E8/pcs/files-pane.pper
- create mode 100644 .Rproj.user/4CADD3E8/pcs/source-pane.pper
- create mode 100644 .Rproj.user/4CADD3E8/pcs/windowlayoutstate.pper
- create mode 100644 .Rproj.user/4CADD3E8/pcs/workbench-pane.pper
- create mode 100644 .Rproj.user/4CADD3E8/persistent-state
- create mode 100644 .Rproj.user/4CADD3E8/saved_source_markers
- create mode 100644 .Rproj.user/4CADD3E8/sources/prop/1E8B24F6
- create mode 100644 .Rproj.user/4CADD3E8/sources/prop/22B5DB25
- create mode 100644 .Rproj.user/4CADD3E8/sources/prop/2AB6C637
- create mode 100644 .Rproj.user/4CADD3E8/sources/prop/2CAB7BFD
- create mode 100644 .Rproj.user/4CADD3E8/sources/prop/2D7B7DC3
- create mode 100644 .Rproj.user/4CADD3E8/sources/prop/34EB1E76
- create mode 100644 .Rproj.user/4CADD3E8/sources/prop/47CD67CC
- create mode 100644 .Rproj.user/4CADD3E8/sources/prop/6F5279A7
- create mode 100644 .Rproj.user/4CADD3E8/sources/prop/7DF8F1C7
- create mode 100644 .Rproj.user/4CADD3E8/sources/prop/9BFB65B
- create mode 100644 .Rproj.user/4CADD3E8/sources/prop/A2803BED
- create mode 100644 .Rproj.user/4CADD3E8/sources/prop/DC321D24
- create mode 100644 .Rproj.user/4CADD3E8/sources/prop/INDEX
- create mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/2FA1B995-contents
- create mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/3E3214B1
- create mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/3E3214B1-contents
- create mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/6A417AB0-contents
- create mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/7809327B-contents
- create mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/7F20BF5B
- create mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/7F20BF5B-contents
- create mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/8626EDFE-contents
- create mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/BD4C9B13-contents
- create mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/C012BC11-contents
- create mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/C31F18BC-contents
- create mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/CF1B2F7D-contents
- create mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/EABF8429-contents
- create mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/F41D4404-contents
- create mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/F6AED1DE-contents
- create mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/lock_file
- create mode 100644 .Rproj.user/shared/notebooks/3D89CDA7-reportother/1/s/chunks.json
- create mode 100644 .Rproj.user/shared/notebooks/534F4818-index/1/s/chunks.json
- create mode 100644 .Rproj.user/shared/notebooks/7A7899BE-report/1/s/chunks.json
- create mode 100644 .Rproj.user/shared/notebooks/89230BD-03-architectures/1/s/chunks.json
- create mode 100644 .Rproj.user/shared/notebooks/B4887F3E-02-deep_learning/1/4CADD3E8534a5643/chunks.json
- create mode 100644 .Rproj.user/shared/notebooks/B4887F3E-02-deep_learning/1/s/chunks.json
- create mode 100644 .Rproj.user/shared/notebooks/B4887F3E-02-deep_learning/1/s/cvwnuz9urqnpq/000002.csv
- create mode 100644 .Rproj.user/shared/notebooks/B4887F3E-02-deep_learning/1/s/cvwnuz9urqnpq/000003.png
- create mode 100644 .Rproj.user/shared/notebooks/EA93BA34-01-intro/1/s/chunks.json
- create mode 100644 .Rproj.user/shared/notebooks/EDBEA361-03-deep_learning/1/4CADD3E8534a5643/chunks.json
- create mode 100644 .Rproj.user/shared/notebooks/EDBEA361-03-deep_learning/1/s/chunks.json
- create mode 100644 .Rproj.user/shared/notebooks/patch-chunk-names
- create mode 100644 .Rproj.user/shared/notebooks/paths
- create mode 100644 01-intro.Rmd
- create mode 100644 02-deep_learning.Rmd
- create mode 100644 03-architectures.Rmd
- create mode 100644 DESCRIPTION
- create mode 100644 LICENSE
- create mode 100644 README.md
- create mode 100644 _book/architectures.html
- create mode 100644 _book/figures/backprop.png
- create mode 100644 _book/index.html
- create mode 100644 _book/intro.html
- create mode 100644 _book/libs/gitbook-2.6.7/css/fontawesome/fontawesome-webfont.ttf
- create mode 100644 _book/libs/gitbook-2.6.7/css/plugin-bookdown.css
- create mode 100644 _book/libs/gitbook-2.6.7/css/plugin-fontsettings.css
- create mode 100644 _book/libs/gitbook-2.6.7/css/plugin-highlight.css
- create mode 100644 _book/libs/gitbook-2.6.7/css/plugin-search.css
- create mode 100644 _book/libs/gitbook-2.6.7/css/style.css
- create mode 100644 _book/libs/gitbook-2.6.7/js/app.min.js
- create mode 100644 _book/libs/gitbook-2.6.7/js/jquery.highlight.js
- create mode 100644 _book/libs/gitbook-2.6.7/js/lunr.js
- create mode 100644 _book/libs/gitbook-2.6.7/js/plugin-bookdown.js
- create mode 100644 _book/libs/gitbook-2.6.7/js/plugin-fontsettings.js
- create mode 100644 _book/libs/gitbook-2.6.7/js/plugin-search.js
- create mode 100644 _book/libs/gitbook-2.6.7/js/plugin-sharing.js
- create mode 100644 _book/libs/jquery-2.2.3/jquery.min.js
- create mode 100644 _book/neuralnetworks.html
- create mode 100644 _book/placeholder-1.html
- create mode 100644 _book/placeholder.html
- create mode 100644 _book/search_index.json
- create mode 100644 _book/style.css
- create mode 100644 _bookdown.yml
- create mode 100644 _bookdown_files/bookdown-demo_files/figure-html/nice-fig-1.png
- create mode 100644 _build.sh
- create mode 100755 _deploy.sh
- create mode 100644 _output.yml
- create mode 100644 book.bib
- create mode 100644 figures/backprop.png
- create mode 100644 index.Rmd
- create mode 100644 packages.bib
- create mode 100644 preamble.tex
- create mode 100644 report.Rmd
- create mode 100644 report.Rproj
- create mode 100644 report.html
- create mode 100644 reportother.Rmd
- create mode 100644 reportother.nb.html
- create mode 100644 style.css
- create mode 100644 toc.css
-Counting objects: 124, done.
-Delta compression using up to 8 threads.
-Compressing objects:   1% (1/94)   Compressing objects:   2% (2/94)   Compressing objects:   3% (3/94)   Compressing objects:   4% (4/94)   Compressing objects:   5% (5/94)   Compressing objects:   6% (6/94)   Compressing objects:   7% (7/94)   Compressing objects:   8% (8/94)   Compressing objects:   9% (9/94)   Compressing objects:  10% (10/94)   Compressing objects:  11% (11/94)   Compressing objects:  12% (12/94)   Compressing objects:  13% (13/94)   Compressing objects:  14% (14/94)   Compressing objects:  15% (15/94)   Compressing objects:  17% (16/94)   Compressing objects:  18% (17/94)   Compressing objects:  19% (18/94)   Compressing objects:  20% (19/94)   Compressing objects:  21% (20/94)   Compressing objects:  22% (21/94)   Compressing objects:  23% (22/94)   Compressing objects:  24% (23/94)   Compressing objects:  25% (24/94)   Compressing objects:  26% (25/94)   Compressing objects:  27% (26/94)   Compressing objects:  28% (27/94)   Compressing objects:  29% (28/94)   Compressing objects:  30% (29/94)   Compressing objects:  31% (30/94)   Compressing objects:  32% (31/94)   Compressing objects:  34% (32/94)   Compressing objects:  35% (33/94)   Compressing objects:  36% (34/94)   Compressing objects:  37% (35/94)   Compressing objects:  38% (36/94)   Compressing objects:  39% (37/94)   Compressing objects:  40% (38/94)   Compressing objects:  41% (39/94)   Compressing objects:  42% (40/94)   Compressing objects:  43% (41/94)   Compressing objects:  44% (42/94)   Compressing objects:  45% (43/94)   Compressing objects:  46% (44/94)   Compressing objects:  47% (45/94)   Compressing objects:  48% (46/94)   Compressing objects:  50% (47/94)   Compressing objects:  51% (48/94)   Compressing objects:  52% (49/94)   Compressing objects:  53% (50/94)   Compressing objects:  54% (51/94)   Compressing objects:  55% (52/94)   Compressing objects:  56% (53/94)   Compressing objects:  57% (54/94)   Compressing objects:  58% (55/94)   Compressing objects:  59% (56/94)   Compressing objects:  60% (57/94)   Compressing objects:  61% (58/94)   Compressing objects:  62% (59/94)   Compressing objects:  63% (60/94)   Compressing objects:  64% (61/94)   Compressing objects:  65% (62/94)   Compressing objects:  67% (63/94)   Compressing objects:  68% (64/94)   Compressing objects:  69% (65/94)   Compressing objects:  70% (66/94)   Compressing objects:  71% (67/94)   Compressing objects:  72% (68/94)   Compressing objects:  73% (69/94)   Compressing objects:  74% (70/94)   Compressing objects:  75% (71/94)   Compressing objects:  76% (72/94)   Compressing objects:  77% (73/94)   Compressing objects:  78% (74/94)   Compressing objects:  79% (75/94)   Compressing objects:  80% (76/94)   Compressing objects:  81% (77/94)   Compressing objects:  82% (78/94)   Compressing objects:  84% (79/94)   Compressing objects:  85% (80/94)   Compressing objects:  86% (81/94)   Compressing objects:  87% (82/94)   Compressing objects:  88% (83/94)   Compressing objects:  89% (84/94)   Compressing objects:  90% (85/94)   Compressing objects:  91% (86/94)   Compressing objects:  92% (87/94)   Compressing objects:  93% (88/94)   Compressing objects:  94% (89/94)   Compressing objects:  95% (90/94)   Compressing objects:  96% (91/94)   Compressing objects:  97% (92/94)   Compressing objects:  98% (93/94)   Compressing objects: 100% (94/94)   Compressing objects: 100% (94/94), done.
-Writing objects:   0% (1/124)   Writing objects:   1% (2/124)   Writing objects:   2% (3/124)   Writing objects:   3% (4/124)   Writing objects:   4% (5/124)   Writing objects:   5% (7/124)   Writing objects:   6% (8/124)   Writing objects:   7% (9/124)   Writing objects:   8% (10/124)   Writing objects:   9% (12/124)   Writing objects:  10% (13/124)   Writing objects:  11% (14/124)   Writing objects:  12% (15/124)   Writing objects:  13% (17/124)   Writing objects:  14% (18/124)   Writing objects:  15% (19/124)   Writing objects:  16% (20/124)   Writing objects:  17% (22/124)   Writing objects:  18% (23/124)   Writing objects:  19% (24/124)   Writing objects:  20% (25/124)   Writing objects:  21% (27/124)   Writing objects:  22% (28/124)   Writing objects:  23% (29/124)   Writing objects:  24% (30/124)   Writing objects:  25% (31/124)   Writing objects:  26% (33/124)   Writing objects:  28% (35/124)   Writing objects:  29% (36/124)   Writing objects:  30% (38/124)   Writing objects:  31% (39/124)   Writing objects:  32% (40/124)   Writing objects:  33% (41/124)   Writing objects:  34% (43/124)   Writing objects:  35% (44/124)   Writing objects:  36% (45/124)   Writing objects:  37% (46/124)   Writing objects:  38% (48/124)   Writing objects:  39% (49/124)   Writing objects:  40% (50/124)   Writing objects:  41% (51/124)   Writing objects:  42% (53/124)   Writing objects:  43% (54/124)   Writing objects:  44% (55/124)   Writing objects:  45% (56/124)   Writing objects:  46% (58/124)   Writing objects:  47% (59/124)   Writing objects:  48% (60/124)   Writing objects:  49% (61/124)   Writing objects:  50% (62/124)   Writing objects:  51% (64/124)   Writing objects:  52% (65/124)   Writing objects:  53% (66/124)   Writing objects:  54% (67/124)   Writing objects:  55% (69/124)   Writing objects:  56% (70/124)   Writing objects:  57% (71/124)   Writing objects:  58% (72/124)   Writing objects:  59% (74/124)   Writing objects:  60% (75/124)   Writing objects:  61% (76/124)   Writing objects:  62% (77/124)   Writing objects:  63% (79/124)   Writing objects:  64% (80/124)   Writing objects:  65% (81/124)   Writing objects:  66% (82/124)   Writing objects:  67% (84/124)   Writing objects:  68% (85/124)   Writing objects:  69% (86/124)   Writing objects:  70% (87/124)   Writing objects:  71% (89/124)   Writing objects:  72% (90/124)   Writing objects:  73% (91/124)   Writing objects:  74% (92/124)   Writing objects:  75% (93/124)   Writing objects:  76% (95/124)   Writing objects:  77% (96/124)   Writing objects:  78% (97/124)   Writing objects:  79% (98/124)   Writing objects:  80% (100/124)   Writing objects:  81% (101/124)   Writing objects:  82% (102/124)   Writing objects:  83% (103/124)   Writing objects:  84% (105/124)   Writing objects:  85% (106/124)   Writing objects:  86% (107/124)   Writing objects:  87% (108/124)   Writing objects:  88% (110/124)   Writing objects:  89% (111/124)   Writing objects:  90% (112/124)   Writing objects:  91% (113/124)   Writing objects:  92% (115/124)   Writing objects:  93% (116/124)   Writing objects:  94% (117/124)   Writing objects:  95% (118/124)   Writing objects:  96% (120/124)   Writing objects:  97% (121/124)   Writing objects:  98% (122/124)   Writing objects:  99% (123/124)   Writing objects: 100% (124/124)   Writing objects: 100% (124/124), 898.68 KiB | 0 bytes/s, done.
-Total 124 (delta 2), reused 0 (delta 0)
-remote: Resolving deltas:   0% (0/2)   [Kremote: Resolving deltas: 100% (2/2)   [Kremote: Resolving deltas: 100% (2/2), done.[K
-To git@github.com:nstrayer/qualifying_exam.git
- * [new branch]      master -> master
-]0;/home/nick/quals/report]0;nick@compooper: ~/quals/report[01;32mnick@compooper[00m:[01;34m~/quals/report[00m$ [K]0;nick@compooper: ~/quals/report[01;32mnick@compooper[00m:[01;34m~/quals/report[00m$ ls
-total 1.7M
-drwxr-xr-x 7 nick nick 4.0K Dec  6 18:19 [0m[01;34m.[0m
-drwxr-xr-x 4 nick nick 4.0K Dec  5 11:11 [01;34m..[0m
--rw-r--r-- 1 nick nick  13K Dec  5 11:29 01-intro.Rmd
--rw-r--r-- 1 nick nick  23K Dec  6 15:48 02-deep_learning.Rmd
--rw-r--r-- 1 nick nick 6.2K Dec  6 18:19 03-architectures.Rmd
-drwxr-xr-x 5 nick nick 4.0K Dec  6 18:19 [01;34m_book[0m
--rw-r--r-- 1 nick nick 5.6K Dec  6 18:07 book.bib
-drwxr-xr-x 3 nick nick 4.0K Dec  6 18:19 [01;34m_bookdown_files[0m
--rw-r--r-- 1 nick nick  101 Dec  5 11:12 _bookdown.yml
--rw-r--r-- 1 nick nick   80 Dec  5 11:12 _build.sh
--rwxr-xr-x 1 nick nick  398 Dec  5 11:12 [01;32m_deploy.sh[0m
--rw-r--r-- 1 nick nick  115 Dec  5 11:12 DESCRIPTION
-drwxr-xr-x 2 nick nick 4.0K Dec  6 18:02 [01;34mfigures[0m
-drwxr-xr-x 8 nick nick 4.0K Dec  5 20:27 [01;34m.git[0m
--rw-r--r-- 1 nick nick 1.9K Dec  5 11:48 index.Rmd
--rw-r--r-- 1 nick nick 6.5K Dec  5 11:12 LICENSE
--rw-r--r-- 1 nick nick  501 Dec  5 11:12 _output.yml
--rw-r--r-- 1 nick nick 1.1K Dec  5 11:28 packages.bib
--rw-r--r-- 1 nick nick  161 Dec  5 11:12 preamble.tex
--rw-r--r-- 1 nick nick  291 Dec  5 11:12 README.md
--rw-r--r-- 1 nick nick 767K Dec  4 16:31 report.html
--rw-r--r-- 1 nick nick 778K Dec  4 17:31 reportother.nb.html
--rw-r--r-- 1 nick nick 2.6K Dec  4 17:31 reportother.Rmd
--rw-r--r-- 1 nick nick  688 Dec  4 16:32 report.Rmd
--rw-r--r-- 1 nick nick  225 Dec  5 11:13 report.Rproj
-drwxr-xr-x 4 nick nick 4.0K Dec  4 16:29 [01;34m.Rproj.user[0m
--rw-r--r-- 1 nick nick  172 Dec  5 11:12 style.css
--rw-r--r-- 1 nick nick 2.4K Dec  5 11:12 toc.css
-]0;/home/nick/quals/report]0;nick@compooper: ~/quals/report[01;32mnick@compooper[00m:[01;34m~/quals/report[00m$ [K]0;nick@compooper: ~/quals/report[01;32mnick@compooper[00m:[01;34m~/quals/report[00m$ ls
-total 1.7M
-drwxr-xr-x 7 nick nick 4.0K Dec  6 18:19 [0m[01;34m.[0m
-drwxr-xr-x 4 nick nick 4.0K Dec  5 11:11 [01;34m..[0m
--rw-r--r-- 1 nick nick  13K Dec  5 11:29 01-intro.Rmd
--rw-r--r-- 1 nick nick  23K Dec  6 15:48 02-deep_learning.Rmd
--rw-r--r-- 1 nick nick 6.2K Dec  6 18:19 03-architectures.Rmd
-drwxr-xr-x 5 nick nick 4.0K Dec  6 18:19 [01;34m_book[0m
--rw-r--r-- 1 nick nick 5.6K Dec  6 18:07 book.bib
-drwxr-xr-x 3 nick nick 4.0K Dec  6 18:19 [01;34m_bookdown_files[0m
--rw-r--r-- 1 nick nick  101 Dec  5 11:12 _bookdown.yml
--rw-r--r-- 1 nick nick   80 Dec  5 11:12 _build.sh
--rwxr-xr-x 1 nick nick  398 Dec  5 11:12 [01;32m_deploy.sh[0m
--rw-r--r-- 1 nick nick  115 Dec  5 11:12 DESCRIPTION
-drwxr-xr-x 2 nick nick 4.0K Dec  6 18:02 [01;34mfigures[0m
-drwxr-xr-x 8 nick nick 4.0K Dec  5 20:27 [01;34m.git[0m
--rw-r--r-- 1 nick nick 1.9K Dec  5 11:48 index.Rmd
--rw-r--r-- 1 nick nick 6.5K Dec  5 11:12 LICENSE
--rw-r--r-- 1 nick nick  501 Dec  5 11:12 _output.yml
--rw-r--r-- 1 nick nick 1.1K Dec  5 11:28 packages.bib
--rw-r--r-- 1 nick nick  161 Dec  5 11:12 preamble.tex
--rw-r--r-- 1 nick nick  291 Dec  5 11:12 README.md
--rw-r--r-- 1 nick nick 767K Dec  4 16:31 report.html
--rw-r--r-- 1 nick nick 778K Dec  4 17:31 reportother.nb.html
--rw-r--r-- 1 nick nick 2.6K Dec  4 17:31 reportother.Rmd
--rw-r--r-- 1 nick nick  688 Dec  4 16:32 report.Rmd
--rw-r--r-- 1 nick nick  225 Dec  5 11:13 report.Rproj
-drwxr-xr-x 4 nick nick 4.0K Dec  4 16:29 [01;34m.Rproj.user[0m
--rw-r--r-- 1 nick nick  172 Dec  5 11:12 style.css
--rw-r--r-- 1 nick nick 2.4K Dec  5 11:12 toc.css
-]0;/home/nick/quals/report]0;nick@compooper: ~/quals/report[01;32mnick@compooper[00m:[01;34m~/quals/report[00m$ lgit "lots of updates, chap[K[K[K[K[K nn chapter done deent headway [K[K[K[K[K[K[K[K[K[K[K[K[Kc[Kecent headway on RNNs"
-[master 6ca90f4] lots of updates, nn chapter done decent headway on RNNs
- 37 files changed, 1091 insertions(+), 262 deletions(-)
- create mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/682756F6
- create mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/682756F6-contents
- create mode 100644 .Rproj.user/shared/notebooks/89230BD-03-architectures/1/4CADD3E8534a5643/chunks.json
- create mode 100644 .Rproj.user/shared/notebooks/B4887F3E-02-deep_learning/1/s/cy1za1cvaeukk/000019.csv
- create mode 100644 .Rproj.user/shared/notebooks/B4887F3E-02-deep_learning/1/s/cy1za1cvaeukk/00001a.metadata
- create mode 100644 .Rproj.user/shared/notebooks/B4887F3E-02-deep_learning/1/s/cy1za1cvaeukk/00001a.png
- create mode 100644 .Rproj.user/shared/notebooks/B4887F3E-02-deep_learning/1/s/cy1za1cvaeukk/00001a.snapshot
- rewrite 03-architectures.Rmd (94%)
- create mode 100644 _book/bookdown-demo_files/figure-html/unnamed-chunk-21-1.png
- create mode 100644 _book/bookdown-demo_files/figure-html/unnamed-chunk-4-1.png
- create mode 100644 _book/figures/handwriting_rnn.png
- create mode 100644 _book/figures/rnn_compact.png
- create mode 100644 _book/figures/rnn_unrolled.png
- rewrite _book/search_index.json (99%)
- create mode 100644 _bookdown_files/bookdown-demo_files/figure-html/unnamed-chunk-21-1.png
- create mode 100644 _bookdown_files/bookdown-demo_files/figure-html/unnamed-chunk-4-1.png
- create mode 100644 figures/handwriting_rnn.png
- create mode 100644 figures/rnn_compact.png
- create mode 100644 figures/rnn_unrolled.png
-Counting objects: 52, done.
-Delta compression using up to 8 threads.
-Compressing objects:   2% (1/44)   Compressing objects:   4% (2/44)   Compressing objects:   6% (3/44)   Compressing objects:   9% (4/44)   Compressing objects:  11% (5/44)   Compressing objects:  13% (6/44)   Compressing objects:  15% (7/44)   Compressing objects:  18% (8/44)   Compressing objects:  20% (9/44)   Compressing objects:  22% (10/44)   Compressing objects:  25% (11/44)   Compressing objects:  27% (12/44)   Compressing objects:  29% (13/44)   Compressing objects:  31% (14/44)   Compressing objects:  34% (15/44)   Compressing objects:  36% (16/44)   Compressing objects:  38% (17/44)   Compressing objects:  40% (18/44)   Compressing objects:  43% (19/44)   Compressing objects:  45% (20/44)   Compressing objects:  47% (21/44)   Compressing objects:  50% (22/44)   Compressing objects:  52% (23/44)   Compressing objects:  54% (24/44)   Compressing objects:  56% (25/44)   Compressing objects:  59% (26/44)   Compressing objects:  61% (27/44)   Compressing objects:  63% (28/44)   Compressing objects:  65% (29/44)   Compressing objects:  68% (30/44)   Compressing objects:  70% (31/44)   Compressing objects:  72% (32/44)   Compressing objects:  75% (33/44)   Compressing objects:  77% (34/44)   Compressing objects:  79% (35/44)   Compressing objects:  81% (36/44)   Compressing objects:  84% (37/44)   Compressing objects:  86% (38/44)   Compressing objects:  88% (39/44)   Compressing objects:  90% (40/44)   Compressing objects:  93% (41/44)   Compressing objects:  95% (42/44)   Compressing objects:  97% (43/44)   Compressing objects: 100% (44/44)   Compressing objects: 100% (44/44), done.
-Writing objects:   1% (1/52)   Writing objects:   3% (2/52)   Writing objects:   5% (3/52)   Writing objects:   7% (4/52)   Writing objects:   9% (5/52)   Writing objects:  11% (6/52)   Writing objects:  13% (7/52)   Writing objects:  15% (8/52)   Writing objects:  17% (9/52)   Writing objects:  19% (10/52)   Writing objects:  21% (11/52)   Writing objects:  23% (12/52)   Writing objects:  25% (13/52)   Writing objects:  26% (14/52)   Writing objects:  28% (15/52)   Writing objects:  30% (16/52)   Writing objects:  32% (17/52)   Writing objects:  34% (18/52)   Writing objects:  36% (19/52)   Writing objects:  38% (20/52)   Writing objects:  40% (21/52)   Writing objects:  42% (22/52)   Writing objects:  44% (23/52)   Writing objects:  46% (24/52)   Writing objects:  48% (25/52)   Writing objects:  50% (26/52)   Writing objects:  51% (27/52)   Writing objects:  53% (28/52)   Writing objects:  57% (30/52)   Writing objects:  59% (31/52)   Writing objects:  61% (32/52)   Writing objects:  63% (33/52)   Writing objects:  65% (34/52)   Writing objects:  67% (35/52)   Writing objects:  69% (36/52)   Writing objects:  71% (37/52)   Writing objects:  75% (39/52)   Writing objects:  76% (40/52)   Writing objects:  80% (42/52)   Writing objects:  82% (43/52)   Writing objects:  84% (44/52)   Writing objects:  86% (45/52)   Writing objects:  88% (46/52)   Writing objects:  90% (47/52)   Writing objects:  92% (48/52)   Writing objects:  94% (49/52)   Writing objects:  96% (50/52)   Writing objects:  98% (51/52)   Writing objects: 100% (52/52)   Writing objects: 100% (52/52), 2.51 MiB | 0 bytes/s, done.
-Total 52 (delta 18), reused 0 (delta 0)
-remote: Resolving deltas:   0% (0/18)   [Kremote: Resolving deltas:   5% (1/18)   [Kremote: Resolving deltas:  11% (2/18)   [Kremote: Resolving deltas:  16% (3/18)   [Kremote: Resolving deltas:  22% (4/18)   [Kremote: Resolving deltas:  27% (5/18)   [Kremote: Resolving deltas:  33% (6/18)   [Kremote: Resolving deltas:  38% (7/18)   [Kremote: Resolving deltas:  44% (8/18)   [Kremote: Resolving deltas:  55% (10/18)   [Kremote: Resolving deltas:  61% (11/18)   [Kremote: Resolving deltas:  66% (12/18)   [Kremote: Resolving deltas:  77% (14/18)   [Kremote: Resolving deltas:  88% (16/18)   [Kremote: Resolving deltas:  94% (17/18)   [Kremote: Resolving deltas: 100% (18/18)   [Kremote: Resolving deltas: 100% (18/18), completed with 13 local objects.[K
-To git@github.com:nstrayer/qualifying_exam.git
-   3f96d16..6ca90f4  master -> master
-]0;/home/nick/quals/report]0;nick@compooper: ~/quals/report[01;32mnick@compooper[00m:[01;34m~/quals/report[00m$ [K]0;nick@compooper: ~/quals/report[01;32mnick@compooper[00m:[01;34m~/quals/report[00m$ lgit "added start to lstm section"
-[master 0ab449c] added start to lstm section
- 16 files changed, 305 insertions(+), 25 deletions(-)
- rewrite .Rproj.user/4CADD3E8/console06/INDEX001 (69%)
- rewrite .Rproj.user/shared/notebooks/B4887F3E-02-deep_learning/1/s/cy1za1cvaeukk/00001a.png (91%)
- create mode 100644 _book/figures/lstm_cell.png
- rewrite _book/search_index.json (99%)
- create mode 100644 figures/lstm_cell.png
-Counting objects: 30, done.
-Delta compression using up to 8 threads.
-Compressing objects:   3% (1/27)   Compressing objects:   7% (2/27)   Compressing objects:  11% (3/27)   Compressing objects:  14% (4/27)   Compressing objects:  18% (5/27)   Compressing objects:  22% (6/27)   Compressing objects:  25% (7/27)   Compressing objects:  29% (8/27)   Compressing objects:  33% (9/27)   Compressing objects:  37% (10/27)   Compressing objects:  40% (11/27)   Compressing objects:  44% (12/27)   Compressing objects:  48% (13/27)   Compressing objects:  51% (14/27)   Compressing objects:  55% (15/27)   Compressing objects:  59% (16/27)   Compressing objects:  62% (17/27)   Compressing objects:  66% (18/27)   Compressing objects:  70% (19/27)   Compressing objects:  74% (20/27)   Compressing objects:  77% (21/27)   Compressing objects:  81% (22/27)   Compressing objects:  85% (23/27)   Compressing objects:  88% (24/27)   Compressing objects:  92% (25/27)   Compressing objects:  96% (26/27)   Compressing objects: 100% (27/27)   Compressing objects: 100% (27/27), done.
-Writing objects:   3% (1/30)   Writing objects:   6% (2/30)   Writing objects:  10% (3/30)   Writing objects:  13% (4/30)   Writing objects:  16% (5/30)   Writing objects:  20% (6/30)   Writing objects:  23% (7/30)   Writing objects:  26% (8/30)   Writing objects:  30% (9/30)   Writing objects:  33% (10/30)   Writing objects:  36% (11/30)   Writing objects:  40% (12/30)   Writing objects:  43% (13/30)   Writing objects:  46% (14/30)   Writing objects:  50% (15/30)   Writing objects:  53% (16/30)   Writing objects:  56% (17/30)   Writing objects:  60% (18/30)   Writing objects:  63% (19/30)   Writing objects:  66% (20/30)   Writing objects:  70% (21/30)   Writing objects:  73% (22/30)   Writing objects:  76% (23/30)   Writing objects:  80% (24/30)   Writing objects:  83% (25/30)   Writing objects:  86% (26/30)   Writing objects:  90% (27/30)   Writing objects:  93% (28/30)   Writing objects:  96% (29/30)   Writing objects: 100% (30/30)   Writing objects: 100% (30/30), 257.55 KiB | 0 bytes/s, done.
-Total 30 (delta 18), reused 0 (delta 0)
-remote: Resolving deltas:   0% (0/18)   [Kremote: Resolving deltas:   5% (1/18)   [Kremote: Resolving deltas:  11% (2/18)   [Kremote: Resolving deltas:  16% (3/18)   [Kremote: Resolving deltas:  22% (4/18)   [Kremote: Resolving deltas:  27% (5/18)   [Kremote: Resolving deltas:  33% (6/18)   [Kremote: Resolving deltas:  38% (7/18)   [Kremote: Resolving deltas:  44% (8/18)   [Kremote: Resolving deltas:  50% (9/18)   [Kremote: Resolving deltas:  61% (11/18)   [Kremote: Resolving deltas:  66% (12/18)   [Kremote: Resolving deltas:  72% (13/18)   [Kremote: Resolving deltas:  77% (14/18)   [Kremote: Resolving deltas:  83% (15/18)   [Kremote: Resolving deltas:  88% (16/18)   [Kremote: Resolving deltas:  94% (17/18)   [Kremote: Resolving deltas: 100% (18/18)   [Kremote: Resolving deltas: 100% (18/18), completed with 17 local objects.[K
-To git@github.com:nstrayer/qualifying_exam.git
-   6ca90f4..0ab449c  master -> master
-]0;/home/nick/quals/report]0;nick@compooper: ~/quals/report[01;32mnick@compooper[00m:[01;34m~/quals/report[00m$ lgit "gru section almost done"
-[master 92a1354] gru section almost done
- 13 files changed, 122 insertions(+), 24 deletions(-)
- create mode 100644 _book/figures/gru_cell.png
- create mode 100644 figures/gru_cell.png
-Counting objects: 20, done.
-Delta compression using up to 8 threads.
-Compressing objects:   5% (1/20)   Compressing objects:  10% (2/20)   Compressing objects:  15% (3/20)   Compressing objects:  20% (4/20)   Compressing objects:  25% (5/20)   Compressing objects:  30% (6/20)   Compressing objects:  35% (7/20)   Compressing objects:  40% (8/20)   Compressing objects:  45% (9/20)   Compressing objects:  50% (10/20)   Compressing objects:  55% (11/20)   Compressing objects:  60% (12/20)   Compressing objects:  65% (13/20)   Compressing objects:  70% (14/20)   Compressing objects:  75% (15/20)   Compressing objects:  80% (16/20)   Compressing objects:  85% (17/20)   Compressing objects:  90% (18/20)   Compressing objects:  95% (19/20)   Compressing objects: 100% (20/20)   Compressing objects: 100% (20/20), done.
-Writing objects:   5% (1/20)   Writing objects:  10% (2/20)   Writing objects:  15% (3/20)   Writing objects:  20% (4/20)   Writing objects:  25% (5/20)   Writing objects:  30% (6/20)   Writing objects:  35% (7/20)   Writing objects:  40% (8/20)   Writing objects:  45% (9/20)   Writing objects:  50% (10/20)   Writing objects:  55% (11/20)   Writing objects:  60% (12/20)   Writing objects:  65% (13/20)   Writing objects:  70% (14/20)   Writing objects:  75% (15/20)   Writing objects:  80% (16/20)   Writing objects:  85% (17/20)   Writing objects:  90% (18/20)   Writing objects:  95% (19/20)   Writing objects: 100% (20/20)   Writing objects: 100% (20/20), 125.73 KiB | 0 bytes/s, done.
-Total 20 (delta 13), reused 0 (delta 0)
-remote: Resolving deltas:   0% (0/13)   [Kremote: Resolving deltas:   7% (1/13)   [Kremote: Resolving deltas:  15% (2/13)   [Kremote: Resolving deltas:  23% (3/13)   [Kremote: Resolving deltas:  30% (4/13)   [Kremote: Resolving deltas:  38% (5/13)   [Kremote: Resolving deltas:  46% (6/13)   [Kremote: Resolving deltas:  53% (7/13)   [Kremote: Resolving deltas:  61% (8/13)   [Kremote: Resolving deltas:  76% (10/13)   [Kremote: Resolving deltas:  84% (11/13)   [Kremote: Resolving deltas:  92% (12/13)   [Kremote: Resolving deltas: 100% (13/13)   [Kremote: Resolving deltas: 100% (13/13), completed with 12 local objects.[K
-To git@github.com:nstrayer/qualifying_exam.git
-   0ab449c..92a1354  master -> master
-]0;/home/nick/quals/report]0;nick@compooper: ~/quals/report[01;32mnick@compooper[00m:[01;34m~/quals/report[00m$ [K]0;nick@compooper: ~/quals/report[01;32mnick@compooper[00m:[01;34m~/quals/report[00m$ l[K]0;nick@compooper: ~/quals/report[01;32mnick@compooper[00m:[01;34m~/quals/report[00m$ lgit "done with architectures chapet[K[K[Kpter"
-[master 308000f] done with architectures chapter
- 20 files changed, 252 insertions(+), 62 deletions(-)
- delete mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/7F20BF5B
- delete mode 100644 .Rproj.user/shared/notebooks/B4887F3E-02-deep_learning/1/4CADD3E8534a5643/chunks.json
- create mode 100644 _book/figures/convolutional_explainer.jpeg
- create mode 100644 _book/figures/output_rnn.png
- create mode 100644 figures/convolutional_explainer.jpeg
- create mode 100644 figures/output_rnn.png
-Counting objects: 28, done.
-Delta compression using up to 8 threads.
-Compressing objects:   4% (1/25)   Compressing objects:   8% (2/25)   Compressing objects:  12% (3/25)   Compressing objects:  16% (4/25)   Compressing objects:  20% (5/25)   Compressing objects:  24% (6/25)   Compressing objects:  28% (7/25)   Compressing objects:  32% (8/25)   Compressing objects:  36% (9/25)   Compressing objects:  40% (10/25)   Compressing objects:  44% (11/25)   Compressing objects:  48% (12/25)   Compressing objects:  52% (13/25)   Compressing objects:  56% (14/25)   Compressing objects:  60% (15/25)   Compressing objects:  64% (16/25)   Compressing objects:  68% (17/25)   Compressing objects:  72% (18/25)   Compressing objects:  76% (19/25)   Compressing objects:  80% (20/25)   Compressing objects:  84% (21/25)   Compressing objects:  88% (22/25)   Compressing objects:  92% (23/25)   Compressing objects:  96% (24/25)   Compressing objects: 100% (25/25)   Compressing objects: 100% (25/25), done.
-Writing objects:   3% (1/28)   Writing objects:   7% (2/28)   Writing objects:  10% (3/28)   Writing objects:  14% (4/28)   Writing objects:  17% (5/28)   Writing objects:  21% (6/28)   Writing objects:  25% (7/28)   Writing objects:  28% (8/28)   Writing objects:  32% (9/28)   Writing objects:  35% (10/28)   Writing objects:  39% (11/28)   Writing objects:  42% (12/28)   Writing objects:  46% (13/28)   Writing objects:  50% (14/28)   Writing objects:  53% (15/28)   Writing objects:  57% (16/28)   Writing objects:  60% (17/28)   Writing objects:  64% (18/28)   Writing objects:  67% (19/28)   Writing objects:  71% (20/28)   Writing objects:  75% (21/28)   Writing objects:  78% (22/28)   Writing objects:  82% (23/28)   Writing objects:  85% (24/28)   Writing objects:  89% (25/28)   Writing objects:  92% (26/28)   Writing objects:  96% (27/28)   Writing objects: 100% (28/28)   Writing objects: 100% (28/28), 391.83 KiB | 0 bytes/s, done.
-Total 28 (delta 16), reused 0 (delta 0)
-remote: Resolving deltas:   0% (0/16)   [Kremote: Resolving deltas:   6% (1/16)   [Kremote: Resolving deltas:  12% (2/16)   [Kremote: Resolving deltas:  18% (3/16)   [Kremote: Resolving deltas:  25% (4/16)   [Kremote: Resolving deltas:  31% (5/16)   [Kremote: Resolving deltas:  37% (6/16)   [Kremote: Resolving deltas:  43% (7/16)   [Kremote: Resolving deltas:  50% (8/16)   [Kremote: Resolving deltas:  56% (9/16)   [Kremote: Resolving deltas:  62% (10/16)   [Kremote: Resolving deltas:  75% (12/16)   [Kremote: Resolving deltas:  81% (13/16)   [Kremote: Resolving deltas:  87% (14/16)   [Kremote: Resolving deltas:  93% (15/16)   [Kremote: Resolving deltas: 100% (16/16)   [Kremote: Resolving deltas: 100% (16/16), completed with 15 local objects.[K
-To git@github.com:nstrayer/qualifying_exam.git
-   92a1354..308000f  master -> master
-]0;/home/nick/quals/report]0;nick@compooper: ~/quals/report[01;32mnick@compooper[00m:[01;34m~/quals/report[00m$ [K]0;nick@compooper: ~/quals/report[01;32mnick@compooper[00m:[01;34m~/quals/report[00m$ lgit "spell checked the future directions section"
-[master 97ba07c] spell checked the future directions section
- 43 files changed, 1563 insertions(+), 96 deletions(-)
- create mode 100644 .Rproj.user/4CADD3E8/sources/prop/AE447C74
- create mode 100644 .Rproj.user/4CADD3E8/sources/prop/D2A5B81E
- create mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/2ABFC372
- create mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/2ABFC372-contents
- create mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/3CE12D39-contents
- create mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/5A76B209
- create mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/5A76B209-contents
- delete mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/682756F6
- create mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/8549A7AF-contents
- create mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/B1F35A2F
- rename 03-architectures.Rmd => .Rproj.user/4CADD3E8/sources/s-534a5643/B1F35A2F-contents (100%)
- create mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/F5E31349-contents
- create mode 100644 .Rproj.user/shared/notebooks/23D311B2-04-future_directions/1/4CADD3E8534a5643/chunks.json
- create mode 100644 .Rproj.user/shared/notebooks/23D311B2-04-future_directions/1/s/chunks.json
- create mode 100644 .Rproj.user/shared/notebooks/43E314EC-03-sequence_architectures/1/s/chunks.json
- delete mode 100644 .Rproj.user/shared/notebooks/B4887F3E-02-deep_learning/1/s/cy1za1cvaeukk/000019.csv
- delete mode 100644 .Rproj.user/shared/notebooks/B4887F3E-02-deep_learning/1/s/cy1za1cvaeukk/00001a.metadata
- delete mode 100644 .Rproj.user/shared/notebooks/B4887F3E-02-deep_learning/1/s/cy1za1cvaeukk/00001a.png
- delete mode 100644 .Rproj.user/shared/notebooks/B4887F3E-02-deep_learning/1/s/cy1za1cvaeukk/00001a.snapshot
- create mode 100644 03-sequence_architectures.Rmd
- create mode 100644 04-future_directions.Rmd
- create mode 100644 _book/figures/gan_example.png
- create mode 100644 _book/figures/semi-supervised.png
- create mode 100644 _book/future.html
- rewrite _book/search_index.json (99%)
- create mode 100644 figures/gan_example.png
- create mode 100644 figures/semi-supervised.png
-Counting objects: 47, done.
-Delta compression using up to 8 threads.
-Compressing objects:   2% (1/40)   Compressing objects:   5% (2/40)   Compressing objects:   7% (3/40)   Compressing objects:  10% (4/40)   Compressing objects:  12% (5/40)   Compressing objects:  15% (6/40)   Compressing objects:  17% (7/40)   Compressing objects:  20% (8/40)   Compressing objects:  22% (9/40)   Compressing objects:  25% (10/40)   Compressing objects:  27% (11/40)   Compressing objects:  30% (12/40)   Compressing objects:  32% (13/40)   Compressing objects:  35% (14/40)   Compressing objects:  37% (15/40)   Compressing objects:  40% (16/40)   Compressing objects:  42% (17/40)   Compressing objects:  45% (18/40)   Compressing objects:  47% (19/40)   Compressing objects:  50% (20/40)   Compressing objects:  52% (21/40)   Compressing objects:  55% (22/40)   Compressing objects:  57% (23/40)   Compressing objects:  60% (24/40)   Compressing objects:  62% (25/40)   Compressing objects:  65% (26/40)   Compressing objects:  67% (27/40)   Compressing objects:  70% (28/40)   Compressing objects:  72% (29/40)   Compressing objects:  75% (30/40)   Compressing objects:  77% (31/40)   Compressing objects:  80% (32/40)   Compressing objects:  82% (33/40)   Compressing objects:  85% (34/40)   Compressing objects:  87% (35/40)   Compressing objects:  90% (36/40)   Compressing objects:  92% (37/40)   Compressing objects:  95% (38/40)   Compressing objects:  97% (39/40)   Compressing objects: 100% (40/40)   Compressing objects: 100% (40/40), done.
-Writing objects:   2% (1/47)   Writing objects:   4% (2/47)   Writing objects:   6% (3/47)   Writing objects:   8% (4/47)   Writing objects:  10% (5/47)   Writing objects:  12% (6/47)   Writing objects:  14% (7/47)   Writing objects:  17% (8/47)   Writing objects:  19% (9/47)   Writing objects:  21% (10/47)   Writing objects:  23% (11/47)   Writing objects:  25% (12/47)   Writing objects:  27% (13/47)   Writing objects:  29% (14/47)   Writing objects:  31% (15/47)   Writing objects:  34% (16/47)   Writing objects:  38% (18/47)   Writing objects:  40% (19/47)   Writing objects:  42% (20/47)   Writing objects:  44% (21/47)   Writing objects:  46% (22/47)   Writing objects:  48% (23/47)   Writing objects:  51% (24/47)   Writing objects:  53% (25/47)   Writing objects:  55% (26/47)   Writing objects:  57% (27/47)   Writing objects:  59% (28/47)   Writing objects:  61% (29/47)   Writing objects:  63% (30/47)   Writing objects:  65% (31/47)   Writing objects:  68% (32/47)   Writing objects:  70% (33/47)   Writing objects:  72% (34/47)   Writing objects:  74% (35/47)   Writing objects:  76% (36/47)   Writing objects:  78% (37/47)   Writing objects:  80% (38/47)   Writing objects:  82% (39/47)   Writing objects:  85% (40/47)   Writing objects:  87% (41/47)   Writing objects:  89% (42/47)   Writing objects:  91% (43/47)   Writing objects:  93% (44/47)   Writing objects:  95% (45/47)   Writing objects:  97% (46/47)   Writing objects: 100% (47/47)   Writing objects: 100% (47/47), 256.08 KiB | 0 bytes/s, done.
-Total 47 (delta 19), reused 0 (delta 0)
-remote: Resolving deltas:   0% (0/19)   [Kremote: Resolving deltas:  10% (2/19)   [Kremote: Resolving deltas:  15% (3/19)   [Kremote: Resolving deltas:  21% (4/19)   [Kremote: Resolving deltas:  26% (5/19)   [Kremote: Resolving deltas:  31% (6/19)   [Kremote: Resolving deltas:  36% (7/19)   [Kremote: Resolving deltas:  42% (8/19)   [Kremote: Resolving deltas:  47% (9/19)   [Kremote: Resolving deltas:  52% (10/19)   [Kremote: Resolving deltas:  57% (11/19)   [Kremote: Resolving deltas:  63% (12/19)   [Kremote: Resolving deltas:  68% (13/19)   [Kremote: Resolving deltas:  73% (14/19)   [Kremote: Resolving deltas:  78% (15/19)   [Kremote: Resolving deltas:  84% (16/19)   [Kremote: Resolving deltas:  89% (17/19)   [Kremote: Resolving deltas:  94% (18/19)   [Kremote: Resolving deltas: 100% (19/19)   [Kremote: Resolving deltas: 100% (19/19), completed with 16 local objects.[K
-To git@github.com:nstrayer/qualifying_exam.git
-   308000f..97ba07c  master -> master
-]0;/home/nick/quals/report]0;nick@compooper: ~/quals/report[01;32mnick@compooper[00m:[01;34m~/quals/report[00m$ lgit :[K"spellcheck of sequences [K[K architecture chapter done"
-[master 979bdb3] spellcheck of sequence architecture chapter done
- 9 files changed, 162 insertions(+), 118 deletions(-)
- create mode 100644 .Rproj.user/shared/notebooks/43E314EC-03-sequence_architectures/1/4CADD3E8534a5643/chunks.json
- rewrite _book/search_index.json (99%)
-Counting objects: 21, done.
-Delta compression using up to 8 threads.
-Compressing objects:   5% (1/18)   Compressing objects:  11% (2/18)   Compressing objects:  16% (3/18)   Compressing objects:  22% (4/18)   Compressing objects:  27% (5/18)   Compressing objects:  33% (6/18)   Compressing objects:  38% (7/18)   Compressing objects:  44% (8/18)   Compressing objects:  50% (9/18)   Compressing objects:  55% (10/18)   Compressing objects:  61% (11/18)   Compressing objects:  66% (12/18)   Compressing objects:  72% (13/18)   Compressing objects:  77% (14/18)   Compressing objects:  83% (15/18)   Compressing objects:  88% (16/18)   Compressing objects:  94% (17/18)   Compressing objects: 100% (18/18)   Compressing objects: 100% (18/18), done.
-Writing objects:   4% (1/21)   Writing objects:   9% (2/21)   Writing objects:  14% (3/21)   Writing objects:  19% (4/21)   Writing objects:  23% (5/21)   Writing objects:  28% (6/21)   Writing objects:  33% (7/21)   Writing objects:  38% (8/21)   Writing objects:  42% (9/21)   Writing objects:  47% (10/21)   Writing objects:  52% (11/21)   Writing objects:  57% (12/21)   Writing objects:  61% (13/21)   Writing objects:  66% (14/21)   Writing objects:  71% (15/21)   Writing objects:  76% (16/21)   Writing objects:  80% (17/21)   Writing objects:  85% (18/21)   Writing objects:  90% (19/21)   Writing objects:  95% (20/21)   Writing objects: 100% (21/21)   Writing objects: 100% (21/21), 5.84 KiB | 0 bytes/s, done.
-Total 21 (delta 11), reused 0 (delta 0)
-remote: Resolving deltas:   0% (0/11)   [Kremote: Resolving deltas:   9% (1/11)   [Kremote: Resolving deltas:  18% (2/11)   [Kremote: Resolving deltas:  27% (3/11)   [Kremote: Resolving deltas:  36% (4/11)   [Kremote: Resolving deltas:  45% (5/11)   [Kremote: Resolving deltas:  54% (6/11)   [Kremote: Resolving deltas:  72% (8/11)   [Kremote: Resolving deltas:  81% (9/11)   [Kremote: Resolving deltas:  90% (10/11)   [Kremote: Resolving deltas: 100% (11/11)   [Kremote: Resolving deltas: 100% (11/11), completed with 10 local objects.[K
-To git@github.com:nstrayer/qualifying_exam.git
-   97ba07c..979bdb3  master -> master
-]0;/home/nick/quals/report]0;nick@compooper: ~/quals/report[01;32mnick@compooper[00m:[01;34m~/quals/report[00m$ lgit "spellchecked he[K[Kthe neurel[Kal[K[K[Kal network chapter"
+]0;/home/nick/quals/report]0;nick@compooper: ~/quals/report[01;32mnick@compooper[00m:[01;34m~/quals/report[00m$ lgit "g[Kspellchecked the intro"
