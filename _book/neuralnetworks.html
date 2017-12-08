@@ -87,20 +87,20 @@
 </ul></li>
 <li class="chapter" data-level="2.2" data-path="neuralnetworks.html"><a href="neuralnetworks.html#universal-approximation-theorem"><i class="fa fa-check"></i><b>2.2</b> Universal Approximation Theorem</a></li>
 <li class="chapter" data-level="2.3" data-path="neuralnetworks.html"><a href="neuralnetworks.html#the-computation-graph"><i class="fa fa-check"></i><b>2.3</b> The Computation Graph</a></li>
-<li class="chapter" data-level="2.4" data-path="neuralnetworks.html"><a href="neuralnetworks.html#mathematical-operations"><i class="fa fa-check"></i><b>2.4</b> Mathematical Operations</a><ul>
-<li class="chapter" data-level="2.4.1" data-path="neuralnetworks.html"><a href="neuralnetworks.html#terminology"><i class="fa fa-check"></i><b>2.4.1</b> Terminology</a></li>
-<li class="chapter" data-level="2.4.2" data-path="neuralnetworks.html"><a href="neuralnetworks.html#forward-propagation"><i class="fa fa-check"></i><b>2.4.2</b> Forward Propagation</a></li>
-<li class="chapter" data-level="2.4.3" data-path="neuralnetworks.html"><a href="neuralnetworks.html#back-propigation"><i class="fa fa-check"></i><b>2.4.3</b> Back Propigation</a></li>
+<li class="chapter" data-level="2.4" data-path="neuralnetworks.html"><a href="neuralnetworks.html#terminology"><i class="fa fa-check"></i><b>2.4</b> Terminology</a></li>
+<li class="chapter" data-level="2.5" data-path="neuralnetworks.html"><a href="neuralnetworks.html#mathematical-operations"><i class="fa fa-check"></i><b>2.5</b> Mathematical Operations</a><ul>
+<li class="chapter" data-level="2.5.1" data-path="neuralnetworks.html"><a href="neuralnetworks.html#forward-propagation"><i class="fa fa-check"></i><b>2.5.1</b> Forward Propagation</a></li>
+<li class="chapter" data-level="2.5.2" data-path="neuralnetworks.html"><a href="neuralnetworks.html#back-propagation"><i class="fa fa-check"></i><b>2.5.2</b> Back Propagation</a></li>
 </ul></li>
-<li class="chapter" data-level="2.5" data-path="neuralnetworks.html"><a href="neuralnetworks.html#training"><i class="fa fa-check"></i><b>2.5</b> Training</a><ul>
-<li class="chapter" data-level="2.5.1" data-path="neuralnetworks.html"><a href="neuralnetworks.html#gradient-descent"><i class="fa fa-check"></i><b>2.5.1</b> Gradient Descent</a></li>
-<li class="chapter" data-level="2.5.2" data-path="neuralnetworks.html"><a href="neuralnetworks.html#gradient-descent-modifications"><i class="fa fa-check"></i><b>2.5.2</b> Gradient Descent Modifications</a></li>
+<li class="chapter" data-level="2.6" data-path="neuralnetworks.html"><a href="neuralnetworks.html#training"><i class="fa fa-check"></i><b>2.6</b> Training</a><ul>
+<li class="chapter" data-level="2.6.1" data-path="neuralnetworks.html"><a href="neuralnetworks.html#gradient-descent"><i class="fa fa-check"></i><b>2.6.1</b> Gradient Descent</a></li>
+<li class="chapter" data-level="2.6.2" data-path="neuralnetworks.html"><a href="neuralnetworks.html#gradient-descent-modifications"><i class="fa fa-check"></i><b>2.6.2</b> Gradient Descent Modifications</a></li>
 </ul></li>
-<li class="chapter" data-level="2.6" data-path="neuralnetworks.html"><a href="neuralnetworks.html#activation-functions"><i class="fa fa-check"></i><b>2.6</b> Activation Functions</a></li>
-<li class="chapter" data-level="2.7" data-path="neuralnetworks.html"><a href="neuralnetworks.html#loss-functions"><i class="fa fa-check"></i><b>2.7</b> Loss functions</a><ul>
-<li class="chapter" data-level="2.7.1" data-path="neuralnetworks.html"><a href="neuralnetworks.html#regression-loss-functions"><i class="fa fa-check"></i><b>2.7.1</b> Regression loss functions</a></li>
-<li class="chapter" data-level="2.7.2" data-path="neuralnetworks.html"><a href="neuralnetworks.html#classification-loss-functions"><i class="fa fa-check"></i><b>2.7.2</b> Classification loss functions</a></li>
-<li class="chapter" data-level="2.7.3" data-path="neuralnetworks.html"><a href="neuralnetworks.html#other-loss-functions"><i class="fa fa-check"></i><b>2.7.3</b> Other loss functions</a></li>
+<li class="chapter" data-level="2.7" data-path="neuralnetworks.html"><a href="neuralnetworks.html#activation-functions"><i class="fa fa-check"></i><b>2.7</b> Activation Functions</a></li>
+<li class="chapter" data-level="2.8" data-path="neuralnetworks.html"><a href="neuralnetworks.html#loss-functions"><i class="fa fa-check"></i><b>2.8</b> Loss functions</a><ul>
+<li class="chapter" data-level="2.8.1" data-path="neuralnetworks.html"><a href="neuralnetworks.html#regression-loss-functions"><i class="fa fa-check"></i><b>2.8.1</b> Regression loss functions</a></li>
+<li class="chapter" data-level="2.8.2" data-path="neuralnetworks.html"><a href="neuralnetworks.html#classification-loss-functions"><i class="fa fa-check"></i><b>2.8.2</b> Classification loss functions</a></li>
+<li class="chapter" data-level="2.8.3" data-path="neuralnetworks.html"><a href="neuralnetworks.html#other-loss-functions"><i class="fa fa-check"></i><b>2.8.3</b> Other loss functions</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="architectures.html"><a href="architectures.html"><i class="fa fa-check"></i><b>3</b> Architectures For Sequence Learning</a><ul>
@@ -173,15 +173,21 @@
 Figure 2.1: Example of the XOR problem. Classes encoded by color are not linearly seperable.
 </p>
 </div>
-<p>It wasn’t until 1986 that a technique for training these multi-layer perceptrons was introduced (<span class="citation">Rumelhart, Hinton, and Williams (<a href="#ref-backprop_1986">1986</a>)</span>). Finally all of the algorithmic pieces were in place for deep neural networks, but interest stagnated due to the computational intensiveness of training the networks, a lack of data, and the success of other competing machine learning algorithms.</p>
-<p>Interest in the field of deep learning has had a massive resurgence in the second decade of the 21st century. Driven by the ability for massive amounts of data to be captured and also innovations in neural network architectures. One commonly sited tipping point for the current “deep learning revolution” was the 2012 paper (<span class="citation">Krizhevsky, Sutskever, and Hinton (<a href="#ref-imagenet_2012">2012</a>)</span>) in which a deep neural network architecture known as “convolutional neural networks” won the ImageNet prize and showed massive improvements over traditional methods.</p>
+<p>It wasn’t until 1986 that a realistic technique for training these multi-layer perceptrons was introduced (<span class="citation">Rumelhart, Hinton, and Williams (<a href="#ref-backprop_1986">1986</a>)</span>). Finally all of the algorithmic pieces were in place for deep neural networks, but interest stagnated due to the computational expense of training the networks, a lack of data, and the success of other competing machine learning algorithms.</p>
+<p>Interest in the field of deep learning has had a massive resurgence in the second decade of the 21st century. Driven by growing stores of data and innovations in neural network architectures. One commonly cited tipping point for the current “deep learning revolution” was the 2012 paper (<span class="citation">Krizhevsky, Sutskever, and Hinton (<a href="#ref-imagenet_2012">2012</a>)</span>) in which a deep convolutional neural network won the ImageNet prize and showed massive improvements over traditional methods.</p>
 <div id="biological-inspirations" class="section level3">
 <h3><span class="header-section-number">2.1.1</span> Biological Inspirations</h3>
-<p>The word ‘neural’ in the name is reference to the fact that these models derive inspiration from how the brain actually works. With the individual nodes in a hidden ‘layer’ frequently being called a ‘neuron’. While the broad concept’s may be similar between the way animal brains work and neural networks it is important to note that the similarities end approximately at the network-ness of both systems. There have however, been some more recent work on trying to more closely mimic the brain structure with architectures such as capsule networks (<span class="citation">Sabour, Frosst, and Hinton (<a href="#ref-capsnet">2017</a>)</span>). In addition, neuroscience experiments have demonstrated that at least part of our visual system does truly perform these hierarchical stacks of features when recognizing objects (<span class="citation">Kheradpisheh et al. (<a href="#ref-cnn_animals">2016</a>)</span>).</p>
+<p>The word ‘neural’ in the ‘neural network’ is reference to the fact that these models derive inspiration from how the brain works. With the individual nodes in a hidden ‘layer’ frequently being called a ‘neuron’. While the broad concepts may be similar between the way animal brains and neural networks work, it is important to note that the similarities end approximately at the network-ness of both systems. There has however, been some more recent work on trying to more closely mimic the brain structure with architectures such as capsule networks (<span class="citation">Sabour, Frosst, and Hinton (<a href="#ref-capsnet">2017</a>)</span>). In addition, neuroscience experiments have demonstrated that at least part of our visual system does truly perform these hierarchical stacks of features when recognizing objects (<span class="citation">Kheradpisheh et al. (<a href="#ref-cnn_animals">2016</a>)</span>).</p>
 </div>
 <div id="geometric-interpretation" class="section level3">
 <h3><span class="header-section-number">2.1.2</span> Geometric Interpretation</h3>
-<p>Another way of thinking of how neural networks work is as a building up a series of successive transformations of the data-space that attempt to eventually let the data be linearly separable. In this interpretation each layer can be seen as a shift and rotation of the data (the linear transformation), followed by a warping of the new space (the activation function). In his excellent blog post: <a href="http://colah.github.io/posts/2014-03-NN-Manifolds-Topology/">Neural Networks, Manifolds, and Topology</a>, Chris Olah gives an excellent visual demonstration of this.</p>
+<p>Another way of thinking of how neural networks work is as a building up a series of successive transformations of the data-space that attempt to eventually let the data be linearly separable ((<a href="neuralnetworks.html#fig:geometricinterp">2.2</a>). In this interpretation each layer can be seen as a shift and rotation of the data (the linear transformation), followed by a warping of the new space (the activation function). In his excellent blog post: <a href="http://colah.github.io/posts/2014-03-NN-Manifolds-Topology/">Neural Networks, Manifolds, and Topology</a>, Chris Olah gives an excellent visual demonstration of this.</p>
+<div class="figure"><span id="fig:geometricinterp"></span>
+<img src="figures/warp_space.png" alt="Example of how a neural network can, through a series of affine transformations followed by non-linear squashings, turn a linearly inseperable proble into a linearly seperable one. Image courtesy of [Chris Olah's blog](http://colah.github.io/posts/2014-03-NN-Manifolds-Topology/)"  />
+<p class="caption">
+Figure 2.2: Example of how a neural network can, through a series of affine transformations followed by non-linear squashings, turn a linearly inseperable proble into a linearly seperable one. Image courtesy of <a href="http://colah.github.io/posts/2014-03-NN-Manifolds-Topology/">Chris Olah’s blog</a>
+</p>
+</div>
 </div>
 </div>
 <div id="universal-approximation-theorem" class="section level2">
@@ -190,29 +196,28 @@ Figure 2.1: Example of the XOR problem. Classes encoded by color are not linearl
 </div>
 <div id="the-computation-graph" class="section level2">
 <h2><span class="header-section-number">2.3</span> The Computation Graph</h2>
-<p>While the building blocks of neural networks are simple, very often complete models are composed of many blocks and thus reasoning about them becomes difficult. A method of dealing with this complexity, along with also helping in the intuition of many other properties, is to represent the networks as a ‘computation graph.’</p>
+<p>While the building blocks of neural networks are simple, often complete models are composed of hundreds to even thousands of neurons and millions of connections and representing them in mathematical notation becomes exceedingly difficult. A method of dealing with this complexity, along with also helping in the intuition of many other properties, is to represent the networks as a ‘computation graph.’</p>
 <p>A computation graph is simply directed acyclic diagram that shows the flow of data through the model. Each neuron is usually represented as a circle with the weights both in and out of the neuron’s value represented as edges.</p>
 <!-- [image:0E87AF40-C4A7-4EFD-8ED1-D04FAD772692-1368-0000019FCB3F31C6/image.png] -->
 <!-- /Example of a simple computation graph. From @dl_book, figure 6.2./ -->
-<p>Sometimes, when the models get even larger, the layers (or groups of neurons) will get lumped into a single object (as on the right of the figure).</p>
+<p>Sometimes, when the models get even larger, the layers (or groups of neurons) will get lumped into a single node in the graph (as on the right of the figure.)</p>
 </div>
-<div id="mathematical-operations" class="section level2">
-<h2><span class="header-section-number">2.4</span> Mathematical Operations</h2>
-<p>There are two basic operations that are performed on neural networks: forward propagation (or generating predictions from inputs) and back propagation (or calculating the gradients on all the model’s parameters for training). Here we will give a brief overview of these operations. For a more thorough treatment of this problem see <span class="citation">Goodfellow, Bengio, and Courville (<a href="#ref-goodfellow_DL">2016</a>)</span>.</p>
-<div id="terminology" class="section level3">
-<h3><span class="header-section-number">2.4.1</span> Terminology</h3>
+<div id="terminology" class="section level2">
+<h2><span class="header-section-number">2.4</span> Terminology</h2>
 <p>When covering the basic mathematical operations of a neural network it helps to have a reference for some of the terms that get used. This list provides the most commonly used terms for the models we will be describing.</p>
 <p><strong>Neuron</strong>: An individual node in the network. Has two values: activation, or the value of the linear function of all inputs, and the post-activation-function value, or a simple transformation of the activation by the activation function.</p>
 <p><strong>Affine Transformation</strong>: A linear transformation of an input (either data input or a hidden layer’s output). Essentially a linear regression.</p>
-<p><strong>Bias Term</strong>: A constant term added to the affine transformation for a given neuron. Also known as an ‘intercept term.’.</p>
-<p><strong>Activation Function</strong>: A simple non-linear function that takes an input and ‘squashes’ it to some range. A activation functions is the sigmoid, which takes an unbounded real-valued input and returns a value between -1 and 1.</p>
-<p><strong>Layer</strong>: A collection of neurons who’s inputs typically all come from the same set of inputs.</p>
+<p><strong>Bias Term</strong>: A constant term added to the affine transformation for a given neuron. Also known as an ‘intercept term.’. For notational simplicity in most of our formulas we will omit this.</p>
+<p><strong>Activation Function</strong>: A non-linear function that takes an input and ‘squashes’ it to some range. A common activation function is the sigmoid, which takes an unbounded real-valued input and returns a value between -1 and 1.</p>
+<p><strong>Layer</strong>: A collection of neurons who’s inputs typically share the same inputs (either another layer’s output or the data).</p>
 <p><strong>Hidden Layer</strong>: A layer who’s input is the output of a previous layer and who’s output is another layer. E.g. Input layer -&gt; hidden layer -&gt; output layer.</p>
-<p>The basic operations that one does on a neural network really fall into two categories. Forward propagation, or the passing of data into and through subsequent layers of the model to arrive at an output, and back-propagation, or the calculation of the gradient of each parameter in the model by stepping back through the model from the loss function to the input.</p>
 </div>
+<div id="mathematical-operations" class="section level2">
+<h2><span class="header-section-number">2.5</span> Mathematical Operations</h2>
+<p>The basic operations that one does on a neural network really fall into two categories. Forward propagation, or the passing of data into and through subsequent layers of the model to arrive at an output, and back-propagation, or the calculation of the gradient of each parameter in the model by stepping back through the model from the loss function to the input. For a more thorough treatment of these steps see <span class="citation">Goodfellow, Bengio, and Courville (<a href="#ref-goodfellow_DL">2016</a>)</span> chapter six.</p>
 <div id="forward-propagation" class="section level3">
-<h3><span class="header-section-number">2.4.2</span> Forward Propagation</h3>
-<p>Let a neural network with <span class="math inline">\(l\)</span> layers and <span class="math inline">\(k\)</span> dimensional input <span class="math inline">\(X\)</span> and <span class="math inline">\(m\)</span> dimensional output <span class="math inline">\(\hat{y}\)</span> attempting to predict the true target <span class="math inline">\(y\)</span>. Each layer is composed of <span class="math inline">\(s_i, i \in \{1, 2, ...,l\}\)</span> neurons and has respective non-linear activation function <span class="math inline">\(f_i\)</span>. Layer activation vectors <span class="math inline">\(\underline{a_i}\)</span> and post-activation function outputs <span class="math inline">\(\underline{o_i}\)</span>. The weights into neuron <span class="math inline">\(j\)</span> in layer <span class="math inline">\(i\)</span> is given by <span class="math inline">\(w_{(i,j)}\)</span> which is a vector of size <span class="math inline">\(s_{i -1}\)</span>. We can thus view the weights into the <span class="math inline">\(i^{\text{th}}\)</span> layer as a matrix <span class="math inline">\(W_i\)</span> of of size <span class="math inline">\(s_{i -1} \times s_i\)</span>. Finally the network has a differentiable with respect to <span class="math inline">\(\hat{y}\)</span> loss function: <span class="math inline">\(L(\hat{y}, y)\)</span>.</p>
+<h3><span class="header-section-number">2.5.1</span> Forward Propagation</h3>
+<p>Let a neural network with <span class="math inline">\(l\)</span> layers and <span class="math inline">\(k\)</span> dimensional input <span class="math inline">\(X\)</span> and <span class="math inline">\(m\)</span> dimensional output <span class="math inline">\(\hat{y}\)</span> attempting to predict the true target <span class="math inline">\(y\)</span>. Each layer is composed of <span class="math inline">\(s_i, i \in \{1, 2, ...,l\}\)</span> neurons and has respective non-linear activation function <span class="math inline">\(f_i\)</span>. The output of a layer after affine transformation is represented as a vector of length <span class="math inline">\(s_i\)</span>: <span class="math inline">\(\underline{a_i}\)</span> and the layer ouput vector post-activation function outputs: <span class="math inline">\(\underline{o_i}\)</span>. The weights representing the affine transition from one layer <span class="math inline">\(i\)</span> to layer <span class="math inline">\(j\)</span> are a matrix <span class="math inline">\(W_i\)</span> of of size <span class="math inline">\(s_{i} \times s_j\)</span>. Finally the network has a differentiable with respect to <span class="math inline">\(\hat{y}\)</span> loss function: <span class="math inline">\(L(\hat{y}, y)\)</span>.</p>
 <p>Forward propagation then proceeds as follows.</p>
 <ol style="list-style-type: decimal">
 <li>Input <span class="math inline">\(X\)</span> <span class="math inline">\((1 \times k\)</span>) is multiplied by <span class="math inline">\(W_1\)</span> (size <span class="math inline">\((k\times s_i)\)</span> ) to achieve the <em>activation values</em> of the first hidden layer.
@@ -232,22 +237,22 @@ Figure 2.1: Example of the XOR problem. Classes encoded by color are not linearl
 <li><span class="math inline">\(L_n = L(\underline{o_l}, y) = L(\hat{y}, y)\)</span></li>
 </ul></li>
 </ol>
-<p>While not strictly necessary for forward propagation, the intermediate layer activation and output vectors are kept stored so they can be used in the later calculation of the gradient via back propagation.</p>
+<p>While not strictly necessary for forward propagation, the intermediate layer activations and output vectors are kept stored so they can be used in the later calculation of the gradient via back propagation.</p>
 </div>
-<div id="back-propigation" class="section level3">
-<h3><span class="header-section-number">2.4.3</span> Back Propigation</h3>
-<p>If we are just looking to gather predictions from our model we can stop at forward propagation. However, most likely we want to train our model first. The most common technique for training neural networks is using a technique called back propagation (<span class="citation">Rumelhart, Hinton, and Williams (<a href="#ref-backprop_1986">1986</a>)</span>). In this algorithm the chain rule is used to walk back through the layers of the model starting from the loss function to the input weights in order to calculate each weight’s gradient. This gradient is then descended using any number of gradient descent algorithms. (We will demonstrate the simplest steepest descent method.)</p>
+<div id="back-propagation" class="section level3">
+<h3><span class="header-section-number">2.5.2</span> Back Propagation</h3>
+<p>If we are just looking to gather predictions from our model we can stop at forward propagation. However, most likely we want to train our model first. The most common technique for training neural networks is using a technique called back propagation (<span class="citation">Rumelhart, Hinton, and Williams (<a href="#ref-backprop_1986">1986</a>)</span>). In this algorithm the chain rule is used to walk back through the layers of the model starting from the loss function to the input weights in order to calculate each weight’s gradient with respect to the loss. This gradient is then descended using any number of gradient descent algorithms.</p>
 <div id="the-chain-rule" class="section level4">
-<h4><span class="header-section-number">2.4.3.1</span> The Chain Rule</h4>
-<p>Back propagation is really nothing more than a repeated application of the chain rule from calculus. Let <span class="math inline">\(x\)</span> be a single dimensional real valued input that is mapped through first equation <span class="math inline">\(f\)</span> and then <span class="math inline">\(g\)</span>, both of which map from a single dimensional real number to another single dimensional real number: <span class="math inline">\(f(x) = z, g(z) = y\)</span> or <span class="math inline">\(g(f(x)) = y\)</span>. The chain rule states that we can calculate the derivative the outcome with respect to the input by a series of multiplications of the derivatives of the composing functions.</p>
+<h4><span class="header-section-number">2.5.2.1</span> The Chain Rule</h4>
+<p>Back propagation is nothing more than a repeated application of the chain rule from calculus. Let <span class="math inline">\(x\)</span> be a single dimensional real valued input that is mapped through first equation <span class="math inline">\(f\)</span> and then <span class="math inline">\(g\)</span>, both of which map from a single dimensional real number to another single dimensional real number: <span class="math inline">\(f(x) = z, g(z) = y\)</span> or <span class="math inline">\(g(f(x)) = y\)</span>. The chain rule states that we can calculate the derivative of the outcome with respect to the input by a series of multiplications of the derivatives of the composing functions.</p>
 <span class="math display" id="eq:chainrule">\[\begin{equation} 
   \frac{dy}{dx} = \frac{dy}{dz}\frac{dz}{dx}
   \tag{2.1}
 \end{equation}\]</span>
-<p>This single dimensional example could be thought of as a neural network composed of two layers, each with a single dimension. While this is interesting the value of this observation comes when the chain rule is applied to higher dimensional values.</p>
+<p>This single dimensional example could be thought of as a neural network composed of two layers, each with a single dimension. The single dimensional case is illuminating, but the value of the chain rule comes when it is applied to higher dimensional values.</p>
 </div>
 <div id="expanding-to-higher-dimensions" class="section level4">
-<h4><span class="header-section-number">2.4.3.2</span> Expanding to higher dimensions</h4>
+<h4><span class="header-section-number">2.5.2.2</span> Expanding to higher dimensions</h4>
 <p>Now, let <span class="math inline">\(\mathbb{x} \in \mathbb{R}^m\)</span> and <span class="math inline">\(\mathbb{z} \in \mathbb{R}^n\)</span>. The function <span class="math inline">\(f\)</span> maps from <span class="math inline">\(\mathbb{R}^m \to \mathbb{R}^n\)</span> and <span class="math inline">\(g: \mathbb{R}^n \to \mathbb{R}\)</span>. Further, let <span class="math inline">\(\textbf{z} = f(\textbf{x})\)</span> and <span class="math inline">\(y = g(\textbf{z})\)</span>. The chain rule can then be expressed as:</p>
 <span class="math display" id="eq:chainrulemv">\[\begin{equation} 
   \frac{dy}{dx_i} = \sum_{j}\frac{dy}{dz_j}\frac{dz_j}{dx_i}
@@ -256,45 +261,48 @@ Figure 2.1: Example of the XOR problem. Classes encoded by color are not linearl
 <p>Or that the derivative of <span class="math inline">\(y\)</span> with respect to the <span class="math inline">\(i^{\text{th}}\)</span> element of <span class="math inline">\(\textbf{x}\)</span> is the sum of the series of products of the derivatives of result <span class="math inline">\(\textbf{z}\)</span> that sits between the two values in the function composition.</p>
 <p>Another way of thinking of this is, the derivative of the output of the function composition <span class="math inline">\(f \circ g\)</span> with respect to some element of the input is the sum of all of the derivatives of all of the paths leading from the input element to the output.</p>
 <div class="figure"><span id="fig:unnamed-chunk-1"></span>
-<img src="figures/backprop.png" alt="How back propigation steps back from the output to the input. To calculate the gradient with respect to the loss of the orange neuron the we need to aggregate the gradients of all connected points further along in the computation graph."  />
+<img src="figures/backprop.png" alt="How back Propagation steps back from the output to the input. To calculate the gradient with respect to the loss of the orange neuron the we need to aggregate the gradients of all connected points further along in the computation graph (blue connections)."  />
 <p class="caption">
-Figure 2.2: How back propigation steps back from the output to the input. To calculate the gradient with respect to the loss of the orange neuron the we need to aggregate the gradients of all connected points further along in the computation graph.
+Figure 2.3: How back Propagation steps back from the output to the input. To calculate the gradient with respect to the loss of the orange neuron the we need to aggregate the gradients of all connected points further along in the computation graph (blue connections).
 </p>
 </div>
 </div>
 <div id="applied-to-neural-networks" class="section level4">
-<h4><span class="header-section-number">2.4.3.3</span> Applied to Neural Networks</h4>
-<p>To apply this technique to neural networks we simply need to make sure all components of our network are differentiable and then walk back from the loss function first to the output layer, calculating the gradients of the output layer’s neurons with respect to the loss. Once we have calculated the gradients with respect to the weights of the output layer we only need use those calculated gradients to calculate the gradients of the preceding layer. We can then proceed layer by layer, walking back through the model filling out each neuron’s weight gradients until we reach the input.</p>
+<h4><span class="header-section-number">2.5.2.3</span> Applied to Neural Networks</h4>
+<p>To apply this technique to neural networks we need to make sure all components of our network are differentiable and then walk back from the loss function to the last (or output) layer, calculating the gradients of the output layer’s neurons with respect to the loss. Once we have calculated the gradients with respect to the weights of the output layer we only need use those calculated gradients to calculate the gradients of the preceding layer. We can then proceed layer by layer, walking back through the model filling out each neuron’s weight gradients until we reach the input.</p>
 <p>To calculate the gradient of the weights for hidden layer <span class="math inline">\(i\)</span> we can recall that the hidden layers output can be represented as <span class="math inline">\(\textbf{a}_i = f_i(\textbf{W}\cdot\textbf{a}_{(i -1)})\)</span> (we’re omitting the bias term here for simplicity). Thus to calculate the gradient’s on the weights we can set <span class="math inline">\(\textbf{g}^*_i = \textbf{g}_{i+1} \odot f&#39;(a_{i+1})\)</span> to be the gradient un-activated by our layer’s activation function’s derivative. Then to find the derivative with respect to each neuron’s weights within the layer we multiply this un-activated gradient by the transpose of the layer’s output vector: <span class="math inline">\(\textbf{g}_i = \textbf{g}^*_i \textbf{o}_i^t\)</span>.</p>
-<p>The fact that the calculation of these gradients is so simple is fundamental to deep learning. If it were more complicated extremely large networks (such as those used in computer vision) with millions of parameters to tune would simply be computationally infeasible to calculate gradients for. The run time a simple product of the number of neurons in each layer and the number of layers in the whole model.</p>
+<p>The fact that the calculation of these gradients is so simple is fundamental to deep learning. If it were more complicated, extremely large networks (such as those used in computer vision) with millions of parameters to tune would simply be computationally infeasible to calculate gradients for. Conveniently, the run time of the back propigation is a simple product of the number of neurons in each layer and the number of layers in the whole model.</p>
 </div>
 <div id="other-methods" class="section level4">
-<h4><span class="header-section-number">2.4.3.4</span> Other methods</h4>
-<p>Non-gradient based techniques have been explored for neural networks but ultimately found extremely slow for large networks. For instance evolutionary strategies (<span class="citation">Salimans et al. (<a href="#ref-evostrat">2017</a>)</span>), a new technique proposed by a group at OpenAi uses random searches of the parameter space. However, since often these parameter spaces are millions of dimensions an extremely large number of random perturbations are needed to inform a good direction to move. However, these methods are used when the loss function does not have a gradient (such as reinforcement learning scenarios).</p>
+<h4><span class="header-section-number">2.5.2.4</span> Other methods</h4>
+<p>Non-gradient based techniques have been explored for neural networks but have ultimately proven to slow for any realistic sized network. For instance evolutionary strategies (<span class="citation">Salimans et al. (<a href="#ref-evostrat">2017</a>)</span>), a new technique proposed by a group at OpenAi uses random searches of the parameter space with evolutionary algorithms to tune the model’s parameters. However, since often these parameter spaces are millions of dimensions, an extremely large number of random perturbations are needed to inform a good direction to move[^These do find use when methods are used when the loss function does not have a gradient. Such as reinforcement learning scenarios.].</p>
 </div>
 </div>
 </div>
 <div id="training" class="section level2">
-<h2><span class="header-section-number">2.5</span> Training</h2>
+<h2><span class="header-section-number">2.6</span> Training</h2>
 <div id="gradient-descent" class="section level3">
-<h3><span class="header-section-number">2.5.1</span> Gradient Descent</h3>
-<p>Once the gradient is computed optimization proceeds the same way any gradient-based optimization problem does. The simplest algorithm for doing so being the steepest descent algorithm. In this algorithm each weight for our network is updated by adding its gradient multiplied by a small scalar called a ‘learning rate’. The new updated weights are then used in another forward propagation, followed by another back propagation and weight update and so on until the loss finds a minimum or some other stopping criteria is defined (such as a given number steps) is satisfied.</p>
+<h3><span class="header-section-number">2.6.1</span> Gradient Descent</h3>
+<p>Once the gradient is computed, optimization proceeds the same way any gradient-based optimization problem does. The simplest algorithm for doing so being the steepest descent algorithm. In this algorithm, each weight for our network is updated by adding its gradient multiplied by a small scalar called a ‘learning rate’ (<span class="math inline">\(\alpha\)</span>).</p>
+<p><span class="math display">\[\theta^{(j)} = \theta^{(j - 1)} + \alpha\Delta_{\theta}\]</span></p>
+<p>The new updated weights are then used in another forward propagation, followed by another back propagation and weight update. This processes is repeated until the loss finds a minimum or some other stopping criteria is defined (such as a given number steps) is satisfied.</p>
 </div>
 <div id="gradient-descent-modifications" class="section level3">
-<h3><span class="header-section-number">2.5.2</span> Gradient Descent Modifications</h3>
-<p>There are many scenarios in which traditional steepest descent is not an ideal for finding minimums. A classic example is when the loss function takes the form of a long trough. In this case steepest descent will spend most of its time bouncing around between the sides of the trough due to over stepping the low point, thus wasting many of its iterations undoing its previous work rather than progressing in the true direction of the minimum.</p>
-<div class="figure"><span id="fig:unnamed-chunk-2"></span>
+<h3><span class="header-section-number">2.6.2</span> Gradient Descent Modifications</h3>
+<p>There are many scenarios in which traditional steepest descent is not an ideal for finding minimums of the loss function. A classic example is when the loss function takes the form of a long trough (<a href="neuralnetworks.html#fig:badloss">2.4</a>. In this case steepest descent will spend most of its time bouncing around between the sides of the trough due to over stepping the low point, thus wasting many of its iterations undoing its previous work rather than progressing in the true direction of the minimum.</p>
+<div class="figure"><span id="fig:badloss"></span>
 <img src="http://www.nbertagnolli.com/assets/descent_methods/GDWBLS.png" alt="Demonstration of steepest descents limitations on trough like gradient surfaces. Much of each step's progress is wasted on bouncing back and forth between the two walls of the gradient rather than descending directly towards the minimum. Image from [Nicolas Bertagnolli's blog](http://www.nbertagnolli.com/)" width="300" height="300" />
 <p class="caption">
-Figure 2.3: Demonstration of steepest descents limitations on trough like gradient surfaces. Much of each step’s progress is wasted on bouncing back and forth between the two walls of the gradient rather than descending directly towards the minimum. Image from <a href="http://www.nbertagnolli.com/">Nicolas Bertagnolli’s blog</a>
+Figure 2.4: Demonstration of steepest descents limitations on trough like gradient surfaces. Much of each step’s progress is wasted on bouncing back and forth between the two walls of the gradient rather than descending directly towards the minimum. Image from <a href="http://www.nbertagnolli.com/">Nicolas Bertagnolli’s blog</a>
 </p>
 </div>
-<p>One of the most common additions to simple gradient descent is the addition of momentum. Momentum makes each step a function of not only the current gradient but also a decaying average of previous generations. For a thorough overview of momentum based methods see <span class="citation">Goh (<a href="#ref-momentum">2017</a>)</span>.</p>
+<p>One of the most common additions to plain gradient descent is the addition of momentum. Momentum makes each step a function of not only the current gradient but also a decaying average of previous generations. For a thorough overview of momentum based methods see <span class="citation">Goh (<a href="#ref-momentum">2017</a>)</span>.</p>
 </div>
 </div>
 <div id="activation-functions" class="section level2">
-<h2><span class="header-section-number">2.6</span> Activation Functions</h2>
-<p>There are many different possible activation functions. One of the simplest being the sigmoid function which simply squashes the neuron’s activation from all real numbers to between 0 and 1. A newer and extremely common choice is the rectified linear unit (Relu) function (<span class="citation">Nair and Hinton (<a href="#ref-relu_paper">2010</a>)</span>).</p>
+<h2><span class="header-section-number">2.7</span> Activation Functions</h2>
+<p>There are many different possible activation functions. The only conditions that an activation function needs to satisfy is that it takes an unbounded real input and returns some non-linear transformation of that input that is differentiable with respect to the input.</p>
+<p>One of the simplest functions used is the sigmoid which simply squashes the neuron’s activation from all real numbers to between 0 and 1. A newer and extremely common choice is the rectified linear unit (Relu) function (<span class="citation">Nair and Hinton (<a href="#ref-relu_paper">2010</a>)</span>).</p>
 
 <div class="definition">
 <span id="def:sigmoid" class="definition"><strong>Definition 2.1  (sigmoid activation function)  </strong></span><span class="math display">\[f(x) = e(x)/(1 + e(x))\]</span>
@@ -305,10 +313,10 @@ Figure 2.3: Demonstration of steepest descents limitations on trough like gradie
 <span id="def:relu" class="definition"><strong>Definition 2.2  (Rectified Linear Unit activation function)  </strong></span><span class="math display">\[f(x) = \text{max}(0,x)\]</span>
 </div>
 
-<div class="figure"><span id="fig:unnamed-chunk-3"></span>
-<img src="bookdown-demo_files/figure-html/unnamed-chunk-3-1.png" alt="Comparison of the relu and sigmoid activation functions." width="672" />
+<div class="figure"><span id="fig:unnamed-chunk-2"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-2-1.png" alt="Comparison of the relu and sigmoid activation functions." width="672" />
 <p class="caption">
-Figure 2.4: Comparison of the relu and sigmoid activation functions.
+Figure 2.5: Comparison of the relu and sigmoid activation functions.
 </p>
 </div>
 <p>Another, popular loss function that is used on the output layer when predicting categories is the softmax function. Unlike the previously mentioned loss functions this one takes a vector <span class="math inline">\(\textbf{o}\)</span> of length <span class="math inline">\(m\)</span> representing the output of each of the layer’s neurons.</p>
@@ -317,20 +325,21 @@ Figure 2.4: Comparison of the relu and sigmoid activation functions.
 <span id="def:softmax" class="definition"><strong>Definition 2.3  (Softmax activation function.)  </strong></span><span class="math display">\[f(\textbf{o})_i = \frac{\text{exp}(o_i)}{\sum_{j = 1}^m \text{exp}(o_j)}\]</span>
 </div>
 
-<p>This function serves to turn the output of a layer into a multivariate probability vector. The <span class="math inline">\(m\)</span> outputs of the softmax sum to 1. It is important to note that, while the values sum to one, it’s not a true probability output, but will help indicate which class is most likely and roughly by what magnitude over other potential class choices.</p>
+<p>This function serves to turn the output of a layer into a multivariate probability vector. The <span class="math inline">\(m\)</span> outputs of the softmax sum to one.<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a></p>
 </div>
 <div id="loss-functions" class="section level2">
-<h2><span class="header-section-number">2.7</span> Loss functions</h2>
+<h2><span class="header-section-number">2.8</span> Loss functions</h2>
 <p>Like any machine learning model, neural networks have a loss function (sometimes called a cost function), or a function that helps the model know how close it is to performing as desired. As previously mentioned, in the case of neural networks we almost always want our loss function to be differentiable with respect to our model’s output <span class="math inline">\(\hat{\textbf{y}}\)</span> as the derivative is needed for calculating the gradient on which the model is trained.</p>
-<p>Almost always the loss function is derived from the model’s likelihood and thus we can view our model training as a form of maximum likelihood estimation. If we let <span class="math inline">\(\theta\)</span> represent the parameters (weights) of our model with input <span class="math inline">\(\textbf{x}\)</span> and output <span class="math inline">\(\textbf{y}\)</span>. The negative log-likelihood of our model is minimized when the Kullback Leibler divergence between our estimated model and the truth is minimized. Thus we can view training as traversing the space of <span class="math inline">\(\theta\)</span> in an attempt to find values that return the lowest value to this function.</p>
+<p>Almost always the loss function is derived from the model’s likelihood and serves as a maximum likelihood estimator.</p>
+<p>If we let <span class="math inline">\(\theta\)</span> represent the parameters (weights) of our model with input <span class="math inline">\(\textbf{x}\)</span> and output <span class="math inline">\(\textbf{y}\)</span>. The negative log-likelihood of our model is minimized when the Kullback Leibler divergence between our estimated model and the truth is minimized. Thus we can view training as traversing the space of <span class="math inline">\(\theta\)</span> in an attempt to find values that return the lowest value to this function.</p>
 
 <div class="definition">
 <span id="def:negloglik" class="definition"><strong>Definition 2.4  (General maximum likelihood loss function)  </strong></span><span class="math display">\[J(\theta) = - \mathbb{E}_{x,y \sim \hat{p} \text{ data}} \log{{p_{\text{model}}(\textbf{y} |\textbf{x} })}\]</span>
 </div>
 
-<p>Of course, the precise form of the maximum likelihood loss function will change depending on the model. Here we will briefly introduce the two classes of loss functions: regression and classification, and the most commonly used functions within those classes.</p>
+<p>Of course, the precise form of the maximum likelihood loss function will change depending on the model. Next we will briefly introduce the two classes of loss functions: regression and classification, and the most commonly used functions within those classes.</p>
 <div id="regression-loss-functions" class="section level3">
-<h3><span class="header-section-number">2.7.1</span> Regression loss functions</h3>
+<h3><span class="header-section-number">2.8.1</span> Regression loss functions</h3>
 <p>When fitting a neural network who’s outcome is a single real numbered variable <span class="math inline">\(\hat{y}\)</span> the most common loss function used is the mean square error.</p>
 
 <div class="definition">
@@ -338,18 +347,18 @@ Figure 2.4: Comparison of the relu and sigmoid activation functions.
 Where <span class="math inline">\(y_i\)</span> represents the outcome of the <span class="math inline">\(i^{\text{th}}\)</span> observation of <span class="math inline">\(n\)</span> training observations.
 </div>
 
-<p>Minimizing the mean squared error can be shown to be equivalent to maximizing the likelihood function (<span class="citation">Goodfellow, Bengio, and Courville (<a href="#ref-goodfellow_DL">2016</a>)</span> chapter 5.5) and is thus a maximum likelihood method.</p>
+<p>This assumes that the output, when conditioned on the input, takes the form of a normal distribution. Minimizing the mean squared error is equivalent to maximizing the conditional normal likelihood function (<span class="citation">Goodfellow, Bengio, and Courville (<a href="#ref-goodfellow_DL">2016</a>)</span> chapter 5.5) and is thus a maximum likelihood method.</p>
 </div>
 <div id="classification-loss-functions" class="section level3">
-<h3><span class="header-section-number">2.7.2</span> Classification loss functions</h3>
+<h3><span class="header-section-number">2.8.2</span> Classification loss functions</h3>
 <p>There are two separate instances of classification that need to be considered. The binary case, where we are classifying a yes or no answer for a single class, or a categorical case, where we have more than two possible classes to choose from and need to place our data into one of them.</p>
-<p>In the single outcome case the approach to assume the outcome is a Bernoulli distribution over outcome <span class="math inline">\(y\)</span> conditioned on the input <span class="math inline">\(x\)</span>. The resultant loss function is commonly referred to as ‘binary cross entropy.’<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a></p>
+<p>In the single outcome case the approach is to assume the outcome is a Bernoulli distribution over outcome <span class="math inline">\(y\)</span> conditioned on the input <span class="math inline">\(x\)</span>. The resultant loss function is commonly referred to as ‘binary cross entropy.’<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a></p>
 
 <div class="definition">
 <span id="def:crossentropy" class="definition"><strong>Definition 2.6  (Binary cross entropy loss)  </strong></span><span class="math display">\[L(\theta) = -\frac{1}{n}\sum_{i = 1}^n\left[ y_i\log(\hat{y}_i) + (1 - y_i)\log(1 - \hat{y}_i)\right]\]</span>
 </div>
 
-<p>This can be generalized into the multivariate case by swapping a multinomial model as the conditional distribution and thus adding more terms to the internal summation representing each possible class and it’s assigned probability.</p>
+<p>This can be generalized into the multivariate case by swapping a multinomial model as the conditional distribution and thus adding more terms to the internal summation representing each possible class and its assigned probability.</p>
 
 <div class="definition">
 <p><span id="def:catcrossentropy" class="definition"><strong>Definition 2.7  (Categorical cross entropy loss)  </strong></span><span class="math display">\[L(\theta) = -\frac{1}{n}\sum_{i = 1}^n\sum_{j = 1}^k y_{i,j}\log(\hat{y}_{i,j})\]</span></p>
@@ -358,8 +367,8 @@ Where <span class="math inline">\(y_{i,j}\)</span> represents the <span class="m
 
 </div>
 <div id="other-loss-functions" class="section level3">
-<h3><span class="header-section-number">2.7.3</span> Other loss functions</h3>
-<p>While it is possible to use other loss functions in neural networks it is commonly not advised as the maximum-likelihood methods perform just as well and usually results in a more robust fit to the data. As deep learning situations usually have a large number of training observations the Cramer-Rao lower bound property, that a maximum likelihood estimator has the lowest variance of any consistent estimator, is particularly relevant. For a more thorough overview of the common loss functions used in deep learning see <span class="citation">Goodfellow, Bengio, and Courville (<a href="#ref-goodfellow_DL">2016</a>)</span> chapter six.</p>
+<h3><span class="header-section-number">2.8.3</span> Other loss functions</h3>
+<p>While it is possible to use other loss functions in neural networks, it is commonly not advised as the maximum-likelihood methods perform just as well and usually results in a more robust fit to the data. As deep learning situations usually have a large number of training observations the Cramer-Rao lower bound property, that a maximum likelihood estimator has the lowest variance of any consistent estimator, is particularly relevant. For a more thorough overview of the common loss functions used in deep learning see <span class="citation">Goodfellow, Bengio, and Courville (<a href="#ref-goodfellow_DL">2016</a>)</span> chapter six.</p>
 
 </div>
 </div>
@@ -408,8 +417,9 @@ Where <span class="math inline">\(y_{i,j}\)</span> represents the <span class="m
 </div>
 <div class="footnotes">
 <hr />
-<ol start="1">
-<li id="fn1"><p>It is interesting to note that while we typically only use the term ‘cross entropy’ for categorical outcomes, any time we are minimizing KL or maximizing the likelihood we are minimizing the cross entropy. So technically we could also call the mean squared error the ‘continuous cross entropy loss.’<a href="neuralnetworks.html#fnref1">↩</a></p></li>
+<ol start="2">
+<li id="fn2"><p>It is important to note that, while the values sum to one, it’s not a true probability output, but will help indicate which class is most likely and roughly by what magnitude over other potential class choices.<a href="neuralnetworks.html#fnref2">↩</a></p></li>
+<li id="fn3"><p>It is interesting to note that while we typically only use the term ‘cross entropy’ for categorical outcomes, any time we are minimizing KL or maximizing the likelihood we are minimizing the cross entropy. So technically we could also call the mean squared error the ‘continuous cross entropy loss.’<a href="neuralnetworks.html#fnref3">↩</a></p></li>
 </ol>
 </div>
             </section>

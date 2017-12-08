@@ -1140,3 +1140,26 @@ remote: Resolving deltas:   0% (0/15)   [Kremote: Resolving deltas:  13% (2/15
 To git@github.com:nstrayer/qualifying_exam.git
    f4596cf..c8831ce  master -> master
 ]0;/home/nick/quals/report]0;nick@compooper: ~/quals/report[01;32mnick@compooper[00m:[01;34m~/quals/report[00m$ lgit "eited [K[K[K[K[Kdited the neural network chapter"
+[master 522eb4a] edited the neural network chapter
+ 23 files changed, 872 insertions(+), 69 deletions(-)
+ create mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/2CBA05BF
+ create mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/2CBA05BF-contents
+ create mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/43D5CEAC
+ create mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/43D5CEAC-contents
+ create mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/96EA21A1-contents
+ create mode 100644 .Rproj.user/shared/notebooks/B4887F3E-02-deep_learning/1/4CADD3E8534a5643/chunks.json
+ create mode 100644 _book/bookdown-demo_files/figure-html/unnamed-chunk-3-1.png
+ create mode 100644 _book/figures/xor_problem.png
+ rewrite _book/search_index.json (99%)
+ create mode 100644 _bookdown_files/bookdown-demo_files/figure-html/unnamed-chunk-3-1.png
+ create mode 100644 figures/warp_space.png
+ create mode 100644 figures/xor_problem.png
+Counting objects: 37, done.
+Delta compression using up to 8 threads.
+Compressing objects:   3% (1/32)   Compressing objects:   6% (2/32)   Compressing objects:   9% (3/32)   Compressing objects:  12% (4/32)   Compressing objects:  15% (5/32)   Compressing objects:  18% (6/32)   Compressing objects:  21% (7/32)   Compressing objects:  25% (8/32)   Compressing objects:  28% (9/32)   Compressing objects:  31% (10/32)   Compressing objects:  34% (11/32)   Compressing objects:  37% (12/32)   Compressing objects:  40% (13/32)   Compressing objects:  43% (14/32)   Compressing objects:  46% (15/32)   Compressing objects:  50% (16/32)   Compressing objects:  53% (17/32)   Compressing objects:  56% (18/32)   Compressing objects:  59% (19/32)   Compressing objects:  62% (20/32)   Compressing objects:  65% (21/32)   Compressing objects:  68% (22/32)   Compressing objects:  71% (23/32)   Compressing objects:  75% (24/32)   Compressing objects:  78% (25/32)   Compressing objects:  81% (26/32)   Compressing objects:  84% (27/32)   Compressing objects:  87% (28/32)   Compressing objects:  90% (29/32)   Compressing objects:  93% (30/32)   Compressing objects:  96% (31/32)   Compressing objects: 100% (32/32)   Compressing objects: 100% (32/32), done.
+Writing objects:   2% (1/37)   Writing objects:   5% (2/37)   Writing objects:   8% (3/37)   Writing objects:  10% (4/37)   Writing objects:  13% (5/37)   Writing objects:  16% (6/37)   Writing objects:  18% (7/37)   Writing objects:  21% (8/37)   Writing objects:  24% (9/37)   Writing objects:  27% (10/37)   Writing objects:  29% (11/37)   Writing objects:  32% (12/37)   Writing objects:  35% (13/37)   Writing objects:  37% (14/37)   Writing objects:  40% (15/37)   Writing objects:  43% (16/37)   Writing objects:  45% (17/37)   Writing objects:  48% (18/37)   Writing objects:  51% (19/37)   Writing objects:  54% (20/37)   Writing objects:  56% (21/37)   Writing objects:  59% (22/37)   Writing objects:  62% (23/37)   Writing objects:  64% (24/37)   Writing objects:  67% (25/37)   Writing objects:  70% (26/37)   Writing objects:  75% (28/37)   Writing objects:  78% (29/37)   Writing objects:  81% (30/37)   Writing objects:  83% (31/37)   Writing objects:  86% (32/37)   Writing objects:  89% (33/37)   Writing objects:  91% (34/37)   Writing objects:  94% (35/37)   Writing objects:  97% (36/37)   Writing objects: 100% (37/37)   Writing objects: 100% (37/37), 650.53 KiB | 0 bytes/s, done.
+Total 37 (delta 15), reused 0 (delta 0)
+remote: Resolving deltas:   0% (0/15)   [Kremote: Resolving deltas:   6% (1/15)   [Kremote: Resolving deltas:  13% (2/15)   [Kremote: Resolving deltas:  20% (3/15)   [Kremote: Resolving deltas:  26% (4/15)   [Kremote: Resolving deltas:  33% (5/15)   [Kremote: Resolving deltas:  40% (6/15)   [Kremote: Resolving deltas:  46% (7/15)   [Kremote: Resolving deltas:  53% (8/15)   [Kremote: Resolving deltas:  60% (9/15)   [Kremote: Resolving deltas:  66% (10/15)   [Kremote: Resolving deltas:  73% (11/15)   [Kremote: Resolving deltas:  86% (13/15)   [Kremote: Resolving deltas:  93% (14/15)   [Kremote: Resolving deltas: 100% (15/15)   [Kremote: Resolving deltas: 100% (15/15), completed with 11 local objects.[K
+To git@github.com:nstrayer/qualifying_exam.git
+   c8831ce..522eb4a  master -> master
+]0;/home/nick/quals/report]0;nick@compooper: ~/quals/report[01;32mnick@compooper[00m:[01;34m~/quals/report[00m$ lgit "edited the sequence chapter"
