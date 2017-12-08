@@ -425,3 +425,41 @@ remote: Resolving deltas:   0% (0/16)   [Kremote: Resolving deltas:   6% (1/16
 To git@github.com:nstrayer/qualifying_exam.git
    92a1354..308000f  master -> master
 ]0;/home/nick/quals/report]0;nick@compooper: ~/quals/report[01;32mnick@compooper[00m:[01;34m~/quals/report[00m$ [K]0;nick@compooper: ~/quals/report[01;32mnick@compooper[00m:[01;34m~/quals/report[00m$ lgit "spell checked the future directions section"
+[master 97ba07c] spell checked the future directions section
+ 43 files changed, 1563 insertions(+), 96 deletions(-)
+ create mode 100644 .Rproj.user/4CADD3E8/sources/prop/AE447C74
+ create mode 100644 .Rproj.user/4CADD3E8/sources/prop/D2A5B81E
+ create mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/2ABFC372
+ create mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/2ABFC372-contents
+ create mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/3CE12D39-contents
+ create mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/5A76B209
+ create mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/5A76B209-contents
+ delete mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/682756F6
+ create mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/8549A7AF-contents
+ create mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/B1F35A2F
+ rename 03-architectures.Rmd => .Rproj.user/4CADD3E8/sources/s-534a5643/B1F35A2F-contents (100%)
+ create mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/F5E31349-contents
+ create mode 100644 .Rproj.user/shared/notebooks/23D311B2-04-future_directions/1/4CADD3E8534a5643/chunks.json
+ create mode 100644 .Rproj.user/shared/notebooks/23D311B2-04-future_directions/1/s/chunks.json
+ create mode 100644 .Rproj.user/shared/notebooks/43E314EC-03-sequence_architectures/1/s/chunks.json
+ delete mode 100644 .Rproj.user/shared/notebooks/B4887F3E-02-deep_learning/1/s/cy1za1cvaeukk/000019.csv
+ delete mode 100644 .Rproj.user/shared/notebooks/B4887F3E-02-deep_learning/1/s/cy1za1cvaeukk/00001a.metadata
+ delete mode 100644 .Rproj.user/shared/notebooks/B4887F3E-02-deep_learning/1/s/cy1za1cvaeukk/00001a.png
+ delete mode 100644 .Rproj.user/shared/notebooks/B4887F3E-02-deep_learning/1/s/cy1za1cvaeukk/00001a.snapshot
+ create mode 100644 03-sequence_architectures.Rmd
+ create mode 100644 04-future_directions.Rmd
+ create mode 100644 _book/figures/gan_example.png
+ create mode 100644 _book/figures/semi-supervised.png
+ create mode 100644 _book/future.html
+ rewrite _book/search_index.json (99%)
+ create mode 100644 figures/gan_example.png
+ create mode 100644 figures/semi-supervised.png
+Counting objects: 47, done.
+Delta compression using up to 8 threads.
+Compressing objects:   2% (1/40)   Compressing objects:   5% (2/40)   Compressing objects:   7% (3/40)   Compressing objects:  10% (4/40)   Compressing objects:  12% (5/40)   Compressing objects:  15% (6/40)   Compressing objects:  17% (7/40)   Compressing objects:  20% (8/40)   Compressing objects:  22% (9/40)   Compressing objects:  25% (10/40)   Compressing objects:  27% (11/40)   Compressing objects:  30% (12/40)   Compressing objects:  32% (13/40)   Compressing objects:  35% (14/40)   Compressing objects:  37% (15/40)   Compressing objects:  40% (16/40)   Compressing objects:  42% (17/40)   Compressing objects:  45% (18/40)   Compressing objects:  47% (19/40)   Compressing objects:  50% (20/40)   Compressing objects:  52% (21/40)   Compressing objects:  55% (22/40)   Compressing objects:  57% (23/40)   Compressing objects:  60% (24/40)   Compressing objects:  62% (25/40)   Compressing objects:  65% (26/40)   Compressing objects:  67% (27/40)   Compressing objects:  70% (28/40)   Compressing objects:  72% (29/40)   Compressing objects:  75% (30/40)   Compressing objects:  77% (31/40)   Compressing objects:  80% (32/40)   Compressing objects:  82% (33/40)   Compressing objects:  85% (34/40)   Compressing objects:  87% (35/40)   Compressing objects:  90% (36/40)   Compressing objects:  92% (37/40)   Compressing objects:  95% (38/40)   Compressing objects:  97% (39/40)   Compressing objects: 100% (40/40)   Compressing objects: 100% (40/40), done.
+Writing objects:   2% (1/47)   Writing objects:   4% (2/47)   Writing objects:   6% (3/47)   Writing objects:   8% (4/47)   Writing objects:  10% (5/47)   Writing objects:  12% (6/47)   Writing objects:  14% (7/47)   Writing objects:  17% (8/47)   Writing objects:  19% (9/47)   Writing objects:  21% (10/47)   Writing objects:  23% (11/47)   Writing objects:  25% (12/47)   Writing objects:  27% (13/47)   Writing objects:  29% (14/47)   Writing objects:  31% (15/47)   Writing objects:  34% (16/47)   Writing objects:  38% (18/47)   Writing objects:  40% (19/47)   Writing objects:  42% (20/47)   Writing objects:  44% (21/47)   Writing objects:  46% (22/47)   Writing objects:  48% (23/47)   Writing objects:  51% (24/47)   Writing objects:  53% (25/47)   Writing objects:  55% (26/47)   Writing objects:  57% (27/47)   Writing objects:  59% (28/47)   Writing objects:  61% (29/47)   Writing objects:  63% (30/47)   Writing objects:  65% (31/47)   Writing objects:  68% (32/47)   Writing objects:  70% (33/47)   Writing objects:  72% (34/47)   Writing objects:  74% (35/47)   Writing objects:  76% (36/47)   Writing objects:  78% (37/47)   Writing objects:  80% (38/47)   Writing objects:  82% (39/47)   Writing objects:  85% (40/47)   Writing objects:  87% (41/47)   Writing objects:  89% (42/47)   Writing objects:  91% (43/47)   Writing objects:  93% (44/47)   Writing objects:  95% (45/47)   Writing objects:  97% (46/47)   Writing objects: 100% (47/47)   Writing objects: 100% (47/47), 256.08 KiB | 0 bytes/s, done.
+Total 47 (delta 19), reused 0 (delta 0)
+remote: Resolving deltas:   0% (0/19)   [Kremote: Resolving deltas:  10% (2/19)   [Kremote: Resolving deltas:  15% (3/19)   [Kremote: Resolving deltas:  21% (4/19)   [Kremote: Resolving deltas:  26% (5/19)   [Kremote: Resolving deltas:  31% (6/19)   [Kremote: Resolving deltas:  36% (7/19)   [Kremote: Resolving deltas:  42% (8/19)   [Kremote: Resolving deltas:  47% (9/19)   [Kremote: Resolving deltas:  52% (10/19)   [Kremote: Resolving deltas:  57% (11/19)   [Kremote: Resolving deltas:  63% (12/19)   [Kremote: Resolving deltas:  68% (13/19)   [Kremote: Resolving deltas:  73% (14/19)   [Kremote: Resolving deltas:  78% (15/19)   [Kremote: Resolving deltas:  84% (16/19)   [Kremote: Resolving deltas:  89% (17/19)   [Kremote: Resolving deltas:  94% (18/19)   [Kremote: Resolving deltas: 100% (19/19)   [Kremote: Resolving deltas: 100% (19/19), completed with 16 local objects.[K
+To git@github.com:nstrayer/qualifying_exam.git
+   308000f..97ba07c  master -> master
+]0;/home/nick/quals/report]0;nick@compooper: ~/quals/report[01;32mnick@compooper[00m:[01;34m~/quals/report[00m$ lgit :[K"spellcheck of sequences [K[K architecture chapter done"
