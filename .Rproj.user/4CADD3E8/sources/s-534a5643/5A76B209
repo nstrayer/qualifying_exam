@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1512747385638.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1841360993",
+    "id" : "5A76B209",
+    "lastKnownWriteTime" : 1512762093,
+    "last_content_update" : 1512762093014,
+    "path" : "~/quals/report/04-future_directions.Rmd",
+    "project_path" : "04-future_directions.Rmd",
+    "properties" : {
+        "cursorPosition" : "35,0",
+        "scrollLine" : "32"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

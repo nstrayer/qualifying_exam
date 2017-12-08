@@ -25,7 +25,7 @@
 <meta name="author" content="Nick Strayer">
 
 
-<meta name="date" content="2017-12-07">
+<meta name="date" content="2017-12-08">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -33,7 +33,7 @@
   
   
 <link rel="prev" href="neuralnetworks.html">
-<link rel="next" href="placeholder.html">
+<link rel="next" href="future.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -122,11 +122,21 @@
 <li class="chapter" data-level="4.3.4" data-path="architectures.html"><a href="architectures.html#translation-invariance"><i class="fa fa-check"></i><b>4.3.4</b> Translation invariance</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="placeholder.html"><a href="placeholder.html"><i class="fa fa-check"></i><b>5</b> Placeholder</a><ul>
-<li class="chapter" data-level="5.0.1" data-path="placeholder.html"><a href="placeholder.html#mathematical-operations-1"><i class="fa fa-check"></i><b>5.0.1</b> Mathematical Operations</a></li>
+<li class="chapter" data-level="5" data-path="future.html"><a href="future.html"><i class="fa fa-check"></i><b>5</b> Oportunities for advancing field</a><ul>
+<li class="chapter" data-level="5.1" data-path="future.html"><a href="future.html#what-to-do-with-all-those-parameters"><i class="fa fa-check"></i><b>5.1</b> What to do with all those parameters</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="future.html"><a href="future.html#data-requirments"><i class="fa fa-check"></i><b>5.1.1</b> Data requirments</a></li>
+<li class="chapter" data-level="5.1.2" data-path="future.html"><a href="future.html#runtime-on-mobile-hardware-hardware"><i class="fa fa-check"></i><b>5.1.2</b> Runtime on mobile hardware hardware</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="placeholder-1.html"><a href="placeholder-1.html"><i class="fa fa-check"></i><b>6</b> Placeholder</a><ul>
-<li class="chapter" data-level="6.0.1" data-path="placeholder-1.html"><a href="placeholder-1.html#mathematical-operations-2"><i class="fa fa-check"></i><b>6.0.1</b> Mathematical Operations</a></li>
+<li class="chapter" data-level="5.2" data-path="future.html"><a href="future.html#inference"><i class="fa fa-check"></i><b>5.2</b> Inference</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="future.html"><a href="future.html#black-box-issue"><i class="fa fa-check"></i><b>5.2.1</b> “Black Box” issue</a></li>
+<li class="chapter" data-level="5.2.2" data-path="future.html"><a href="future.html#causality-problems"><i class="fa fa-check"></i><b>5.2.2</b> Causality problems</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="future.html"><a href="future.html#missing-or-small-data"><i class="fa fa-check"></i><b>5.3</b> Missing or small data*</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="future.html"><a href="future.html#missing-data-methods"><i class="fa fa-check"></i><b>5.3.1</b> Missing data methods</a></li>
+<li class="chapter" data-level="5.3.2" data-path="future.html"><a href="future.html#semi-supervised-methods"><i class="fa fa-check"></i><b>5.3.2</b> Semi-supervised methods</a></li>
+<li class="chapter" data-level="5.3.3" data-path="future.html"><a href="future.html#mathematical-operations-1"><i class="fa fa-check"></i><b>5.3.3</b> Mathematical Operations</a></li>
+<li class="chapter" data-level="5.3.4" data-path="future.html"><a href="future.html#mathematical-operations-2"><i class="fa fa-check"></i><b>5.3.4</b> Mathematical Operations</a></li>
+</ul></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -172,7 +182,7 @@ Figure 4.1: A recurrent neural network with a single hidden layer. The hidden la
 <h3><span class="header-section-number">4.2.1</span> Applications to sequential data</h3>
 <p>RNN’s are fundementally models for performing analysis on sequential data (although they have been applied to static inputs and used to generate sequential outputs (<span class="citation">Mao et al. (<a href="#ref-rnn_captions">2014</a>)</span>)). Some of the major success stories in recurrent neural networks come in the realm of machine translation. For instance, Google’s entire translation service is now powered by RNNs (<span class="citation">Wu et al. (<a href="#ref-google_translate">2016</a>)</span>).</p>
 <p>Other domains in which RNNs have been successfully applied is in time-series regression (<span class="citation">Cai et al. (<a href="#ref-rnn_regression">2007</a>)</span>), speech recoginition (<span class="citation">Graves, Mohamed, and Hinton (<a href="#ref-rnn_speach">2013</a>)</span>), and handwriting recognition (<span class="citation">Graves et al. (<a href="#ref-rnn_handwriting">2008</a>)</span>).</p>
-<div class="figure"><span id="fig:unnamed-chunk-1"></span>
+<div class="figure"><span id="fig:unnamed-chunk-5"></span>
 <img src="figures/handwriting_rnn.png" alt="Example of an RNN's output for recognizing characters in handwritten characters. The model scans along one slice at a time of the data and the output is character likelihood. Still from [youtube video](https://www.youtube.com/watch?v=mLxsbWAYIpw) by Nikhil Buduma." height="320" />
 <p class="caption">
 Figure 4.2: Example of an RNN’s output for recognizing characters in handwritten characters. The model scans along one slice at a time of the data and the output is character likelihood. Still from <a href="https://www.youtube.com/watch?v=mLxsbWAYIpw">youtube video</a> by Nikhil Buduma.
@@ -223,7 +233,7 @@ Figure 4.3: Unrolled view of the RNN shown in previous figure. Each timestep has
 \end{align}\]</span>
 <p>From the form of the function composition in <a href="architectures.html#eq:simplernn3">(4.3)</a> allows us to see that while the eigen matrix is continuouly being raised to the <span class="math inline">\(t\)</span> power, it will cause it’s eigenvalues with magnitude greater than one to diverge to infinity and those with magnitude less than one to converge to zero.</p>
 <p>This observation leads to the problem that, over any long term sequence our model will have a very hard time keeping track of dependencies. When applied to back propigation this is essentially means that the gradients associated with parameters linked to longer term dependencies will either vanish (go to zero) or expload (go to infinity).</p>
-<p>Due to the problems caused by this repeated function composition plain RNNs have generally proved unable to learn dependencies longer than a few time-steps<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>, and when they do, they are outweighed by those closer in time, simply due to mathematical inconvenciences and not neccesarily information importance (<span class="citation">Bengio and Frasconi (<a href="#ref-bengio_gradient">1994</a>)</span>, <span class="citation">Graves and others (<a href="#ref-graves_rnn">2012</a>)</span>).</p>
+<p>Due to the problems caused by this repeated function composition plain RNNs have generally proved unable to learn dependencies longer than a few time-steps<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a>, and when they do, they are outweighed by those closer in time, simply due to mathematical inconvenciences and not neccesarily information importance (<span class="citation">Bengio and Frasconi (<a href="#ref-bengio_gradient">1994</a>)</span>, <span class="citation">Graves and others (<a href="#ref-graves_rnn">2012</a>)</span>).</p>
 </div>
 <div id="modern-extensions" class="section level3">
 <h3><span class="header-section-number">4.2.6</span> Modern Extensions</h3>
@@ -372,8 +382,8 @@ Figure 4.7: A diagram of how a convolutions are applied to sequential data.
 </div>
 <div class="footnotes">
 <hr />
-<ol start="1">
-<li id="fn1"><p><span class="citation">Bengio and Frasconi (<a href="#ref-bengio_gradient">1994</a>)</span> showed that after only 10-20 steps the probability of successfully learning a dependency was effectively zero.<a href="architectures.html#fnref1">↩</a></p></li>
+<ol start="2">
+<li id="fn2"><p><span class="citation">Bengio and Frasconi (<a href="#ref-bengio_gradient">1994</a>)</span> showed that after only 10-20 steps the probability of successfully learning a dependency was effectively zero.<a href="architectures.html#fnref2">↩</a></p></li>
 </ol>
 </div>
             </section>
@@ -382,7 +392,7 @@ Figure 4.7: A diagram of how a convolutions are applied to sequential data.
         </div>
       </div>
 <a href="neuralnetworks.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="placeholder.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="future.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -411,7 +421,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/rstudio/bookdown-demo/edit/master/03-architectures.Rmd",
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/03-sequence_architectures.Rmd",
 "text": "Edit"
 },
 "download": ["bookdown-demo.pdf", "bookdown-demo.epub"],

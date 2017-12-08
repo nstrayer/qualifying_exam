@@ -1,0 +1,103 @@
+# Introduction {#intro}
+
+
+## Continuous Classification 
+Imagine you are watching a movie. A friend walks in late and asks "what did I miss?" You tell him that the main character has just escaped from a nasty predicament and has defeated the antagonist. What you have done is classification of a sequence. The sequence in this case is the frames of the movie and your classification was what was occurring in the movie at that moment. You could have given the same answer if you just saw a single frame, but most likely your assessment of the state of the movie depended on events you saw before and the context in which they placed the most recent frame. 
+
+What continuous classification in the context of statistics and machine learning is is an attempt to train computers to watch data like you watched the movie and be able to report the status of the generating system at any given point. Sometimes seeing the most recent data is all that is needed, but more interesting and challenging problems need the algorithm to be able to make decisions about a current time while leveraging context from previous history to do so. 
+
+This report is a brief run through past attempts at continuous classification and a deeper explanation of the current state of the art methods. 
+
+## Potential applications of continuous classification models
+
+The following are just a few examples of biomedical applications made possible with effective continuous classification models. 
+
+
+### Activity Prediction
+
+With the advent of wearable devises such as fitbits and apple watches the amount of high temporal resolution data we have streaming from individuals is exploding and showing no sign of letting up. 
+
+Continuous classification models could be used to to assess the state of the wearer at any moment. Simple applications of this could be for things like detecting different exercise types (e.g. running vs. weightlifting) which is implemented by unpublished methods internally by companies such as fitbit. 
+
+More advanced and potentially impactful methods could be extended to predicting more subtle but medically relevant states such as dehydration or sleep apnea (sleep apnea citation). Preliminary work in these areas has shown surprising success with data as limited as heart-rate and motion indication being enough to predict sleep apnea and various cardiovascular risk states with ___ accuracy compared to invasive gold standards.
+
+
+### EHR monitoring
+
+With more and more information on patients being accrued in governmental and hospital databases we have a clearer than ever picture of a patient's health over long periods of time. Unfortunately, due to a combination of overwhelming quantities and noise levels in the data our ability to make use of these data has not kept up with their quantity. 
+
+Sequential models can help ease the burden on health practitioners in making use of these data. For instance, a model could be trained on a patient's records to predict the likelihood of cardiovascular events. This model could then alert a doctor of potential risk in order to facilitate timely interventions. This could be especially helpful in large clinical settings where personal doctor-patient relationships may not be common. 
+
+(Insert reference to applications on these data already performed)
+
+### Hospital Automation
+
+Patient monitoring systems already have alarms to alert staff of occurring anomaly for a patient. Continuous classification methods could extend these methods to more subtle actions (patient is experiencing pain and needs a change in the medications administered by their IV) or to give staff more heads-up time before an event occurs (model predicts patient has a high change of going into afribulation in the next five mins). These methods, if successfully implemented could help hospitals more efficiently allocate resources and potentially save lives. 
+
+---
+
+## History of methods
+
+While sources of data to perform it on have recently greatly expanded, the interest in performing continuous classification is not a new topic. Many methods have been proposed for the task to varying degrees of success.  Below is a brief review of some of the more successful methods and their advantages and limitations.
+
+
+### Windowed regression
+
+Perhaps the most intuitive approach to the problem of incorperating context from previous time points into your prediction is to use a windowed approach. Broadly, in these approaches a window of some width (in previous observation numbers or time length) is sequentially run over the data and then the model uses information from within that window to predict. 
+
+The data obtained from the window may have some form of summary applied to it. This could be a mean, median, or any other function which is then used to predict with. By summarizing the multiple datapoints into a single (or few) values noisy data can be made slightly cleaner but at the cost of potentially throwing away useful information captured by the interval (such as trajectory.) 
+
+If the data are kept intact mode advanced methods are available. These include dynamic time warping (Time warping citation) or kernel methods (see next section). This allows much more information to be retained in the sample but at the cost of setting a limit on how far back your model can learn dependencies in the data. For instance if your window is one hour long but  an activity lasts two hours your model will have a very hard time recognizing it. This is equivalent to an infinitely strong prior on the interaction timeline (window prior assumptions citation). 
+
+
+### Transformation methods
+
+As mentioned before, when a window is scanned across the time dimension of data, one of the ways of extracting information is by performing some transformation on the data. Common examples include wavelet or Fourier transforms. These methods attempt to separate the data into separate components. For instance, Fourier transforms applied to accelerometer data from an individuals wrist can be used to detect the frequencies associated with walking and running(Transformed accelerometer citation). These methods have also been used extensively in electrical systems and signal processing to help determine the state of the system. 
+
+/Fourier transform equation/
+
+A few limitations are imposed by these methods. First, as mentioned before, they are still subject to the windowing constraints. Secondly, they rely on the data to be periodic or oscillatory in nature. For instance, the accelerometer data oscillated back and forth as the individual's arms moved in their gate and electrical systems are inherently oscillatory. Data such as heart-rate or step counts as produced by devices like apple watches and fitbits is a rather stable signal (although before output it may not be) and thus transformation methods are unable to separate them into frequency domains at reasonable time scales.  In addition, these methods are unable to deal with non-numeric data which severally limits them in heterogenous data domains such as EHR data. 
+
+
+
+### Hidden Markov Models
+
+In an attempt to deal with the fact that in most scenarios the classification of time point $t$ is dependent on that of previous time points, hidden makov models (or HMMs)  model data as a series of observations generated by a system transitioning between some unobserved (or latent) states. This is done by constructing a transition matrix that denotes the probability of transitioning from one state to another and conditioning it on whatever observed data you have. 
+
+$$P(s_a -> s_b | x_t) = ...$$
+
+This allows the model to learn time dependencies in the data. For instance, if a person is running now their next state is probably going to be walking rather than sitting or swimming. 
+
+HMMs were the state of the art models on continuous classification problems until very recently (HMM state of art citation), and are still very valuable for many problems. However, their greatest advantage is also their greatest disadvantage. 
+
+The Markov property (or the first 'M' in HMM) states that the next state of the system being modeled depends exclusively on the current state. This means that the model is 'memoryless.' For instance, returning to our running example, say an individual had been running in the previous time point, the model will most likely pick walking as their next state (ignoring any conditional data for simplicity) but what if before they were running they were swimming? This fact from multiple time-steps before would strongly hint that the next state would in fact be biking and not walking (they are running a triathlon.) 
+
+There are ways to fix this (extending hmms past a single time step citation), however the number of parameters needed to estimate transition probabilities for $m$ previous time steps is (# of classes) to the $k^{th}$ power, which rapidly becomes untenable.  In addition, we have to a-priori decide the number of time steps in the past that matter. 
+
+---
+
+### Advantages of deep learning methods
+
+Before we dive into the mathematical underpinnings of deep learning methods for continuous classification we will go over how they solve many of the aforementioned issues from traditional methods. 
+
+*Less Domain Knowledge Needed*
+One of the ways that it helps to think about deep learning is as a computer program that learns what to do.  In his popular blog post _Software 2.0) Andrej Karapathy makes the argument that deep learning is powerful because it helps avoid traditional tediums like explicitly defining cases for the computer to deal with. One of the ways this is applicable to our problems is the ability for most data to be a kind-of 'plug-and-play' process. 
+
+This can be seen in the context of the input data form. If you had data from say an accelerometer it would go into the same neural network as data from a more static heart-rate sensor would. The models are flexible enough to learn how to deal with these input patterns without requiring the researcher to explicitly define a transformation based on the data. This allows the same methods to be applied to many domains and further reduces the amount of analyst decisions to be made, which has the potential to make performance assessments more accurate (Frank's automate as much of the model as possible citation). 
+
+*Can find and deal with arbitrary time dependencies*
+Deep learning models are theoretically capable of learning time dependencies of infinite length and strength (Universal approximation theorem). While obviously it is impossible to supply a network with enough data to fit enough parameters to do so, the fact remains that deep learning methods are capable of handling time dependencies (even of very long length (stateful LSTM citation) ). In addition to being able to model these dependencies they do so without any need for explicitly telling the model the length of the dependencies and also using substantially fewer parameters than an extended hidden markov model (RNN textbook citation).
+
+For example, an recurrent neural network (RNN) can automatically learn that if a person swims and then runs, they will most likely be biking next, but it could also remember that a patient was given a flu vaccine three months prior and thus their symptoms most likely don't indicate the flu but a cold. The power of this flexibility to automatically learn arbitrary time dependency patterns is powerful in not only its ability to create accurate models, but potentially for exploration of causal patterns. 
+
+
+*Multiple architectures for solving traditional problems*
+In a similar vein, one of the decisions that does need to be made with deep learning: which network architecture to use, conveniently is rather robust to the problem of continuous classification. For instance: convolutional neural networks that have achieved great success in computer vision were actually originally designed for time series data, and recent advanced such as dilated convolutions allow for them to search as far back in the time-series as needed to find valuable information for classification. Recurrent neural networks (which will be elaborated on in the following sections) are also fantastic for time-series data, as they explicitly model the autocorrelation found in the data via a recurrent cycle in their computation graph.  This allows them to read data much like one reads a book, selectively remembering past events that have applicability to the current state. 
+
+
+*Downsides*
+As a result of being so flexible deep learning models require a lot of data to properly tune all their parameters without over fitting. This results in not only more data being needed (with some exceptions such as bayesian methods) but also, when combined with their non-convexity, requires a large amount of computation power. 
+
+
+
+
