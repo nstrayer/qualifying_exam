@@ -1076,3 +1076,67 @@ l.247 ...cs[height=320]{figures/fourier_transform}
 Error: Failed to compile bookdown-demo.tex. See bookdown-demo.log for more info.
 Execution halted
 ]0;/home/nick/quals/report]0;nick@compooper: ~/quals/report[01;32mnick@compooper[00m:[01;34m~/quals/report[00m$ [K]0;nick@compooper: ~/quals/report[01;32mnick@compooper[00m:[01;34m~/quals/report[00m$ edited [K[K[K[K[K[K[K"lgit "edited[K[K[K[K[K[K[K[K[K[K[K[K[Klgit "edited the first chapter"
+[master c8831ce] edited the first chapter
+ 71 files changed, 6279 insertions(+), 1514 deletions(-)
+ rewrite .Rproj.user/4CADD3E8/console06/INDEX001 (70%)
+ create mode 100644 .Rproj.user/4CADD3E8/sources/prop/2868790B
+ create mode 100644 .Rproj.user/4CADD3E8/sources/prop/81F92A24
+ create mode 100644 .Rproj.user/4CADD3E8/sources/prop/ABE3C885
+ create mode 100644 .Rproj.user/4CADD3E8/sources/prop/BD123ACE
+ create mode 100644 .Rproj.user/4CADD3E8/sources/prop/C3D022AD
+ create mode 100644 .Rproj.user/4CADD3E8/sources/prop/F34F39E2
+ create mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/18EAE5BA-contents
+ delete mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/2ABFC372
+ create mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/30693324-contents
+ create mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/4D8E061D
+ create mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/4D8E061D-contents
+ create mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/5607CFD1-contents
+ delete mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/5A76B209
+ rename _deploy.sh => .Rproj.user/4CADD3E8/sources/s-534a5643/5EE6FCF1-contents (100%)
+ mode change 100755 => 100644
+ delete mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/66427A27
+ create mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/77A4E79E
+ create mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/77A4E79E-contents
+ create mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/9CC3E002-contents
+ rename .Rproj.user/4CADD3E8/sources/s-534a5643/{3E3214B1 => A0335D69} (57%)
+ create mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/A0335D69-contents
+ delete mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/B1F35A2F
+ create mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/BA659C96-contents
+ create mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/BE689A18-contents
+ create mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/DEB48125-contents
+ create mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/DF98E92A-contents
+ delete mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/F02960C9
+ create mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/FF6C9468-contents
+ delete mode 100644 .Rproj.user/shared/notebooks/23D311B2-04-future_directions/1/4CADD3E8534a5643/chunks.json
+ delete mode 100644 .Rproj.user/shared/notebooks/43E314EC-03-sequence_architectures/1/4CADD3E8534a5643/chunks.json
+ create mode 100644 .Rproj.user/shared/notebooks/534F4818-index/1/4CADD3E8534a5643/chunks.json
+ delete mode 100644 .Rproj.user/shared/notebooks/B4887F3E-02-deep_learning/1/4CADD3E8534a5643/chunks.json
+ delete mode 100644 .Rproj.user/shared/notebooks/EA93BA34-01-intro/1/4CADD3E8534a5643/chunks.json
+ delete mode 100644 01-intro.Rmd
+ delete mode 100644 _book/bookdown-demo_files/figure-html/unnamed-chunk-21-1.png
+ create mode 100644 _book/figures/fourier_transform.gif
+ create mode 100644 _book/figures/fourier_transform.png
+ delete mode 100644 _book/intro.html
+ delete mode 100644 _book/placeholder-1.html
+ delete mode 100644 _book/placeholder.html
+ rewrite _book/search_index.json (99%)
+ create mode 100644 _bookdown_files/bookdown-demo_files/figure-latex/unnamed-chunk-4-1.pdf
+ create mode 100644 bookdown-demo.log
+ create mode 100644 bookdown-demo.pdf
+ create mode 100644 bookdown-demo.tex
+ create mode 100644 figures/fourier_transform.png
+ rewrite index.Rmd (84%)
+ create mode 100644 intro.html
+ delete mode 100644 report.Rmd
+ delete mode 100644 report.html
+ delete mode 100644 reportother.Rmd
+ delete mode 100644 reportother.nb.html
+Counting objects: 64, done.
+Delta compression using up to 8 threads.
+Compressing objects:   2% (1/49)   Compressing objects:   4% (2/49)   Compressing objects:   6% (3/49)   Compressing objects:   8% (4/49)   Compressing objects:  10% (5/49)   Compressing objects:  12% (6/49)   Compressing objects:  14% (7/49)   Compressing objects:  16% (8/49)   Compressing objects:  18% (9/49)   Compressing objects:  20% (10/49)   Compressing objects:  22% (11/49)   Compressing objects:  24% (12/49)   Compressing objects:  26% (13/49)   Compressing objects:  28% (14/49)   Compressing objects:  30% (15/49)   Compressing objects:  32% (16/49)   Compressing objects:  34% (17/49)   Compressing objects:  36% (18/49)   Compressing objects:  38% (19/49)   Compressing objects:  40% (20/49)   Compressing objects:  42% (21/49)   Compressing objects:  44% (22/49)   Compressing objects:  46% (23/49)   Compressing objects:  48% (24/49)   Compressing objects:  51% (25/49)   Compressing objects:  53% (26/49)   Compressing objects:  55% (27/49)   Compressing objects:  57% (28/49)   Compressing objects:  59% (29/49)   Compressing objects:  61% (30/49)   Compressing objects:  63% (31/49)   Compressing objects:  65% (32/49)   Compressing objects:  67% (33/49)   Compressing objects:  69% (34/49)   Compressing objects:  71% (35/49)   Compressing objects:  73% (36/49)   Compressing objects:  75% (37/49)   Compressing objects:  77% (38/49)   Compressing objects:  79% (39/49)   Compressing objects:  81% (40/49)   Compressing objects:  83% (41/49)   Compressing objects:  85% (42/49)   Compressing objects:  87% (43/49)   Compressing objects:  89% (44/49)   Compressing objects:  91% (45/49)   Compressing objects:  93% (46/49)   Compressing objects:  95% (47/49)   Compressing objects:  97% (48/49)   Compressing objects: 100% (49/49)   Compressing objects: 100% (49/49), done.
+Writing objects:   1% (1/64)   Writing objects:   3% (2/64)   Writing objects:   4% (3/64)   Writing objects:   6% (4/64)   Writing objects:   7% (5/64)   Writing objects:   9% (6/64)   Writing objects:  10% (7/64)   Writing objects:  12% (8/64)   Writing objects:  14% (9/64)   Writing objects:  15% (10/64)   Writing objects:  17% (11/64)   Writing objects:  18% (12/64)   Writing objects:  20% (13/64)   Writing objects:  21% (14/64)   Writing objects:  23% (15/64)   Writing objects:  25% (16/64)   Writing objects:  26% (17/64)   Writing objects:  28% (18/64)   Writing objects:  29% (19/64)   Writing objects:  31% (20/64)   Writing objects:  32% (21/64)   Writing objects:  35% (23/64)   Writing objects:  39% (25/64)   Writing objects:  40% (26/64)   Writing objects:  42% (27/64)   Writing objects:  43% (28/64)   Writing objects:  45% (29/64)   Writing objects:  46% (30/64)   Writing objects:  48% (31/64)   Writing objects:  50% (32/64)   Writing objects:  51% (33/64)   Writing objects:  53% (34/64)   Writing objects:  54% (35/64)   Writing objects:  56% (36/64)   Writing objects:  57% (37/64)   Writing objects:  59% (38/64)   Writing objects:  60% (39/64)   Writing objects:  62% (40/64)   Writing objects:  64% (41/64)   Writing objects:  65% (42/64)   Writing objects:  67% (43/64)   Writing objects:  68% (44/64)   Writing objects:  70% (45/64)   Writing objects:  71% (46/64)   Writing objects:  73% (47/64)   Writing objects:  75% (48/64)   Writing objects:  76% (49/64)   Writing objects:  78% (50/64)   Writing objects:  79% (51/64)   Writing objects:  81% (52/64)   Writing objects:  82% (53/64)   Writing objects:  84% (54/64)   Writing objects:  85% (55/64)   Writing objects:  87% (56/64)   Writing objects:  89% (57/64)   Writing objects:  90% (58/64)   Writing objects:  92% (59/64)   Writing objects:  93% (60/64)   Writing objects:  95% (61/64)   Writing objects:  96% (62/64)   Writing objects:  98% (63/64)   Writing objects: 100% (64/64)   Writing objects: 100% (64/64), 406.27 KiB | 0 bytes/s, done.
+Total 64 (delta 15), reused 0 (delta 0)
+remote: Resolving deltas:   0% (0/15)   [Kremote: Resolving deltas:  13% (2/15)   [Kremote: Resolving deltas:  26% (4/15)   [Kremote: Resolving deltas:  33% (5/15)   [Kremote: Resolving deltas:  40% (6/15)   [Kremote: Resolving deltas:  46% (7/15)   [Kremote: Resolving deltas:  53% (8/15)   [Kremote: Resolving deltas:  60% (9/15)   [Kremote: Resolving deltas:  66% (10/15)   [Kremote: Resolving deltas:  73% (11/15)   [Kremote: Resolving deltas:  80% (12/15)   [Kremote: Resolving deltas:  86% (13/15)   [Kremote: Resolving deltas:  93% (14/15)   [Kremote: Resolving deltas: 100% (15/15)   [Kremote: Resolving deltas: 100% (15/15), completed with 11 local objects.[K
+To git@github.com:nstrayer/qualifying_exam.git
+   f4596cf..c8831ce  master -> master
+]0;/home/nick/quals/report]0;nick@compooper: ~/quals/report[01;32mnick@compooper[00m:[01;34m~/quals/report[00m$ lgit "eited [K[K[K[K[Kdited the neural network chapter"

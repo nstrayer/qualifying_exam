@@ -161,14 +161,14 @@
 <blockquote>
 <p>A multilayer perceptron is just a mathematical function mapping some set of input values to output values. The function is formed by composing many simpler function. We can think of each application of a different mathematical function as providing a new representation of the input. (<span class="citation">Goodfellow, Bengio, and Courville (<a href="#ref-goodfellow_DL">2016</a>)</span>)</p>
 </blockquote>
-<p>Neural networks (sometimes referred to as multilayer perceptrons) are actually very simple models. Traditional modern neural networks simply pass data forward through a “network” that at each layer, performs a linear (also referred to as affine) transformation of its inputs followed by a element wise non-linear transformation (also called an activation function). In doing this they can build up successively more complex representations of data and use those to make decisions about it.</p>
-<p>This can be roughly thought about in the analogy of recognizing a cat. First you see, ears, a nose, two eyes, four feet, and a fluffy tail; next, you recognize the ears, nose and eyes as a head, the tail and legs as a body; and lastly the head and body as a cat. In performing this ‘classification’ of a cat you first constructed small features and successively stacked them to figure out what you were looking at. While this is obviously a stretched definition of how neural networks work, it actually is very close to how a special variant called Convolutional Neural Networks work for computer vision techniques (<span class="citation">Olah, Mordvintsev, and Schubert (<a href="#ref-cnn_vis">2017</a>)</span>).</p>
+<p>Neural networks (sometimes referred to as multilayer perceptrons) are at their core very simple models. Traditional modern neural networks simply pass data forward through a “network” that at each layer, performs a linear (also referred to as affine) transformation of its inputs followed by a element-wise non-linear transformation (also called an activation function). In doing this they can build up successively more complex representations of data and use those to make decisions about it.</p>
+<p>This can be thought about in the analogy of recognizing a cat. First you see ears, a nose, two eyes, four feet, and a fluffy tail; next, you recognize the ears, nose and eyes as a head, the tail and legs as a body; and lastly the head and body as a cat. In performing this ‘classification’ of a cat you first constructed small features and successively stacked them to figure out what you were looking at. While this is obviously a stretched definition of how neural networks work, it actually is very close to how a special variant called Convolutional Neural Networks work for computer vision techniques (<span class="citation">Olah, Mordvintsev, and Schubert (<a href="#ref-cnn_vis">2017</a>)</span>).</p>
 <div id="history" class="section level2">
 <h2><span class="header-section-number">2.1</span> History</h2>
-<p>While neural networks’ popularity has taken off in recent years they are in fact not very new techniques. The neuron or smallest unit of a neural network was first introduced in 1943 (<span class="citation">McCulloch and Pitts (<a href="#ref-mcculloch_neuron">1943</a>)</span>). It was then another 15 years until the perceptron (now commonly called ‘neural network’) was introduced (<span class="citation">Rosenblatt (<a href="#ref-rosenblatt_perceptron">1958</a>)</span>) that tied together groups of neurons to represent more complex relationships.</p>
-<p>Another ten years later, in a textbook (<span class="citation">Minsky, Papert, and Bottou (<a href="#ref-minsky_perceptrons">1969</a>)</span>) it was shown that a simple single layer perceptron was incapable of solving certain classes of problems like the XOR problem. The authors argued that the only way for a perceptron to overcome this hurdle would be to be stacked together, which while appealing was not possible to be trained effectively at the time.</p>
-<div class="figure"><span id="fig:unnamed-chunk-1"></span>
-<img src="http://lab.fs.uni-lj.si/lasin/wp/IMIT_files/neural/nn06_rbfn_xor/html/nn06_rbfn_xor_2_newrb_01.png" alt="Example of the XOR problem. Classes encoded by color are not linearly seperable."  />
+<p>While neural networks’ popularity has taken off in recent years they are not a new technique. The neuron or smallest unit of a neural network was first introduced in 1943 (<span class="citation">McCulloch and Pitts (<a href="#ref-mcculloch_neuron">1943</a>)</span>). It was then another 15 years until the perceptron (now commonly called ‘neural network’) was introduced (<span class="citation">Rosenblatt (<a href="#ref-rosenblatt_perceptron">1958</a>)</span>) that tied together groups of neurons to represent more complex relationships.</p>
+<p>Another ten years later, in a textbook (<span class="citation">Minsky, Papert, and Bottou (<a href="#ref-minsky_perceptrons">1969</a>)</span>) it was shown that a simple single layer perceptron was incapable of solving certain classes of problems like the “And Or” (XOR) problem (<a href="neuralnetworks.html#fig:xorproble">2.1</a>), due to their being linearly inseperable. The authors argued that the only way for a perceptron to overcome this hurdle would be to be stacked together, which, while appealing, was not possible to be trained effectively at the time.</p>
+<div class="figure"><span id="fig:xorproble"></span>
+<img src="figures/xor_problem.png" alt="Example of the XOR problem. Classes encoded by color are not linearly seperable."  />
 <p class="caption">
 Figure 2.1: Example of the XOR problem. Classes encoded by color are not linearly seperable.
 </p>
@@ -255,7 +255,7 @@ Figure 2.1: Example of the XOR problem. Classes encoded by color are not linearl
 \end{equation}\]</span>
 <p>Or that the derivative of <span class="math inline">\(y\)</span> with respect to the <span class="math inline">\(i^{\text{th}}\)</span> element of <span class="math inline">\(\textbf{x}\)</span> is the sum of the series of products of the derivatives of result <span class="math inline">\(\textbf{z}\)</span> that sits between the two values in the function composition.</p>
 <p>Another way of thinking of this is, the derivative of the output of the function composition <span class="math inline">\(f \circ g\)</span> with respect to some element of the input is the sum of all of the derivatives of all of the paths leading from the input element to the output.</p>
-<div class="figure"><span id="fig:unnamed-chunk-2"></span>
+<div class="figure"><span id="fig:unnamed-chunk-1"></span>
 <img src="figures/backprop.png" alt="How back propigation steps back from the output to the input. To calculate the gradient with respect to the loss of the orange neuron the we need to aggregate the gradients of all connected points further along in the computation graph."  />
 <p class="caption">
 Figure 2.2: How back propigation steps back from the output to the input. To calculate the gradient with respect to the loss of the orange neuron the we need to aggregate the gradients of all connected points further along in the computation graph.
@@ -283,7 +283,7 @@ Figure 2.2: How back propigation steps back from the output to the input. To cal
 <div id="gradient-descent-modifications" class="section level3">
 <h3><span class="header-section-number">2.5.2</span> Gradient Descent Modifications</h3>
 <p>There are many scenarios in which traditional steepest descent is not an ideal for finding minimums. A classic example is when the loss function takes the form of a long trough. In this case steepest descent will spend most of its time bouncing around between the sides of the trough due to over stepping the low point, thus wasting many of its iterations undoing its previous work rather than progressing in the true direction of the minimum.</p>
-<div class="figure"><span id="fig:unnamed-chunk-3"></span>
+<div class="figure"><span id="fig:unnamed-chunk-2"></span>
 <img src="http://www.nbertagnolli.com/assets/descent_methods/GDWBLS.png" alt="Demonstration of steepest descents limitations on trough like gradient surfaces. Much of each step's progress is wasted on bouncing back and forth between the two walls of the gradient rather than descending directly towards the minimum. Image from [Nicolas Bertagnolli's blog](http://www.nbertagnolli.com/)" width="300" height="300" />
 <p class="caption">
 Figure 2.3: Demonstration of steepest descents limitations on trough like gradient surfaces. Much of each step’s progress is wasted on bouncing back and forth between the two walls of the gradient rather than descending directly towards the minimum. Image from <a href="http://www.nbertagnolli.com/">Nicolas Bertagnolli’s blog</a>
@@ -305,8 +305,8 @@ Figure 2.3: Demonstration of steepest descents limitations on trough like gradie
 <span id="def:relu" class="definition"><strong>Definition 2.2  (Rectified Linear Unit activation function)  </strong></span><span class="math display">\[f(x) = \text{max}(0,x)\]</span>
 </div>
 
-<div class="figure"><span id="fig:unnamed-chunk-4"></span>
-<img src="bookdown-demo_files/figure-html/unnamed-chunk-4-1.png" alt="Comparison of the relu and sigmoid activation functions." width="672" />
+<div class="figure"><span id="fig:unnamed-chunk-3"></span>
+<img src="bookdown-demo_files/figure-html/unnamed-chunk-3-1.png" alt="Comparison of the relu and sigmoid activation functions." width="672" />
 <p class="caption">
 Figure 2.4: Comparison of the relu and sigmoid activation functions.
 </p>
