@@ -20,7 +20,7 @@ This can be accomplished in a neural network by adding recurrent links between l
 
 Why not just pass the output at time $(t-1)$ to the hidden state at $t$ instead? While this is possible, and indeed works much better than not communicating information between time points at all, it suffers from the squashing of the latent state information to out outcome of interest. This results in a loss of information about what is happening in the system since the hidden or latent state to the outcome is not necessarily a one-to-one function. In addition, there is convenience in the fact that the hidden state is already of the same dimension, allowing for a simple element-wise  addition of the components from the previous hidden state and the new input information. 
 
-```{r,  out.height = 320, echo = FALSE, label = "cyclegraph", fig.cap = "A recurrent neural network with a single hidden layer. The hidden layer's values at time $t$ are passed to the hidden layer at time $(t + 1)$."}
+```{r,  out.height = 320, echo = FALSE, fig.align = "center", label = "cyclegraph", fig.cap = "A recurrent neural network with a single hidden layer. The hidden layer's values at time $t$ are passed to the hidden layer at time $(t + 1)$."}
 knitr::include_graphics("figures/rnn_compact.png")
 ```
 
@@ -31,7 +31,7 @@ RNNs are fundamentally models for performing analysis on sequential data (althou
 
 Other domains in which RNNs have been successfully applied is in time-series regression (@rnn_regression), speech recognition (@rnn_speach), and handwriting recognition (@rnn_handwriting). 
 
-```{r,  out.height = 320, echo = FALSE, fig.cap = "Example of an RNN's output for recognizing characters in handwritten characters. The model scans along one slice at a time of the data and the output is character likelihood. Still from [youtube video](https://www.youtube.com/watch?v=mLxsbWAYIpw) by Nikhil Buduma."}
+```{r,  out.height = 320, echo = FALSE, fig.align = "center", fig.cap = "Example of an RNN's output for recognizing characters in handwritten characters. The model scans along one slice at a time of the data and the output is character likelihood. Still from [youtube video](https://www.youtube.com/watch?v=mLxsbWAYIpw) by Nikhil Buduma."}
 knitr::include_graphics("figures/handwriting_rnn.png")
 ```
 
@@ -47,7 +47,7 @@ Usage of neural networks for these tasks has greatly improved upon previous tech
 
 A natural question that arises from the cyclical computational graph shown in figure \@ref(fig:cyclegraph) is how the gradient can be calculated via back propagation. In fact, the cycle as represented is just a visual simplification of the true computational graph. The 'unrolled' graph can be thought of as a long chain of neural networks that share connections between sequential hidden layers. 
 
-```{r,  out.height = 320, echo = FALSE, label = "unrolledgraph", fig.cap = "Unrolled view of the RNN shown in previous figure. Each timestep has two outputs, the timesteps predictions and its hidden state. The next time step subsequently has two inputs: the data at the timepoint and the previous timepoint's hidden state."}
+```{r,  out.height = 320, echo = FALSE, fig.align = "center", label = "unrolledgraph", fig.cap = "Unrolled view of the RNN shown in previous figure. Each timestep has two outputs, the timesteps predictions and its hidden state. The next time step subsequently has two inputs: the data at the timepoint and the previous timepoint's hidden state."}
 knitr::include_graphics("figures/rnn_unrolled.png")
 ```
 
@@ -104,7 +104,7 @@ While these methods do successfully allow RNNs to learn longer time dependencies
 
 A way of controlling how an RNN keeps track of different dependencies over time is to make that control flow part of the model itself and allow it to be learned. This is the concept that long short term memory (LSTM) networks (@lstm_intro) use. In the broadest sense, LSTM networks augment the traditional RNN architecture by adding a series of 'gates' that control which parts of the hidden state are remembered and used from time-step to time-step. 
 
-```{r,  out.width = 400, echo = FALSE, label = 'lstmdiagram', fig.cap = "The internal structure of an LSTM hidden unit. The gates are all fed by the input at time _t_, the whole hidden unit at time (_t - 1_), and the hidden units internal state from time (_t - 1_). The gates themselves are linear combinations of the input that are then transformed by sigmoid activation functions."}
+```{r,  out.width = 400, echo = FALSE, fig.align = "center",  label = 'lstmdiagram', fig.cap = "The internal structure of an LSTM hidden unit. The gates are all fed by the input at time _t_, the whole hidden unit at time (_t - 1_), and the hidden units internal state from time (_t - 1_). The gates themselves are linear combinations of the input that are then transformed by sigmoid activation functions."}
 knitr::include_graphics("figures/lstm_cell.png")
 ```
 
@@ -120,7 +120,7 @@ The major issue with LSTMs is how many parameters there are to learn. The number
 
 Introduced relatively recently (2014), Gated recurrent units (GRU)(@gru_intro), like LSTM, use gates to help control information flow through time, but it omits the extra recurrence step of the internal step from the LSTM and also sets the update and forget gates to be complements of each other, thus accomplishing the task with a single gate. This is paired with a reset gate that controls how much of the hidden state from the previous time-point makes it into the hidden state's input vector. 
 
-```{r,  out.width = 400, echo = FALSE, label = 'grudiagram', fig.cap = "The internal structure of an GRU hidden unit. Unlike the LSTM there are only two gates, with the update and forget get tasks being taken care of by a single gate that controls what proportion to remember and what to forget. In addition, a reset gate controls how much of the hidden state from the previous step to bring into the current."}
+```{r,  out.width = 400, echo = FALSE, fig.align = "center", label = 'grudiagram', fig.cap = "The internal structure of an GRU hidden unit. Unlike the LSTM there are only two gates, with the update and forget get tasks being taken care of by a single gate that controls what proportion to remember and what to forget. In addition, a reset gate controls how much of the hidden state from the previous step to bring into the current."}
 knitr::include_graphics("figures/gru_cell.png")
 ```
 
@@ -136,7 +136,7 @@ There are a few general approaches to solving this. The simplest is to just stop
 
 Another technique is to modify the architecture of the RNN such that the hidden state receives input not from itself at the previous time point but the output at the previous time-point. This allows the model to be trained one time point at a time because the output from the next time step can be substituted with the observed value at that time step. While this approach massively speeds up training, as mentioned previously, it throws away some potentially valuable latent-space information that the model has learned. This approach has gained very little traction due to these limitations.
 
-```{r,  out.width = 300, echo = FALSE, label = 'outputrnn', fig.cap = "An RNN where the recurrent connection is made between the previous timepoint's output and the hidden unit. This model is less expressive than the traditional hidden - hidden architecture but is much easier to train."}
+```{r,  out.width = 300, echo = FALSE, fig.align = "center", label = 'outputrnn', fig.cap = "An RNN where the recurrent connection is made between the previous timepoint's output and the hidden unit. This model is less expressive than the traditional hidden - hidden architecture but is much easier to train."}
 knitr::include_graphics("figures/output_rnn.png")
 ```
 
@@ -157,7 +157,7 @@ The power of neural networks comes in with the fact that these feature recognize
 
 Neuroscience research has shown that CNNs mimic how the first stages of the animal visual perception system works (@cnn_animals) and has in many cases surpassed human level performance on basic tasks.
 
-```{r,  out.width = '100%', echo = FALSE, label = 'cnnexplain', fig.cap = "A diagram of how a convolutions are applied to sequential data."}
+```{r,  out.width = '100%', echo = FALSE,fig.align = "center",  label = 'cnnexplain', fig.cap = "A diagram of how a convolutions are applied to sequential data."}
 knitr::include_graphics("figures/convolutional_explainer.jpeg")
 ```
 

@@ -121,10 +121,10 @@
 <li class="chapter" data-level="3.3.4" data-path="architectures.html"><a href="architectures.html#translation-invariance"><i class="fa fa-check"></i><b>3.3.4</b> Translation invariance</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="future.html"><a href="future.html"><i class="fa fa-check"></i><b>4</b> Oportunities for advancing field</a><ul>
+<li class="chapter" data-level="4" data-path="future.html"><a href="future.html"><i class="fa fa-check"></i><b>4</b> Opportunities for advancing field</a><ul>
 <li class="chapter" data-level="4.1" data-path="future.html"><a href="future.html#what-to-do-with-all-those-parameters"><i class="fa fa-check"></i><b>4.1</b> What to do with all those parameters</a><ul>
 <li class="chapter" data-level="4.1.1" data-path="future.html"><a href="future.html#theory-backed-methods-for-choosing-model-architectures"><i class="fa fa-check"></i><b>4.1.1</b> Theory backed methods for choosing model architectures</a></li>
-<li class="chapter" data-level="4.1.2" data-path="future.html"><a href="future.html#runtime-on-mobile-hardware-hardware"><i class="fa fa-check"></i><b>4.1.2</b> Runtime on mobile hardware hardware</a></li>
+<li class="chapter" data-level="4.1.2" data-path="future.html"><a href="future.html#runtime-on-mobile-hardware"><i class="fa fa-check"></i><b>4.1.2</b> Runtime on mobile hardware</a></li>
 </ul></li>
 <li class="chapter" data-level="4.2" data-path="future.html"><a href="future.html#inference"><i class="fa fa-check"></i><b>4.2</b> Inference</a><ul>
 <li class="chapter" data-level="4.2.1" data-path="future.html"><a href="future.html#peering-into-the-black-box"><i class="fa fa-check"></i><b>4.2.1</b> Peering into the black box</a></li>
@@ -170,7 +170,7 @@
 <p>One way to efficiently deal with the fact that sequential data is often highly correlated between observations is to fit a model to each time-point and then pass it information on what was happening prior. The model can then combine the previous information with the newly observed input to come up with a prediction.</p>
 <p>This can be accomplished in a neural network by adding recurrent links between layers. Typically, this is done by passing the hidden layer (or layers) of the network the values of itself at the previous time point. I.e. <span class="math inline">\(\mathbf{h}_{t} = g(\mathbf{x}_t, \mathbf{h}_{t - 1})\)</span>. The idea behind this is that the hidden layer learns to encode some ‘latent state’<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> of the system that is informative for its output, and so letting the model know what that latent state was previously will help it update the latent state and provide an accurate output.</p>
 <p>Why not just pass the output at time <span class="math inline">\((t-1)\)</span> to the hidden state at <span class="math inline">\(t\)</span> instead? While this is possible, and indeed works much better than not communicating information between time points at all, it suffers from the squashing of the latent state information to out outcome of interest. This results in a loss of information about what is happening in the system since the hidden or latent state to the outcome is not necessarily a one-to-one function. In addition, there is convenience in the fact that the hidden state is already of the same dimension, allowing for a simple element-wise addition of the components from the previous hidden state and the new input information.</p>
-<div class="figure"><span id="fig:cyclegraph"></span>
+<div class="figure" style="text-align: center"><span id="fig:cyclegraph"></span>
 <img src="figures/rnn_compact.png" alt="A recurrent neural network with a single hidden layer. The hidden layer's values at time $t$ are passed to the hidden layer at time $(t + 1)$." height="320" />
 <p class="caption">
 Figure 3.1: A recurrent neural network with a single hidden layer. The hidden layer’s values at time <span class="math inline">\(t\)</span> are passed to the hidden layer at time <span class="math inline">\((t + 1)\)</span>.
@@ -180,7 +180,7 @@ Figure 3.1: A recurrent neural network with a single hidden layer. The hidden la
 <h3><span class="header-section-number">3.2.1</span> Applications to sequential data</h3>
 <p>RNNs are fundamentally models for performing analysis on sequential data (although they have been applied to static inputs and used to generate sequential outputs (<span class="citation">Mao et al. (<a href="#ref-rnn_captions">2014</a>)</span>)). Some of the major success stories in recurrent neural networks come in the realm of machine translation. For instance, Google’s entire translation service is now powered by RNNs (<span class="citation">Wu et al. (<a href="#ref-google_translate">2016</a>)</span>).</p>
 <p>Other domains in which RNNs have been successfully applied is in time-series regression (<span class="citation">Cai et al. (<a href="#ref-rnn_regression">2007</a>)</span>), speech recognition (<span class="citation">Graves, Mohamed, and Hinton (<a href="#ref-rnn_speach">2013</a>)</span>), and handwriting recognition (<span class="citation">Graves et al. (<a href="#ref-rnn_handwriting">2008</a>)</span>).</p>
-<div class="figure"><span id="fig:unnamed-chunk-1"></span>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-1"></span>
 <img src="figures/handwriting_rnn.png" alt="Example of an RNN's output for recognizing characters in handwritten characters. The model scans along one slice at a time of the data and the output is character likelihood. Still from [youtube video](https://www.youtube.com/watch?v=mLxsbWAYIpw) by Nikhil Buduma." height="320" />
 <p class="caption">
 Figure 3.2: Example of an RNN’s output for recognizing characters in handwritten characters. The model scans along one slice at a time of the data and the output is character likelihood. Still from <a href="https://www.youtube.com/watch?v=mLxsbWAYIpw">youtube video</a> by Nikhil Buduma.
@@ -196,7 +196,7 @@ Figure 3.2: Example of an RNN’s output for recognizing characters in handwritt
 <div id="cyclical-computation-graph" class="section level3">
 <h3><span class="header-section-number">3.2.3</span> Cyclical Computation Graph</h3>
 <p>A natural question that arises from the cyclical computational graph shown in figure <a href="architectures.html#fig:cyclegraph">3.1</a> is how the gradient can be calculated via back propagation. In fact, the cycle as represented is just a visual simplification of the true computational graph. The ‘unrolled’ graph can be thought of as a long chain of neural networks that share connections between sequential hidden layers.</p>
-<div class="figure"><span id="fig:unrolledgraph"></span>
+<div class="figure" style="text-align: center"><span id="fig:unrolledgraph"></span>
 <img src="figures/rnn_unrolled.png" alt="Unrolled view of the RNN shown in previous figure. Each timestep has two outputs, the timesteps predictions and its hidden state. The next time step subsequently has two inputs: the data at the timepoint and the previous timepoint's hidden state." height="320" />
 <p class="caption">
 Figure 3.3: Unrolled view of the RNN shown in previous figure. Each timestep has two outputs, the timesteps predictions and its hidden state. The next time step subsequently has two inputs: the data at the timepoint and the previous timepoint’s hidden state.
@@ -240,7 +240,7 @@ Figure 3.3: Unrolled view of the RNN shown in previous figure. Each timestep has
 <div id="long-short-term-memory-networks" class="section level4">
 <h4><span class="header-section-number">3.2.6.1</span> Long short term memory networks</h4>
 <p>A way of controlling how an RNN keeps track of different dependencies over time is to make that control flow part of the model itself and allow it to be learned. This is the concept that long short term memory (LSTM) networks (<span class="citation">Hochreiter and Schmidhuber (<a href="#ref-lstm_intro">1997</a>)</span>) use. In the broadest sense, LSTM networks augment the traditional RNN architecture by adding a series of ‘gates’ that control which parts of the hidden state are remembered and used from time-step to time-step.</p>
-<div class="figure"><span id="fig:lstmdiagram"></span>
+<div class="figure" style="text-align: center"><span id="fig:lstmdiagram"></span>
 <img src="figures/lstm_cell.png" alt="The internal structure of an LSTM hidden unit. The gates are all fed by the input at time _t_, the whole hidden unit at time (_t - 1_), and the hidden units internal state from time (_t - 1_). The gates themselves are linear combinations of the input that are then transformed by sigmoid activation functions." width="400" />
 <p class="caption">
 Figure 3.4: The internal structure of an LSTM hidden unit. The gates are all fed by the input at time <em>t</em>, the whole hidden unit at time (<em>t - 1</em>), and the hidden units internal state from time (<em>t - 1</em>). The gates themselves are linear combinations of the input that are then transformed by sigmoid activation functions.
@@ -254,7 +254,7 @@ Figure 3.4: The internal structure of an LSTM hidden unit. The gates are all fed
 <div id="gated-recurrent-units" class="section level4">
 <h4><span class="header-section-number">3.2.6.2</span> Gated recurrent units</h4>
 <p>Introduced relatively recently (2014), Gated recurrent units (GRU)(<span class="citation">Cho et al. (<a href="#ref-gru_intro">2014</a>)</span>), like LSTM, use gates to help control information flow through time, but it omits the extra recurrence step of the internal step from the LSTM and also sets the update and forget gates to be complements of each other, thus accomplishing the task with a single gate. This is paired with a reset gate that controls how much of the hidden state from the previous time-point makes it into the hidden state’s input vector.</p>
-<div class="figure"><span id="fig:grudiagram"></span>
+<div class="figure" style="text-align: center"><span id="fig:grudiagram"></span>
 <img src="figures/gru_cell.png" alt="The internal structure of an GRU hidden unit. Unlike the LSTM there are only two gates, with the update and forget get tasks being taken care of by a single gate that controls what proportion to remember and what to forget. In addition, a reset gate controls how much of the hidden state from the previous step to bring into the current." width="400" />
 <p class="caption">
 Figure 3.5: The internal structure of an GRU hidden unit. Unlike the LSTM there are only two gates, with the update and forget get tasks being taken care of by a single gate that controls what proportion to remember and what to forget. In addition, a reset gate controls how much of the hidden state from the previous step to bring into the current.
@@ -269,7 +269,7 @@ Figure 3.5: The internal structure of an GRU hidden unit. Unlike the LSTM there 
 <p>It is very common for neural network training to be multi-threaded using graphics processing units (GPUs). The reason this is effective is most of the calculations involved are simple and only depend on a few sequential layers, and thus it is very easy to run many training samples through the network in parallel to calculate their gradients and then aggregate those to a gradient descent step. However, with RNNs we must processes each sequence all the way though its (potentially very numerous) time steps. As a result, RNNs train much slower than other neural network architectures.</p>
 <p>There are a few general approaches to solving this. The simplest is to just stop back propagation at a certain number of steps, regardless of if the sequence has been fully processed yet. This is known as truncated back propagation through time (<span class="citation">Williams and Peng (<a href="#ref-trunc_bptt">1990</a>)</span>) and does often substantially speed up training, but at the obvious cost of limiting the length of time the network is able to look back in.</p>
 <p>Another technique is to modify the architecture of the RNN such that the hidden state receives input not from itself at the previous time point but the output at the previous time-point. This allows the model to be trained one time point at a time because the output from the next time step can be substituted with the observed value at that time step. While this approach massively speeds up training, as mentioned previously, it throws away some potentially valuable latent-space information that the model has learned. This approach has gained very little traction due to these limitations.</p>
-<div class="figure"><span id="fig:outputrnn"></span>
+<div class="figure" style="text-align: center"><span id="fig:outputrnn"></span>
 <img src="figures/output_rnn.png" alt="An RNN where the recurrent connection is made between the previous timepoint's output and the hidden unit. This model is less expressive than the traditional hidden - hidden architecture but is much easier to train." width="300" />
 <p class="caption">
 Figure 3.6: An RNN where the recurrent connection is made between the previous timepoint’s output and the hidden unit. This model is less expressive than the traditional hidden - hidden architecture but is much easier to train.
@@ -289,7 +289,7 @@ Figure 3.6: An RNN where the recurrent connection is made between the previous t
 <h3><span class="header-section-number">3.3.2</span> Feature Learning</h3>
 <p>The power of neural networks comes in with the fact that these feature recognizers are learned. This is in contrast with traditional approaches where the features to be extracted had to be manually curated. Usually some number of convolution’s are initialized for a given model and are allowed to learn the patterns that help them best minimize the loss function. Interestingly, in the case of computer-vision, sometimes fascinating patterns are learned that mimic what one might expect, but are much more complicated than those manually created by humans (<span class="citation">Olah, Mordvintsev, and Schubert (<a href="#ref-cnn_vis">2017</a>)</span>).</p>
 <p>Neuroscience research has shown that CNNs mimic how the first stages of the animal visual perception system works (<span class="citation">Kheradpisheh et al. (<a href="#ref-cnn_animals">2016</a>)</span>) and has in many cases surpassed human level performance on basic tasks.</p>
-<div class="figure"><span id="fig:cnnexplain"></span>
+<div class="figure" style="text-align: center"><span id="fig:cnnexplain"></span>
 <img src="figures/convolutional_explainer.jpeg" alt="A diagram of how a convolutions are applied to sequential data." width="100%" />
 <p class="caption">
 Figure 3.7: A diagram of how a convolutions are applied to sequential data.

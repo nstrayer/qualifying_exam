@@ -7,13 +7,13 @@
     "folds" : "",
     "hash" : "0",
     "id" : "4D8E061D",
-    "lastKnownWriteTime" : 1512769097,
-    "last_content_update" : 1512769097316,
+    "lastKnownWriteTime" : 1512788097,
+    "last_content_update" : 1512788097364,
     "path" : "~/quals/report/index.Rmd",
     "project_path" : "index.Rmd",
     "properties" : {
-        "cursorPosition" : "106,26",
-        "scrollLine" : "103"
+        "cursorPosition" : "111,155",
+        "scrollLine" : "107"
     },
     "relative_order" : 6,
     "source_on_save" : false,

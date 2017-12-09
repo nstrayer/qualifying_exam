@@ -121,10 +121,10 @@
 <li class="chapter" data-level="3.3.4" data-path="architectures.html"><a href="architectures.html#translation-invariance"><i class="fa fa-check"></i><b>3.3.4</b> Translation invariance</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="future.html"><a href="future.html"><i class="fa fa-check"></i><b>4</b> Oportunities for advancing field</a><ul>
+<li class="chapter" data-level="4" data-path="future.html"><a href="future.html"><i class="fa fa-check"></i><b>4</b> Opportunities for advancing field</a><ul>
 <li class="chapter" data-level="4.1" data-path="future.html"><a href="future.html#what-to-do-with-all-those-parameters"><i class="fa fa-check"></i><b>4.1</b> What to do with all those parameters</a><ul>
 <li class="chapter" data-level="4.1.1" data-path="future.html"><a href="future.html#theory-backed-methods-for-choosing-model-architectures"><i class="fa fa-check"></i><b>4.1.1</b> Theory backed methods for choosing model architectures</a></li>
-<li class="chapter" data-level="4.1.2" data-path="future.html"><a href="future.html#runtime-on-mobile-hardware-hardware"><i class="fa fa-check"></i><b>4.1.2</b> Runtime on mobile hardware hardware</a></li>
+<li class="chapter" data-level="4.1.2" data-path="future.html"><a href="future.html#runtime-on-mobile-hardware"><i class="fa fa-check"></i><b>4.1.2</b> Runtime on mobile hardware</a></li>
 </ul></li>
 <li class="chapter" data-level="4.2" data-path="future.html"><a href="future.html#inference"><i class="fa fa-check"></i><b>4.2</b> Inference</a><ul>
 <li class="chapter" data-level="4.2.1" data-path="future.html"><a href="future.html#peering-into-the-black-box"><i class="fa fa-check"></i><b>4.2.1</b> Peering into the black box</a></li>
@@ -167,8 +167,8 @@
 <h2><span class="header-section-number">2.1</span> History</h2>
 <p>While neural networks’ popularity has taken off in recent years they are not a new technique. The neuron or smallest unit of a neural network was first introduced in 1943 (<span class="citation">McCulloch and Pitts (<a href="#ref-mcculloch_neuron">1943</a>)</span>). It was then another 15 years until the perceptron (now commonly called ‘neural network’) was introduced (<span class="citation">Rosenblatt (<a href="#ref-rosenblatt_perceptron">1958</a>)</span>) that tied together groups of neurons to represent more complex relationships.</p>
 <p>Another ten years later, in a textbook (<span class="citation">Minsky, Papert, and Bottou (<a href="#ref-minsky_perceptrons">1969</a>)</span>) it was shown that a simple single layer perceptron was incapable of solving certain classes of problems like the “And Or” (XOR) problem (<a href="neuralnetworks.html#fig:xorproble">2.1</a>), due to their being linearly inseperable. The authors argued that the only way for a perceptron to overcome this hurdle would be to be stacked together, which, while appealing, was not possible to be trained effectively at the time.</p>
-<div class="figure"><span id="fig:xorproble"></span>
-<img src="figures/xor_problem.png" alt="Example of the XOR problem. Classes encoded by color are not linearly seperable."  />
+<div class="figure" style="text-align: center"><span id="fig:xorproble"></span>
+<img src="figures/xor_problem.png" alt="Example of the XOR problem. Classes encoded by color are not linearly seperable." width="350" />
 <p class="caption">
 Figure 2.1: Example of the XOR problem. Classes encoded by color are not linearly seperable.
 </p>
@@ -182,7 +182,7 @@ Figure 2.1: Example of the XOR problem. Classes encoded by color are not linearl
 <div id="geometric-interpretation" class="section level3">
 <h3><span class="header-section-number">2.1.2</span> Geometric Interpretation</h3>
 <p>Another way of thinking of how neural networks work is as a building up a series of successive transformations of the data-space that attempt to eventually let the data be linearly separable ((<a href="neuralnetworks.html#fig:geometricinterp">2.2</a>). In this interpretation each layer can be seen as a shift and rotation of the data (the linear transformation), followed by a warping of the new space (the activation function). In his excellent blog post: <a href="http://colah.github.io/posts/2014-03-NN-Manifolds-Topology/">Neural Networks, Manifolds, and Topology</a>, Chris Olah gives an excellent visual demonstration of this.</p>
-<div class="figure"><span id="fig:geometricinterp"></span>
+<div class="figure" style="text-align: center"><span id="fig:geometricinterp"></span>
 <img src="figures/warp_space.png" alt="Example of how a neural network can, through a series of affine transformations followed by non-linear squashings, turn a linearly inseperable proble into a linearly seperable one. Image courtesy of [Chris Olah's blog](http://colah.github.io/posts/2014-03-NN-Manifolds-Topology/)"  />
 <p class="caption">
 Figure 2.2: Example of how a neural network can, through a series of affine transformations followed by non-linear squashings, turn a linearly inseperable proble into a linearly seperable one. Image courtesy of <a href="http://colah.github.io/posts/2014-03-NN-Manifolds-Topology/">Chris Olah’s blog</a>
@@ -260,7 +260,7 @@ Figure 2.2: Example of how a neural network can, through a series of affine tran
 \end{equation}\]</span>
 <p>Or that the derivative of <span class="math inline">\(y\)</span> with respect to the <span class="math inline">\(i^{\text{th}}\)</span> element of <span class="math inline">\(\textbf{x}\)</span> is the sum of the series of products of the derivatives of result <span class="math inline">\(\textbf{z}\)</span> that sits between the two values in the function composition.</p>
 <p>Another way of thinking of this is, the derivative of the output of the function composition <span class="math inline">\(f \circ g\)</span> with respect to some element of the input is the sum of all of the derivatives of all of the paths leading from the input element to the output.</p>
-<div class="figure"><span id="fig:unnamed-chunk-1"></span>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-1"></span>
 <img src="figures/backprop.png" alt="How back Propagation steps back from the output to the input. To calculate the gradient with respect to the loss of the orange neuron the we need to aggregate the gradients of all connected points further along in the computation graph (blue connections)."  />
 <p class="caption">
 Figure 2.3: How back Propagation steps back from the output to the input. To calculate the gradient with respect to the loss of the orange neuron the we need to aggregate the gradients of all connected points further along in the computation graph (blue connections).
@@ -290,8 +290,8 @@ Figure 2.3: How back Propagation steps back from the output to the input. To cal
 <div id="gradient-descent-modifications" class="section level3">
 <h3><span class="header-section-number">2.6.2</span> Gradient Descent Modifications</h3>
 <p>There are many scenarios in which traditional steepest descent is not an ideal for finding minimums of the loss function. A classic example is when the loss function takes the form of a long trough (<a href="neuralnetworks.html#fig:badloss">2.4</a>. In this case steepest descent will spend most of its time bouncing around between the sides of the trough due to over stepping the low point, thus wasting many of its iterations undoing its previous work rather than progressing in the true direction of the minimum.</p>
-<div class="figure"><span id="fig:badloss"></span>
-<img src="http://www.nbertagnolli.com/assets/descent_methods/GDWBLS.png" alt="Demonstration of steepest descents limitations on trough like gradient surfaces. Much of each step's progress is wasted on bouncing back and forth between the two walls of the gradient rather than descending directly towards the minimum. Image from [Nicolas Bertagnolli's blog](http://www.nbertagnolli.com/)" width="300" height="300" />
+<div class="figure" style="text-align: center"><span id="fig:badloss"></span>
+<img src="http://www.nbertagnolli.com/assets/descent_methods/GDWBLS.png" alt="Demonstration of steepest descents limitations on trough like gradient surfaces. Much of each step's progress is wasted on bouncing back and forth between the two walls of the gradient rather than descending directly towards the minimum. Image from [Nicolas Bertagnolli's blog](http://www.nbertagnolli.com/)" height="400" />
 <p class="caption">
 Figure 2.4: Demonstration of steepest descents limitations on trough like gradient surfaces. Much of each step’s progress is wasted on bouncing back and forth between the two walls of the gradient rather than descending directly towards the minimum. Image from <a href="http://www.nbertagnolli.com/">Nicolas Bertagnolli’s blog</a>
 </p>
@@ -325,7 +325,7 @@ Figure 2.5: Comparison of the relu and sigmoid activation functions.
 <span id="def:softmax" class="definition"><strong>Definition 2.3  (Softmax activation function.)  </strong></span><span class="math display">\[f(\textbf{o})_i = \frac{\text{exp}(o_i)}{\sum_{j = 1}^m \text{exp}(o_j)}\]</span>
 </div>
 
-<p>This function serves to turn the output of a layer into a multivariate probability vector. The <span class="math inline">\(m\)</span> outputs of the softmax sum to one.<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a></p>
+<p>This function serves to turn the output of a layer into a multivariate probability vector. The <span class="math inline">\(m\)</span> outputs of the softmax sum to one.<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a></p>
 </div>
 <div id="loss-functions" class="section level2">
 <h2><span class="header-section-number">2.8</span> Loss functions</h2>
@@ -352,7 +352,7 @@ Where <span class="math inline">\(y_i\)</span> represents the outcome of the <sp
 <div id="classification-loss-functions" class="section level3">
 <h3><span class="header-section-number">2.8.2</span> Classification loss functions</h3>
 <p>There are two separate instances of classification that need to be considered. The binary case, where we are classifying a yes or no answer for a single class, or a categorical case, where we have more than two possible classes to choose from and need to place our data into one of them.</p>
-<p>In the single outcome case the approach is to assume the outcome is a Bernoulli distribution over outcome <span class="math inline">\(y\)</span> conditioned on the input <span class="math inline">\(x\)</span>. The resultant loss function is commonly referred to as ‘binary cross entropy.’<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a></p>
+<p>In the single outcome case the approach is to assume the outcome is a Bernoulli distribution over outcome <span class="math inline">\(y\)</span> conditioned on the input <span class="math inline">\(x\)</span>. The resultant loss function is commonly referred to as ‘binary cross entropy.’<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a></p>
 
 <div class="definition">
 <span id="def:crossentropy" class="definition"><strong>Definition 2.6  (Binary cross entropy loss)  </strong></span><span class="math display">\[L(\theta) = -\frac{1}{n}\sum_{i = 1}^n\left[ y_i\log(\hat{y}_i) + (1 - y_i)\log(1 - \hat{y}_i)\right]\]</span>
@@ -417,9 +417,9 @@ Where <span class="math inline">\(y_{i,j}\)</span> represents the <span class="m
 </div>
 <div class="footnotes">
 <hr />
-<ol start="2">
-<li id="fn2"><p>It is important to note that, while the values sum to one, it’s not a true probability output, but will help indicate which class is most likely and roughly by what magnitude over other potential class choices.<a href="neuralnetworks.html#fnref2">↩</a></p></li>
-<li id="fn3"><p>It is interesting to note that while we typically only use the term ‘cross entropy’ for categorical outcomes, any time we are minimizing KL or maximizing the likelihood we are minimizing the cross entropy. So technically we could also call the mean squared error the ‘continuous cross entropy loss.’<a href="neuralnetworks.html#fnref3">↩</a></p></li>
+<ol start="1">
+<li id="fn1"><p>It is important to note that, while the values sum to one, it’s not a true probability output, but will help indicate which class is most likely and roughly by what magnitude over other potential class choices.<a href="neuralnetworks.html#fnref1">↩</a></p></li>
+<li id="fn2"><p>It is interesting to note that while we typically only use the term ‘cross entropy’ for categorical outcomes, any time we are minimizing KL or maximizing the likelihood we are minimizing the cross entropy. So technically we could also call the mean squared error the ‘continuous cross entropy loss.’<a href="neuralnetworks.html#fnref2">↩</a></p></li>
 </ol>
 </div>
             </section>

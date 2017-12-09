@@ -66,7 +66,7 @@ If the data are kept intact more advanced methods are available. These include d
 As mentioned before, when a window is scanned across the time dimension of data, one of the ways of extracting information is by performing some transformation on the data. Common examples include wavelet or Fourier transforms. These methods attempt to separate the data into separate components. For instance, Fourier transforms applied to accelerometer data from an individuals wrist can be used to detect the frequencies associated with walking and running (@accelerometer_activity). These methods have also been used extensively in electrical systems and signal processing to help determine the state of the system. 
 
 
-```{r,  out.height = 320, echo = FALSE, label = "fouriertransform", fig.cap = "Example of transforming data from the data-domain to the frequency-domain for time series data. Image courtousy of [Allen D. Elster, MD FACR](http://mriquestions.com/index.html)."}
+```{r,  out.height = 320,fig.align = "center",  echo = FALSE, label = "fouriertransform", fig.cap = "Example of transforming data from the data-domain to the frequency-domain for time series data. Image courtousy of [Allen D. Elster, MD FACR](http://mriquestions.com/index.html)."}
 knitr::include_graphics("figures/fourier_transform.png")
 ```
 

@@ -5,15 +5,15 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "40466514",
+    "hash" : "2579619701",
     "id" : "F1E508AB",
-    "lastKnownWriteTime" : 1512787661,
-    "last_content_update" : 1512787661282,
+    "lastKnownWriteTime" : 1512788081,
+    "last_content_update" : 1512788081738,
     "path" : "~/quals/report/04-future_directions.Rmd",
     "project_path" : "04-future_directions.Rmd",
     "properties" : {
-        "cursorPosition" : "94,1",
-        "scrollLine" : "87"
+        "cursorPosition" : "78,48",
+        "scrollLine" : "85"
     },
     "relative_order" : 5,
     "source_on_save" : false,
