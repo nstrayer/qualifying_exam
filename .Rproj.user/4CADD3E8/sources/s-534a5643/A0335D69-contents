@@ -421,6 +421,12 @@ month = dec
   pages={1929--1958},
   year={2014}
 }
+@article{attention,
+  title={A neural attention model for abstractive sentence summarization},
+  author={Rush, Alexander M and Chopra, Sumit and Weston, Jason},
+  journal={arXiv preprint arXiv:1509.00685},
+  year={2015}
+}
 
 @article{variational_autoencoders,
   title={Auto-encoding variational bayes},

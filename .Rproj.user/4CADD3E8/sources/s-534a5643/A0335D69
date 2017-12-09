@@ -5,15 +5,15 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "0",
+    "hash" : "324368796",
     "id" : "A0335D69",
-    "lastKnownWriteTime" : 1512768680,
-    "last_content_update" : 1512768680246,
+    "lastKnownWriteTime" : 1512786967,
+    "last_content_update" : 1512786967036,
     "path" : "~/quals/report/book.bib",
     "project_path" : "book.bib",
     "properties" : {
-        "cursorPosition" : "114,9",
-        "scrollLine" : "106"
+        "cursorPosition" : "423,18",
+        "scrollLine" : "411"
     },
     "relative_order" : 3,
     "source_on_save" : false,
