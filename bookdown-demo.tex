@@ -132,15 +132,15 @@ movie depended on events you saw before and the context in which they
 placed the most recent frame.
 
 Continuous classification in the context of statistics and machine
-learning is training models to observe data, like you watched the movie,
-and be able to report the status of the generating system at any given
+learning is training models to observe data over time, like you watched
+the movie, and classify the status of the generating system at any given
 point. Sometimes seeing the most recent data is all that is needed, but
 more interesting and challenging problems need the algorithm to be able
 to make decisions about a current time while leveraging context from
 previous history to do so.
 
 This report is a brief run through past attempts at continuous
-classification and a deeper explanation of the current state of the art
+classification and a deeper exploration of the current state of the art
 methods.
 
 \section{Potential applications of continuous classification
@@ -151,30 +151,30 @@ possible with effective continuous classification models.
 
 \subsection{Activity Prediction}\label{activity-prediction}
 
-With the advent of wearable devises such as fitbits and apple watches
+With the advent of wearable devices such as fitbits and apple watches,
 the amount of high temporal resolution data we have streaming from
 individuals is exploding and showing no sign of letting up.
 
-Continuous classification models could be used to to assess the state of
-the wearer at any moment. Simple applications of this could be for
-things like detecting different exercise types (e.g.~running
-vs.~weightlifting) which is implemented by unpublished methods
-internally by companies such as fitbit.
+Continuous classification models could use these data to classify the
+state of the wearer at any moment. A simple example of this is detecting
+different exercise types (e.g.~running vs.~swimming); which is
+implemented (by unpublished methods) internally at companies such as
+fitbit.
 
-More advanced and potentially impactful methods could be extended to
-predicting more subtle but medically relevant states such as dehydration
-or sleep apnea (sleep apnea citation). Preliminary work in these areas
-has shown surprising success with data as limited as heart-rate and
-motion indication being enough to predict sleep apnea and various
-cardiovascular risk states with \_\_\_ accuracy compared to invasive
-gold standards.
+More advanced, and potentially impactful, applications include extending
+the predictions to more subtle but medically relevant states such as
+dehydration or sleep apnea (\citet{wearable_atrial}). Preliminary work
+in these areas using deep learning has shown surprising success with
+data as limited as heart-rate and motion indication being enough to
+predict sleep apnea and various cardiovascular risk states with a
+c-statistic of 0.94: comparable to invasive gold standards.
 
 \subsection{EHR monitoring}\label{ehr-monitoring}
 
-With more and more information on patients being accrued in governmental
+With more and more information on patients being accrued in government
 and hospital databases we have a clearer than ever picture of a
 patient's health over long periods of time. Unfortunately, due to a
-combination of overwhelming quantities and noise levels in the data our
+combination of overwhelming quantities and noise levels in the data, our
 ability to make use of these data has not kept up with their quantity.
 
 Sequential models can help ease the burden on health practitioners in
@@ -183,25 +183,24 @@ patient's records to predict the likelihood of cardiovascular events.
 This model could then alert a doctor of potential risk in order to
 facilitate timely interventions. This could be especially helpful in
 large clinical settings where personal doctor-patient relationships may
-not be common.
-
-(Insert reference to applications on these data already performed)
+not be common. For a review of the performance of deep learning models
+in electronic health record contects, see \citet{deep_ehr}.
 
 \subsection{Hospital Automation}\label{hospital-automation}
 
 Patient monitoring systems already have alarms to alert staff of
 occurring anomaly for a patient. Continuous classification methods could
-extend these methods to more subtle actions (patient is experiencing
-pain and needs a change in the medications administered by their IV) or
-to give staff more heads-up time before an event occurs (model predicts
-patient has a high change of going into afribulation in the next five
-mins). These methods, if successfully implemented could help hospitals
-more efficiently allocate resources and potentially save lives.
+extend these systems to warn \emph{before} the anomaly occurs
+(e.g.~patient has a high change of going into afribulation in the next
+five mins), or to more subtle actions (patient is experiencing pain and
+needs a change in the medications administered by their IV). These
+methods, if successfully implemented could help hospitals more
+efficiently allocate resources and potentially save lives.
 
 \section{History of methods}\label{history-of-methods}
 
-While sources of data to perform it on have recently greatly expanded,
-the interest in performing continuous classification is not a new topic.
+While sources of data well suited to it have recently greatly expanded,
+interest in performing continuous classification is not a new topic.
 Many methods have been proposed for the task to varying degrees of
 success. Below is a brief review of some of the more successful methods
 and their advantages and limitations.
@@ -212,24 +211,22 @@ Perhaps the most intuitive approach to the problem of incorporating
 context from previous time points into your prediction is to use a
 windowed approach. Broadly, in these approaches a window of some width
 (in previous observation numbers or time length) is sequentially run
-over the data and then the model uses information from within that
-window to predict.
+over the series. The data obtained from the window may have some form of
+summary applied to it. This could be a mean, median, or any other
+function which is then used to predict with.
 
-The data obtained from the window may have some form of summary applied
-to it. This could be a mean, median, or any other function which is then
-used to predict with. By summarizing the multiple data-points into a
-single (or few) values noisy data can be made slightly cleaner but at
-the cost of potentially throwing away useful information captured by the
-interval (such as trajectory.)
+By summarizing the multiple data-points into a single (or few) values
+noise can be removed, but at the cost of potentially throwing away
+useful information captured by the interval (such as trajectory.)
 
-If the data are kept intact mode advanced methods are available. These
-include dynamic time warping (Time warping citation) or kernel methods
-(see next section). This allows much more information to be retained in
-the sample but at the cost of setting a limit on how far back your model
-can learn dependencies in the data. For instance if your window is one
-hour long but an activity lasts two hours your model will have a very
-hard time recognizing it. This is equivalent to an infinitely strong
-prior on the interaction timeline (window prior assumptions citation).
+If the data are kept intact more advanced methods are available. These
+include dynamic time warping (\citet{dtw}) or kernel methods (see next
+section). This allows more information to be retained in the sample but
+at the cost of setting a limit on how far back your model can learn
+dependencies in the data. For instance, if your window is one hour long
+but an activity lasts two hours your model will have a very hard time
+recognizing it. This is equivalent to an infinitely strong prior on the
+interaction timeline (\citet{graves_rnn}).
 
 \subsection{Transformation methods}\label{transformation-methods}
 
@@ -239,26 +236,30 @@ transformation on the data. Common examples include wavelet or Fourier
 transforms. These methods attempt to separate the data into separate
 components. For instance, Fourier transforms applied to accelerometer
 data from an individuals wrist can be used to detect the frequencies
-associated with walking and running(Transformed accelerometer citation).
+associated with walking and running (\citet{accelerometer_activity}).
 These methods have also been used extensively in electrical systems and
 signal processing to help determine the state of the system.
 
 \begin{figure}
-\includegraphics[height=320]{figures/fourier_transform} \caption{Example of transforming data from the data-domain to the frequency-domain for time series data. Image courtousy of [Allen D. Elster, MD FACR](http://mriquestions.com/index.html).}\label{fig:fouriertransform}
+
+{\centering \includegraphics[width=0.6\linewidth]{figures/fourier_transform} 
+
+}
+
+\caption{Example of transforming data from the data-domain to the frequency-domain for time series data. Image courtousy of [Allen D. Elster, MD FACR](http://mriquestions.com/index.html).}\label{fig:fouriertransform}
 \end{figure}
 
-A few limitations are imposed by these methods. First, as mentioned
-before, they are still subject to the windowing constraints. Secondly,
-they rely on the data to be periodic or oscillatory in nature. For
-instance, the accelerometer data oscillated back and forth as the
-individual's arms moved in their gate and electrical systems are
-inherently oscillatory. Data such as heart-rate or step counts as
-produced by devices like apple watches and fitbits is a rather stable
-signal (although before output it may not be) and thus transformation
-methods are unable to separate them into frequency domains at reasonable
-time scales. In addition, these methods are unable to deal with
-non-numeric data which severally limits them in heterogeneous data
-domains such as EHR data.
+A few limitations are imposed by these methods. First, as previously
+mentioned, they are subject to the windowing constraints. Secondly, they
+rely on the data to be periodic or oscillatory in nature. For instance,
+accelerometer data oscillates back and forth as the individual swings
+their arms and electrical systems are inherently oscillatory. Data such
+as heart-rate or step counts produced by devices like apple watches and
+fitbits are a rather stable signal \footnote{Although the raw data the
+  sensors receive may not be.} and thus transformation methods are
+unable to separate them into frequency domains at small time scales. In
+addition, these methods are unable to deal with non-numeric data which
+severally limits them in heterogeneous data domains such as EHR data.
 
 \subsection{Hidden Markov Models}\label{hidden-markov-models}
 
@@ -277,9 +278,9 @@ instance, if a person is running now their next state is probably going
 to be walking rather than sitting or swimming.
 
 HMMs were the state of the art models on continuous classification
-problems until very recently (HMM state of art citation), and are still
-very valuable for many problems. However, their greatest advantage is
-also their greatest disadvantage.
+problems until very recently and are still very valuable for many
+problems. However, their greatest advantage is also their greatest
+disadvantage.
 
 The Markov property (or the first `M' in HMM) states that the next state
 of the system being modeled depends exclusively on the current state.
@@ -291,63 +292,64 @@ were running they were swimming? This fact from multiple time-steps
 before would strongly hint that the next state would in fact be biking
 and not walking (they are running a triathlon.)
 
-There are ways to fix this (extending HMMs past a single time step
-citation), however the number of parameters needed to estimate
-transition probabilities for \(m\) previous time steps is (\# of
-classes) to the \(k^{th}\) power, which rapidly becomes untenable. In
-addition, we have to a-priori decide the number of time steps in the
-past that matter.
+There are ways to fix this such as extending the model's transition
+probabilities to multiple time-steps, however the number of parameters
+needed to estimate transition probabilities for \(m\) previous time
+steps is (\# of classes) to the \(k^{th}\) power, which rapidly becomes
+untenable. In addition, we have to a priori decide the number of time
+steps in the past that matter.
 
 \subsection{Advantages of deep learning
 methods}\label{advantages-of-deep-learning-methods}
 
 Before we dive into the mathematical underpinnings of deep learning
-methods for continuous classification we will go over how they solve
-many of the aforementioned issues from traditional methods.
+methods we will go over how they solve many of the aforementioned issues
+from traditional methods.
 
 \subsubsection{Less Domain Knowledge
 Needed}\label{less-domain-knowledge-needed}
 
 One of the ways that it helps to think about deep learning is as a
-computer program that learns what to do. In his popular blog post
-\_Software 2.0) Andrej Karapathy makes the argument that deep learning
-is powerful because it helps avoid traditional tedium like explicitly
+computer program that programs itself given an objective and examples.
+In his popular blog post
+\href{https://medium.com/@karpathy/software-2-0-a64152b37c35}{\emph{Software
+2.0}} Andrej Karapathy makes the argument that deep learning is powerful
+because it helps avoid traditionally tedius processes like explicitly
 defining cases for the computer to deal with. One of the ways this is
-applicable to our problems is the ability for most data to be a kind-of
-`plug-and-play' process.
+applicable to our problems is the ability for deep learning models to
+adapt to a wide range of problem/ data domains without much
+human-defined customization.
 
 This can be seen in the context of the input data form. If you had data
-from say an accelerometer it would go into the same neural network as
+from an accelerometer it could be fit into the same neural network as
 data from a more static heart-rate sensor would. The models are flexible
 enough to learn how to deal with these input patterns without requiring
 the researcher to explicitly define a transformation based on the data.
-This allows the same methods to be applied to many domains and further
-reduces the amount of analyst decisions to be made, which has the
-potential to make performance assessments more accurate (Frank's
-automate as much of the model as possible citation).
+One advantage of this independence from large amounts of human
+intervention has the potential to make performance assessments more
+accurate (\citet{rms}).
 
 \subsubsection{Can find and deal with arbitrary time
 dependencies}\label{can-find-and-deal-with-arbitrary-time-dependencies}
 
 Deep learning models are theoretically capable of learning time
-dependencies of infinite length and strength (Universal approximation
-theorem). While obviously it is impossible to supply a network with
-enough data to fit enough parameters to do so, the fact remains that
-deep learning methods are capable of handling time dependencies (even of
-very long length (stateful LSTM citation) ). In addition to being able
-to model these dependencies they do so without any need for explicitly
-telling the model the length of the dependencies and also using
-substantially fewer parameters than an extended hidden Markov model (RNN
-textbook citation).
+dependencies of infinite length and strength
+(\citet{universal_approximators}). While obviously it is impossible to
+supply a network with enough data to fit the number of parameters
+neccesary to do so, the fact remains that deep learning methods are
+capable of handling long-term time dependencies. In addition to being
+able to model these dependencies they do so without any need for
+explicitly telling the model the length of the dependencies and also
+using substantially fewer parameters than an extended hidden Markov
+model (\citet{graves_rnn}).
 
-For example, an recurrent neural network (RNN) can automatically learn
+For example, a recurrent neural network (RNN) can automatically learn
 that if a person swims and then runs, they will most likely be biking
 next, but it could also remember that a patient was given a flu vaccine
 three months prior and thus their symptoms most likely don't indicate
-the flu but a cold. The power of this flexibility to automatically learn
-arbitrary time dependency patterns is powerful in not only its ability
-to create accurate models, but potentially for exploration of causal
-patterns.
+the flu but a cold. This flexibility to automatically learn arbitrary
+time dependency patterns is powerful in not only its ability to create
+accurate models, but potentially for exploration of causal patterns.
 
 \subsubsection{Multiple architectures for solving traditional
 problems}\label{multiple-architectures-for-solving-traditional-problems}
@@ -357,14 +359,15 @@ deep learning: which network architecture to use, conveniently is rather
 robust to the problem of continuous classification. For instance:
 convolutional neural networks that have achieved great success in
 computer vision were actually originally designed for time series data,
-and recent advanced such as dilated convolutions allow for them to
-search as far back in the time-series as needed to find valuable
-information for classification. Recurrent neural networks (which will be
-elaborated on in the following sections) are also fantastic for
-time-series data, as they explicitly model the autocorrelation found in
-the data via a recurrent cycle in their computation graph. This allows
-them to read data much like one reads a book, selectively remembering
-past events that have applicability to the current state.
+and recent advanced such as dilated convolutions
+(\citet{dilated_convolutions}) allow for them to search as far back in
+the time-series as needed to find valuable information for
+classification. Recurrent neural networks (which will be elaborated on
+in the following sections) are also fantastic for time-series data, as
+they explicitly model the autocorrelation found in the data via a
+recurrent cycle in their computation graph. This allows them to read
+data much like one reads a book, selectively remembering past events
+that have applicability to the current state.
 
 \subsubsection{Downsides}\label{downsides}
 
@@ -373,6 +376,16 @@ data to properly tune all their parameters without over fitting. This
 results in not only more data being needed (with some exceptions such as
 Bayesian methods) but also, when combined with their non-convexity,
 requires a large amount of computation power.
+
+Another side effect, although one shared by many other approaches
+described here, is that neural networks are not amenable to inference on
+specific factors contributing to their classifications.
+
+These and other downsides and potential solutions are explored in the
+last chapter.
+
+In the next chapter we will go over the basics of modern deep neural
+networks.
 
 \chapter{Neural Networks}\label{neuralnetworks}
 
@@ -384,19 +397,19 @@ mathematical function as providing a new representation of the input.
 (\citet{goodfellow_DL})
 \end{quote}
 
-Neural networks (sometimes referred to as multilayer perceptrons) are
-actually very simple models. Traditional modern neural networks simply
+Neural networks (sometimes referred to as multilayer perceptrons) are at
+their core very simple models. Traditional modern neural networks simply
 pass data forward through a ``network'' that at each layer, performs a
 linear (also referred to as affine) transformation of its inputs
-followed by a element wise non-linear transformation (also called an
+followed by a element-wise non-linear transformation (also called an
 activation function). In doing this they can build up successively more
 complex representations of data and use those to make decisions about
 it.
 
-This can be roughly thought about in the analogy of recognizing a cat.
-First you see, ears, a nose, two eyes, four feet, and a fluffy tail;
-next, you recognize the ears, nose and eyes as a head, the tail and legs
-as a body; and lastly the head and body as a cat. In performing this
+This can be thought about in the analogy of recognizing a cat. First you
+see ears, a nose, two eyes, four feet, and a fluffy tail; next, you
+recognize the ears, nose and eyes as a head, the tail and legs as a
+body; and lastly the head and body as a cat. In performing this
 `classification' of a cat you first constructed small features and
 successively stacked them to figure out what you were looking at. While
 this is obviously a stretched definition of how neural networks work, it
@@ -406,50 +419,52 @@ Neural Networks work for computer vision techniques (\citet{cnn_vis}).
 \section{History}\label{history}
 
 While neural networks' popularity has taken off in recent years they are
-in fact not very new techniques. The neuron or smallest unit of a neural
-network was first introduced in 1943 (\citet{mcculloch_neuron}). It was
-then another 15 years until the perceptron (now commonly called `neural
-network') was introduced (\citet{rosenblatt_perceptron}) that tied
-together groups of neurons to represent more complex relationships.
+not a new technique. The neuron or smallest unit of a neural network was
+first introduced in 1943 (\citet{mcculloch_neuron}). It was then another
+15 years until the perceptron (now commonly called `neural network') was
+introduced (\citet{rosenblatt_perceptron}) that tied together groups of
+neurons to represent more complex relationships.
 
 Another ten years later, in a textbook (\citet{minsky_perceptrons}) it
 was shown that a simple single layer perceptron was incapable of solving
-certain classes of problems like the XOR problem. The authors argued
-that the only way for a perceptron to overcome this hurdle would be to
-be stacked together, which while appealing was not possible to be
-trained effectively at the time.
+certain classes of problems like the ``And Or'' (XOR) problem
+(\ref{fig:xorproble}), due to their being linearly inseperable. The
+authors argued that the only way for a perceptron to overcome this
+hurdle would be to be stacked together, which, while appealing, was not
+possible to be trained effectively at the time.
 
 \begin{figure}
-\centering
-\includegraphics{http://lab.fs.uni-lj.si/lasin/wp/IMIT_files/neural/nn06_rbfn_xor/html/nn06_rbfn_xor_2_newrb_01.png}
-\caption{\label{fig:unnamed-chunk-1}Example of the XOR problem. Classes
-encoded by color are not linearly seperable.}
+
+{\centering \includegraphics[width=0.5\linewidth]{figures/xor_problem} 
+
+}
+
+\caption{Example of the XOR problem. Classes encoded by color are not linearly seperable.}\label{fig:xorproble}
 \end{figure}
 
-It wasn't until 1986 that a technique for training these multi-layer
-perceptrons was introduced (\citet{backprop_1986}). Finally all of the
-algorithmic pieces were in place for deep neural networks, but interest
-stagnated due to the computational intensiveness of training the
+It wasn't until 1986 that a realistic technique for training these
+multi-layer perceptrons was introduced (\citet{backprop_1986}). Finally
+all of the algorithmic pieces were in place for deep neural networks,
+but interest stagnated due to the computational expense of training the
 networks, a lack of data, and the success of other competing machine
 learning algorithms.
 
 Interest in the field of deep learning has had a massive resurgence in
-the second decade of the 21st century. Driven by the ability for massive
-amounts of data to be captured and also innovations in neural network
-architectures. One commonly sited tipping point for the current ``deep
-learning revolution'' was the 2012 paper (\citet{imagenet_2012}) in
-which a deep neural network architecture known as ``convolutional neural
-networks'' won the ImageNet prize and showed massive improvements over
+the second decade of the 21st century. Driven by growing stores of data
+and innovations in neural network architectures. One commonly cited
+tipping point for the current ``deep learning revolution'' was the 2012
+paper (\citet{imagenet_2012}) in which a deep convolutional neural
+network won the ImageNet prize and showed massive improvements over
 traditional methods.
 
 \subsection{Biological Inspirations}\label{biological-inspirations}
 
-The word `neural' in the name is reference to the fact that these models
-derive inspiration from how the brain actually works. With the
+The word `neural' in the `neural network' is reference to the fact that
+these models derive inspiration from how the brain works. With the
 individual nodes in a hidden `layer' frequently being called a `neuron'.
-While the broad concept's may be similar between the way animal brains
-work and neural networks it is important to note that the similarities
-end approximately at the network-ness of both systems. There have
+While the broad concepts may be similar between the way animal brains
+and neural networks work, it is important to note that the similarities
+end approximately at the network-ness of both systems. There has
 however, been some more recent work on trying to more closely mimic the
 brain structure with architectures such as capsule networks
 (\citet{capsnet}). In addition, neuroscience experiments have
@@ -461,13 +476,23 @@ these hierarchical stacks of features when recognizing objects
 
 Another way of thinking of how neural networks work is as a building up
 a series of successive transformations of the data-space that attempt to
-eventually let the data be linearly separable. In this interpretation
-each layer can be seen as a shift and rotation of the data (the linear
-transformation), followed by a warping of the new space (the activation
-function). In his excellent blog post:
+eventually let the data be linearly separable
+((\ref{fig:geometricinterp}). In this interpretation each layer can be
+seen as a shift and rotation of the data (the linear transformation),
+followed by a warping of the new space (the activation function). In his
+excellent blog post:
 \href{http://colah.github.io/posts/2014-03-NN-Manifolds-Topology/}{Neural
 Networks, Manifolds, and Topology}, Chris Olah gives an excellent visual
 demonstration of this.
+
+\begin{figure}
+
+{\centering \includegraphics{figures/warp_space} 
+
+}
+
+\caption{Example of how a neural network can, through a series of affine transformations followed by non-linear squashings, turn a linearly inseperable proble into a linearly seperable one. Image courtesy of [Chris Olah's blog](http://colah.github.io/posts/2014-03-NN-Manifolds-Topology/)}\label{fig:geometricinterp}
+\end{figure}
 
 \section{Universal Approximation
 Theorem}\label{universal-approximation-theorem}
@@ -487,10 +512,11 @@ models.
 
 \section{The Computation Graph}\label{the-computation-graph}
 
-While the building blocks of neural networks are simple, very often
-complete models are composed of many blocks and thus reasoning about
-them becomes difficult. A method of dealing with this complexity, along
-with also helping in the intuition of many other properties, is to
+While the building blocks of neural networks are simple, often complete
+models are composed of hundreds to even thousands of neurons and
+millions of connections and representing them in mathematical notation
+becomes exceedingly difficult. A method of dealing with this complexity,
+along with also helping in the intuition of many other properties, is to
 represent the networks as a `computation graph.'
 
 A computation graph is simply directed acyclic diagram that shows the
@@ -499,18 +525,10 @@ circle with the weights both in and out of the neuron's value
 represented as edges.
 
 Sometimes, when the models get even larger, the layers (or groups of
-neurons) will get lumped into a single object (as on the right of the
-figure).
+neurons) will get lumped into a single node in the graph (as on the
+right of the figure.)
 
-\section{Mathematical Operations}\label{mathematical-operations}
-
-There are two basic operations that are performed on neural networks:
-forward propagation (or generating predictions from inputs) and back
-propagation (or calculating the gradients on all the model's parameters
-for training). Here we will give a brief overview of these operations.
-For a more thorough treatment of this problem see \citet{goodfellow_DL}.
-
-\subsection{Terminology}\label{terminology}
+\section{Terminology}\label{terminology}
 
 When covering the basic mathematical operations of a neural network it
 helps to have a reference for some of the terms that get used. This list
@@ -527,39 +545,43 @@ activation by the activation function.
 regression.
 
 \textbf{Bias Term}: A constant term added to the affine transformation
-for a given neuron. Also known as an `intercept term.'.
+for a given neuron. Also known as an `intercept term.'. For notational
+simplicity in most of our formulas we will omit this.
 
-\textbf{Activation Function}: A simple non-linear function that takes an
-input and `squashes' it to some range. A activation functions is the
+\textbf{Activation Function}: A non-linear function that takes an input
+and `squashes' it to some range. A common activation function is the
 sigmoid, which takes an unbounded real-valued input and returns a value
 between -1 and 1.
 
-\textbf{Layer}: A collection of neurons who's inputs typically all come
-from the same set of inputs.
+\textbf{Layer}: A collection of neurons who's inputs typically share the
+same inputs (either another layer's output or the data).
 
 \textbf{Hidden Layer}: A layer who's input is the output of a previous
 layer and who's output is another layer. E.g. Input layer
 -\textgreater{} hidden layer -\textgreater{} output layer.
+
+\section{Mathematical Operations}\label{mathematical-operations}
 
 The basic operations that one does on a neural network really fall into
 two categories. Forward propagation, or the passing of data into and
 through subsequent layers of the model to arrive at an output, and
 back-propagation, or the calculation of the gradient of each parameter
 in the model by stepping back through the model from the loss function
-to the input.
+to the input. For a more thorough treatment of these steps see
+\citet{goodfellow_DL} chapter six.
 
 \subsection{Forward Propagation}\label{forward-propagation}
 
 Let a neural network with \(l\) layers and \(k\) dimensional input \(X\)
 and \(m\) dimensional output \(\hat{y}\) attempting to predict the true
 target \(y\). Each layer is composed of \(s_i, i \in \{1, 2, ...,l\}\)
-neurons and has respective non-linear activation function \(f_i\). Layer
-activation vectors \(\underline{a_i}\) and post-activation function
-outputs \(\underline{o_i}\). The weights into neuron \(j\) in layer
-\(i\) is given by \(w_{(i,j)}\) which is a vector of size \(s_{i -1}\).
-We can thus view the weights into the \(i^{\text{th}}\) layer as a
-matrix \(W_i\) of of size \(s_{i -1} \times s_i\). Finally the network
-has a differentiable with respect to \(\hat{y}\) loss function:
+neurons and has respective non-linear activation function \(f_i\). The
+output of a layer after affine transformation is represented as a vector
+of length \(s_i\): \(\underline{a_i}\) and the layer ouput vector
+post-activation function outputs: \(\underline{o_i}\). The weights
+representing the affine transition from one layer \(i\) to layer \(j\)
+are a matrix \(W_i\) of of size \(s_{i} \times s_j\). Finally the
+network has a differentiable with respect to \(\hat{y}\) loss function:
 \(L(\hat{y}, y)\).
 
 Forward propagation then proceeds as follows.
@@ -608,10 +630,10 @@ Forward propagation then proceeds as follows.
 \end{enumerate}
 
 While not strictly necessary for forward propagation, the intermediate
-layer activation and output vectors are kept stored so they can be used
+layer activations and output vectors are kept stored so they can be used
 in the later calculation of the gradient via back propagation.
 
-\subsection{Back Propigation}\label{back-propigation}
+\subsection{Back Propagation}\label{back-propagation}
 
 If we are just looking to gather predictions from our model we can stop
 at forward propagation. However, most likely we want to train our model
@@ -619,20 +641,19 @@ first. The most common technique for training neural networks is using a
 technique called back propagation (\citet{backprop_1986}). In this
 algorithm the chain rule is used to walk back through the layers of the
 model starting from the loss function to the input weights in order to
-calculate each weight's gradient. This gradient is then descended using
-any number of gradient descent algorithms. (We will demonstrate the
-simplest steepest descent method.)
+calculate each weight's gradient with respect to the loss. This gradient
+is then descended using any number of gradient descent algorithms.
 
 \subsubsection{The Chain Rule}\label{the-chain-rule}
 
-Back propagation is really nothing more than a repeated application of
-the chain rule from calculus. Let \(x\) be a single dimensional real
-valued input that is mapped through first equation \(f\) and then \(g\),
-both of which map from a single dimensional real number to another
-single dimensional real number: \(f(x) = z, g(z) = y\) or
-\(g(f(x)) = y\). The chain rule states that we can calculate the
-derivative the outcome with respect to the input by a series of
-multiplications of the derivatives of the composing functions.
+Back propagation is nothing more than a repeated application of the
+chain rule from calculus. Let \(x\) be a single dimensional real valued
+input that is mapped through first equation \(f\) and then \(g\), both
+of which map from a single dimensional real number to another single
+dimensional real number: \(f(x) = z, g(z) = y\) or \(g(f(x)) = y\). The
+chain rule states that we can calculate the derivative of the outcome
+with respect to the input by a series of multiplications of the
+derivatives of the composing functions.
 
 \begin{equation} 
   \frac{dy}{dx} = \frac{dy}{dz}\frac{dz}{dx}
@@ -640,9 +661,9 @@ multiplications of the derivatives of the composing functions.
 \end{equation}
 
 This single dimensional example could be thought of as a neural network
-composed of two layers, each with a single dimension. While this is
-interesting the value of this observation comes when the chain rule is
-applied to higher dimensional values.
+composed of two layers, each with a single dimension. The single
+dimensional case is illuminating, but the value of the chain rule comes
+when it is applied to higher dimensional values.
 
 \subsubsection{Expanding to higher
 dimensions}\label{expanding-to-higher-dimensions}
@@ -670,20 +691,20 @@ input is the sum of all of the derivatives of all of the paths leading
 from the input element to the output.
 
 \begin{figure}
-\centering
-\includegraphics{figures/backprop.png}
-\caption{\label{fig:unnamed-chunk-2}How back propigation steps back from the
-output to the input. To calculate the gradient with respect to the loss
-of the orange neuron the we need to aggregate the gradients of all
-connected points further along in the computation graph.}
+
+{\centering \includegraphics{figures/backprop} 
+
+}
+
+\caption{How back Propagation steps back from the output to the input. To calculate the gradient with respect to the loss of the orange neuron the we need to aggregate the gradients of all connected points further along in the computation graph (blue connections).}\label{fig:unnamed-chunk-1}
 \end{figure}
 
 \subsubsection{Applied to Neural
 Networks}\label{applied-to-neural-networks}
 
-To apply this technique to neural networks we simply need to make sure
-all components of our network are differentiable and then walk back from
-the loss function first to the output layer, calculating the gradients
+To apply this technique to neural networks we need to make sure all
+components of our network are differentiable and then walk back from the
+loss function to the last (or output) layer, calculating the gradients
 of the output layer's neurons with respect to the loss. Once we have
 calculated the gradients with respect to the weights of the output layer
 we only need use those calculated gradients to calculate the gradients
@@ -703,54 +724,65 @@ the layer we multiply this un-activated gradient by the transpose of the
 layer's output vector: \(\textbf{g}_i = \textbf{g}^*_i \textbf{o}_i^t\).
 
 The fact that the calculation of these gradients is so simple is
-fundamental to deep learning. If it were more complicated extremely
+fundamental to deep learning. If it were more complicated, extremely
 large networks (such as those used in computer vision) with millions of
 parameters to tune would simply be computationally infeasible to
-calculate gradients for. The run time a simple product of the number of
-neurons in each layer and the number of layers in the whole model.
+calculate gradients for. Conveniently, the run time of the back
+propigation is a simple product of the number of neurons in each layer
+and the number of layers in the whole model.
 
 \subsubsection{Other methods}\label{other-methods}
 
 Non-gradient based techniques have been explored for neural networks but
-ultimately found extremely slow for large networks. For instance
-evolutionary strategies (\citet{evostrat}), a new technique proposed by
-a group at OpenAi uses random searches of the parameter space. However,
-since often these parameter spaces are millions of dimensions an
-extremely large number of random perturbations are needed to inform a
-good direction to move. However, these methods are used when the loss
-function does not have a gradient (such as reinforcement learning
-scenarios).
+have ultimately proven to slow for any realistic sized network. For
+instance evolutionary strategies (\citet{evostrat}), a new technique
+proposed by a group at OpenAi uses random searches of the parameter
+space with evolutionary algorithms to tune the model's parameters.
+However, since often these parameter spaces are millions of dimensions,
+an extremely large number of random perturbations are needed to inform a
+good direction to move{[}\^{}These do find use when methods are used
+when the loss function does not have a gradient. Such as reinforcement
+learning scenarios.{]}.
 
 \section{Training}\label{training}
 
 \subsection{Gradient Descent}\label{gradient-descent}
 
-Once the gradient is computed optimization proceeds the same way any
+Once the gradient is computed, optimization proceeds the same way any
 gradient-based optimization problem does. The simplest algorithm for
-doing so being the steepest descent algorithm. In this algorithm each
+doing so being the steepest descent algorithm. In this algorithm, each
 weight for our network is updated by adding its gradient multiplied by a
-small scalar called a `learning rate'. The new updated weights are then
-used in another forward propagation, followed by another back
-propagation and weight update and so on until the loss finds a minimum
-or some other stopping criteria is defined (such as a given number
-steps) is satisfied.
+small scalar called a `learning rate' (\(\alpha\)).
+
+\[\theta^{(j)} = \theta^{(j - 1)} + \alpha\Delta_{\theta}\]
+
+The new updated weights are then used in another forward propagation,
+followed by another back propagation and weight update. This processes
+is repeated until the loss finds a minimum or some other stopping
+criteria is defined (such as a given number steps) is satisfied.
 
 \subsection{Gradient Descent
 Modifications}\label{gradient-descent-modifications}
 
 There are many scenarios in which traditional steepest descent is not an
-ideal for finding minimums. A classic example is when the loss function
-takes the form of a long trough. In this case steepest descent will
-spend most of its time bouncing around between the sides of the trough
-due to over stepping the low point, thus wasting many of its iterations
-undoing its previous work rather than progressing in the true direction
-of the minimum.
+ideal for finding minimums of the loss function. A classic example is
+when the loss function takes the form of a long trough
+(\ref{fig:badloss}. In this case steepest descent will spend most of its
+time bouncing around between the sides of the trough due to over
+stepping the low point, thus wasting many of its iterations undoing its
+previous work rather than progressing in the true direction of the
+minimum.
 
 \begin{figure}
-\includegraphics[width=300,height=300]{http://www.nbertagnolli.com/assets/descent_methods/GDWBLS} \caption{Demonstration of steepest descents limitations on trough like gradient surfaces. Much of each step's progress is wasted on bouncing back and forth between the two walls of the gradient rather than descending directly towards the minimum. Image from [Nicolas Bertagnolli's blog](http://www.nbertagnolli.com/)}\label{fig:unnamed-chunk-3}
+
+{\centering \includegraphics[width=0.6\linewidth]{http://www.nbertagnolli.com/assets/descent_methods/GDWBLS} 
+
+}
+
+\caption{Demonstration of steepest descents limitations on trough like gradient surfaces. Much of each step's progress is wasted on bouncing back and forth between the two walls of the gradient rather than descending directly towards the minimum. Image from [Nicolas Bertagnolli's blog](http://www.nbertagnolli.com/)}\label{fig:badloss}
 \end{figure}
 
-One of the most common additions to simple gradient descent is the
+One of the most common additions to plain gradient descent is the
 addition of momentum. Momentum makes each step a function of not only
 the current gradient but also a decaying average of previous
 generations. For a thorough overview of momentum based methods see
@@ -758,11 +790,15 @@ generations. For a thorough overview of momentum based methods see
 
 \section{Activation Functions}\label{activation-functions}
 
-There are many different possible activation functions. One of the
-simplest being the sigmoid function which simply squashes the neuron's
-activation from all real numbers to between 0 and 1. A newer and
-extremely common choice is the rectified linear unit (Relu) function
-(\citet{relu_paper}).
+There are many different possible activation functions. The only
+conditions that an activation function needs to satisfy is that it takes
+an unbounded real input and returns some non-linear transformation of
+that input that is differentiable with respect to the input.
+
+One of the simplest functions used is the sigmoid which simply squashes
+the neuron's activation from all real numbers to between 0 and 1. A
+newer and extremely common choice is the rectified linear unit (Relu)
+function (\citet{relu_paper}).
 
 \BeginKnitrBlock{definition}[sigmoid activation function]
 \protect\hypertarget{def:sigmoid}{}{\label{def:sigmoid} \iffalse (sigmoid
@@ -809,10 +845,12 @@ Unit activation function) \fi{} }\[f(x) = \text{max}(0,x)\]
 \end{verbatim}
 
 \begin{figure}
-\centering
-\includegraphics{bookdown-demo_files/figure-latex/unnamed-chunk-4-1.pdf}
-\caption{\label{fig:unnamed-chunk-4}Comparison of the relu and sigmoid
-activation functions.}
+
+{\centering \includegraphics[width=0.85\linewidth]{bookdown-demo_files/figure-latex/unnamed-chunk-2-1} 
+
+}
+
+\caption{Comparison of the relu and sigmoid activation functions.}\label{fig:unnamed-chunk-2}
 \end{figure}
 
 Another, popular loss function that is used on the output layer when
@@ -827,10 +865,11 @@ activation function.) \fi{}
 \EndKnitrBlock{definition}
 
 This function serves to turn the output of a layer into a multivariate
-probability vector. The \(m\) outputs of the softmax sum to 1. It is
-important to note that, while the values sum to one, it's not a true
-probability output, but will help indicate which class is most likely
-and roughly by what magnitude over other potential class choices.
+probability vector. The \(m\) outputs of the softmax sum to one.
+\footnote{It is important to note that, while the values sum to one,
+  it's not a true probability output, but will help indicate which class
+  is most likely and roughly by what magnitude over other potential
+  class choices.}
 
 \section{Loss functions}\label{loss-functions}
 
@@ -843,14 +882,14 @@ to be differentiable with respect to our model's output
 gradient on which the model is trained.
 
 Almost always the loss function is derived from the model's likelihood
-and thus we can view our model training as a form of maximum likelihood
-estimation. If we let \(\theta\) represent the parameters (weights) of
-our model with input \(\textbf{x}\) and output \(\textbf{y}\). The
-negative log-likelihood of our model is minimized when the Kullback
-Leibler divergence between our estimated model and the truth is
-minimized. Thus we can view training as traversing the space of
-\(\theta\) in an attempt to find values that return the lowest value to
-this function.
+and serves as a maximum likelihood estimator.
+
+If we let \(\theta\) represent the parameters (weights) of our model
+with input \(\textbf{x}\) and output \(\textbf{y}\). The negative
+log-likelihood of our model is minimized when the Kullback Leibler
+divergence between our estimated model and the truth is minimized. Thus
+we can view training as traversing the space of \(\theta\) in an attempt
+to find values that return the lowest value to this function.
 
 \BeginKnitrBlock{definition}[General maximum likelihood loss function]
 \protect\hypertarget{def:negloglik}{}{\label{def:negloglik}
@@ -859,7 +898,7 @@ this function.
 \EndKnitrBlock{definition}
 
 Of course, the precise form of the maximum likelihood loss function will
-change depending on the model. Here we will briefly introduce the two
+change depending on the model. Next we will briefly introduce the two
 classes of loss functions: regression and classification, and the most
 commonly used functions within those classes.
 
@@ -878,9 +917,11 @@ Where \(y_i\) represents the outcome of the \(i^{\text{th}}\)
 observation of \(n\) training observations.
 \EndKnitrBlock{definition}
 
-Minimizing the mean squared error can be shown to be equivalent to
-maximizing the likelihood function (\citet{goodfellow_DL} chapter 5.5)
-and is thus a maximum likelihood method.
+This assumes that the output, when conditioned on the input, takes the
+form of a normal distribution. Minimizing the mean squared error is
+equivalent to maximizing the conditional normal likelihood function
+(\citet{goodfellow_DL} chapter 5.5) and is thus a maximum likelihood
+method.
 
 \subsection{Classification loss
 functions}\label{classification-loss-functions}
@@ -891,7 +932,7 @@ for a single class, or a categorical case, where we have more than two
 possible classes to choose from and need to place our data into one of
 them.
 
-In the single outcome case the approach to assume the outcome is a
+In the single outcome case the approach is to assume the outcome is a
 Bernoulli distribution over outcome \(y\) conditioned on the input
 \(x\). The resultant loss function is commonly referred to as `binary
 cross entropy.'\footnote{It is interesting to note that while we
@@ -908,8 +949,8 @@ cross entropy.'\footnote{It is interesting to note that while we
 
 This can be generalized into the multivariate case by swapping a
 multinomial model as the conditional distribution and thus adding more
-terms to the internal summation representing each possible class and
-it's assigned probability.
+terms to the internal summation representing each possible class and its
+assigned probability.
 
 \BeginKnitrBlock{definition}[Categorical cross entropy loss]
 \protect\hypertarget{def:catcrossentropy}{}{\label{def:catcrossentropy}
@@ -922,7 +963,7 @@ for the \(k^{\text{th}}\) category (dummy encoded).
 
 \subsection{Other loss functions}\label{other-loss-functions}
 
-While it is possible to use other loss functions in neural networks it
+While it is possible to use other loss functions in neural networks, it
 is commonly not advised as the maximum-likelihood methods perform just
 as well and usually results in a more robust fit to the data. As deep
 learning situations usually have a large number of training observations
@@ -934,19 +975,20 @@ in deep learning see \citet{goodfellow_DL} chapter six.
 \chapter{Architectures For Sequence Learning}\label{architectures}
 
 In the previous chapter we described the general neural network
-architecture. This is usually called a dense-neural feed-forward
-networks. `Dense' refers to the fact that all neurons of a given layer
-are connected to all neurons of the successive layer. `Feed-forward'
-refers to the fact that data flows into the network and straight to the
-output, traveling only forward through the layers. In this section we
-will expand upon this general model with different architectures: the
+architecture. This is usually called a dense feed-forward network.
+`Dense' refers to the fact that all neurons of a given layer are
+connected to all neurons of the successive layer. `Feed-forward' refers
+to the fact that data flows into the network and straight to the output,
+traveling only forward through the layers. In this section we will
+expand upon this general model with different architectures: the
 recurrent neural network (RNN) (\citet{rnn_intro}) and the convolutional
 neural net (CNN) (\citet{cnn_intro}).
 
-It is important to note that while these models are in fact sub-models
-of the dense feed-forward networks from the last chapter, just with
-restrictions placed on weights in the form of deleting connections
-(setting weight to 0) or sharing weights between multiple connections.
+While they are often represented as very different models, these
+architectures are in fact sub-models of the dense feed-forward networks
+from the last chapter, just with restrictions placed on weights in the
+form of deleting connections (setting weight to 0) or sharing weights
+between multiple connections.
 
 These restrictions applied to standard neural networks allow the models
 to more efficiently model tasks related to sequential data by reducing
@@ -955,29 +997,31 @@ with the propagation of the gradients for efficient training.
 
 \section{Terminology}\label{terminology-1}
 
-Throughout this chapter we will refer to an input \(\textbf{x}\) which
-is a single observation of \(t\) time points. In addition, we have an
-outcome \(\textbf{y}\), also of length \(t\) that represents some state
-or property of the system generating \(x\) at each time point. This
-could be the type of road a car is driving on, the sentiment of a
+Throughout this chapter we will refer to an input \(\mathbf{x}\) which
+is a vector of observations at \(t\) time points. In addition, we have
+an outcome \(\mathbf{y}\), also of length \(t\) that represents some
+state or property of the system generating \(x\) at each time point.
+This could be the type of road a car is driving on, the sentiment of a
 speaker, or the next \(x_i\) value (e.g.~next word in a sentence).
 
 \section{Recurrent Neural Networks}\label{recurrent-neural-networks}
 
 One way to efficiently deal with the fact that sequential data is often
 highly correlated between observations is to fit a model to each
-time-point observation and then pass it information on what was
-happening prior. The model can then combine the previous information
-with the newly observed input to come up with a prediction.
+time-point and then pass it information on what was happening prior. The
+model can then combine the previous information with the newly observed
+input to come up with a prediction.
 
 This can be accomplished in a neural network by adding recurrent links
 between layers. Typically, this is done by passing the hidden layer (or
 layers) of the network the values of itself at the previous time point.
-I.e. \(\textbf{h}_{t} = g(\textbf{x}_t, \textbf{h}_{t - 1})\). The idea
+I.e. \(\mathbf{h}_{t} = g(\mathbf{x}_t, \mathbf{h}_{t - 1})\). The idea
 behind this is that the hidden layer learns to encode some `latent
-state' of the system that is informative for its output, and so letting
-the model know what that latent state was previously will help it update
-the latent state and provide an accurate output.
+state'\footnote{This is in contrast with hidden markov models, which
+  force the state use to infer the next step to be of the possible
+  classes.} of the system that is informative for its output, and so
+letting the model know what that latent state was previously will help
+it update the latent state and provide an accurate output.
 
 Why not just pass the output at time \((t-1)\) to the hidden state at
 \(t\) instead? While this is possible, and indeed works much better than
@@ -991,7 +1035,12 @@ allowing for a simple element-wise addition of the components from the
 previous hidden state and the new input information.
 
 \begin{figure}
-\includegraphics[height=320]{figures/rnn_compact} \caption{A recurrent neural network with a single hidden layer. The hidden layer's values at time $t$ are passed to the hidden layer at time $(t + 1)$.}\label{fig:cyclegraph}
+
+{\centering \includegraphics[width=0.4\linewidth]{figures/rnn_compact} 
+
+}
+
+\caption{A recurrent neural network with a single hidden layer. The hidden layer's values at time $t$ are passed to the hidden layer at time $(t + 1)$.}\label{fig:cyclegraph}
 \end{figure}
 
 \subsection{Applications to sequential
@@ -1010,7 +1059,12 @@ time-series regression (\citet{rnn_regression}), speech recognition
 (\citet{rnn_handwriting}).
 
 \begin{figure}
-\includegraphics[height=320]{figures/handwriting_rnn} \caption{Example of an RNN's output for recognizing characters in handwritten characters. The model scans along one slice at a time of the data and the output is character likelihood. Still from [youtube video](https://www.youtube.com/watch?v=mLxsbWAYIpw) by Nikhil Buduma.}\label{fig:unnamed-chunk-5}
+
+{\centering \includegraphics[width=0.9\linewidth]{figures/handwriting_rnn} 
+
+}
+
+\caption{Example of an RNN's output for recognizing characters in handwritten characters. The model scans along one slice at a time of the data and the output is character likelihood. Still from [youtube video](https://www.youtube.com/watch?v=mLxsbWAYIpw) by Nikhil Buduma.}\label{fig:unnamed-chunk-3}
 \end{figure}
 
 \subsection{Successes in natural language
@@ -1038,7 +1092,12 @@ just a visual simplification of the true computational graph. The
 that share connections between sequential hidden layers.
 
 \begin{figure}
-\includegraphics[height=320]{figures/rnn_unrolled} \caption{Unrolled view of the RNN shown in previous figure. Each timestep has two outputs, the timesteps predictions and its hidden state. The next time step subsequently has two inputs: the data at the timepoint and the previous timepoint's hidden state.}\label{fig:unrolledgraph}
+
+{\centering \includegraphics[width=0.65\linewidth]{figures/rnn_unrolled} 
+
+}
+
+\caption{Unrolled view of the RNN shown in previous figure. Each timestep has two outputs, the timesteps predictions and its hidden state. The next time step subsequently has two inputs: the data at the timepoint and the previous timepoint's hidden state.}\label{fig:unrolledgraph}
 \end{figure}
 
 So in fact, we still satisfy the requirement of a directed acyclic
@@ -1047,14 +1106,16 @@ in the graph in a single cyclical diagram.
 
 \subsection{Weight sharing}\label{weight-sharing}
 
-A recurrent neural network is actually a very large neural network with
-a bunch of outputs, so it should be hard to train, correct? The secret
-to RNNs having maintainable parameter quantities is weight sharing. In
-the unrolled graph every layer has the same weights. This means that the
-hidden layer always parses the input data with the same affine function
-and combines it with the previous hidden state in the same way;
-likewise, with the same hidden state activation, the model output will
-always be the same.
+The unrolled graph representation shows that a recurrent neural network
+is actually a very large neural network, so untuitively it should be
+hard to train. The secret to RNNs having maintainable parameter
+quantities is weight sharing. In the unrolled graph every layer has the
+same weights. This means that the hidden layer always parses the input
+data with the same affine function and combines it with the previous
+hidden state in the same way; likewise, with the same hidden state
+activation, the model output will always be the same\footnote{We rely on
+  the model to learn a hidden state that stores information from the
+  past to avoid the problems with Markov processes}.
 
 In order to calculate gradients, first an initial hidden state is
 defined (usually all zeros) and then forward propagation is carried out
@@ -1062,7 +1123,7 @@ through all \(t\) time-points of the input. Then, back propagation
 starts from the last output and proceeds all the way back through the
 computation graph. The resulting gradient descent updates are a function
 of the average of all of the gradients calculated. This procedure,
-although technically no different from plain back propagation is known
+although technically no different from plain back propagation, is known
 as the \emph{back-propigation through time} (BPTT) algorithm. For a
 thorough overview of the form of the gradient equations for BPTT see
 \citet{goodfellow_DL} chapter 10.2.2.
@@ -1078,52 +1139,52 @@ typically have somewhere between two and ten layers of this composition,
 RNNs can have hundreds of steps of this composition as sequences are
 commonly very long (e.g.~time series data collected every second for a
 day: \(t= 86,400\)). When this many compositions are performed negative
-side effects tend to accumulate. This largest being the problem of the
+side effects tend to accumulate. The largest being the problem of the
 exploding and vanishing gradients (\citet{vanishing_gradient},
 \citet{bengio_gradient}).
 
 To illustrate this problem we can think of an extremely simple RNN. One
 that has no input, a single hidden layer
-\(\textbf{h}^{(i)}, i \in \{1, ..., t\}\), and no non-linear activation
+\(\mathbf{h}^{(i)}, i \in \{1, ..., t\}\), and no non-linear activation
 functions. We will denote the weights for mapping
-\(\textbf{h}^{(i)} \to \textbf{h}^{(i + 1)}\) with \(\textbf{W}\). We
-also assume that \(\textbf{W}\) can be eigendecomposed to
-\(\textbf{Q}\Lambda\textbf{Q}'\) where \(\textbf{Q}\) is orthogonal and
-\(\Lambda\) is the eigen matrix. This is obviously a functionally
-useless model, but it serves well to illustrate our problem.
+\(\mathbf{h}^{(i)} \to \mathbf{h}^{(i + 1)}\) with \(\mathbf{W}\). We
+also assume that \(\mathbf{W}\) can be eigendecomposed to
+\(\mathbf{Q}\mathbf{\Lambda}\mathbf{Q}'\) where \(\mathbf{Q}\) is
+orthogonal and \(\mathbf{\Lambda}\) is the eigen matrix. This is
+obviously a functionally useless model, but it serves to illustrate our
+problem.
 
-We can thus think of each step of our RNN through time in terms of
-matrix multiplication.
+We can think of each step of our RNN through time in terms of matrix
+multiplication.
 
 \begin{equation} 
-  \textbf{h}^{(t)} = \textbf{W}' \textbf{h}^{(t - 1)}
+  \mathbf{h}^{(t)} = \mathbf{W}' \mathbf{h}^{(t - 1)}
   \label{eq:simplernn1}
 \end{equation}
 
-We can see that this equation can be simplified to a function of only
-the weight matrix and the first hidden state using the power method.
+This equation can be simplified to a function of only the weight matrix
+and the first hidden state using the power method.
 
 \begin{equation} 
-  \textbf{h}^{(t)} = \left[\textbf{W}^t\right]' \textbf{h}^{(0)}
+  \mathbf{h}^{(t)} = \left[\mathbf{W}^t\right]' \mathbf{h}^{(0)}
   \label{eq:simplernn2}
 \end{equation}
 
-Next we just need to substitute the eigendecomposition of
-\(\textbf{W}\).
+Next, we substitute the eigendecomposition of \(\mathbf{W}\).
 
 \begin{align} 
-  \textbf{h}^{(t)} &= \left[(\textbf{Q}\Lambda\textbf{Q})^t\right]' \textbf{h}^{(0)} \\
-                    &= \textbf{Q}'\Lambda^t \textbf{Q} \textbf{h}^{(0)} \\
+  \mathbf{h}^{(t)} &= \left[(\mathbf{Q}\mathbf{\Lambda}\mathbf{Q})^t\right]' \mathbf{h}^{(0)} \\
+                    &= \mathbf{Q}'\mathbf{\Lambda}^t \mathbf{Q} \mathbf{h}^{(0)} \\
   \label{eq:simplernn3}
 \end{align}
 
-From the form of the function composition in \eqref{eq:simplernn3} allows
-us to see that while the eigen matrix is continuously being raised to
-the \(t\) power, it will cause it's eigenvalues with magnitude greater
-than one to diverge to infinity and those with magnitude less than one
-to converge to zero.
+The form of the function composition in \eqref{eq:simplernn3} allows us to
+see that while the eigen matrix is continuously being raised to the
+\(t\) power, it will cause its eigenvalues with magnitude greater than
+one to diverge to infinity and those with magnitude less than one to
+converge to zero.
 
-This observation leads to the problem that, over any long term sequence
+This observation leads to the problem that, over any long term sequence,
 our model will have a very hard time keeping track of dependencies. When
 applied to back propagation this is essentially means that the gradients
 associated with parameters linked to longer term dependencies will
@@ -1142,10 +1203,10 @@ necessarily information importance (\citet{bengio_gradient},
 
 There have been many proposed solutions to solving the problems
 associated with plain RNNs inability to learn long term dependencies.
-Some of them focus on forcing gradient's into good behavior by trying to
-constrain them close to one (\citet{bounded_gradient_rnn}) and others on
-adding `skip connections' between times further apart than a single step
-(\citet{skip_connections}).
+Some of them focus on forcing gradient's into good behavior by
+constraining them to be close to one (\citet{bounded_gradient_rnn}) and
+others on adding `skip connections' between times further apart than a
+single step (\citet{skip_connections}).
 
 While these methods do successfully allow RNNs to learn longer time
 dependencies, they are rather restrictive (forcing weights to have
@@ -1168,7 +1229,12 @@ networks augment the traditional RNN architecture by adding a series of
 used from time-step to time-step.
 
 \begin{figure}
-\includegraphics[width=400]{figures/lstm_cell} \caption{The internal structure of an LSTM hidden unit. The gates are all fed by the input at time _t_, the whole hidden unit at time (_t - 1_), and the hidden units internal state from time (_t - 1_). The gates themselves are linear combinations of the input that are then transformed by sigmoid activation functions.}\label{fig:lstmdiagram}
+
+{\centering \includegraphics[width=0.6\linewidth]{figures/lstm_cell} 
+
+}
+
+\caption{The internal structure of an LSTM hidden unit. The gates are all fed by the input at time _t_, the whole hidden unit at time (_t - 1_), and the hidden units internal state from time (_t - 1_). The gates themselves are linear combinations of the input that are then transformed by sigmoid activation functions.}\label{fig:lstmdiagram}
 \end{figure}
 
 It is important to note that an LSTM network is really just an RNN that
@@ -1177,37 +1243,36 @@ that controls its inputs and outputs along with having a secondary
 internal recurrence to an internal state. See figure
 \ref{fig:lstmdiagram} for the details of this internal cell.
 
-These gates are themselves simple little neurons that take linear
-combination of the input at time \(t\), the hidden state at \((t - 1)\)
-and the LSTM cell's internal state at \((t - 1)\) and produce an output
-that is squashed between zero (closed) and one (open) by a sigmoid
-activation function. The input gate will control what information makes
-it through to the unit internal state, the forget gate decides which
-information from the internal state gets recycled for the next time
-point, and the output gate decides what of the internal state is
-important to the next layer.
+These gates are themselves neurons that take linear combinations of the
+input at time \(t\), the hidden state at \((t - 1)\) and the LSTM cell's
+internal state at \((t - 1)\) and produce an output that is squashed
+between zero (closed) and one (open) by a sigmoid activation function.
+The input gate will control what information makes it through to the
+unit internal state, the forget gate decides which information from the
+internal state gets recycled for the next time point, and the output
+gate decides what of the internal state is important to the next layer.
 
 While LSTMs are conceptually more complicated, their improvements in
 performance over standard RNNs is drastic (\citet{lstm_intro}). The
-network can now learn what features are important to it's given outcome
-at any given time, while at the same time filtering out information that
+network can now learn what features are important to its given outcome
+at a given time, while at the same time filtering out information that
 it finds unnecessary in context. To give intuition to this we can
-imagine a baseball scenario. Say the batter hits a foul ball, that foul
-has different implications on the outcome of the at bat depending on how
+imagine a baseball game. Say the batter hits a foul ball, that foul has
+different implications on the outcome of the at bat depending on how
 many strikes the player has when it occurred. A traditional RNN would
 always choose to remember a foul the same, whereas an LSTM network could
 learn this contextual frame for importance.
 
 The major issue with LSTMs is how many parameters there are to learn.
 The number of parameter's associated with a neuron in a hidden layer
-jumps roughly 3 times over a standard RNN due to the weights necessary
-for the gates. Due to this, LSTMs require a very large amount of data to
-effectively train and not over-fit. In practice, these complications,
-combined with the recovery of some degrees of freedom through
-regularization, are worth it and LSTMs are by far the most common
-RNN-based architecture used today. However, some other approaches using
-similar methodologies have proven successful while reducing the number
-of parameters needed.
+jumps roughly three times over a standard RNN due to the weights
+necessary for the gates. Due to this, LSTMs require a very large amount
+of data to effectively train and not over-fit. In practice, these
+complications, combined with the recovery of some degrees of freedom
+through regularization, seem to be worth it and LSTMs are by far the
+most common RNN-based architecture used today. However, some other
+approaches using similar methodologies have proven successful while
+reducing the number of parameters needed.
 
 \subsubsection{Gated recurrent units}\label{gated-recurrent-units}
 
@@ -1221,7 +1286,12 @@ of the hidden state from the previous time-point makes it into the
 hidden state's input vector.
 
 \begin{figure}
-\includegraphics[width=400]{figures/gru_cell} \caption{The internal structure of an GRU hidden unit. Unlike the LSTM there are only two gates, with the update and forget get tasks being taken care of by a single gate that controls what proportion to remember and what to forget. In addition, a reset gate controls how much of the hidden state from the previous step to bring into the current.}\label{fig:grudiagram}
+
+{\centering \includegraphics[width=0.6\linewidth]{figures/gru_cell} 
+
+}
+
+\caption{The internal structure of an GRU hidden unit. Unlike the LSTM there are only two gates, with the update and forget get tasks being taken care of by a single gate that controls what proportion to remember and what to forget. In addition, a reset gate controls how much of the hidden state from the previous step to bring into the current.}\label{fig:grudiagram}
 \end{figure}
 
 While the GRU has fewer parameters to train, and does appear to perform
@@ -1236,16 +1306,17 @@ a systematic hyper-parameter search.
 The complications caused by RNNs propagating values/errors over many
 time steps is also the cause of the biggest computational hurdle
 associated with RNNs. When forward propagating or back propagating, we
-need to do it all in one sequential set of calculations. It is very
-common for neural network training to be multi-threaded using graphics
-processing units (GPUs). The reason this is effective is most of the
-calculations involved are simple and only depend on a few sequential
-layers, and thus it is very easy to run many training samples through
-the network at once to calculate their gradients and then aggregate
-those to a gradient descent step. However, with RNNs we must processes
-each sequence all the way though its (potentially very numerous) time
-steps. As a result, RNNs train much slower than other neural network
-architectures.
+need to do it all in one sequential set of calculations.
+
+It is very common for neural network training to be multi-threaded using
+graphics processing units (GPUs). The reason this is effective is most
+of the calculations involved are simple and only depend on a few
+sequential layers, and thus it is very easy to run many training samples
+through the network in parallel to calculate their gradients and then
+aggregate those to a gradient descent step. However, with RNNs we must
+processes each sequence all the way though its (potentially very
+numerous) time steps. As a result, RNNs train much slower than other
+neural network architectures.
 
 There are a few general approaches to solving this. The simplest is to
 just stop back propagation at a certain number of steps, regardless of
@@ -1261,10 +1332,16 @@ trained one time point at a time because the output from the next time
 step can be substituted with the observed value at that time step. While
 this approach massively speeds up training, as mentioned previously, it
 throws away some potentially valuable latent-space information that the
-model has learned. This approach has gained very little traction.
+model has learned. This approach has gained very little traction due to
+these limitations.
 
 \begin{figure}
-\includegraphics[width=300]{figures/output_rnn} \caption{An RNN where the recurrent connection is made between the previous timepoint's output and the hidden unit. This model is less expressive than the traditional hidden - hidden architecture but is much easier to train.}\label{fig:outputrnn}
+
+{\centering \includegraphics[width=0.45\linewidth]{figures/output_rnn} 
+
+}
+
+\caption{An RNN where the recurrent connection is made between the previous timepoint's output and the hidden unit. This model is less expressive than the traditional hidden - hidden architecture but is much easier to train.}\label{fig:outputrnn}
 \end{figure}
 
 As both the number of observations as well as the number of time points
@@ -1278,18 +1355,18 @@ been using convolutional neural networks.
 Networks}\label{convolutional-neural-networks}
 
 While CNNs have garnered a great amount of attention in recent years for
-their successes in the computer-vision world they were in fact
-originally introduced as a method for modeling time-series data
-(\citet{hinton_cnn}){[}\^{}Although at the time they were called
-time-delay neural networks.{]}. A convolutional neural network is one
-where a convolution, or window that detects features such as edges, is
-run over the specially connected dimensions of the data in order to map
-where the given feature is located.
+their successes in computer-vision they were originally introduced as a
+method for modeling time-series data (\citet{hinton_cnn}){[}\^{}Although
+at the time they were called time-delay neural networks.{]}. A
+convolutional neural network is one where a convolution (, or window
+that detects features such as edges,) is run over the spatially
+connected dimensions of the data in order create a map where a given
+feature is located.
 
 \subsection{Application to spatially correlated
 data}\label{application-to-spatially-correlated-data}
 
-In the context of image recognition this means scanning a
+In the context of image recognition this mapping means scanning a
 two-dimensional block of pixels over the range of the picture to detect
 important features in the data. In time-series data this window is one
 dimensional (e.g.~a five minute window) and it scans exclusively along
@@ -1302,18 +1379,22 @@ recognizers are learned. This is in contrast with traditional approaches
 where the features to be extracted had to be manually curated. Usually
 some number of convolution's are initialized for a given model and are
 allowed to learn the patterns that help them best minimize the loss
-function. Interestingly, in the case of computer-vision sometimes
+function. Interestingly, in the case of computer-vision, sometimes
 fascinating patterns are learned that mimic what one might expect, but
 are much more complicated than those manually created by humans
 (\citet{cnn_vis}).
 
-Interestingly, neuroscience research has shown that CNNs mimic how the
-first stages of the animal visual perception system works
-(\citet{cnn_animals}) and has in many cases surpassed human level
-performance on basic tasks.
+Neuroscience research has shown that CNNs mimic how the first stages of
+the animal visual perception system works (\citet{cnn_animals}) and has
+in many cases surpassed human level performance on basic tasks.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{figures/convolutional_explainer} \caption{A diagram of how a convolutions are applied to sequential data.}\label{fig:cnnexplain}
+
+{\centering \includegraphics[width=1\linewidth]{figures/convolutional_explainer} 
+
+}
+
+\caption{A diagram of how a convolutions are applied to sequential data.}\label{fig:cnnexplain}
 \end{figure}
 
 \subsection{Weight sharing}\label{weight-sharing-1}
@@ -1326,7 +1407,10 @@ data in the hidden layer neurons (1,2,3) would correspond to convolution
 one on the first time-point of the input, neurons (4,5,6) would
 correspond to convolution two on the first time point, neurons (7,8,9)
 to convolution one on time-point two, and so on. See
-\ref{fig:cnnexplain} for a visual treatment of this.
+\ref{fig:cnnexplain} for a visual treatment of this\footnote{The actual
+  location placement of the convolutional outputs for the next layer
+  does not actually matter unless the next layer is itself a
+  convolutional layer.}.
 
 \subsection{Translation invariance}\label{translation-invariance}
 
@@ -1339,63 +1423,63 @@ invariant.
 A pooling layer acts similarly to a convolutional layer in that it scans
 sequentially over its input, however in the case of a pooling layer the
 input is the output of a convolutional layer. In addition, instead of
-applying some learned linear transformation to its inputs it performs a
+applying some learned linear transformation to its inputs, it performs a
 predesignated pooling operation such as finding the maximum, or average
 of the input values for its window and then returning that singular
 value. By taking steps larger than one between each application of the
 filter (also known as the stride), this serves to create an indicator
-for if a feature was see in the region, but it does not care about where
-in that region it was seen.
+for if a feature was `seen' in the region, but it does not care about
+where in that region it was seen.
 
 This can be beneficial in many scenarios. For instance, if you were
 trying to identify the waveform of the word ``dog'', one feature
 detector may be to find the pattern corresponding to the ``d'' phoneme,
-and one to the ``au'' phoneme. Depending on the speaker they may say the
-word faster or slower, and so in one instance the ``d'' phoneme might
-appear two tenths of a second before the ``au'' one, and for another one
-tenth. By pooling we avoid the model from getting confused in this case,
-because it just looks for the ``au'' phoneme to occur in a flexible
-window after the ``d'' one.
+and one to the ``au'' phoneme. Depending on the speed of the speaker,
+the ``d'' phoneme might appear two tenths of a second before the ``au''
+one or one tenth. By pooling we help the model getting confused in this
+case, because it just looks for the ``au'' phoneme to occur in a
+flexible window after the ``d'' one.
 
-Translation invariance does also have it's downsides too. Geoffrey
-Hinton, coincidentally the inventor of CNNs has been very open about how
-he thinks
+Translation invariance does also have its downsides too. Geoffrey Hinton
+(coincidentally the inventor of CNNs) has been very open about how he
+thinks
 \href{www.youtube.com\%2Fwatch\%3Fv\%3DrTawFwUvnLE\&usg=AOvVaw3CKtrHEhfBZkXdd7xgJ1PM}{they
 are bad models}. His main complaint rests with the fact that pooling
-layers through away large chunks of information in ways that animal
-vision systems do not. Recently he published a paper with co-authors
-Sara Sabour and Nicholas Frosst that introduces a new architecture
-called the ``capsule network'' (\citet{capsnet}) which acts similarly to
-a convolutional network with pooling, but it preserves information about
+layers throw away large chunks of information in ways that animal vision
+systems do not. Recently he published a paper with co-authors Sara
+Sabour and Nicholas Frosst that introduces a new architecture called the
+``capsule network'' (\citet{capsnet}) which acts similarly to a
+convolutional network with pooling, but it preserves information about
 the translation of the feature.
 
-\chapter{Oportunities for advancing field}\label{future}
+\chapter{Opportunities for advancing field}\label{future}
 
-While up to now has been an overview of the techniques that have been
-successfully and commonly implemented in sequential classification
-problems, this chapter will be devoted to new efforts to solving
-problems associated with the aforementioned methods. In addition to
-being a survey of the current state of the art it will also identify
+Up to now has been an overview of the techniques in deep learning that
+have been successfully and commonly implemented in sequential
+classification problems. This chapter will be devoted to new efforts of
+solving problems associated with the aforementioned methods. In addition
+to being a survey of the current state of the art it will also identify
 potential avenues for new research that could enhance our ability to
 work with sequential data subjected to various constraints.
 
 \section{What to do with all those
 parameters}\label{what-to-do-with-all-those-parameters}
 
-A large issue with not just sequence-based deep learning, but the field
-as a whole is how large models are. For instance: VGGnet
-(\citet{vggnet}), the second place winner of the 2014 ImageNet
-competition and an extremely common model to use for image recognition
-tasks has 138 million parameters to tune. Going by the rule of thumb
-from Frank Harrell book ``Regression Modeling Strategies''(\citet{rms})
-of 10-20 observations per parameter in our model this is an issue,
-especially given the size of the data-set that the VGGnet model was
-trained on was \emph{only} one million images.
+An issue with not just sequence-based deep learning, but the field as a
+whole, is how large models are. For instance: VGGnet (\citet{vggnet}),
+the second place winner of the 2014 ImageNet competition and an
+extremely common model to use for image recognition tasks, has 138
+million parameters to tune. Going by the rule of thumb from Frank
+Harrell's book ``Regression Modeling Strategies'' (\citet{rms}) of 10-20
+observations per parameter in our model, this is an issue, especially
+given the size of the data-set that the VGGnet model was trained on was
+\emph{only} one million images\footnote{This comparison is not exactly
+  fair as images are composed of many pixels as well.}.
 
-Even simple models have large amounts of parameters to tune. A model
-with just a single hidden layer taking a ten dimensional input and a
-hidden layer of ten neurons performing binary classification would have
-(with bias parameters included) \((10*11) + (10*11) + (2*11) = 242\)
+Even simple neural nets have a large number of parameters. A model with
+just a single hidden layer taking a ten dimensional input and a hidden
+layer of ten neurons performing binary classification would have (with
+bias parameters included) \((10*11) + (10*11) + (2*11) = 242\)
 parameters to tune.
 
 \subsection{Theory backed methods for choosing model
@@ -1405,25 +1489,27 @@ How then, did the VGGnet model achieve an accuracy of 93\% on the test
 set? The answer lies in the fact that data is not shared over parameters
 in the same way it is in regression models. This stems from the fact
 that each layer's parameters are using as their input the output from
-the previous layer, and thus are reusing data in some sense. While it
-does not appear that this means we only need to count the parameters in
-the first layer, it does mean that deep learning models need to be
-thought of differently than traditional regression based models in terms
-of parameter complexity.
+the previous layer, and thus data are being reused. While it does not
+appear that this means we only need to count the parameters in the first
+layer, it does mean that deep learning models need to be thought of
+differently than traditional regression based models in terms of
+parameter complexity\citep[\^{}It also points to the advantages of deep
+neural nets over wide ones, a topic considered more deeply in][ chapter
+13.]{goodfellow_DL}.
 
-As of yet, no solid theoretical explanation of exactly what is happening
-with the data to parameter learning in deep neural networks, and thus
+As of yet, there is no solid theoretical explanation of exactly what the
+data to parameter relationships are in deep neural networks, and thus
 there are no concrete guidelines to model construction. Difficulties in
 ascertaining these guidelines seems in part due to the non-convex
 optimization routines used for the models.
 
 The combination of the lack of theory and the computational time needed
-to train deep neural networks all but ruling out more traditional
-grid-search techniques for tuning layer numbers/size imply that there
-exists the potential for very impact research in this area.
+to perform traditional grid-search techniques for tuning layer
+numbers/size suggest the potential for very impactful research in this
+area.
 
-\subsection{Runtime on mobile hardware
-hardware}\label{runtime-on-mobile-hardware-hardware}
+\subsection{Runtime on mobile
+hardware}\label{runtime-on-mobile-hardware}
 
 Another impact of having extremely large models is they take a long time
 to not only train, but to be used to predict as well. If deep learning
@@ -1431,21 +1517,23 @@ models are to be brought to mobile devices such as smart phones or
 watches the models need to be scaled down in terms of their size and run
 time complexity substantially. Efforts towards this have been successful
 with models such as SqueezeNet (\citet{squeezenet}) drastically reducing
-the number of parameters while still maintaining a good level of
-accuracy in ImageNet prediction performance. In addition, certain forms
-of penalization such as \(L_0\) penalization can be applied to `thin
-out' a network by forcing certain weights to drop to zero and then
-throwing them out (\citet{sparsenets}), all while performing a single
-run of stochastic gradient descent, eliminating the need to do costly
-re-training of the network after dropping weights.
+the number of parameters compared to traditional convolutional networks,
+while still maintaining a good level of accuracy in ImageNet prediction
+performance. In addition, certain forms of penalization such as \(L_0\)
+penalization can be applied to `thin out' a network by forcing certain
+weights to drop to zero and then throwing them out (\citet{sparsenets}),
+all while performing a single run of stochastic gradient descent,
+eliminating the need to do costly re-training of the network after
+dropping weights.
 
 Great opportunity lies the development of objective and rigorous methods
 of eliminating unnecessary parameters in models. Approaches such as
-regularization are promising as are the evaluation of the models
-response to techniques such as `dropout' where by neurons are randomly
-dropped during training in an effort to build robust prediction
-pathways. An analysis of the models robustness to certain neuron's being
-dropped may indicate the potential for sparsity inducing techniques.
+regularization are promising as are the evaluation of model response to
+techniques such as dropout (\citet{dropout}) where by neurons are
+randomly dropped during forward propigation in training in an effort to
+build robust prediction pathways. An analysis of a model's response to
+certain neuron's being dropped may indicate the potential for sparsity
+inducing techniques.
 
 \section{Inference}\label{inference}
 
@@ -1454,62 +1542,72 @@ literature in the deep learning world is that in many cases the same
 words have different meanings. ``Inference'' is a good example of this.
 To a statistician inference means the dissection of the inner workings
 of the model: what parameters are used to make predictions and how
-confident are we in those parameters. In deep learning, inference simply
-refers to the use of a model for prediction. There are a few things that
-stand in the way of traditional inference in deep learning models.
+confident are we in those parameters. In deep learning, inference
+typically refers to the use of a model for prediction. There are a few
+things that stand in the way of traditional inference in deep learning
+models.
 
 \subsection{Peering into the black
 box}\label{peering-into-the-black-box}
 
 Often it is common to hear people refer to deep neural networks as
 ``black box predictors.'' This meaning simply that data goes in and the
-model performs some uninterpreted transformations to that data and
-returns its prediction. While in giant models such as VGGnet this may be
-the case, it is actually quite possible to see what is going on within a
-neural network, just the quantity of information to understand is too
-high to fully comprehend it in its raw form.
+model performs some uninterpretable transformations to that data and
+returns its prediction. While in giant models such as VGGnet may make
+this seem like the case, it is actually quite possible to see what is
+going on within a neural network, just the quantity of information to
+understand is too high to fully comprehend it in its raw form.
 
-I believe that the desire for traditional inference in the statistical
-sense is a limiting goal. Having a parameter estimate and its
-uncertainty works well when models are single-stage linear combinations
-of the data, but neural networks, and arguably the world, does not work
-like that. Traditional inference has relied on making (hopefully)
-non-impactful simplifications on the true nature of the system being
+The desire for traditional inference in the statistical sense is a
+limiting goal. Having a parameter estimate and its uncertainty works
+well when models are single-stage linear combinations of the data, but
+neural networks, and arguably the world, does not usually work in linear
+combinations. Traditional inference has relied on making (hopefully)
+non-impactful simplifications of the true nature of the system being
 modeled in order for it to fit the framework of linear models.
 
-With deep learning we have a model theoretically capable of modeling any
-function of data and I think we should take advantage of that. If the
-model objectively performs well, we should perform the simplification on
-the explanation side, rather than the model side. How exactly this is
-done is not a solved issue (and may never be), but some early examples
-include the work of visualizing the constitutional layers in computer
+With deep learning we have a system theoretically capable of modeling
+any function of data and we should take advantage of that. If the model
+objectively performs well, we should perform the simplification on the
+explanation side, rather than the model side. How exactly this is done
+is not a solved issue (and may never be), but some early examples
+include the work of visualizing the intermediate layers in computer
 vision models (\citet{cnn_vis}): investigating the features learned by
-neural networks can provide insight into the problem greatly.
+neural networks can provide great insight into the way it parsing the
+signals in the data.
 
 \subsection{Generative Adversarial
 Networks}\label{generative-adversarial-networks}
 
-One approach to simultaneously attempting to train a better model, but
-also understand the workings of a model is a class of deep learning
-models called ``generative adversarial networks'' (or
-GANs)(\citet{gans}). GANs train two separate networks in tandem: a
-generator and a discriminator. The job is for the generator to construct
-fake examples of some training set and the discriminator's job is to
-decide if the example is a real observation or a generated one. These
-models have shown remarkable results in terms of image generation such
-as those recently presented by NVIDIA \ref{fig:ganexample}
+One approach that allows simultaneously attempting to train a better
+model, but also understanding the workings of the model is a class of
+deep learning models called ``generative adversarial networks'' (or
+GANs)(\citet{gans}). GANs train two separate neural networks in tandem:
+a generator and a discriminator. The job is for the generator to
+construct fake examples of some training set and the discriminator's job
+is to decide if the example is a real observation or a generated one.
+These models have shown remarkable results in terms of image generation
+such as those recently presented by NVIDIA \ref{fig:ganexample}
 (\citet{progressive_gans}).
 
 \begin{figure}
-\includegraphics[height=320]{figures/gan_example} \caption{The output of a generative adversarial network trained on a database of celebrity faces. Both faces seen are entirely generated by the model and show that it learned to a very precise degree, what constitutes a 'face.'}\label{fig:ganexample}
+
+{\centering \includegraphics[width=0.8\linewidth]{figures/gan_example} 
+
+}
+
+\caption{The output of a generative adversarial network trained on a database of celebrity faces. Both faces seen are entirely generated by the model and show that it learned to a very precise degree, what constitutes a 'face.'}\label{fig:ganexample}
 \end{figure}
 
-One potentially valuable for inference property of sample generated by
-GANs is they show what the model is `seeing' when it chooses to classify
+The output produced by the generator model of GANs effectively show what
+the descriminator model is `seeing' when it chooses to classify
 something as a given class. For instance, an over-fit model may classify
 a house as a house because it sees a lot of the color blue in the sky.
 If that was the case a GAN would simply return a blue canvas when asked
-to generate a house.
+to generate a house\footnote{Another similar approach is neural networks
+  with `attention' mechanisms (\citet{attention}). These mechanisms can
+  be used to explore what exactly in the data is contributing heavily to
+  a given classification.}.
 
 Recently, a team at ETH Zurich used GANs on time series data taken from
 hospital records (\citet{medical_gans}) and found that GANs could be
@@ -1524,13 +1622,14 @@ well\footnote{This opens a fascinating ethical conundrum in that,
 \subsection{Causality problems}\label{causality-problems}
 
 While much of deep learning is not currently focused on uncovering
-causal pathways, given the ability of these models to generalize so
-well, it is worth exploring the issue more. One area of concern with the
-models mentioned is the temporarily of data. For instance, in
-constitutional methods for sequence classification, often the
-convolutions are allowed to explore not only back in time, but also
-forward in time to classify at a given instance. The same goes with a
-class of RNNs that we didn't discuss but have proved successful: the
+causal pathways\footnote{It is being explored however, particularly in
+  the Bayesian deep learning communities.}, given the ability of these
+models to generalize so well, it is worth exploring the issue more. One
+area of concern with the models mentioned is the temporal order of data.
+For instance, in convolutional methods for sequence classification,
+often the convolutions are allowed to explore not only back in time, but
+also forward in time to classify at a given instance. The same goes with
+a class of RNNs that we didn't discuss but have proved successful: the
 bi-directional RNN. In this case the RNN's hidden state path travels not
 only forward in time, but also backwards.
 
@@ -1548,12 +1647,10 @@ this. For instance, if the backwards in time component of the RNN found
 that the administration of some drug was a strong signal that high
 blood-pressure would later occur, but not the reverse direction the
 relationship could warrant further experimental exploration of causality
-potential.
-
-It would be necessary to make sure that the patterns discovered were not
-due to residuals from the reverse-time predictors, but this could be
-done by forcing the model to `forget' those patterns and seeing if our
-forward-time trends remain.
+potential. It would be necessary to make sure that the patterns
+discovered were not due to residuals from the reverse-time predictors,
+but this could be done by forcing the model to `forget' those patterns
+and seeing if our forward-time trends remain.
 
 \section{Small or sparse data}\label{small-or-sparse-data}
 
@@ -1564,8 +1661,8 @@ This has left the area of deep learning corresponding to small data
 relatively unexplored. We have already seen that deep learning models
 seem to use their parameters more efficiently than traditional
 statistical methods, but that is clearly not without limit. The
-following are brief survey of a few techniques for dealing with small or
-sparse (meaning a large portion missing labels) data.
+following are a brief survey of a few techniques for dealing with small
+or sparse (meaning a large portion missing labels) data.
 
 \subsection{Bayesian deep learning}\label{bayesian-deep-learning}
 
@@ -1574,10 +1671,10 @@ linear models with static non-linear transformations applied. Much like
 we can fit a regression model in a Bayesian context, we can fit a deep
 neural network with Bayesian techniques. To do so, each tuneable
 parameter is simply provided a prior (usually a normal centered at zero)
-and the posterior model is determined the same as any other Bayesian
-model. Usually variational inference techniques are used instead of
-sampling techniques such as Hamiltonian Monte Carlo due to the size of
-the models (\citet{bayesnets}).
+distribution and the posterior distribution is determined the same as
+any other Bayesian model. Usually variational inference techniques are
+used instead of sampling techniques such as Hamiltonian Monte Carlo due
+to the size of the models (\citet{bayesnets}).
 
 Bayesian neural networks have been shown to perform more efficiently on
 small data-sets than traditional models (\citet{dropout}). In addition,
@@ -1588,12 +1685,12 @@ standard implementations (\citet{variational_autoencoders}).
 \subsection{Semi-supervised methods}\label{semi-supervised-methods}
 
 In many circumstances the data may not be small as a whole, but the
-number of observations that have labels for what you want to predict is.
+number of observations that have labels for the desired prediction are.
 An example of this is activity tagging data. For each day twenty four
 hours of time-series data are gathered on the subject, but often when
 asked to tag the data they only tag specific instances of activities,
 leaving much of the day blank. In addition it is often infeasible to ask
-them to label all of their data.
+them to label every day of their data.
 
 Another example comes from EHR based studies. Many times these studies
 rely on using physicians to perform chart reviews in order to construct
@@ -1601,27 +1698,31 @@ their training and test sets. This is a costly and time consuming
 procedure.
 
 \begin{figure}
-\includegraphics[height=320]{figures/semi-supervised} \caption{Visual example of how adding unlabeled data can provide valuable information about the shape of the data valuable for classification. Image taken from [Wikipedia](https://en.wikipedia.org/wiki/Semi-supervised_learning)}\label{fig:semisupervised}
+
+{\centering \includegraphics[width=0.4\linewidth]{figures/semi-supervised} 
+
+}
+
+\caption{Visual example of how adding unlabeled data can provide valuable information about the shape of the data valuable for classification. Image taken from [Wikipedia](https://en.wikipedia.org/wiki/Semi-supervised_learning)}\label{fig:semisupervised}
 \end{figure}
 
-There are various approaches to approaching this issue. A very promising
-one is the use of an initial unsupervised learning task on the data,
-followed by a supervised learning step using features learned by the
-unsupervised step.
+There are various approaches to dealing with this sparse data issue. A
+very promising avenue is the preliminary fitting of an unsupervised
+model on the data, followed by a supervised learning model using
+features learned by the unsupervised model
 
-For instance, say we wished to classify sentiment of a corpus of text,
-but only had labels of sentiment for a small subsection of the text.
-First an unsupervised model would be fit to all of the data, for
-instance, training the model to predict the next word in a sequence.
-This unsupervised model would learn to map the text at a given instance
-to some latent-space that most likely holds information about sentiment
-as well as the next word. What is then done is the final layer of the
-model that maps that latent-space to the next word is removed and
-replaced with a new layer that fits the form of our desired
-classification (in this case a binary outcome of ``happy'' or not). The
-model is then trained on the labeled data with the weights of the
-lower-layers either frozen at their values from the unsupervised step or
-simply initialized at them.
+Say we wished to classify sentiment of a corpus of text, but only had
+labels of sentiment for a small subsection of the text. First an
+unsupervised model would be fit to all of the data. For instance a model
+trained to predict the next word in a sentence. This unsupervised model
+would learn to map the text at a given time-point to some latent-space
+that holds information about the next word and most likely sentiment as
+well. Tthe final layer of the word prediction model that maps that
+latent-space to the next word is removed and replaced with a new layer
+that fits the form of our desired classification (in this case a binary
+outcome of ``happy'' or not). This new model is then trained on the
+labeled data with the weights of the lower-layers either frozen at their
+values from the unsupervised step or simply initialized at them.
 
 This approach of unsupervised pre-training has been shown to yield great
 improvements in the performance of sequence models
@@ -1630,18 +1731,18 @@ improvements in the performance of sequence models
 Other methods of performing semi-supervised learning include training
 the model on available labels, then using the trained model to classify
 the unlabeled data and then retraining the model treating those labels
-as the true values. Surprisingly this method does yield improvements
-over not using any unlabeled data(\citet{semi_supervised}).
+as the true values. Surprisingly this method does almost always yield
+improvements over not using any unlabeled data(\citet{semi_supervised}).
 
 Exploration of the operating characteristics of semi-supervised learning
-could be a valuable contribution to areas of research such as electronic
-health records. A pseudo power calculation could be performed at the
-outset of a modeling effort. This would help the researchers optimize
-time and money by indicating how many labeled examples needed to be
-collected. In addition, efforts to extend the performance benefits of
-semi-supervised learning could allow models to be fit to domains where
-they were previously not able to be due to difficulties in gathering
-labels for data.
+scenarios could be a valuable contribution to areas of research such as
+electronic health records. An example of potential impact: a pseudo
+power calculation could be performed at the outset of a modeling effort.
+This would help the researchers optimize time and money by informing how
+many labeled examples needed to be collected. In addition, efforts to
+extend the performance benefits of semi-supervised learning could allow
+models to be fit to domains where they were previously not able to be
+due to difficulties in gathering labels for data.
 
 \bibliography{book.bib,packages.bib}
 

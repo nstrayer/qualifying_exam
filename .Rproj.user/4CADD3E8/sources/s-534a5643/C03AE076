@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1512788583742.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2290941782",
+    "id" : "C03AE076",
+    "lastKnownWriteTime" : 1512788729,
+    "last_content_update" : 1512788729633,
+    "path" : "~/quals/report/03-sequence_architectures.Rmd",
+    "project_path" : "03-sequence_architectures.Rmd",
+    "properties" : {
+        "cursorPosition" : "138,23",
+        "scrollLine" : "137",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 6,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

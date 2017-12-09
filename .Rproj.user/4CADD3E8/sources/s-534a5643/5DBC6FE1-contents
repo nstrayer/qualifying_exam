@@ -13,7 +13,7 @@ While neural networks' popularity has taken off in recent years they are not a n
 Another ten years later, in a textbook (@minsky_perceptrons) it was shown that a simple single layer perceptron was incapable of solving certain classes of problems like the "And Or" (XOR) problem (\@ref(fig:xorproble)), due to their being linearly inseperable. The authors argued that the only way for a perceptron to overcome this hurdle would be to be stacked together, which, while appealing, was not possible to be trained effectively at the time. 
 
 
-```{r, echo = FALSE, label="xorproble", out.width=350, fig.align = "center", fig.cap = "Example of the XOR problem. Classes encoded by color are not linearly seperable."}
+```{r, echo = FALSE, label="xorproble", out.width= "50%", fig.align = "center", fig.cap = "Example of the XOR problem. Classes encoded by color are not linearly seperable."}
 knitr::include_graphics("figures/xor_problem.png")
 ```
 
@@ -152,8 +152,8 @@ The new updated weights are then used in another forward propagation, followed b
 There are many scenarios in which traditional steepest descent is not an ideal for finding minimums of the loss function. A classic example is when the loss function takes the form of a long trough (\@ref(fig:badloss). In this case steepest descent will spend most of its time bouncing around between the sides of the trough due to over stepping the low point, thus wasting many of its iterations undoing its previous work rather than progressing in the true direction of the minimum. 
 
 
-```{r, echo = FALSE, fig.align = "center", label = 'badloss', out.height = 400, fig.cap = "Demonstration of steepest descents limitations on trough like gradient surfaces. Much of each step's progress is wasted on bouncing back and forth between the two walls of the gradient rather than descending directly towards the minimum. Image from [Nicolas Bertagnolli's blog](http://www.nbertagnolli.com/)"}
-knitr::include_graphics("http://www.nbertagnolli.com/assets/descent_methods/GDWBLS.png")
+```{r, echo = FALSE, fig.align = "center", label = 'badloss', out.width = "60%", fig.cap = "Demonstration of steepest descents limitations on trough like gradient surfaces. Much of each step's progress is wasted on bouncing back and forth between the two walls of the gradient rather than descending directly towards the minimum. Image from [Nicolas Bertagnolli's blog](http://www.nbertagnolli.com/)"}
+knitr::include_graphics("figures/gradient_problems.png")
 ```
 
 
@@ -175,7 +175,7 @@ $$f(x) = \text{max}(0,x)$$
 ```
 
 
-```{r, echo = F, fig.cap = 'Comparison of the relu and sigmoid activation functions.'}
+```{r, fig.align = "center", out.width = "85%", echo = F, fig.cap = 'Comparison of the relu and sigmoid activation functions.'}
 library(tidyverse)
 
 relu <- function(x) ifelse( x > 0, x, 0)
