@@ -3505,3 +3505,12 @@ drwxr-xr-x 4 nick nick 4.0K Dec  4 16:29 [01;34m.Rproj.user[0m
 -rw-r--r-- 1 nick nick  172 Dec  8 21:13 style.css
 -rw-r--r-- 1 nick nick 2.4K Dec  5 11:12 toc.css
 ]0;/home/nick/quals/report]0;nick@compooper: ~/quals/report[01;32mnick@compooper[00m:[01;34m~/quals/report[00m$ lgit "posting f[Kfirst drat[Kft to gh-pages"
+Saved working directory and index state WIP on gh-pages: 08facb1 posting first draft to gh-pages
+HEAD is now at 08facb1 posting first draft to gh-pages
+]0;/home/nick/quals/report]0;nick@compooper: ~/quals/report[01;32mnick@compooper[00m:[01;34m~/quals/report[00m$ git checkout master
+error: Your local changes to the following files would be overwritten by checkout:
+	.Rproj.user/4CADD3E8/console06/3D020B46
+Please, commit your changes or stash them before you can switch branches.
+Aborting
+]0;/home/nick/quals/report]0;nick@compooper: ~/quals/report[01;32mnick@compooper[00m:[01;34m~/quals/report[00m$ lgit "commiting changes so gh[Kit will let me c[Kswitch ot master [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K[K[K[K[K[K[K[Kto master "
