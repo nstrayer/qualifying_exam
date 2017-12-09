@@ -104,7 +104,7 @@ While these methods do successfully allow RNNs to learn longer time dependencies
 
 A way of controlling how an RNN keeps track of different dependencies over time is to make that control flow part of the model itself and allow it to be learned. This is the concept that long short term memory (LSTM) networks (@lstm_intro) use. In the broadest sense, LSTM networks augment the traditional RNN architecture by adding a series of 'gates' that control which parts of the hidden state are remembered and used from time-step to time-step. 
 
-```{r,  out.width = "60%", echo = FALSE, fig.align = "center",  label = 'lstmdiagram', fig.cap = "The internal structure of an LSTM hidden unit. The gates are all fed by the input at time _t_, the whole hidden unit at time (_t - 1_), and the hidden units internal state from time (_t - 1_). The gates themselves are linear combinations of the input that are then transformed by sigmoid activation functions."}
+```{r,  out.width = "60%", echo = FALSE, fig.align = "center",  label = 'lstmdiagram', fig.cap = "The internal structure of an LSTM hidden unit. The gates are all fed by the input at time t, the whole hidden unit at time (t - 1), and the hidden units internal state from time (t - 1). The gates themselves are linear combinations of the input that are then transformed by sigmoid activation functions."}
 knitr::include_graphics("figures/lstm_cell.png")
 ```
 

@@ -30,7 +30,7 @@
 
 @inproceedings{wearable_atrial,
   title={Detecting Atrial Fibrillation using a Smart Watch - the mRhythm study},
-  author={Jose M. Sanchez, MD, Brandon Ballinger, BS, Jeffrey E. Olgin, MD, FHRS, Mark J. Pletcher, MD, MPH, Eric Vittinghoff, PhD, Emily Lee, BA, Shannon Fan, BA, Nimit Sohoni, BS, Carlos Mikell, BS, Johnson Hsieh, MS, Rachel A. Gladstone, BA and Gregory M. Marcus, MD, FHRS.},
+  author={Jose M. Sanchez, MD and Brandon Ballinger, BS and Jeffrey E. Olgin, MD FHRS and Mark J. Pletcher, MD MPH and Eric Vittinghoff, PhD and Emily Lee, BA and Shannon Fan, BA and Nimit Sohoni, BS and Carlos Mikell, BS and Johnson Hsieh, MS and Rachel A. Gladstone, BA and Gregory M. Marcus, MD FHRS.},
   booktitle={Heart Rhythm Scientific Sessions},
   year={2017},
   organization={Heart Rhythm Society}

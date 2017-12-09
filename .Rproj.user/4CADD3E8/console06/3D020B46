@@ -1950,3 +1950,1433 @@ entering extended mode
 Error: Failed to compile bookdown-demo.tex. See bookdown-demo.log for more info.
 Execution halted
 ]0;/home/nick/quals/report]0;nick@compooper: ~/quals/report[01;32mnick@compooper[00m:[01;34m~/quals/report[00m$ bash _build.sh lgit "centered images"
+[master 18d2349] centered images
+ 36 files changed, 1868 insertions(+), 610 deletions(-)
+ rewrite .Rproj.user/4CADD3E8/console06/INDEX001 (70%)
+ create mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/C03AE076
+ create mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/C03AE076-contents
+ create mode 100644 .Rproj.user/shared/notebooks/43E314EC-03-sequence_architectures/1/4CADD3E8534a5643/chunks.json
+ create mode 100644 _book/figures/gradient_problems.png
+ rewrite _book/search_index.json (99%)
+ create mode 100644 _bookdown_files/bookdown-demo_files/figure-latex/unnamed-chunk-2-1.pdf
+ rewrite bookdown-demo.pdf (82%)
+ create mode 100644 figures/gradient_problems.png
+Counting objects: 52, done.
+Delta compression using up to 8 threads.
+Compressing objects:   2% (1/46)   Compressing objects:   4% (2/46)   Compressing objects:   6% (3/46)   Compressing objects:   8% (4/46)   Compressing objects:  10% (5/46)   Compressing objects:  13% (6/46)   Compressing objects:  15% (7/46)   Compressing objects:  17% (8/46)   Compressing objects:  19% (9/46)   Compressing objects:  21% (10/46)   Compressing objects:  23% (11/46)   Compressing objects:  26% (12/46)   Compressing objects:  28% (13/46)   Compressing objects:  30% (14/46)   Compressing objects:  32% (15/46)   Compressing objects:  34% (16/46)   Compressing objects:  36% (17/46)   Compressing objects:  39% (18/46)   Compressing objects:  41% (19/46)   Compressing objects:  43% (20/46)   Compressing objects:  45% (21/46)   Compressing objects:  47% (22/46)   Compressing objects:  50% (23/46)   Compressing objects:  52% (24/46)   Compressing objects:  54% (25/46)   Compressing objects:  56% (26/46)   Compressing objects:  58% (27/46)   Compressing objects:  60% (28/46)   Compressing objects:  63% (29/46)   Compressing objects:  65% (30/46)   Compressing objects:  67% (31/46)   Compressing objects:  69% (32/46)   Compressing objects:  71% (33/46)   Compressing objects:  73% (34/46)   Compressing objects:  76% (35/46)   Compressing objects:  78% (36/46)   Compressing objects:  80% (37/46)   Compressing objects:  82% (38/46)   Compressing objects:  84% (39/46)   Compressing objects:  86% (40/46)   Compressing objects:  89% (41/46)   Compressing objects:  91% (42/46)   Compressing objects:  93% (43/46)   Compressing objects:  95% (44/46)   Compressing objects:  97% (45/46)   Compressing objects: 100% (46/46)   Compressing objects: 100% (46/46), done.
+Writing objects:   1% (1/52)   Writing objects:   3% (2/52)   Writing objects:   5% (3/52)   Writing objects:   7% (4/52)   Writing objects:   9% (5/52)   Writing objects:  11% (6/52)   Writing objects:  13% (7/52)   Writing objects:  15% (8/52)   Writing objects:  17% (9/52)   Writing objects:  19% (10/52)   Writing objects:  21% (11/52)   Writing objects:  23% (12/52)   Writing objects:  25% (13/52)   Writing objects:  26% (14/52)   Writing objects:  28% (15/52)   Writing objects:  30% (16/52)   Writing objects:  32% (17/52)   Writing objects:  34% (18/52)   Writing objects:  36% (19/52)   Writing objects:  38% (20/52)   Writing objects:  40% (21/52)   Writing objects:  44% (23/52)   Writing objects:  48% (25/52)   Writing objects:  50% (26/52)   Writing objects:  51% (27/52)   Writing objects:  53% (28/52)   Writing objects:  55% (29/52)   Writing objects:  57% (30/52)   Writing objects:  59% (31/52)   Writing objects:  61% (32/52)   Writing objects:  63% (33/52)   Writing objects:  65% (34/52)   Writing objects:  67% (35/52)   Writing objects:  69% (36/52)   Writing objects:  71% (37/52)   Writing objects:  73% (38/52)   Writing objects:  75% (39/52)   Writing objects:  76% (40/52)   Writing objects:  78% (41/52)   Writing objects:  80% (42/52)   Writing objects:  82% (43/52)   Writing objects:  84% (44/52)   Writing objects:  86% (45/52)   Writing objects:  88% (46/52)   Writing objects:  90% (47/52)   Writing objects:  92% (48/52)   Writing objects:  94% (49/52)   Writing objects:  96% (50/52)   Writing objects:  98% (51/52)   Writing objects: 100% (52/52)   Writing objects: 100% (52/52), 829.18 KiB | 0 bytes/s, done.
+Total 52 (delta 25), reused 0 (delta 0)
+remote: Resolving deltas:   0% (0/25)   [Kremote: Resolving deltas:   4% (1/25)   [Kremote: Resolving deltas:   8% (2/25)   [Kremote: Resolving deltas:  12% (3/25)   [Kremote: Resolving deltas:  16% (4/25)   [Kremote: Resolving deltas:  20% (5/25)   [Kremote: Resolving deltas:  24% (6/25)   [Kremote: Resolving deltas:  28% (7/25)   [Kremote: Resolving deltas:  32% (8/25)   [Kremote: Resolving deltas:  36% (9/25)   [Kremote: Resolving deltas:  44% (11/25)   [Kremote: Resolving deltas:  48% (12/25)   [Kremote: Resolving deltas:  52% (13/25)   [Kremote: Resolving deltas:  60% (15/25)   [Kremote: Resolving deltas:  68% (17/25)   [Kremote: Resolving deltas:  72% (18/25)   [Kremote: Resolving deltas:  76% (19/25)   [Kremote: Resolving deltas:  80% (20/25)   [Kremote: Resolving deltas:  88% (22/25)   [Kremote: Resolving deltas:  92% (23/25)   [Kremote: Resolving deltas:  96% (24/25)   [Kremote: Resolving deltas: 100% (25/25)   [Kremote: Resolving deltas: 100% (25/25), completed with 21 local objects.[K
+To git@github.com:nstrayer/qualifying_exam.git
+   416dd50..18d2349  master -> master
+]0;/home/nick/quals/report]0;nick@compooper: ~/quals/report[01;32mnick@compooper[00m:[01;34m~/quals/report[00m$ lgit "centered images"[7Pbash _build.sh 
+
+
+processing file: bookdown-demo.Rmd
+  |                                                                         |                                                                 |   0%  |                                                                         |.                                                                |   2%
+   inline R code fragments
+
+  |                                                                         |...                                                              |   4%
+label: fouriertransform (with options) 
+List of 4
+ $ out.width: chr "60%"
+ $ fig.align: chr "center"
+ $ echo     : logi FALSE
+ $ fig.cap  : chr "Example of transforming data from the data-domain to the frequency-domain for time series data. Image courtousy of [Allen D. El"| __truncated__
+
+  |                                                                         |....                                                             |   7%
+  ordinary text without R code
+
+  |                                                                         |......                                                           |   9%
+label: xorproble (with options) 
+List of 4
+ $ echo     : logi FALSE
+ $ out.width: chr "50%"
+ $ fig.align: chr "center"
+ $ fig.cap  : chr "Example of the XOR problem. Classes encoded by color are not linearly seperable."
+
+  |                                                                         |.......                                                          |  11%
+  ordinary text without R code
+
+  |                                                                         |.........                                                        |  13%
+label: geometricinterp (with options) 
+List of 3
+ $ echo     : logi FALSE
+ $ fig.align: chr "center"
+ $ fig.cap  : chr "Example of how a neural network can, through a series of affine transformations followed by non-linear squashings, turn a linea"| __truncated__
+
+  |                                                                         |..........                                                       |  16%
+  ordinary text without R code
+
+  |                                                                         |............                                                     |  18%
+label: unnamed-chunk-1 (with options) 
+List of 3
+ $ echo     : logi FALSE
+ $ fig.align: chr "center"
+ $ fig.cap  : chr "How back Propagation steps back from the output to the input. To calculate the gradient with respect to the loss of the orange "| __truncated__
+
+  |                                                                         |.............                                                    |  20%
+  ordinary text without R code
+
+  |                                                                         |..............                                                   |  22%
+label: badloss (with options) 
+List of 4
+ $ echo     : logi FALSE
+ $ fig.align: chr "center"
+ $ out.width: chr "60%"
+ $ fig.cap  : chr "Demonstration of steepest descents limitations on trough like gradient surfaces. Much of each step's progress is wasted on boun"| __truncated__
+
+  |                                                                         |................                                                 |  24%
+  ordinary text without R code
+
+  |                                                                         |.................                                                |  27%
+label: sigmoid (with options) 
+List of 2
+ $ name  : chr "sigmoid activation function"
+ $ engine: chr "definition"
+
+  |                                                                         |...................                                              |  29%
+  ordinary text without R code
+
+  |                                                                         |....................                                             |  31%
+label: relu (with options) 
+List of 2
+ $ name  : chr "Rectified Linear Unit activation function"
+ $ engine: chr "definition"
+
+  |                                                                         |......................                                           |  33%
+  ordinary text without R code
+
+  |                                                                         |.......................                                          |  36%
+label: unnamed-chunk-2 (with options) 
+List of 4
+ $ fig.align: chr "center"
+ $ out.width: chr "85%"
+ $ echo     : symbol F
+ $ fig.cap  : chr "Comparison of the relu and sigmoid activation functions."
+
+  |                                                                         |.........................                                        |  38%
+  ordinary text without R code
+
+  |                                                                         |..........................                                       |  40%
+label: softmax (with options) 
+List of 2
+ $ name  : chr "Softmax activation function."
+ $ engine: chr "definition"
+
+  |                                                                         |...........................                                      |  42%
+  ordinary text without R code
+
+  |                                                                         |.............................                                    |  44%
+label: negloglik (with options) 
+List of 2
+ $ name  : chr "General maximum likelihood loss function"
+ $ engine: chr "definition"
+
+  |                                                                         |..............................                                   |  47%
+  ordinary text without R code
+
+  |                                                                         |................................                                 |  49%
+label: mse (with options) 
+List of 2
+ $ name  : chr "Mean squared error loss"
+ $ engine: chr "definition"
+
+  |                                                                         |.................................                                |  51%
+  ordinary text without R code
+
+  |                                                                         |...................................                              |  53%
+label: crossentropy (with options) 
+List of 2
+ $ name  : chr "Binary cross entropy loss"
+ $ engine: chr "definition"
+
+  |                                                                         |....................................                             |  56%
+  ordinary text without R code
+
+  |                                                                         |......................................                           |  58%
+label: catcrossentropy (with options) 
+List of 2
+ $ name  : chr "Categorical cross entropy loss"
+ $ engine: chr "definition"
+
+  |                                                                         |.......................................                          |  60%
+  ordinary text without R code
+
+  |                                                                         |........................................                         |  62%
+label: cyclegraph (with options) 
+List of 4
+ $ out.width: chr "40%"
+ $ echo     : logi FALSE
+ $ fig.align: chr "center"
+ $ fig.cap  : chr "A recurrent neural network with a single hidden layer. The hidden layer's values at time $t$ are passed to the hidden layer at "| __truncated__
+
+  |                                                                         |..........................................                       |  64%
+  ordinary text without R code
+
+  |                                                                         |...........................................                      |  67%
+label: unnamed-chunk-3 (with options) 
+List of 4
+ $ out.width: chr "90%"
+ $ echo     : logi FALSE
+ $ fig.align: chr "center"
+ $ fig.cap  : chr "Example of an RNN's output for recognizing characters in handwritten characters. The model scans along one slice at a time of t"| __truncated__
+
+  |                                                                         |.............................................                    |  69%
+  ordinary text without R code
+
+  |                                                                         |..............................................                   |  71%
+label: unrolledgraph (with options) 
+List of 4
+ $ out.width: chr "65%"
+ $ echo     : logi FALSE
+ $ fig.align: chr "center"
+ $ fig.cap  : chr "Unrolled view of the RNN shown in previous figure. Each timestep has two outputs, the timesteps predictions and its hidden stat"| __truncated__
+
+  |                                                                         |................................................                 |  73%
+  ordinary text without R code
+
+  |                                                                         |.................................................                |  76%
+label: lstmdiagram (with options) 
+List of 4
+ $ out.width: chr "60%"
+ $ echo     : logi FALSE
+ $ fig.align: chr "center"
+ $ fig.cap  : chr "The internal structure of an LSTM hidden unit. The gates are all fed by the input at time _t_, the whole hidden unit at time (_"| __truncated__
+
+  |                                                                         |...................................................              |  78%
+  ordinary text without R code
+
+  |                                                                         |....................................................             |  80%
+label: grudiagram (with options) 
+List of 4
+ $ out.width: chr "60%"
+ $ echo     : logi FALSE
+ $ fig.align: chr "center"
+ $ fig.cap  : chr "The internal structure of an GRU hidden unit. Unlike the LSTM there are only two gates, with the update and forget get tasks be"| __truncated__
+
+  |                                                                         |.....................................................            |  82%
+  ordinary text without R code
+
+  |                                                                         |.......................................................          |  84%
+label: outputrnn (with options) 
+List of 4
+ $ out.width: chr "45%"
+ $ echo     : logi FALSE
+ $ fig.align: chr "center"
+ $ fig.cap  : chr "An RNN where the recurrent connection is made between the previous timepoint's output and the hidden unit. This model is less e"| __truncated__
+
+  |                                                                         |........................................................         |  87%
+  ordinary text without R code
+
+  |                                                                         |..........................................................       |  89%
+label: cnnexplain (with options) 
+List of 4
+ $ out.width: chr "100%"
+ $ echo     : logi FALSE
+ $ fig.align: chr "center"
+ $ fig.cap  : chr "A diagram of how a convolutions are applied to sequential data."
+
+  |                                                                         |...........................................................      |  91%
+  ordinary text without R code
+
+  |                                                                         |.............................................................    |  93%
+label: ganexample (with options) 
+List of 4
+ $ out.width: chr "80%"
+ $ fig.align: chr "center"
+ $ echo     : logi FALSE
+ $ fig.cap  : chr "The output of a generative adversarial network trained on a database of celebrity faces. Both faces seen are entirely generated"| __truncated__
+
+  |                                                                         |..............................................................   |  96%
+  ordinary text without R code
+
+  |                                                                         |................................................................ |  98%
+label: semisupervised (with options) 
+List of 4
+ $ out.width: chr "40%"
+ $ fig.align: chr "center"
+ $ echo     : logi FALSE
+ $ fig.cap  : chr "Visual example of how adding unlabeled data can provide valuable information about the shape of the data valuable for classific"| __truncated__
+
+  |                                                                         |.................................................................| 100%
+  ordinary text without R code
+
+
+output file: bookdown-demo.knit.md
+
+/usr/lib/rstudio-server/bin/pandoc/pandoc +RTS -K512m -RTS bookdown-demo.utf8.md --to latex --from markdown+autolink_bare_uris+ascii_identifiers+tex_math_single_backslash --output bookdown-demo.tex --table-of-contents --toc-depth 2 --template /home/nick/R/x86_64-pc-linux-gnu-library/3.2/rmarkdown/rmd/latex/default-1.17.0.2.tex --number-sections --highlight-style tango --latex-engine xelatex --natbib --include-in-header preamble.tex --variable graphics=yes --variable 'geometry:margin=1in' --variable tables=yes --standalone 
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex)
+ restricted \write18 enabled.
+entering extended mode
+! Missing $ inserted.
+<inserted text> 
+                $
+l.1237 ...formed by sigmoid activation functions.}
+                                                  \label{fig:lstmdiagram} 
+Here is how much of TeX's memory you used:
+ 24932 strings out of 495579
+ 439181 string characters out of 6187322
+ 488987 words of memory out of 5000000
+ 27911 multiletter control sequences out of 15000+600000
+ 39153 words of font info for 68 fonts, out of 8000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 54i,9n,68p,10411b,450s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+Error: Failed to compile bookdown-demo.tex. See bookdown-demo.log for more info.
+Execution halted
+]0;/home/nick/quals/report]0;nick@compooper: ~/quals/report[01;32mnick@compooper[00m:[01;34m~/quals/report[00m$ bash _build.sh 
+
+
+processing file: bookdown-demo.Rmd
+  |                                                                         |                                                                 |   0%  |                                                                         |.                                                                |   2%
+   inline R code fragments
+
+  |                                                                         |...                                                              |   4%
+label: fouriertransform (with options) 
+List of 4
+ $ out.width: chr "60%"
+ $ fig.align: chr "center"
+ $ echo     : logi FALSE
+ $ fig.cap  : chr "Example of transforming data from the data-domain to the frequency-domain for time series data. Image courtousy of [Allen D. El"| __truncated__
+
+  |                                                                         |....                                                             |   7%
+  ordinary text without R code
+
+  |                                                                         |......                                                           |   9%
+label: xorproble (with options) 
+List of 4
+ $ echo     : logi FALSE
+ $ out.width: chr "50%"
+ $ fig.align: chr "center"
+ $ fig.cap  : chr "Example of the XOR problem. Classes encoded by color are not linearly seperable."
+
+  |                                                                         |.......                                                          |  11%
+  ordinary text without R code
+
+  |                                                                         |.........                                                        |  13%
+label: geometricinterp (with options) 
+List of 3
+ $ echo     : logi FALSE
+ $ fig.align: chr "center"
+ $ fig.cap  : chr "Example of how a neural network can, through a series of affine transformations followed by non-linear squashings, turn a linea"| __truncated__
+
+  |                                                                         |..........                                                       |  16%
+  ordinary text without R code
+
+  |                                                                         |............                                                     |  18%
+label: unnamed-chunk-1 (with options) 
+List of 3
+ $ echo     : logi FALSE
+ $ fig.align: chr "center"
+ $ fig.cap  : chr "How back Propagation steps back from the output to the input. To calculate the gradient with respect to the loss of the orange "| __truncated__
+
+  |                                                                         |.............                                                    |  20%
+  ordinary text without R code
+
+  |                                                                         |..............                                                   |  22%
+label: badloss (with options) 
+List of 4
+ $ echo     : logi FALSE
+ $ fig.align: chr "center"
+ $ out.width: chr "60%"
+ $ fig.cap  : chr "Demonstration of steepest descents limitations on trough like gradient surfaces. Much of each step's progress is wasted on boun"| __truncated__
+
+  |                                                                         |................                                                 |  24%
+  ordinary text without R code
+
+  |                                                                         |.................                                                |  27%
+label: sigmoid (with options) 
+List of 2
+ $ name  : chr "sigmoid activation function"
+ $ engine: chr "definition"
+
+  |                                                                         |...................                                              |  29%
+  ordinary text without R code
+
+  |                                                                         |....................                                             |  31%
+label: relu (with options) 
+List of 2
+ $ name  : chr "Rectified Linear Unit activation function"
+ $ engine: chr "definition"
+
+  |                                                                         |......................                                           |  33%
+  ordinary text without R code
+
+  |                                                                         |.......................                                          |  36%
+label: unnamed-chunk-2 (with options) 
+List of 4
+ $ fig.align: chr "center"
+ $ out.width: chr "85%"
+ $ echo     : symbol F
+ $ fig.cap  : chr "Comparison of the relu and sigmoid activation functions."
+
+  |                                                                         |.........................                                        |  38%
+  ordinary text without R code
+
+  |                                                                         |..........................                                       |  40%
+label: softmax (with options) 
+List of 2
+ $ name  : chr "Softmax activation function."
+ $ engine: chr "definition"
+
+  |                                                                         |...........................                                      |  42%
+  ordinary text without R code
+
+  |                                                                         |.............................                                    |  44%
+label: negloglik (with options) 
+List of 2
+ $ name  : chr "General maximum likelihood loss function"
+ $ engine: chr "definition"
+
+  |                                                                         |..............................                                   |  47%
+  ordinary text without R code
+
+  |                                                                         |................................                                 |  49%
+label: mse (with options) 
+List of 2
+ $ name  : chr "Mean squared error loss"
+ $ engine: chr "definition"
+
+  |                                                                         |.................................                                |  51%
+  ordinary text without R code
+
+  |                                                                         |...................................                              |  53%
+label: crossentropy (with options) 
+List of 2
+ $ name  : chr "Binary cross entropy loss"
+ $ engine: chr "definition"
+
+  |                                                                         |....................................                             |  56%
+  ordinary text without R code
+
+  |                                                                         |......................................                           |  58%
+label: catcrossentropy (with options) 
+List of 2
+ $ name  : chr "Categorical cross entropy loss"
+ $ engine: chr "definition"
+
+  |                                                                         |.......................................                          |  60%
+  ordinary text without R code
+
+  |                                                                         |........................................                         |  62%
+label: cyclegraph (with options) 
+List of 4
+ $ out.width: chr "40%"
+ $ echo     : logi FALSE
+ $ fig.align: chr "center"
+ $ fig.cap  : chr "A recurrent neural network with a single hidden layer. The hidden layer's values at time $t$ are passed to the hidden layer at "| __truncated__
+
+  |                                                                         |..........................................                       |  64%
+  ordinary text without R code
+
+  |                                                                         |...........................................                      |  67%
+label: unnamed-chunk-3 (with options) 
+List of 4
+ $ out.width: chr "90%"
+ $ echo     : logi FALSE
+ $ fig.align: chr "center"
+ $ fig.cap  : chr "Example of an RNN's output for recognizing characters in handwritten characters. The model scans along one slice at a time of t"| __truncated__
+
+  |                                                                         |.............................................                    |  69%
+  ordinary text without R code
+
+  |                                                                         |..............................................                   |  71%
+label: unrolledgraph (with options) 
+List of 4
+ $ out.width: chr "65%"
+ $ echo     : logi FALSE
+ $ fig.align: chr "center"
+ $ fig.cap  : chr "Unrolled view of the RNN shown in previous figure. Each timestep has two outputs, the timesteps predictions and its hidden stat"| __truncated__
+
+  |                                                                         |................................................                 |  73%
+  ordinary text without R code
+
+  |                                                                         |.................................................                |  76%
+label: lstmdiagram (with options) 
+List of 4
+ $ out.width: chr "60%"
+ $ echo     : logi FALSE
+ $ fig.align: chr "center"
+ $ fig.cap  : chr "The internal structure of an LSTM hidden unit. The gates are all fed by the input at time t, the whole hidden unit at time (t -"| __truncated__
+
+  |                                                                         |...................................................              |  78%
+  ordinary text without R code
+
+  |                                                                         |....................................................             |  80%
+label: grudiagram (with options) 
+List of 4
+ $ out.width: chr "60%"
+ $ echo     : logi FALSE
+ $ fig.align: chr "center"
+ $ fig.cap  : chr "The internal structure of an GRU hidden unit. Unlike the LSTM there are only two gates, with the update and forget get tasks be"| __truncated__
+
+  |                                                                         |.....................................................            |  82%
+  ordinary text without R code
+
+  |                                                                         |.......................................................          |  84%
+label: outputrnn (with options) 
+List of 4
+ $ out.width: chr "45%"
+ $ echo     : logi FALSE
+ $ fig.align: chr "center"
+ $ fig.cap  : chr "An RNN where the recurrent connection is made between the previous timepoint's output and the hidden unit. This model is less e"| __truncated__
+
+  |                                                                         |........................................................         |  87%
+  ordinary text without R code
+
+  |                                                                         |..........................................................       |  89%
+label: cnnexplain (with options) 
+List of 4
+ $ out.width: chr "100%"
+ $ echo     : logi FALSE
+ $ fig.align: chr "center"
+ $ fig.cap  : chr "A diagram of how a convolutions are applied to sequential data."
+
+  |                                                                         |...........................................................      |  91%
+  ordinary text without R code
+
+  |                                                                         |.............................................................    |  93%
+label: ganexample (with options) 
+List of 4
+ $ out.width: chr "80%"
+ $ fig.align: chr "center"
+ $ echo     : logi FALSE
+ $ fig.cap  : chr "The output of a generative adversarial network trained on a database of celebrity faces. Both faces seen are entirely generated"| __truncated__
+
+  |                                                                         |..............................................................   |  96%
+  ordinary text without R code
+
+  |                                                                         |................................................................ |  98%
+label: semisupervised (with options) 
+List of 4
+ $ out.width: chr "40%"
+ $ fig.align: chr "center"
+ $ echo     : logi FALSE
+ $ fig.cap  : chr "Visual example of how adding unlabeled data can provide valuable information about the shape of the data valuable for classific"| __truncated__
+
+  |                                                                         |.................................................................| 100%
+  ordinary text without R code
+
+
+output file: bookdown-demo.knit.md
+
+/usr/lib/rstudio-server/bin/pandoc/pandoc +RTS -K512m -RTS bookdown-demo.utf8.md --to latex --from markdown+autolink_bare_uris+ascii_identifiers+tex_math_single_backslash --output bookdown-demo.tex --table-of-contents --toc-depth 2 --template /home/nick/R/x86_64-pc-linux-gnu-library/3.2/rmarkdown/rmd/latex/default-1.17.0.2.tex --number-sections --highlight-style tango --latex-engine xelatex --natbib --include-in-header preamble.tex --variable graphics=yes --variable 'geometry:margin=1in' --variable tables=yes --standalone 
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex)
+ restricted \write18 enabled.
+entering extended mode
+! Missing $ inserted.
+<inserted text> 
+                $
+l.1706 ...edia.org/wiki/Semi-supervised_learning)}
+                                                  \label{fig:semisupervised} 
+Here is how much of TeX's memory you used:
+ 24984 strings out of 495579
+ 440146 string characters out of 6187322
+ 493771 words of memory out of 5000000
+ 27954 multiletter control sequences out of 15000+600000
+ 39153 words of font info for 68 fonts, out of 8000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 54i,9n,68p,10411b,450s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+Error: Failed to compile bookdown-demo.tex. See bookdown-demo.log for more info.
+Execution halted
+]0;/home/nick/quals/report]0;nick@compooper: ~/quals/report[01;32mnick@compooper[00m:[01;34m~/quals/report[00m$ bash _build.sh 
+
+
+processing file: bookdown-demo.Rmd
+  |                                                                         |                                                                 |   0%  |                                                                         |.                                                                |   2%
+   inline R code fragments
+
+  |                                                                         |...                                                              |   4%
+label: fouriertransform (with options) 
+List of 4
+ $ out.width: chr "60%"
+ $ fig.align: chr "center"
+ $ echo     : logi FALSE
+ $ fig.cap  : chr "Example of transforming data from the data-domain to the frequency-domain for time series data. Image courtousy of [Allen D. El"| __truncated__
+
+  |                                                                         |....                                                             |   7%
+  ordinary text without R code
+
+  |                                                                         |......                                                           |   9%
+label: xorproble (with options) 
+List of 4
+ $ echo     : logi FALSE
+ $ out.width: chr "50%"
+ $ fig.align: chr "center"
+ $ fig.cap  : chr "Example of the XOR problem. Classes encoded by color are not linearly seperable."
+
+  |                                                                         |.......                                                          |  11%
+  ordinary text without R code
+
+  |                                                                         |.........                                                        |  13%
+label: geometricinterp (with options) 
+List of 3
+ $ echo     : logi FALSE
+ $ fig.align: chr "center"
+ $ fig.cap  : chr "Example of how a neural network can, through a series of affine transformations followed by non-linear squashings, turn a linea"| __truncated__
+
+  |                                                                         |..........                                                       |  16%
+  ordinary text without R code
+
+  |                                                                         |............                                                     |  18%
+label: unnamed-chunk-1 (with options) 
+List of 3
+ $ echo     : logi FALSE
+ $ fig.align: chr "center"
+ $ fig.cap  : chr "How back Propagation steps back from the output to the input. To calculate the gradient with respect to the loss of the orange "| __truncated__
+
+  |                                                                         |.............                                                    |  20%
+  ordinary text without R code
+
+  |                                                                         |..............                                                   |  22%
+label: badloss (with options) 
+List of 4
+ $ echo     : logi FALSE
+ $ fig.align: chr "center"
+ $ out.width: chr "60%"
+ $ fig.cap  : chr "Demonstration of steepest descents limitations on trough like gradient surfaces. Much of each step's progress is wasted on boun"| __truncated__
+
+  |                                                                         |................                                                 |  24%
+  ordinary text without R code
+
+  |                                                                         |.................                                                |  27%
+label: sigmoid (with options) 
+List of 2
+ $ name  : chr "sigmoid activation function"
+ $ engine: chr "definition"
+
+  |                                                                         |...................                                              |  29%
+  ordinary text without R code
+
+  |                                                                         |....................                                             |  31%
+label: relu (with options) 
+List of 2
+ $ name  : chr "Rectified Linear Unit activation function"
+ $ engine: chr "definition"
+
+  |                                                                         |......................                                           |  33%
+  ordinary text without R code
+
+  |                                                                         |.......................                                          |  36%
+label: unnamed-chunk-2 (with options) 
+List of 4
+ $ fig.align: chr "center"
+ $ out.width: chr "85%"
+ $ echo     : symbol F
+ $ fig.cap  : chr "Comparison of the relu and sigmoid activation functions."
+
+  |                                                                         |.........................                                        |  38%
+  ordinary text without R code
+
+  |                                                                         |..........................                                       |  40%
+label: softmax (with options) 
+List of 2
+ $ name  : chr "Softmax activation function."
+ $ engine: chr "definition"
+
+  |                                                                         |...........................                                      |  42%
+  ordinary text without R code
+
+  |                                                                         |.............................                                    |  44%
+label: negloglik (with options) 
+List of 2
+ $ name  : chr "General maximum likelihood loss function"
+ $ engine: chr "definition"
+
+  |                                                                         |..............................                                   |  47%
+  ordinary text without R code
+
+  |                                                                         |................................                                 |  49%
+label: mse (with options) 
+List of 2
+ $ name  : chr "Mean squared error loss"
+ $ engine: chr "definition"
+
+  |                                                                         |.................................                                |  51%
+  ordinary text without R code
+
+  |                                                                         |...................................                              |  53%
+label: crossentropy (with options) 
+List of 2
+ $ name  : chr "Binary cross entropy loss"
+ $ engine: chr "definition"
+
+  |                                                                         |....................................                             |  56%
+  ordinary text without R code
+
+  |                                                                         |......................................                           |  58%
+label: catcrossentropy (with options) 
+List of 2
+ $ name  : chr "Categorical cross entropy loss"
+ $ engine: chr "definition"
+
+  |                                                                         |.......................................                          |  60%
+  ordinary text without R code
+
+  |                                                                         |........................................                         |  62%
+label: cyclegraph (with options) 
+List of 4
+ $ out.width: chr "40%"
+ $ echo     : logi FALSE
+ $ fig.align: chr "center"
+ $ fig.cap  : chr "A recurrent neural network with a single hidden layer. The hidden layer's values at time $t$ are passed to the hidden layer at "| __truncated__
+
+  |                                                                         |..........................................                       |  64%
+  ordinary text without R code
+
+  |                                                                         |...........................................                      |  67%
+label: unnamed-chunk-3 (with options) 
+List of 4
+ $ out.width: chr "90%"
+ $ echo     : logi FALSE
+ $ fig.align: chr "center"
+ $ fig.cap  : chr "Example of an RNN's output for recognizing characters in handwritten characters. The model scans along one slice at a time of t"| __truncated__
+
+  |                                                                         |.............................................                    |  69%
+  ordinary text without R code
+
+  |                                                                         |..............................................                   |  71%
+label: unrolledgraph (with options) 
+List of 4
+ $ out.width: chr "65%"
+ $ echo     : logi FALSE
+ $ fig.align: chr "center"
+ $ fig.cap  : chr "Unrolled view of the RNN shown in previous figure. Each timestep has two outputs, the timesteps predictions and its hidden stat"| __truncated__
+
+  |                                                                         |................................................                 |  73%
+  ordinary text without R code
+
+  |                                                                         |.................................................                |  76%
+label: lstmdiagram (with options) 
+List of 4
+ $ out.width: chr "60%"
+ $ echo     : logi FALSE
+ $ fig.align: chr "center"
+ $ fig.cap  : chr "The internal structure of an LSTM hidden unit. The gates are all fed by the input at time t, the whole hidden unit at time (t -"| __truncated__
+
+  |                                                                         |...................................................              |  78%
+  ordinary text without R code
+
+  |                                                                         |....................................................             |  80%
+label: grudiagram (with options) 
+List of 4
+ $ out.width: chr "60%"
+ $ echo     : logi FALSE
+ $ fig.align: chr "center"
+ $ fig.cap  : chr "The internal structure of an GRU hidden unit. Unlike the LSTM there are only two gates, with the update and forget get tasks be"| __truncated__
+
+  |                                                                         |.....................................................            |  82%
+  ordinary text without R code
+
+  |                                                                         |.......................................................          |  84%
+label: outputrnn (with options) 
+List of 4
+ $ out.width: chr "45%"
+ $ echo     : logi FALSE
+ $ fig.align: chr "center"
+ $ fig.cap  : chr "An RNN where the recurrent connection is made between the previous timepoint's output and the hidden unit. This model is less e"| __truncated__
+
+  |                                                                         |........................................................         |  87%
+  ordinary text without R code
+
+  |                                                                         |..........................................................       |  89%
+label: cnnexplain (with options) 
+List of 4
+ $ out.width: chr "100%"
+ $ echo     : logi FALSE
+ $ fig.align: chr "center"
+ $ fig.cap  : chr "A diagram of how a convolutions are applied to sequential data."
+
+  |                                                                         |...........................................................      |  91%
+  ordinary text without R code
+
+  |                                                                         |.............................................................    |  93%
+label: ganexample (with options) 
+List of 4
+ $ out.width: chr "80%"
+ $ fig.align: chr "center"
+ $ echo     : logi FALSE
+ $ fig.cap  : chr "The output of a generative adversarial network trained on a database of celebrity faces. Both faces seen are entirely generated"| __truncated__
+
+  |                                                                         |..............................................................   |  96%
+  ordinary text without R code
+
+  |                                                                         |................................................................ |  98%
+label: semisupervised (with options) 
+List of 4
+ $ out.width: chr "40%"
+ $ fig.align: chr "center"
+ $ echo     : logi FALSE
+ $ fig.cap  : chr "Visual example of how adding unlabeled data can provide valuable information about the shape of the data valuable for classific"| __truncated__
+
+  |                                                                         |.................................................................| 100%
+  ordinary text without R code
+
+
+output file: bookdown-demo.knit.md
+
+/usr/lib/rstudio-server/bin/pandoc/pandoc +RTS -K512m -RTS bookdown-demo.utf8.md --to latex --from markdown+autolink_bare_uris+ascii_identifiers+tex_math_single_backslash --output bookdown-demo.tex --table-of-contents --toc-depth 2 --template /home/nick/R/x86_64-pc-linux-gnu-library/3.2/rmarkdown/rmd/latex/default-1.17.0.2.tex --number-sections --highlight-style tango --latex-engine xelatex --natbib --include-in-header preamble.tex --variable graphics=yes --variable 'geometry:margin=1in' --variable tables=yes --standalone 
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex)
+ restricted \write18 enabled.
+entering extended mode
+! Missing $ inserted.
+<inserted text> 
+                $
+l.1706 ...dia.org/wiki/Semi-supervised_learning).}
+                                                  \label{fig:semisupervised} 
+Here is how much of TeX's memory you used:
+ 24984 strings out of 495579
+ 440146 string characters out of 6187322
+ 493771 words of memory out of 5000000
+ 27954 multiletter control sequences out of 15000+600000
+ 39153 words of font info for 68 fonts, out of 8000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 54i,9n,68p,10411b,450s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+Error: Failed to compile bookdown-demo.tex. See bookdown-demo.log for more info.
+Execution halted
+]0;/home/nick/quals/report]0;nick@compooper: ~/quals/report[01;32mnick@compooper[00m:[01;34m~/quals/report[00m$ bash _build.sh 
+
+
+processing file: bookdown-demo.Rmd
+  |                                                                         |                                                                 |   0%  |                                                                         |.                                                                |   2%
+   inline R code fragments
+
+  |                                                                         |...                                                              |   4%
+label: fouriertransform (with options) 
+List of 4
+ $ out.width: chr "60%"
+ $ fig.align: chr "center"
+ $ echo     : logi FALSE
+ $ fig.cap  : chr "Example of transforming data from the data-domain to the frequency-domain for time series data. Image courtousy of [Allen D. El"| __truncated__
+
+  |                                                                         |....                                                             |   7%
+  ordinary text without R code
+
+  |                                                                         |......                                                           |   9%
+label: xorproble (with options) 
+List of 4
+ $ echo     : logi FALSE
+ $ out.width: chr "50%"
+ $ fig.align: chr "center"
+ $ fig.cap  : chr "Example of the XOR problem. Classes encoded by color are not linearly seperable."
+
+  |                                                                         |.......                                                          |  11%
+  ordinary text without R code
+
+  |                                                                         |.........                                                        |  13%
+label: geometricinterp (with options) 
+List of 3
+ $ echo     : logi FALSE
+ $ fig.align: chr "center"
+ $ fig.cap  : chr "Example of how a neural network can, through a series of affine transformations followed by non-linear squashings, turn a linea"| __truncated__
+
+  |                                                                         |..........                                                       |  16%
+  ordinary text without R code
+
+  |                                                                         |............                                                     |  18%
+label: unnamed-chunk-1 (with options) 
+List of 3
+ $ echo     : logi FALSE
+ $ fig.align: chr "center"
+ $ fig.cap  : chr "How back Propagation steps back from the output to the input. To calculate the gradient with respect to the loss of the orange "| __truncated__
+
+  |                                                                         |.............                                                    |  20%
+  ordinary text without R code
+
+  |                                                                         |..............                                                   |  22%
+label: badloss (with options) 
+List of 4
+ $ echo     : logi FALSE
+ $ fig.align: chr "center"
+ $ out.width: chr "60%"
+ $ fig.cap  : chr "Demonstration of steepest descents limitations on trough like gradient surfaces. Much of each step's progress is wasted on boun"| __truncated__
+
+  |                                                                         |................                                                 |  24%
+  ordinary text without R code
+
+  |                                                                         |.................                                                |  27%
+label: sigmoid (with options) 
+List of 2
+ $ name  : chr "sigmoid activation function"
+ $ engine: chr "definition"
+
+  |                                                                         |...................                                              |  29%
+  ordinary text without R code
+
+  |                                                                         |....................                                             |  31%
+label: relu (with options) 
+List of 2
+ $ name  : chr "Rectified Linear Unit activation function"
+ $ engine: chr "definition"
+
+  |                                                                         |......................                                           |  33%
+  ordinary text without R code
+
+  |                                                                         |.......................                                          |  36%
+label: unnamed-chunk-2 (with options) 
+List of 4
+ $ fig.align: chr "center"
+ $ out.width: chr "85%"
+ $ echo     : symbol F
+ $ fig.cap  : chr "Comparison of the relu and sigmoid activation functions."
+
+  |                                                                         |.........................                                        |  38%
+  ordinary text without R code
+
+  |                                                                         |..........................                                       |  40%
+label: softmax (with options) 
+List of 2
+ $ name  : chr "Softmax activation function."
+ $ engine: chr "definition"
+
+  |                                                                         |...........................                                      |  42%
+  ordinary text without R code
+
+  |                                                                         |.............................                                    |  44%
+label: negloglik (with options) 
+List of 2
+ $ name  : chr "General maximum likelihood loss function"
+ $ engine: chr "definition"
+
+  |                                                                         |..............................                                   |  47%
+  ordinary text without R code
+
+  |                                                                         |................................                                 |  49%
+label: mse (with options) 
+List of 2
+ $ name  : chr "Mean squared error loss"
+ $ engine: chr "definition"
+
+  |                                                                         |.................................                                |  51%
+  ordinary text without R code
+
+  |                                                                         |...................................                              |  53%
+label: crossentropy (with options) 
+List of 2
+ $ name  : chr "Binary cross entropy loss"
+ $ engine: chr "definition"
+
+  |                                                                         |....................................                             |  56%
+  ordinary text without R code
+
+  |                                                                         |......................................                           |  58%
+label: catcrossentropy (with options) 
+List of 2
+ $ name  : chr "Categorical cross entropy loss"
+ $ engine: chr "definition"
+
+  |                                                                         |.......................................                          |  60%
+  ordinary text without R code
+
+  |                                                                         |........................................                         |  62%
+label: cyclegraph (with options) 
+List of 4
+ $ out.width: chr "40%"
+ $ echo     : logi FALSE
+ $ fig.align: chr "center"
+ $ fig.cap  : chr "A recurrent neural network with a single hidden layer. The hidden layer's values at time $t$ are passed to the hidden layer at "| __truncated__
+
+  |                                                                         |..........................................                       |  64%
+  ordinary text without R code
+
+  |                                                                         |...........................................                      |  67%
+label: unnamed-chunk-3 (with options) 
+List of 4
+ $ out.width: chr "90%"
+ $ echo     : logi FALSE
+ $ fig.align: chr "center"
+ $ fig.cap  : chr "Example of an RNN's output for recognizing characters in handwritten characters. The model scans along one slice at a time of t"| __truncated__
+
+  |                                                                         |.............................................                    |  69%
+  ordinary text without R code
+
+  |                                                                         |..............................................                   |  71%
+label: unrolledgraph (with options) 
+List of 4
+ $ out.width: chr "65%"
+ $ echo     : logi FALSE
+ $ fig.align: chr "center"
+ $ fig.cap  : chr "Unrolled view of the RNN shown in previous figure. Each timestep has two outputs, the timesteps predictions and its hidden stat"| __truncated__
+
+  |                                                                         |................................................                 |  73%
+  ordinary text without R code
+
+  |                                                                         |.................................................                |  76%
+label: lstmdiagram (with options) 
+List of 4
+ $ out.width: chr "60%"
+ $ echo     : logi FALSE
+ $ fig.align: chr "center"
+ $ fig.cap  : chr "The internal structure of an LSTM hidden unit. The gates are all fed by the input at time t, the whole hidden unit at time (t -"| __truncated__
+
+  |                                                                         |...................................................              |  78%
+  ordinary text without R code
+
+  |                                                                         |....................................................             |  80%
+label: grudiagram (with options) 
+List of 4
+ $ out.width: chr "60%"
+ $ echo     : logi FALSE
+ $ fig.align: chr "center"
+ $ fig.cap  : chr "The internal structure of an GRU hidden unit. Unlike the LSTM there are only two gates, with the update and forget get tasks be"| __truncated__
+
+  |                                                                         |.....................................................            |  82%
+  ordinary text without R code
+
+  |                                                                         |.......................................................          |  84%
+label: outputrnn (with options) 
+List of 4
+ $ out.width: chr "45%"
+ $ echo     : logi FALSE
+ $ fig.align: chr "center"
+ $ fig.cap  : chr "An RNN where the recurrent connection is made between the previous timepoint's output and the hidden unit. This model is less e"| __truncated__
+
+  |                                                                         |........................................................         |  87%
+  ordinary text without R code
+
+  |                                                                         |..........................................................       |  89%
+label: cnnexplain (with options) 
+List of 4
+ $ out.width: chr "100%"
+ $ echo     : logi FALSE
+ $ fig.align: chr "center"
+ $ fig.cap  : chr "A diagram of how a convolutions are applied to sequential data."
+
+  |                                                                         |...........................................................      |  91%
+  ordinary text without R code
+
+  |                                                                         |.............................................................    |  93%
+label: ganexample (with options) 
+List of 4
+ $ out.width: chr "80%"
+ $ fig.align: chr "center"
+ $ echo     : logi FALSE
+ $ fig.cap  : chr "The output of a generative adversarial network trained on a database of celebrity faces. Both faces seen are entirely generated"| __truncated__
+
+  |                                                                         |..............................................................   |  96%
+  ordinary text without R code
+
+  |                                                                         |................................................................ |  98%
+label: semisupervised (with options) 
+List of 4
+ $ out.width: chr "40%"
+ $ fig.align: chr "center"
+ $ echo     : logi FALSE
+ $ fig.cap  : chr "Visual example of how adding unlabeled data can provide valuable information about the shape of the data valuable for classific"| __truncated__
+
+  |                                                                         |.................................................................| 100%
+  ordinary text without R code
+
+
+output file: bookdown-demo.knit.md
+
+/usr/lib/rstudio-server/bin/pandoc/pandoc +RTS -K512m -RTS bookdown-demo.utf8.md --to latex --from markdown+autolink_bare_uris+ascii_identifiers+tex_math_single_backslash --output bookdown-demo.tex --table-of-contents --toc-depth 2 --template /home/nick/R/x86_64-pc-linux-gnu-library/3.2/rmarkdown/rmd/latex/default-1.17.0.2.tex --number-sections --highlight-style tango --latex-engine xelatex --natbib --include-in-header preamble.tex --variable graphics=yes --variable 'geometry:margin=1in' --variable tables=yes --standalone 
+This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
+The top-level auxiliary file: bookdown-demo.aux
+The style file: apalike.bst
+Database file #1: book.bib.bib
+Database file #2: packages.bib.bib
+Too many commas in name 1 of "Jose M. Sanchez, MD, Brandon Ballinger, BS, Jeffrey E. Olgin, MD, FHRS, Mark J. Pletcher, MD, MPH, Eric Vittinghoff, PhD, Emily Lee, BA, Shannon Fan, BA, Nimit Sohoni, BS, Carlos Mikell, BS, Johnson Hsieh, MS, Rachel A. Gladstone, BA and Gregory M. Marcus, MD, FHRS." for entry wearable_atrial
+while executing---line 1023 of file apalike.bst
+Too many commas in name 1 of "Jose M. Sanchez, MD, Brandon Ballinger, BS, Jeffrey E. Olgin, MD, FHRS, Mark J. Pletcher, MD, MPH, Eric Vittinghoff, PhD, Emily Lee, BA, Shannon Fan, BA, Nimit Sohoni, BS, Carlos Mikell, BS, Johnson Hsieh, MS, Rachel A. Gladstone, BA and Gregory M. Marcus, MD, FHRS." for entry wearable_atrial
+while executing---line 1023 of file apalike.bst
+Too many commas in name 1 of "Jose M. Sanchez, MD, Brandon Ballinger, BS, Jeffrey E. Olgin, MD, FHRS, Mark J. Pletcher, MD, MPH, Eric Vittinghoff, PhD, Emily Lee, BA, Shannon Fan, BA, Nimit Sohoni, BS, Carlos Mikell, BS, Johnson Hsieh, MS, Rachel A. Gladstone, BA and Gregory M. Marcus, MD, FHRS." for entry wearable_atrial
+while executing---line 1023 of file apalike.bst
+Too many commas in name 1 of "Jose M. Sanchez, MD, Brandon Ballinger, BS, Jeffrey E. Olgin, MD, FHRS, Mark J. Pletcher, MD, MPH, Eric Vittinghoff, PhD, Emily Lee, BA, Shannon Fan, BA, Nimit Sohoni, BS, Carlos Mikell, BS, Johnson Hsieh, MS, Rachel A. Gladstone, BA and Gregory M. Marcus, MD, FHRS." for entry wearable_atrial
+while executing---line 1023 of file apalike.bst
+Too many commas in name 1 of "Jose M. Sanchez, MD, Brandon Ballinger, BS, Jeffrey E. Olgin, MD, FHRS, Mark J. Pletcher, MD, MPH, Eric Vittinghoff, PhD, Emily Lee, BA, Shannon Fan, BA, Nimit Sohoni, BS, Carlos Mikell, BS, Johnson Hsieh, MS, Rachel A. Gladstone, BA and Gregory M. Marcus, MD, FHRS." for entry wearable_atrial
+while executing---line 1023 of file apalike.bst
+Too many commas in name 1 of "Jose M. Sanchez, MD, Brandon Ballinger, BS, Jeffrey E. Olgin, MD, FHRS, Mark J. Pletcher, MD, MPH, Eric Vittinghoff, PhD, Emily Lee, BA, Shannon Fan, BA, Nimit Sohoni, BS, Carlos Mikell, BS, Johnson Hsieh, MS, Rachel A. Gladstone, BA and Gregory M. Marcus, MD, FHRS." for entry wearable_atrial
+while executing---line 1023 of file apalike.bst
+Too many commas in name 1 of "Jose M. Sanchez, MD, Brandon Ballinger, BS, Jeffrey E. Olgin, MD, FHRS, Mark J. Pletcher, MD, MPH, Eric Vittinghoff, PhD, Emily Lee, BA, Shannon Fan, BA, Nimit Sohoni, BS, Carlos Mikell, BS, Johnson Hsieh, MS, Rachel A. Gladstone, BA and Gregory M. Marcus, MD, FHRS." for entry wearable_atrial
+while executing---line 1023 of file apalike.bst
+Too many commas in name 1 of "Jose M. Sanchez, MD, Brandon Ballinger, BS, Jeffrey E. Olgin, MD, FHRS, Mark J. Pletcher, MD, MPH, Eric Vittinghoff, PhD, Emily Lee, BA, Shannon Fan, BA, Nimit Sohoni, BS, Carlos Mikell, BS, Johnson Hsieh, MS, Rachel A. Gladstone, BA and Gregory M. Marcus, MD, FHRS." for entry wearable_atrial
+while executing---line 1023 of file apalike.bst
+Too many commas in name 1 of "Jose M. Sanchez, MD, Brandon Ballinger, BS, Jeffrey E. Olgin, MD, FHRS, Mark J. Pletcher, MD, MPH, Eric Vittinghoff, PhD, Emily Lee, BA, Shannon Fan, BA, Nimit Sohoni, BS, Carlos Mikell, BS, Johnson Hsieh, MS, Rachel A. Gladstone, BA and Gregory M. Marcus, MD, FHRS." for entry wearable_atrial
+while executing---line 1023 of file apalike.bst
+Too many commas in name 1 of "Jose M. Sanchez, MD, Brandon Ballinger, BS, Jeffrey E. Olgin, MD, FHRS, Mark J. Pletcher, MD, MPH, Eric Vittinghoff, PhD, Emily Lee, BA, Shannon Fan, BA, Nimit Sohoni, BS, Carlos Mikell, BS, Johnson Hsieh, MS, Rachel A. Gladstone, BA and Gregory M. Marcus, MD, FHRS." for entry wearable_atrial
+while executing---line 1023 of file apalike.bst
+Too many commas in name 1 of "Jose M. Sanchez, MD, Brandon Ballinger, BS, Jeffrey E. Olgin, MD, FHRS, Mark J. Pletcher, MD, MPH, Eric Vittinghoff, PhD, Emily Lee, BA, Shannon Fan, BA, Nimit Sohoni, BS, Carlos Mikell, BS, Johnson Hsieh, MS, Rachel A. Gladstone, BA and Gregory M. Marcus, MD, FHRS." for entry wearable_atrial
+while executing---line 1023 of file apalike.bst
+Too many commas in name 1 of "Jose M. Sanchez, MD, Brandon Ballinger, BS, Jeffrey E. Olgin, MD, FHRS, Mark J. Pletcher, MD, MPH, Eric Vittinghoff, PhD, Emily Lee, BA, Shannon Fan, BA, Nimit Sohoni, BS, Carlos Mikell, BS, Johnson Hsieh, MS, Rachel A. Gladstone, BA and Gregory M. Marcus, MD, FHRS." for entry wearable_atrial
+while executing---line 1023 of file apalike.bst
+Too many commas in name 1 of "Jose M. Sanchez, MD, Brandon Ballinger, BS, Jeffrey E. Olgin, MD, FHRS, Mark J. Pletcher, MD, MPH, Eric Vittinghoff, PhD, Emily Lee, BA, Shannon Fan, BA, Nimit Sohoni, BS, Carlos Mikell, BS, Johnson Hsieh, MS, Rachel A. Gladstone, BA and Gregory M. Marcus, MD, FHRS." for entry wearable_atrial
+while executing---line 1023 of file apalike.bst
+Too many commas in name 1 of "Jose M. Sanchez, MD, Brandon Ballinger, BS, Jeffrey E. Olgin, MD, FHRS, Mark J. Pletcher, MD, MPH, Eric Vittinghoff, PhD, Emily Lee, BA, Shannon Fan, BA, Nimit Sohoni, BS, Carlos Mikell, BS, Johnson Hsieh, MS, Rachel A. Gladstone, BA and Gregory M. Marcus, MD, FHRS." for entry wearable_atrial
+while executing---line 1023 of file apalike.bst
+Too many commas in name 1 of "Jose M. Sanchez, MD, Brandon Ballinger, BS, Jeffrey E. Olgin, MD, FHRS, Mark J. Pletcher, MD, MPH, Eric Vittinghoff, PhD, Emily Lee, BA, Shannon Fan, BA, Nimit Sohoni, BS, Carlos Mikell, BS, Johnson Hsieh, MS, Rachel A. Gladstone, BA and Gregory M. Marcus, MD, FHRS." for entry wearable_atrial
+while executing---line 1023 of file apalike.bst
+Too many commas in name 1 of "Jose M. Sanchez, MD, Brandon Ballinger, BS, Jeffrey E. Olgin, MD, FHRS, Mark J. Pletcher, MD, MPH, Eric Vittinghoff, PhD, Emily Lee, BA, Shannon Fan, BA, Nimit Sohoni, BS, Carlos Mikell, BS, Johnson Hsieh, MS, Rachel A. Gladstone, BA and Gregory M. Marcus, MD, FHRS." for entry wearable_atrial
+while executing---line 1023 of file apalike.bst
+Too many commas in name 1 of "Jose M. Sanchez, MD, Brandon Ballinger, BS, Jeffrey E. Olgin, MD, FHRS, Mark J. Pletcher, MD, MPH, Eric Vittinghoff, PhD, Emily Lee, BA, Shannon Fan, BA, Nimit Sohoni, BS, Carlos Mikell, BS, Johnson Hsieh, MS, Rachel A. Gladstone, BA and Gregory M. Marcus, MD, FHRS." for entry wearable_atrial
+while executing---line 1023 of file apalike.bst
+Too many commas in name 1 of "Jose M. Sanchez, MD, Brandon Ballinger, BS, Jeffrey E. Olgin, MD, FHRS, Mark J. Pletcher, MD, MPH, Eric Vittinghoff, PhD, Emily Lee, BA, Shannon Fan, BA, Nimit Sohoni, BS, Carlos Mikell, BS, Johnson Hsieh, MS, Rachel A. Gladstone, BA and Gregory M. Marcus, MD, FHRS." for entry wearable_atrial
+while executing---line 1023 of file apalike.bst
+Too many commas in name 1 of "Jose M. Sanchez, MD, Brandon Ballinger, BS, Jeffrey E. Olgin, MD, FHRS, Mark J. Pletcher, MD, MPH, Eric Vittinghoff, PhD, Emily Lee, BA, Shannon Fan, BA, Nimit Sohoni, BS, Carlos Mikell, BS, Johnson Hsieh, MS, Rachel A. Gladstone, BA and Gregory M. Marcus, MD, FHRS." for entry wearable_atrial
+while executing---line 1023 of file apalike.bst
+Too many commas in name 1 of "Jose M. Sanchez, MD, Brandon Ballinger, BS, Jeffrey E. Olgin, MD, FHRS, Mark J. Pletcher, MD, MPH, Eric Vittinghoff, PhD, Emily Lee, BA, Shannon Fan, BA, Nimit Sohoni, BS, Carlos Mikell, BS, Johnson Hsieh, MS, Rachel A. Gladstone, BA and Gregory M. Marcus, MD, FHRS." for entry wearable_atrial
+while executing---line 1023 of file apalike.bst
+Too many commas in name 1 of "Jose M. Sanchez, MD, Brandon Ballinger, BS, Jeffrey E. Olgin, MD, FHRS, Mark J. Pletcher, MD, MPH, Eric Vittinghoff, PhD, Emily Lee, BA, Shannon Fan, BA, Nimit Sohoni, BS, Carlos Mikell, BS, Johnson Hsieh, MS, Rachel A. Gladstone, BA and Gregory M. Marcus, MD, FHRS." for entry wearable_atrial
+while executing---line 1023 of file apalike.bst
+Too many commas in name 1 of "Jose M. Sanchez, MD, Brandon Ballinger, BS, Jeffrey E. Olgin, MD, FHRS, Mark J. Pletcher, MD, MPH, Eric Vittinghoff, PhD, Emily Lee, BA, Shannon Fan, BA, Nimit Sohoni, BS, Carlos Mikell, BS, Johnson Hsieh, MS, Rachel A. Gladstone, BA and Gregory M. Marcus, MD, FHRS." for entry wearable_atrial
+while executing---line 1023 of file apalike.bst
+Too many commas in name 1 of "Jose M. Sanchez, MD, Brandon Ballinger, BS, Jeffrey E. Olgin, MD, FHRS, Mark J. Pletcher, MD, MPH, Eric Vittinghoff, PhD, Emily Lee, BA, Shannon Fan, BA, Nimit Sohoni, BS, Carlos Mikell, BS, Johnson Hsieh, MS, Rachel A. Gladstone, BA and Gregory M. Marcus, MD, FHRS." for entry wearable_atrial
+while executing---line 1023 of file apalike.bst
+Too many commas in name 1 of "Jose M. Sanchez, MD, Brandon Ballinger, BS, Jeffrey E. Olgin, MD, FHRS, Mark J. Pletcher, MD, MPH, Eric Vittinghoff, PhD, Emily Lee, BA, Shannon Fan, BA, Nimit Sohoni, BS, Carlos Mikell, BS, Johnson Hsieh, MS, Rachel A. Gladstone, BA and Gregory M. Marcus, MD, FHRS." for entry wearable_atrial
+while executing---line 1023 of file apalike.bst
+Too many commas in name 1 of "Jose M. Sanchez, MD, Brandon Ballinger, BS, Jeffrey E. Olgin, MD, FHRS, Mark J. Pletcher, MD, MPH, Eric Vittinghoff, PhD, Emily Lee, BA, Shannon Fan, BA, Nimit Sohoni, BS, Carlos Mikell, BS, Johnson Hsieh, MS, Rachel A. Gladstone, BA and Gregory M. Marcus, MD, FHRS." for entry wearable_atrial
+while executing---line 1023 of file apalike.bst
+Too many commas in name 1 of "Jose M. Sanchez, MD, Brandon Ballinger, BS, Jeffrey E. Olgin, MD, FHRS, Mark J. Pletcher, MD, MPH, Eric Vittinghoff, PhD, Emily Lee, BA, Shannon Fan, BA, Nimit Sohoni, BS, Carlos Mikell, BS, Johnson Hsieh, MS, Rachel A. Gladstone, BA and Gregory M. Marcus, MD, FHRS." for entry wearable_atrial
+while executing---line 1023 of file apalike.bst
+Too many commas in name 1 of "Jose M. Sanchez, MD, Brandon Ballinger, BS, Jeffrey E. Olgin, MD, FHRS, Mark J. Pletcher, MD, MPH, Eric Vittinghoff, PhD, Emily Lee, BA, Shannon Fan, BA, Nimit Sohoni, BS, Carlos Mikell, BS, Johnson Hsieh, MS, Rachel A. Gladstone, BA and Gregory M. Marcus, MD, FHRS." for entry wearable_atrial
+while executing---line 1023 of file apalike.bst
+Too many commas in name 1 of "Jose M. Sanchez, MD, Brandon Ballinger, BS, Jeffrey E. Olgin, MD, FHRS, Mark J. Pletcher, MD, MPH, Eric Vittinghoff, PhD, Emily Lee, BA, Shannon Fan, BA, Nimit Sohoni, BS, Carlos Mikell, BS, Johnson Hsieh, MS, Rachel A. Gladstone, BA and Gregory M. Marcus, MD, FHRS." for entry wearable_atrial
+while executing---line 1023 of file apalike.bst
+Too many commas in name 1 of "Jose M. Sanchez, MD, Brandon Ballinger, BS, Jeffrey E. Olgin, MD, FHRS, Mark J. Pletcher, MD, MPH, Eric Vittinghoff, PhD, Emily Lee, BA, Shannon Fan, BA, Nimit Sohoni, BS, Carlos Mikell, BS, Johnson Hsieh, MS, Rachel A. Gladstone, BA and Gregory M. Marcus, MD, FHRS." for entry wearable_atrial
+while executing---line 1023 of file apalike.bst
+Too many commas in name 1 of "Jose M. Sanchez, MD, Brandon Ballinger, BS, Jeffrey E. Olgin, MD, FHRS, Mark J. Pletcher, MD, MPH, Eric Vittinghoff, PhD, Emily Lee, BA, Shannon Fan, BA, Nimit Sohoni, BS, Carlos Mikell, BS, Johnson Hsieh, MS, Rachel A. Gladstone, BA and Gregory M. Marcus, MD, FHRS." for entry wearable_atrial
+while executing---line 1023 of file apalike.bst
+Too many commas in name 1 of "Jose M. Sanchez, MD, Brandon Ballinger, BS, Jeffrey E. Olgin, MD, FHRS, Mark J. Pletcher, MD, MPH, Eric Vittinghoff, PhD, Emily Lee, BA, Shannon Fan, BA, Nimit Sohoni, BS, Carlos Mikell, BS, Johnson Hsieh, MS, Rachel A. Gladstone, BA and Gregory M. Marcus, MD, FHRS." for entry wearable_atrial
+while executing---line 1023 of file apalike.bst
+Too many commas in name 1 of "Jose M. Sanchez, MD, Brandon Ballinger, BS, Jeffrey E. Olgin, MD, FHRS, Mark J. Pletcher, MD, MPH, Eric Vittinghoff, PhD, Emily Lee, BA, Shannon Fan, BA, Nimit Sohoni, BS, Carlos Mikell, BS, Johnson Hsieh, MS, Rachel A. Gladstone, BA and Gregory M. Marcus, MD, FHRS." for entry wearable_atrial
+while executing---line 1023 of file apalike.bst
+Too many commas in name 1 of "Jose M. Sanchez, MD, Brandon Ballinger, BS, Jeffrey E. Olgin, MD, FHRS, Mark J. Pletcher, MD, MPH, Eric Vittinghoff, PhD, Emily Lee, BA, Shannon Fan, BA, Nimit Sohoni, BS, Carlos Mikell, BS, Johnson Hsieh, MS, Rachel A. Gladstone, BA and Gregory M. Marcus, MD, FHRS." for entry wearable_atrial
+while executing---line 1023 of file apalike.bst
+Too many commas in name 1 of "Jose M. Sanchez, MD, Brandon Ballinger, BS, Jeffrey E. Olgin, MD, FHRS, Mark J. Pletcher, MD, MPH, Eric Vittinghoff, PhD, Emily Lee, BA, Shannon Fan, BA, Nimit Sohoni, BS, Carlos Mikell, BS, Johnson Hsieh, MS, Rachel A. Gladstone, BA and Gregory M. Marcus, MD, FHRS." for entry wearable_atrial
+while executing---line 1023 of file apalike.bst
+Too many commas in name 1 of "Jose M. Sanchez, MD, Brandon Ballinger, BS, Jeffrey E. Olgin, MD, FHRS, Mark J. Pletcher, MD, MPH, Eric Vittinghoff, PhD, Emily Lee, BA, Shannon Fan, BA, Nimit Sohoni, BS, Carlos Mikell, BS, Johnson Hsieh, MS, Rachel A. Gladstone, BA and Gregory M. Marcus, MD, FHRS." for entry wearable_atrial
+while executing---line 1023 of file apalike.bst
+Too many commas in name 1 of "Jose M. Sanchez, MD, Brandon Ballinger, BS, Jeffrey E. Olgin, MD, FHRS, Mark J. Pletcher, MD, MPH, Eric Vittinghoff, PhD, Emily Lee, BA, Shannon Fan, BA, Nimit Sohoni, BS, Carlos Mikell, BS, Johnson Hsieh, MS, Rachel A. Gladstone, BA and Gregory M. Marcus, MD, FHRS." for entry wearable_atrial
+while executing---line 1023 of file apalike.bst
+Too many commas in name 1 of "Jose M. Sanchez, MD, Brandon Ballinger, BS, Jeffrey E. Olgin, MD, FHRS, Mark J. Pletcher, MD, MPH, Eric Vittinghoff, PhD, Emily Lee, BA, Shannon Fan, BA, Nimit Sohoni, BS, Carlos Mikell, BS, Johnson Hsieh, MS, Rachel A. Gladstone, BA and Gregory M. Marcus, MD, FHRS." for entry wearable_atrial
+while executing---line 1023 of file apalike.bst
+Too many commas in name 1 of "Jose M. Sanchez, MD, Brandon Ballinger, BS, Jeffrey E. Olgin, MD, FHRS, Mark J. Pletcher, MD, MPH, Eric Vittinghoff, PhD, Emily Lee, BA, Shannon Fan, BA, Nimit Sohoni, BS, Carlos Mikell, BS, Johnson Hsieh, MS, Rachel A. Gladstone, BA and Gregory M. Marcus, MD, FHRS." for entry wearable_atrial
+while executing---line 1023 of file apalike.bst
+Too many commas in name 1 of "Jose M. Sanchez, MD, Brandon Ballinger, BS, Jeffrey E. Olgin, MD, FHRS, Mark J. Pletcher, MD, MPH, Eric Vittinghoff, PhD, Emily Lee, BA, Shannon Fan, BA, Nimit Sohoni, BS, Carlos Mikell, BS, Johnson Hsieh, MS, Rachel A. Gladstone, BA and Gregory M. Marcus, MD, FHRS." for entry wearable_atrial
+while executing---line 1023 of file apalike.bst
+Too many commas in name 1 of "Jose M. Sanchez, MD, Brandon Ballinger, BS, Jeffrey E. Olgin, MD, FHRS, Mark J. Pletcher, MD, MPH, Eric Vittinghoff, PhD, Emily Lee, BA, Shannon Fan, BA, Nimit Sohoni, BS, Carlos Mikell, BS, Johnson Hsieh, MS, Rachel A. Gladstone, BA and Gregory M. Marcus, MD, FHRS." for entry wearable_atrial
+while executing---line 1023 of file apalike.bst
+Too many commas in name 1 of "Jose M. Sanchez, MD, Brandon Ballinger, BS, Jeffrey E. Olgin, MD, FHRS, Mark J. Pletcher, MD, MPH, Eric Vittinghoff, PhD, Emily Lee, BA, Shannon Fan, BA, Nimit Sohoni, BS, Carlos Mikell, BS, Johnson Hsieh, MS, Rachel A. Gladstone, BA and Gregory M. Marcus, MD, FHRS." for entry wearable_atrial
+while executing---line 1023 of file apalike.bst
+Too many commas in name 1 of "Jose M. Sanchez, MD, Brandon Ballinger, BS, Jeffrey E. Olgin, MD, FHRS, Mark J. Pletcher, MD, MPH, Eric Vittinghoff, PhD, Emily Lee, BA, Shannon Fan, BA, Nimit Sohoni, BS, Carlos Mikell, BS, Johnson Hsieh, MS, Rachel A. Gladstone, BA and Gregory M. Marcus, MD, FHRS." for entry wearable_atrial
+while executing---line 1023 of file apalike.bst
+Warning--can't use both volume and number fields in dtw
+Too many commas in name 1 of "Jose M. Sanchez, MD, Brandon Ballinger, BS, Jeffrey E. Olgin, MD, FHRS, Mark J. Pletcher, MD, MPH, Eric Vittinghoff, PhD, Emily Lee, BA, Shannon Fan, BA, Nimit Sohoni, BS, Carlos Mikell, BS, Johnson Hsieh, MS, Rachel A. Gladstone, BA and Gregory M. Marcus, MD, FHRS." for entry wearable_atrial
+while executing---line 1098 of file apalike.bst
+Too many commas in name 1 of "Jose M. Sanchez, MD, Brandon Ballinger, BS, Jeffrey E. Olgin, MD, FHRS, Mark J. Pletcher, MD, MPH, Eric Vittinghoff, PhD, Emily Lee, BA, Shannon Fan, BA, Nimit Sohoni, BS, Carlos Mikell, BS, Johnson Hsieh, MS, Rachel A. Gladstone, BA and Gregory M. Marcus, MD, FHRS." for entry wearable_atrial
+while executing---line 1098 of file apalike.bst
+Too many commas in name 1 of "Jose M. Sanchez, MD, Brandon Ballinger, BS, Jeffrey E. Olgin, MD, FHRS, Mark J. Pletcher, MD, MPH, Eric Vittinghoff, PhD, Emily Lee, BA, Shannon Fan, BA, Nimit Sohoni, BS, Carlos Mikell, BS, Johnson Hsieh, MS, Rachel A. Gladstone, BA and Gregory M. Marcus, MD, FHRS." for entry wearable_atrial
+while executing---line 1098 of file apalike.bst
+Too many commas in name 1 of "Jose M. Sanchez, MD, Brandon Ballinger, BS, Jeffrey E. Olgin, MD, FHRS, Mark J. Pletcher, MD, MPH, Eric Vittinghoff, PhD, Emily Lee, BA, Shannon Fan, BA, Nimit Sohoni, BS, Carlos Mikell, BS, Johnson Hsieh, MS, Rachel A. Gladstone, BA and Gregory M. Marcus, MD, FHRS." for entry wearable_atrial
+while executing---line 1098 of file apalike.bst
+Too many commas in name 1 of "Jose M. Sanchez, MD, Brandon Ballinger, BS, Jeffrey E. Olgin, MD, FHRS, Mark J. Pletcher, MD, MPH, Eric Vittinghoff, PhD, Emily Lee, BA, Shannon Fan, BA, Nimit Sohoni, BS, Carlos Mikell, BS, Johnson Hsieh, MS, Rachel A. Gladstone, BA and Gregory M. Marcus, MD, FHRS." for entry wearable_atrial
+while executing---line 1098 of file apalike.bst
+Too many commas in name 1 of "Jose M. Sanchez, MD, Brandon Ballinger, BS, Jeffrey E. Olgin, MD, FHRS, Mark J. Pletcher, MD, MPH, Eric Vittinghoff, PhD, Emily Lee, BA, Shannon Fan, BA, Nimit Sohoni, BS, Carlos Mikell, BS, Johnson Hsieh, MS, Rachel A. Gladstone, BA and Gregory M. Marcus, MD, FHRS." for entry wearable_atrial
+while executing---line 1098 of file apalike.bst
+Too many commas in name 1 of "Jose M. Sanchez, MD, Brandon Ballinger, BS, Jeffrey E. Olgin, MD, FHRS, Mark J. Pletcher, MD, MPH, Eric Vittinghoff, PhD, Emily Lee, BA, Shannon Fan, BA, Nimit Sohoni, BS, Carlos Mikell, BS, Johnson Hsieh, MS, Rachel A. Gladstone, BA and Gregory M. Marcus, MD, FHRS." for entry wearable_atrial
+while executing---line 1098 of file apalike.bst
+Too many commas in name 1 of "Jose M. Sanchez, MD, Brandon Ballinger, BS, Jeffrey E. Olgin, MD, FHRS, Mark J. Pletcher, MD, MPH, Eric Vittinghoff, PhD, Emily Lee, BA, Shannon Fan, BA, Nimit Sohoni, BS, Carlos Mikell, BS, Johnson Hsieh, MS, Rachel A. Gladstone, BA and Gregory M. Marcus, MD, FHRS." for entry wearable_atrial
+while executing---line 1098 of file apalike.bst
+Too many commas in name 1 of "Jose M. Sanchez, MD, Brandon Ballinger, BS, Jeffrey E. Olgin, MD, FHRS, Mark J. Pletcher, MD, MPH, Eric Vittinghoff, PhD, Emily Lee, BA, Shannon Fan, BA, Nimit Sohoni, BS, Carlos Mikell, BS, Johnson Hsieh, MS, Rachel A. Gladstone, BA and Gregory M. Marcus, MD, FHRS." for entry wearable_atrial
+while executing---line 1098 of file apalike.bst
+Too many commas in name 1 of "Jose M. Sanchez, MD, Brandon Ballinger, BS, Jeffrey E. Olgin, MD, FHRS, Mark J. Pletcher, MD, MPH, Eric Vittinghoff, PhD, Emily Lee, BA, Shannon Fan, BA, Nimit Sohoni, BS, Carlos Mikell, BS, Johnson Hsieh, MS, Rachel A. Gladstone, BA and Gregory M. Marcus, MD, FHRS." for entry wearable_atrial
+while executing---line 1098 of file apalike.bst
+Too many commas in name 1 of "Jose M. Sanchez, MD, Brandon Ballinger, BS, Jeffrey E. Olgin, MD, FHRS, Mark J. Pletcher, MD, MPH, Eric Vittinghoff, PhD, Emily Lee, BA, Shannon Fan, BA, Nimit Sohoni, BS, Carlos Mikell, BS, Johnson Hsieh, MS, Rachel A. Gladstone, BA and Gregory M. Marcus, MD, FHRS." for entry wearable_atrial
+while executing---line 1098 of file apalike.bst
+Too many commas in name 1 of "Jose M. Sanchez, MD, Brandon Ballinger, BS, Jeffrey E. Olgin, MD, FHRS, Mark J. Pletcher, MD, MPH, Eric Vittinghoff, PhD, Emily Lee, BA, Shannon Fan, BA, Nimit Sohoni, BS, Carlos Mikell, BS, Johnson Hsieh, MS, Rachel A. Gladstone, BA and Gregory M. Marcus, MD, FHRS." for entry wearable_atrial
+while executing---line 1098 of file apalike.bst
+Too many commas in name 1 of "Jose M. Sanchez, MD, Brandon Ballinger, BS, Jeffrey E. Olgin, MD, FHRS, Mark J. Pletcher, MD, MPH, Eric Vittinghoff, PhD, Emily Lee, BA, Shannon Fan, BA, Nimit Sohoni, BS, Carlos Mikell, BS, Johnson Hsieh, MS, Rachel A. Gladstone, BA and Gregory M. Marcus, MD, FHRS." for entry wearable_atrial
+while executing---line 1098 of file apalike.bst
+Too many commas in name 1 of "Jose M. Sanchez, MD, Brandon Ballinger, BS, Jeffrey E. Olgin, MD, FHRS, Mark J. Pletcher, MD, MPH, Eric Vittinghoff, PhD, Emily Lee, BA, Shannon Fan, BA, Nimit Sohoni, BS, Carlos Mikell, BS, Johnson Hsieh, MS, Rachel A. Gladstone, BA and Gregory M. Marcus, MD, FHRS." for entry wearable_atrial
+while executing---line 1098 of file apalike.bst
+Too many commas in name 1 of "Jose M. Sanchez, MD, Brandon Ballinger, BS, Jeffrey E. Olgin, MD, FHRS, Mark J. Pletcher, MD, MPH, Eric Vittinghoff, PhD, Emily Lee, BA, Shannon Fan, BA, Nimit Sohoni, BS, Carlos Mikell, BS, Johnson Hsieh, MS, Rachel A. Gladstone, BA and Gregory M. Marcus, MD, FHRS." for entry wearable_atrial
+while executing---line 1098 of file apalike.bst
+Too many commas in name 1 of "Jose M. Sanchez, MD, Brandon Ballinger, BS, Jeffrey E. Olgin, MD, FHRS, Mark J. Pletcher, MD, MPH, Eric Vittinghoff, PhD, Emily Lee, BA, Shannon Fan, BA, Nimit Sohoni, BS, Carlos Mikell, BS, Johnson Hsieh, MS, Rachel A. Gladstone, BA and Gregory M. Marcus, MD, FHRS." for entry wearable_atrial
+while executing---line 1098 of file apalike.bst
+Too many commas in name 1 of "Jose M. Sanchez, MD, Brandon Ballinger, BS, Jeffrey E. Olgin, MD, FHRS, Mark J. Pletcher, MD, MPH, Eric Vittinghoff, PhD, Emily Lee, BA, Shannon Fan, BA, Nimit Sohoni, BS, Carlos Mikell, BS, Johnson Hsieh, MS, Rachel A. Gladstone, BA and Gregory M. Marcus, MD, FHRS." for entry wearable_atrial
+while executing---line 1098 of file apalike.bst
+Too many commas in name 1 of "Jose M. Sanchez, MD, Brandon Ballinger, BS, Jeffrey E. Olgin, MD, FHRS, Mark J. Pletcher, MD, MPH, Eric Vittinghoff, PhD, Emily Lee, BA, Shannon Fan, BA, Nimit Sohoni, BS, Carlos Mikell, BS, Johnson Hsieh, MS, Rachel A. Gladstone, BA and Gregory M. Marcus, MD, FHRS." for entry wearable_atrial
+while executing---line 1098 of file apalike.bst
+Too many commas in name 1 of "Jose M. Sanchez, MD, Brandon Ballinger, BS, Jeffrey E. Olgin, MD, FHRS, Mark J. Pletcher, MD, MPH, Eric Vittinghoff, PhD, Emily Lee, BA, Shannon Fan, BA, Nimit Sohoni, BS, Carlos Mikell, BS, Johnson Hsieh, MS, Rachel A. Gladstone, BA and Gregory M. Marcus, MD, FHRS." for entry wearable_atrial
+while executing---line 1098 of file apalike.bst
+Too many commas in name 1 of "Jose M. Sanchez, MD, Brandon Ballinger, BS, Jeffrey E. Olgin, MD, FHRS, Mark J. Pletcher, MD, MPH, Eric Vittinghoff, PhD, Emily Lee, BA, Shannon Fan, BA, Nimit Sohoni, BS, Carlos Mikell, BS, Johnson Hsieh, MS, Rachel A. Gladstone, BA and Gregory M. Marcus, MD, FHRS." for entry wearable_atrial
+while executing---line 1098 of file apalike.bst
+Too many commas in name 1 of "Jose M. Sanchez, MD, Brandon Ballinger, BS, Jeffrey E. Olgin, MD, FHRS, Mark J. Pletcher, MD, MPH, Eric Vittinghoff, PhD, Emily Lee, BA, Shannon Fan, BA, Nimit Sohoni, BS, Carlos Mikell, BS, Johnson Hsieh, MS, Rachel A. Gladstone, BA and Gregory M. Marcus, MD, FHRS." for entry wearable_atrial
+while executing---line 1098 of file apalike.bst
+Warning--empty institution in skip_connections
+Warning--can't use both volume and number fields in accelerometer_activity
+Warning--empty journal in semi_supervised
+(There were 63 error messages)
+Error: Failed to build the bibliography via bibtex
+Execution halted
+]0;/home/nick/quals/report]0;nick@compooper: ~/quals/report[01;32mnick@compooper[00m:[01;34m~/quals/report[00m$ bash _build.sh 
+
+
+processing file: bookdown-demo.Rmd
+  |                                                                         |                                                                 |   0%  |                                                                         |.                                                                |   2%
+   inline R code fragments
+
+  |                                                                         |...                                                              |   4%
+label: fouriertransform (with options) 
+List of 4
+ $ out.width: chr "60%"
+ $ fig.align: chr "center"
+ $ echo     : logi FALSE
+ $ fig.cap  : chr "Example of transforming data from the data-domain to the frequency-domain for time series data. Image courtousy of [Allen D. El"| __truncated__
+
+  |                                                                         |....                                                             |   7%
+  ordinary text without R code
+
+  |                                                                         |......                                                           |   9%
+label: xorproble (with options) 
+List of 4
+ $ echo     : logi FALSE
+ $ out.width: chr "50%"
+ $ fig.align: chr "center"
+ $ fig.cap  : chr "Example of the XOR problem. Classes encoded by color are not linearly seperable."
+
+  |                                                                         |.......                                                          |  11%
+  ordinary text without R code
+
+  |                                                                         |.........                                                        |  13%
+label: geometricinterp (with options) 
+List of 3
+ $ echo     : logi FALSE
+ $ fig.align: chr "center"
+ $ fig.cap  : chr "Example of how a neural network can, through a series of affine transformations followed by non-linear squashings, turn a linea"| __truncated__
+
+  |                                                                         |..........                                                       |  16%
+  ordinary text without R code
+
+  |                                                                         |............                                                     |  18%
+label: unnamed-chunk-1 (with options) 
+List of 3
+ $ echo     : logi FALSE
+ $ fig.align: chr "center"
+ $ fig.cap  : chr "How back Propagation steps back from the output to the input. To calculate the gradient with respect to the loss of the orange "| __truncated__
+
+  |                                                                         |.............                                                    |  20%
+  ordinary text without R code
+
+  |                                                                         |..............                                                   |  22%
+label: badloss (with options) 
+List of 4
+ $ echo     : logi FALSE
+ $ fig.align: chr "center"
+ $ out.width: chr "60%"
+ $ fig.cap  : chr "Demonstration of steepest descents limitations on trough like gradient surfaces. Much of each step's progress is wasted on boun"| __truncated__
+
+  |                                                                         |................                                                 |  24%
+  ordinary text without R code
+
+  |                                                                         |.................                                                |  27%
+label: sigmoid (with options) 
+List of 2
+ $ name  : chr "sigmoid activation function"
+ $ engine: chr "definition"
+
+  |                                                                         |...................                                              |  29%
+  ordinary text without R code
+
+  |                                                                         |....................                                             |  31%
+label: relu (with options) 
+List of 2
+ $ name  : chr "Rectified Linear Unit activation function"
+ $ engine: chr "definition"
+
+  |                                                                         |......................                                           |  33%
+  ordinary text without R code
+
+  |                                                                         |.......................                                          |  36%
+label: unnamed-chunk-2 (with options) 
+List of 4
+ $ fig.align: chr "center"
+ $ out.width: chr "85%"
+ $ echo     : symbol F
+ $ fig.cap  : chr "Comparison of the relu and sigmoid activation functions."
+
+  |                                                                         |.........................                                        |  38%
+  ordinary text without R code
+
+  |                                                                         |..........................                                       |  40%
+label: softmax (with options) 
+List of 2
+ $ name  : chr "Softmax activation function."
+ $ engine: chr "definition"
+
+  |                                                                         |...........................                                      |  42%
+  ordinary text without R code
+
+  |                                                                         |.............................                                    |  44%
+label: negloglik (with options) 
+List of 2
+ $ name  : chr "General maximum likelihood loss function"
+ $ engine: chr "definition"
+
+  |                                                                         |..............................                                   |  47%
+  ordinary text without R code
+
+  |                                                                         |................................                                 |  49%
+label: mse (with options) 
+List of 2
+ $ name  : chr "Mean squared error loss"
+ $ engine: chr "definition"
+
+  |                                                                         |.................................                                |  51%
+  ordinary text without R code
+
+  |                                                                         |...................................                              |  53%
+label: crossentropy (with options) 
+List of 2
+ $ name  : chr "Binary cross entropy loss"
+ $ engine: chr "definition"
+
+  |                                                                         |....................................                             |  56%
+  ordinary text without R code
+
+  |                                                                         |......................................                           |  58%
+label: catcrossentropy (with options) 
+List of 2
+ $ name  : chr "Categorical cross entropy loss"
+ $ engine: chr "definition"
+
+  |                                                                         |.......................................                          |  60%
+  ordinary text without R code
+
+  |                                                                         |........................................                         |  62%
+label: cyclegraph (with options) 
+List of 4
+ $ out.width: chr "40%"
+ $ echo     : logi FALSE
+ $ fig.align: chr "center"
+ $ fig.cap  : chr "A recurrent neural network with a single hidden layer. The hidden layer's values at time $t$ are passed to the hidden layer at "| __truncated__
+
+  |                                                                         |..........................................                       |  64%
+  ordinary text without R code
+
+  |                                                                         |...........................................                      |  67%
+label: unnamed-chunk-3 (with options) 
+List of 4
+ $ out.width: chr "90%"
+ $ echo     : logi FALSE
+ $ fig.align: chr "center"
+ $ fig.cap  : chr "Example of an RNN's output for recognizing characters in handwritten characters. The model scans along one slice at a time of t"| __truncated__
+
+  |                                                                         |.............................................                    |  69%
+  ordinary text without R code
+
+  |                                                                         |..............................................                   |  71%
+label: unrolledgraph (with options) 
+List of 4
+ $ out.width: chr "65%"
+ $ echo     : logi FALSE
+ $ fig.align: chr "center"
+ $ fig.cap  : chr "Unrolled view of the RNN shown in previous figure. Each timestep has two outputs, the timesteps predictions and its hidden stat"| __truncated__
+
+  |                                                                         |................................................                 |  73%
+  ordinary text without R code
+
+  |                                                                         |.................................................                |  76%
+label: lstmdiagram (with options) 
+List of 4
+ $ out.width: chr "60%"
+ $ echo     : logi FALSE
+ $ fig.align: chr "center"
+ $ fig.cap  : chr "The internal structure of an LSTM hidden unit. The gates are all fed by the input at time t, the whole hidden unit at time (t -"| __truncated__
+
+  |                                                                         |...................................................              |  78%
+  ordinary text without R code
+
+  |                                                                         |....................................................             |  80%
+label: grudiagram (with options) 
+List of 4
+ $ out.width: chr "60%"
+ $ echo     : logi FALSE
+ $ fig.align: chr "center"
+ $ fig.cap  : chr "The internal structure of an GRU hidden unit. Unlike the LSTM there are only two gates, with the update and forget get tasks be"| __truncated__
+
+  |                                                                         |.....................................................            |  82%
+  ordinary text without R code
+
+  |                                                                         |.......................................................          |  84%
+label: outputrnn (with options) 
+List of 4
+ $ out.width: chr "45%"
+ $ echo     : logi FALSE
+ $ fig.align: chr "center"
+ $ fig.cap  : chr "An RNN where the recurrent connection is made between the previous timepoint's output and the hidden unit. This model is less e"| __truncated__
+
+  |                                                                         |........................................................         |  87%
+  ordinary text without R code
+
+  |                                                                         |..........................................................       |  89%
+label: cnnexplain (with options) 
+List of 4
+ $ out.width: chr "100%"
+ $ echo     : logi FALSE
+ $ fig.align: chr "center"
+ $ fig.cap  : chr "A diagram of how a convolutions are applied to sequential data."
+
+  |                                                                         |...........................................................      |  91%
+  ordinary text without R code
+
+  |                                                                         |.............................................................    |  93%
+label: ganexample (with options) 
+List of 4
+ $ out.width: chr "80%"
+ $ fig.align: chr "center"
+ $ echo     : logi FALSE
+ $ fig.cap  : chr "The output of a generative adversarial network trained on a database of celebrity faces. Both faces seen are entirely generated"| __truncated__
+
+  |                                                                         |..............................................................   |  96%
+  ordinary text without R code
+
+  |                                                                         |................................................................ |  98%
+label: semisupervised (with options) 
+List of 4
+ $ out.width: chr "40%"
+ $ fig.align: chr "center"
+ $ echo     : logi FALSE
+ $ fig.cap  : chr "Visual example of how adding unlabeled data can provide valuable information about the shape of the data valuable for classific"| __truncated__
+
+  |                                                                         |.................................................................| 100%
+  ordinary text without R code
+
+
+output file: bookdown-demo.knit.md
+
+/usr/lib/rstudio-server/bin/pandoc/pandoc +RTS -K512m -RTS bookdown-demo.utf8.md --to latex --from markdown+autolink_bare_uris+ascii_identifiers+tex_math_single_backslash --output bookdown-demo.tex --table-of-contents --toc-depth 2 --template /home/nick/R/x86_64-pc-linux-gnu-library/3.2/rmarkdown/rmd/latex/default-1.17.0.2.tex --number-sections --highlight-style tango --latex-engine xelatex --natbib --include-in-header preamble.tex --variable graphics=yes --variable 'geometry:margin=1in' --variable tables=yes --standalone 
+
+Output created: _book/bookdown-demo.pdf
+[1] "/home/nick/quals/report/_book/bookdown-demo.pdf"
+]0;/home/nick/quals/report]0;nick@compooper: ~/quals/report[01;32mnick@compooper[00m:[01;34m~/quals/report[00m$ ls
+total 240K
+drwxr-xr-x 7 nick nick 4.0K Dec  8 21:18 [0m[01;34m.[0m
+drwxr-xr-x 4 nick nick 4.0K Dec  5 11:11 [01;34m..[0m
+-rw-r--r-- 1 nick nick  24K Dec  8 21:08 02-deep_learning.Rmd
+-rw-r--r-- 1 nick nick  24K Dec  8 21:11 03-sequence_architectures.Rmd
+-rw-r--r-- 1 nick nick  16K Dec  8 21:13 04-future_directions.Rmd
+drwxr-xr-x 5 nick nick 4.0K Dec  8 21:18 [01;34m_book[0m
+-rw-r--r-- 1 nick nick  14K Dec  8 21:17 book.bib
+-rw-r--r-- 1 nick nick  44K Dec  8 21:18 bookdown-demo.log
+drwxr-xr-x 3 nick nick 4.0K Dec  8 21:18 [01;34m_bookdown_files[0m
+-rw-r--r-- 1 nick nick  111 Dec  8 21:20 _bookdown.yml
+-rw-r--r-- 1 nick nick   81 Dec  8 14:19 _build.sh
+-rw-r--r-- 1 nick nick  115 Dec  5 11:12 DESCRIPTION
+drwxr-xr-x 2 nick nick 4.0K Dec  8 21:08 [01;34mfigures[0m
+drwxr-xr-x 8 nick nick 4.0K Dec  8 21:08 [01;34m.git[0m
+-rw-r--r-- 1 nick nick  14K Dec  8 20:59 index.Rmd
+-rw-r--r-- 1 nick nick  21K Dec  8 14:18 intro.html
+-rw-r--r-- 1 nick nick 6.5K Dec  5 11:12 LICENSE
+-rw-r--r-- 1 nick nick  531 Dec  8 14:06 _output.yml
+-rw-r--r-- 1 nick nick 1.1K Dec  5 11:28 packages.bib
+-rw-r--r-- 1 nick nick  161 Dec  5 11:12 preamble.tex
+-rw-r--r-- 1 nick nick  291 Dec  5 11:12 README.md
+-rw-r--r-- 1 nick nick  225 Dec  5 11:13 report.Rproj
+drwxr-xr-x 4 nick nick 4.0K Dec  4 16:29 [01;34m.Rproj.user[0m
+-rw-r--r-- 1 nick nick  172 Dec  5 11:12 style.css
+-rw-r--r-- 1 nick nick 2.4K Dec  5 11:12 toc.css
+]0;/home/nick/quals/report]0;nick@compooper: ~/quals/report[01;32mnick@compooper[00m:[01;34m~/quals/report[00m$ lgit "finally got a pdf to knit"

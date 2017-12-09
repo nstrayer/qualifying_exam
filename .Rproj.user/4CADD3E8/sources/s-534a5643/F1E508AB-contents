@@ -76,10 +76,9 @@ In many circumstances the data may not be small as a whole, but the number of ob
 
 Another example comes from EHR based studies. Many times these studies rely on using physicians to perform chart reviews in order to construct their training and test sets. This is a costly and time consuming procedure. 
 
-```{r,  out.width = "40%", fig.align = "center", echo = FALSE, label = "semisupervised", fig.cap = "Visual example of how adding unlabeled data can provide valuable information about the shape of the data valuable for classification. Image taken from [Wikipedia](https://en.wikipedia.org/wiki/Semi-supervised_learning)"}
+```{r,  out.width = "40%", fig.align = "center", echo = FALSE, label = "semisupervised", fig.cap = "Visual example of how adding unlabeled data can provide valuable information about the shape of the data valuable for classification. Image taken from Wikipedia."}
 knitr::include_graphics("figures/semi-supervised.png")
 ```
-
 
 
 There are various approaches to dealing with this sparse data issue. A very promising avenue is the preliminary fitting of an unsupervised model on the data, followed by a supervised learning model using features learned by the unsupervised model 

@@ -216,9 +216,9 @@ Figure 4.1: The output of a generative adversarial network trained on a database
 <p>In many circumstances the data may not be small as a whole, but the number of observations that have labels for the desired prediction are. An example of this is activity tagging data. For each day twenty four hours of time-series data are gathered on the subject, but often when asked to tag the data they only tag specific instances of activities, leaving much of the day blank. In addition it is often infeasible to ask them to label every day of their data.</p>
 <p>Another example comes from EHR based studies. Many times these studies rely on using physicians to perform chart reviews in order to construct their training and test sets. This is a costly and time consuming procedure.</p>
 <div class="figure" style="text-align: center"><span id="fig:semisupervised"></span>
-<img src="figures/semi-supervised.png" alt="Visual example of how adding unlabeled data can provide valuable information about the shape of the data valuable for classification. Image taken from [Wikipedia](https://en.wikipedia.org/wiki/Semi-supervised_learning)" width="40%" />
+<img src="figures/semi-supervised.png" alt="Visual example of how adding unlabeled data can provide valuable information about the shape of the data valuable for classification. Image taken from Wikipedia." width="40%" />
 <p class="caption">
-Figure 4.2: Visual example of how adding unlabeled data can provide valuable information about the shape of the data valuable for classification. Image taken from <a href="https://en.wikipedia.org/wiki/Semi-supervised_learning">Wikipedia</a>
+Figure 4.2: Visual example of how adding unlabeled data can provide valuable information about the shape of the data valuable for classification. Image taken from Wikipedia.
 </p>
 </div>
 <p>There are various approaches to dealing with this sparse data issue. A very promising avenue is the preliminary fitting of an unsupervised model on the data, followed by a supervised learning model using features learned by the unsupervised model</p>
