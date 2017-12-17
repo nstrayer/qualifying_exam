@@ -25,7 +25,7 @@
 <meta name="author" content="Nick Strayer">
 
 
-<meta name="date" content="2017-12-08">
+<meta name="date" content="2017-12-17">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -314,7 +314,7 @@ Figure 2.4: Demonstration of steepest descents limitations on trough like gradie
 </div>
 
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-2"></span>
-<img src="bookdown-demo_files/figure-html/unnamed-chunk-2-1.png" alt="Comparison of the relu and sigmoid activation functions." width="85%" />
+<img src="strayer_qualifying_exam_files/figure-html/unnamed-chunk-2-1.png" alt="Comparison of the relu and sigmoid activation functions." width="85%" />
 <p class="caption">
 Figure 2.5: Comparison of the relu and sigmoid activation functions.
 </p>
@@ -325,7 +325,7 @@ Figure 2.5: Comparison of the relu and sigmoid activation functions.
 <span id="def:softmax" class="definition"><strong>Definition 2.3  (Softmax activation function.)  </strong></span><span class="math display">\[f(\textbf{o})_i = \frac{\text{exp}(o_i)}{\sum_{j = 1}^m \text{exp}(o_j)}\]</span>
 </div>
 
-<p>This function serves to turn the output of a layer into a multivariate probability vector. The <span class="math inline">\(m\)</span> outputs of the softmax sum to one.<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a></p>
+<p>This function serves to turn the output of a layer into a multivariate probability vector. The <span class="math inline">\(m\)</span> outputs of the softmax sum to one.<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a></p>
 </div>
 <div id="loss-functions" class="section level2">
 <h2><span class="header-section-number">2.8</span> Loss functions</h2>
@@ -352,7 +352,7 @@ Where <span class="math inline">\(y_i\)</span> represents the outcome of the <sp
 <div id="classification-loss-functions" class="section level3">
 <h3><span class="header-section-number">2.8.2</span> Classification loss functions</h3>
 <p>There are two separate instances of classification that need to be considered. The binary case, where we are classifying a yes or no answer for a single class, or a categorical case, where we have more than two possible classes to choose from and need to place our data into one of them.</p>
-<p>In the single outcome case the approach is to assume the outcome is a Bernoulli distribution over outcome <span class="math inline">\(y\)</span> conditioned on the input <span class="math inline">\(x\)</span>. The resultant loss function is commonly referred to as ‘binary cross entropy.’<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a></p>
+<p>In the single outcome case the approach is to assume the outcome is a Bernoulli distribution over outcome <span class="math inline">\(y\)</span> conditioned on the input <span class="math inline">\(x\)</span>. The resultant loss function is commonly referred to as ‘binary cross entropy.’<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a></p>
 
 <div class="definition">
 <span id="def:crossentropy" class="definition"><strong>Definition 2.6  (Binary cross entropy loss)  </strong></span><span class="math display">\[L(\theta) = -\frac{1}{n}\sum_{i = 1}^n\left[ y_i\log(\hat{y}_i) + (1 - y_i)\log(1 - \hat{y}_i)\right]\]</span>
@@ -417,9 +417,9 @@ Where <span class="math inline">\(y_{i,j}\)</span> represents the <span class="m
 </div>
 <div class="footnotes">
 <hr />
-<ol start="1">
-<li id="fn1"><p>It is important to note that, while the values sum to one, it’s not a true probability output, but will help indicate which class is most likely and roughly by what magnitude over other potential class choices.<a href="neuralnetworks.html#fnref1">↩</a></p></li>
-<li id="fn2"><p>It is interesting to note that while we typically only use the term ‘cross entropy’ for categorical outcomes, any time we are minimizing KL or maximizing the likelihood we are minimizing the cross entropy. So technically we could also call the mean squared error the ‘continuous cross entropy loss.’<a href="neuralnetworks.html#fnref2">↩</a></p></li>
+<ol start="2">
+<li id="fn2"><p>It is important to note that, while the values sum to one, it’s not a true probability output, but will help indicate which class is most likely and roughly by what magnitude over other potential class choices.<a href="neuralnetworks.html#fnref2">↩</a></p></li>
+<li id="fn3"><p>It is interesting to note that while we typically only use the term ‘cross entropy’ for categorical outcomes, any time we are minimizing KL or maximizing the likelihood we are minimizing the cross entropy. So technically we could also call the mean squared error the ‘continuous cross entropy loss.’<a href="neuralnetworks.html#fnref3">↩</a></p></li>
 </ol>
 </div>
             </section>
@@ -460,7 +460,7 @@ gitbook.start({
 "link": "https://github.com/rstudio/bookdown-demo/edit/master/02-deep_learning.Rmd",
 "text": "Edit"
 },
-"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"download": ["strayer_qualifying_exam.pdf", "strayer_qualifying_exam.epub"],
 "toc": {
 "collapse": "subsection"
 }

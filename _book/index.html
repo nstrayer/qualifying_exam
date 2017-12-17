@@ -25,7 +25,7 @@
 <meta name="author" content="Nick Strayer">
 
 
-<meta name="date" content="2017-12-08">
+<meta name="date" content="2017-12-17">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -159,7 +159,7 @@
 <div id="header">
 <h1 class="title">Continuous Classification using Deep Neural Networks</h1>
 <h4 class="author"><em>Nick Strayer</em></h4>
-<h4 class="date"><em>2017-12-08</em></h4>
+<h4 class="date"><em>2017-12-17</em></h4>
 </div>
 <div id="intro" class="section level1">
 <h1><span class="header-section-number">Chapter 1</span> Introduction</h1>
@@ -176,7 +176,7 @@
 <h3><span class="header-section-number">1.2.1</span> Activity Prediction</h3>
 <p>With the advent of wearable devices such as fitbits and apple watches, the amount of high temporal resolution data we have streaming from individuals is exploding and showing no sign of letting up.</p>
 <p>Continuous classification models could use these data to classify the state of the wearer at any moment. A simple example of this is detecting different exercise types (e.g. running vs. swimming); which is implemented (by unpublished methods) internally at companies such as fitbit.</p>
-<p>More advanced, and potentially impactful, applications include extending the predictions to more subtle but medically relevant states such as dehydration or sleep apnea (<span class="citation">Jose M. Sanchez and Gregory M. Marcus (<a href="#ref-wearable_atrial">2017</a>)</span>). Preliminary work in these areas using deep learning has shown surprising success with data as limited as heart-rate and motion indication being enough to predict sleep apnea and various cardiovascular risk states with a c-statistic of 0.94: comparable to invasive gold standards.</p>
+<p>More advanced, and potentially impactful, applications include extending the predictions to more subtle but medically relevant states such as dehydration or sleep apnea (<span class="citation">Jose M. Sanchez et al. (<a href="#ref-wearable_atrial">2017</a>)</span>). Preliminary work in these areas using deep learning has shown surprising success with data as limited as heart-rate and motion indication being enough to predict sleep apnea and various cardiovascular risk states with a c-statistic of 0.94: comparable to invasive gold standards.</p>
 </div>
 <div id="ehr-monitoring" class="section level3">
 <h3><span class="header-section-number">1.2.2</span> EHR monitoring</h3>
@@ -185,7 +185,8 @@
 </div>
 <div id="hospital-automation" class="section level3">
 <h3><span class="header-section-number">1.2.3</span> Hospital Automation</h3>
-<p>Patient monitoring systems already have alarms to alert staff of occurring anomaly for a patient. Continuous classification methods could extend these systems to warn <em>before</em> the anomaly occurs (e.g. patient has a high change of going into afribulation in the next five mins), or to more subtle actions (patient is experiencing pain and needs a change in the medications administered by their IV). These methods, if successfully implemented could help hospitals more efficiently allocate resources and potentially save lives.</p>
+<p>Patient monitoring systems in hospitals have a complex web of sensors constantly reading data from patients. These systems are programed to alert staff if different thresholds are crossed indicating the occurance (, or likely occurance,) of an event such as a heart attack. Continuous classification methods could assist these systems by automatically learning complex patterns related to events of interest and producing a continuous probability of an event in contrast to the traditional thresholding practice.</p>
+<p>By not requiring explicit checks programed into sensors (temperature above <span class="math inline">\(x\)</span> degrees), and easily combining the signals from multiple sensors, continuous classification could both provide more personalized and sensitive detection for outcomes of interest and help hospitals more efficiently allocate resources and potentially save lives.</p>
 </div>
 </div>
 <div id="history-of-methods" class="section level2">
@@ -195,50 +196,65 @@
 <h3><span class="header-section-number">1.3.1</span> Windowed regression</h3>
 <p>Perhaps the most intuitive approach to the problem of incorporating context from previous time points into your prediction is to use a windowed approach. Broadly, in these approaches a window of some width (in previous observation numbers or time length) is sequentially run over the series. The data obtained from the window may have some form of summary applied to it. This could be a mean, median, or any other function which is then used to predict with.</p>
 <p>By summarizing the multiple data-points into a single (or few) values noise can be removed, but at the cost of potentially throwing away useful information captured by the interval (such as trajectory.)</p>
-<p>If the data are kept intact more advanced methods are available. These include dynamic time warping (<span class="citation">Berndt and Clifford (<a href="#ref-dtw">1994</a>)</span>) or kernel methods (see next section). This allows more information to be retained in the sample but at the cost of setting a limit on how far back your model can learn dependencies in the data. For instance, if your window is one hour long but an activity lasts two hours your model will have a very hard time recognizing it. This is equivalent to an infinitely strong prior on the interaction timeline (<span class="citation">Graves and others (<a href="#ref-graves_rnn">2012</a>)</span>).</p>
+<div class="figure" style="text-align: center"><span id="fig:dynamictimewarp"></span>
+<img src="https://static1.squarespace.com/static/55ff6aece4b0ad2d251b3fee/t/5751d9dd40261d920b308196/1464982022839/" alt="Comparison of dynamic time warping and traditional euclidean-based similarity between two time series sequences. Image courtousy of [SFL Scientific](https://sflscientific.com/data-science-blog/2016/6/3/dynamic-time-warping-time-series-analysis-ii)." width="30%" />
+<p class="caption">
+Figure 1.1: Comparison of dynamic time warping and traditional euclidean-based similarity between two time series sequences. Image courtousy of <a href="https://sflscientific.com/data-science-blog/2016/6/3/dynamic-time-warping-time-series-analysis-ii">SFL Scientific</a>.
+</p>
+</div>
+<p>If the time dimension of the data are kept intact more advanced methods are available. One common example is dynamic time warping (<span class="citation">Berndt and Clifford (<a href="#ref-dtw">1994</a>)</span>, figure <a href="index.html#fig:dynamictimewarp">1.1</a>). In dynamic time warping the shape of a time series signals are matched by either squeezing or stretching the time dimension. This allows for the computation of similarity between signal patterns, rather than scale. Another common approach are kernel methods (see next section). Both of these methods allow more information to be retained in the sample but at the cost of setting a limit on how far back your model can learn dependencies in the data. For instance, if your window is one hour long but an activity lasts two hours your model will have a very hard time recognizing it.</p>
+<p>One way to think of the window size in these approaches is as an infinitely strong prior on the interaction timeline (<span class="citation">Graves (<a href="#ref-graves_rnn">2012</a>)</span>). No matter how strong the data support informative signals from time points <span class="math inline">\(k\)</span> steps back, if our window is less than <span class="math inline">\(k\)</span> wide, our model will never reflect this.</p>
 </div>
 <div id="transformation-methods" class="section level3">
 <h3><span class="header-section-number">1.3.2</span> Transformation methods</h3>
-<p>As mentioned before, when a window is scanned across the time dimension of data, one of the ways of extracting information is by performing some transformation on the data. Common examples include wavelet or Fourier transforms. These methods attempt to separate the data into separate components. For instance, Fourier transforms applied to accelerometer data from an individuals wrist can be used to detect the frequencies associated with walking and running (<span class="citation">Ravi et al. (<a href="#ref-accelerometer_activity">2005</a>)</span>). These methods have also been used extensively in electrical systems and signal processing to help determine the state of the system.</p>
+<p>As mentioned before, when a window is scanned across the time dimension of data, one of the ways of extracting information is by performing some transformation on the data. Common examples include wavelet or Fourier transforms. These methods decompose complex correlated signals into many simple components. For instance, Fourier transforms applied to accelerometer data from an individuals wrist can be used to detect the frequencies associated with walking and running (<span class="citation">Ravi et al. (<a href="#ref-accelerometer_activity">2005</a>)</span>). These methods have also been used extensively in electrical systems and signal processing to help determine the state of the system.</p>
 <div class="figure" style="text-align: center"><span id="fig:fouriertransform"></span>
 <img src="figures/fourier_transform.png" alt="Example of transforming data from the data-domain to the frequency-domain for time series data. Image courtousy of [Allen D. Elster, MD FACR](http://mriquestions.com/index.html)." width="60%" />
 <p class="caption">
-Figure 1.1: Example of transforming data from the data-domain to the frequency-domain for time series data. Image courtousy of <a href="http://mriquestions.com/index.html">Allen D. Elster, MD FACR</a>.
+Figure 1.2: Example of transforming data from the data-domain to the frequency-domain for time series data. Image courtousy of <a href="http://mriquestions.com/index.html">Allen D. Elster, MD FACR</a>.
 </p>
 </div>
 <p>A few limitations are imposed by these methods. First, as previously mentioned, they are subject to the windowing constraints. Secondly, they rely on the data to be periodic or oscillatory in nature. For instance, accelerometer data oscillates back and forth as the individual swings their arms and electrical systems are inherently oscillatory. Data such as heart-rate or step counts produced by devices like apple watches and fitbits are a rather stable signal<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> and thus transformation methods are unable to separate them into frequency domains at small time scales. In addition, these methods are unable to deal with non-numeric data which severally limits them in heterogeneous data domains such as EHR data.</p>
 </div>
 <div id="hidden-markov-models" class="section level3">
 <h3><span class="header-section-number">1.3.3</span> Hidden Markov Models</h3>
-<p>In an attempt to deal with the fact that in most scenarios the classification of time point <span class="math inline">\(t\)</span> is dependent on that of previous time points, hidden Markov models (or HMMs) model data as a series of observations generated by a system transitioning between some unobserved (or latent) states. This is done by constructing a transition matrix that denotes the probability of transitioning from one state to another and conditioning it on whatever observed data you have.</p>
+<p>In an attempt to deal with the fact that in most scenarios the classification of time point <span class="math inline">\(t\)</span> is dependent on that of previous time points, hidden Markov models (or HMMs) model data as a series of observations generated by a system transitioning between some unobserved (or latent) states. This is done by constructing a transition matrix that denotes the probability of transitioning from one state to another and conditioning it on whatever observed data you have. This can be thought of in mathematical form as the the probability of transitioning from one state <span class="math inline">\(s_a\)</span> to another <span class="math inline">\(s_b\)</span> given some input data at time t (<span class="math inline">\(x_t\)</span>).</p>
 <p><span class="math display">\[P(s_a -&gt; s_b | x_t) = ...\]</span></p>
 <p>This allows the model to learn time dependencies in the data. For instance, if a person is running now their next state is probably going to be walking rather than sitting or swimming.</p>
 <p>HMMs were the state of the art models on continuous classification problems until very recently and are still very valuable for many problems. However, their greatest advantage is also their greatest disadvantage.</p>
 <p>The Markov property (or the first ‘M’ in HMM) states that the next state of the system being modeled depends exclusively on the current state. This means that the model is ‘memory-less.’ For instance, returning to our running example, say an individual had been running in the previous time point, the model will most likely pick walking as their next state (ignoring any conditional data for simplicity) but what if before they were running they were swimming? This fact from multiple time-steps before would strongly hint that the next state would in fact be biking and not walking (they are running a triathlon.)</p>
-<p>There are ways to fix this such as extending the model’s transition probabilities to multiple time-steps, however the number of parameters needed to estimate transition probabilities for <span class="math inline">\(m\)</span> previous time steps is (# of classes) to the <span class="math inline">\(k^{th}\)</span> power, which rapidly becomes untenable. In addition, we have to a priori decide the number of time steps in the past that matter.</p>
+<p>There are ways to fix this such as extending the model’s transition probabilities to multiple time-steps, however the number of parameters needed to estimate transition probabilities for <span class="math inline">\(m\)</span> previous time steps is (# of classes) to the <span class="math inline">\(k^{th}\)</span> power: <span class="math inline">\(m^k\)</span>, which rapidly becomes intractable. In addition, we have to a priori decide the number of time steps in the past that matter.</p>
 </div>
 <div id="advantages-of-deep-learning-methods" class="section level3">
 <h3><span class="header-section-number">1.3.4</span> Advantages of deep learning methods</h3>
 <p>Before we dive into the mathematical underpinnings of deep learning methods we will go over how they solve many of the aforementioned issues from traditional methods.</p>
 <div id="less-domain-knowledge-needed" class="section level4">
 <h4><span class="header-section-number">1.3.4.1</span> Less Domain Knowledge Needed</h4>
-<p>One of the ways that it helps to think about deep learning is as a computer program that programs itself given an objective and examples. In his popular blog post <a href="https://medium.com/@karpathy/software-2-0-a64152b37c35"><em>Software 2.0</em></a> Andrej Karapathy makes the argument that deep learning is powerful because it helps avoid traditionally tedius processes like explicitly defining cases for the computer to deal with. One of the ways this is applicable to our problems is the ability for deep learning models to adapt to a wide range of problem/ data domains without much human-defined customization.</p>
-<p>This can be seen in the context of the input data form. If you had data from an accelerometer it could be fit into the same neural network as data from a more static heart-rate sensor would. The models are flexible enough to learn how to deal with these input patterns without requiring the researcher to explicitly define a transformation based on the data. One advantage of this independence from large amounts of human intervention has the potential to make performance assessments more accurate (<span class="citation">Harrell Jr (<a href="#ref-rms">2015</a>)</span>).</p>
+<p>One of the ways that it helps to think about deep learning is as a computer program that programs itself given an objective and examples. In his popular blog post <a href="https://medium.com/@karpathy/software-2-0-a64152b37c35"><em>Software 2.0</em></a> Andrej Karapathy makes the argument that deep learning is powerful because it helps avoid the tedius process pf explicitly defining the context surrounding cases the computer is supposed to detect. One of the ways this is applicable to our problems is the ability for deep learning models to adapt to a wide range of problem/ data domains without much human-defined customization.</p>
+<p>One demonstration of this advantage is less manual manipulation of data is needed before it can be used in models. If you had data from an accelerometer it could be fit with the same neural network as data from a more static heart-rate sensor would. The models are flexible enough to learn how to deal with different input patterns and characteristics without requiring the researcher to explicitly define a transformation. This independence from large amounts of human intervention has the potential to make performance assessments more accurate by automating most parts of the model fitting process (<span class="citation">Harrell Jr (<a href="#ref-rms">2015</a>)</span>).</p>
 </div>
 <div id="can-find-and-deal-with-arbitrary-time-dependencies" class="section level4">
 <h4><span class="header-section-number">1.3.4.2</span> Can find and deal with arbitrary time dependencies</h4>
-<p>Deep learning models are theoretically capable of learning time dependencies of infinite length and strength (<span class="citation">Hornik, Stinchcombe, and White (<a href="#ref-universal_approximators">1989</a>)</span>). While obviously it is impossible to supply a network with enough data to fit the number of parameters neccesary to do so, the fact remains that deep learning methods are capable of handling long-term time dependencies. In addition to being able to model these dependencies they do so without any need for explicitly telling the model the length of the dependencies and also using substantially fewer parameters than an extended hidden Markov model (<span class="citation">Graves and others (<a href="#ref-graves_rnn">2012</a>)</span>).</p>
+<p>Deep learning models are theoretically capable of learning time dependencies of infinite length and strength (<span class="citation">Hornik, Stinchcombe, and White (<a href="#ref-universal_approximators">1989</a>)</span>). While obviously it is impossible to supply a network with enough data to fit the number of parameters neccesary to do so, the fact remains that deep learning methods are capable of handling long-term time dependencies. In addition to being able to model these dependencies they do so without any need for explicitly telling the model the length of the dependencies and also using substantially fewer parameters than an extended hidden Markov model (<span class="citation">Graves (<a href="#ref-graves_rnn">2012</a>)</span>).</p>
 <p>For example, a recurrent neural network (RNN) can automatically learn that if a person swims and then runs, they will most likely be biking next, but it could also remember that a patient was given a flu vaccine three months prior and thus their symptoms most likely don’t indicate the flu but a cold. This flexibility to automatically learn arbitrary time dependency patterns is powerful in not only its ability to create accurate models, but potentially for exploration of causal patterns.</p>
 </div>
 <div id="multiple-architectures-for-solving-traditional-problems" class="section level4">
 <h4><span class="header-section-number">1.3.4.3</span> Multiple architectures for solving traditional problems</h4>
-<p>In a similar vein, one of the decisions that does need to be made with deep learning: which network architecture to use, conveniently is rather robust to the problem of continuous classification. For instance: convolutional neural networks that have achieved great success in computer vision were actually originally designed for time series data, and recent advanced such as dilated convolutions (<span class="citation">Yu and Koltun (<a href="#ref-dilated_convolutions">2015</a>)</span>) allow for them to search as far back in the time-series as needed to find valuable information for classification. Recurrent neural networks (which will be elaborated on in the following sections) are also fantastic for time-series data, as they explicitly model the autocorrelation found in the data via a recurrent cycle in their computation graph. This allows them to read data much like one reads a book, selectively remembering past events that have applicability to the current state.</p>
+<p>In a similar vein, one of the decisions that does need to be made with deep learning: which network architecture to use, conveniently is rather robust to the problem of continuous classification. For instance: convolutional neural networks that have achieved great success in computer vision were actually originally designed for time series data, and recent advances such as dilated convolutions (<span class="citation">Yu and Koltun (<a href="#ref-dilated_convolutions">2015</a>)</span>)(convolutions with gaps in their input dimension to allow for increasing context size as layers progress deeper) allow for them to search as far back in the time-series as needed to find valuable information for classification. Recurrent neural networks (which will be elaborated on in the following sections) are also fantastic for time-series data, as they explicitly model the autocorrelation found in the data via a recurrent cycle in their computation graph. This allows them to read data much like one reads a book, selectively remembering past events that have applicability to the current state.</p>
 </div>
 <div id="downsides" class="section level4">
 <h4><span class="header-section-number">1.3.4.4</span> Downsides</h4>
-<p>As a result of being so flexible deep learning models require a lot of data to properly tune all their parameters without over fitting. This results in not only more data being needed (with some exceptions such as Bayesian methods) but also, when combined with their non-convexity, requires a large amount of computation power.</p>
-<p>Another side effect, although one shared by many other approaches described here, is that neural networks are not amenable to inference on specific factors contributing to their classifications.</p>
-<p>These and other downsides and potential solutions are explored in the last chapter.</p>
+<p>As a result of being so flexible deep learning models require a lot of data to properly tune all their parameters without over fitting. This results in not only more data being needed (with some exceptions such as Bayesian methods.)</p>
+<p>In addition, neural network optimization can not be calculated with a closed form solution, thus requiring the use of itterative methods to traverse the objective (or cost/loss) function. The training of neural networks is a non-convex problem. This means that there is no guarentee that a found minima is a global minima and that for any global minima, there is no guarentee that it is unique.</p>
+<div class="figure" style="text-align: center"><span id="fig:convexoptim"></span>
+<img src="figures/convex_optimization.png" alt="Comparison of the objective surface of a convex and non-convex optimization problem." width="60%" />
+<p class="caption">
+Figure 1.3: Comparison of the objective surface of a convex and non-convex optimization problem.
+</p>
+</div>
+<p>The fact that neural networks need a lot of data and require costly optimization procedures means they are very computationally intensive to train.</p>
+<p>Another downside, although one shared by many other approaches described here, is that neural networks are not amenable to inference on specific factors contributing to their classifications. The nature of neural networks as a “black-box” method can decrease trust in the models and also can hide cases where the model has learned to classify on potential un-intentional characteristics of the training set (such as the instraument that took measurements instead of the measurements themselves).</p>
+<p>These downsides and potential solutions are explored in the last chapter.</p>
 <p>In the next chapter we will go over the basics of modern deep neural networks.</p>
 
 </div>
@@ -248,7 +264,7 @@ Figure 1.1: Example of transforming data from the data-domain to the frequency-d
 <h3>References</h3>
 <div id="refs" class="references">
 <div id="ref-wearable_atrial">
-<p>Jose M. Sanchez, Brandon Ballinger, MD, and FHRS. Gregory M. Marcus MD. 2017. “Detecting Atrial Fibrillation Using a Smart Watch - the mRhythm Study.” In <em>Heart Rhythm Scientific Sessions</em>. Heart Rhythm Society.</p>
+<p>Jose M. Sanchez, MD, BS Brandon Ballinger, MD FHRS Jeffrey E. Olgin, MD MPH Mark J. Pletcher, PhD Eric Vittinghoff, BA Emily Lee, BA Shannon Fan, et al. 2017. “Detecting Atrial Fibrillation Using a Smart Watch - the mRhythm Study.” In <em>Heart Rhythm Scientific Sessions</em>. Heart Rhythm Society.</p>
 </div>
 <div id="ref-deep_ehr">
 <p>Shickel, Benjamin, Patrick Tighe, Azra Bihorac, and Parisa Rashidi. 2017. “Deep Ehr: A Survey of Recent Advances on Deep Learning Techniques for Electronic Health Record (Ehr) Analysis.” <em>arXiv Preprint arXiv:1706.03446</em>.</p>
@@ -257,7 +273,7 @@ Figure 1.1: Example of transforming data from the data-domain to the frequency-d
 <p>Berndt, Donald J, and James Clifford. 1994. “Using Dynamic Time Warping to Find Patterns in Time Series.” In <em>KDD Workshop</em>, 10:359–70. 16. Seattle, WA.</p>
 </div>
 <div id="ref-graves_rnn">
-<p>Graves, Alex, and others. 2012. <em>Supervised Sequence Labelling with Recurrent Neural Networks</em>. Vol. 385. Springer.</p>
+<p>Graves, Alex. 2012. <em>Supervised Sequence Labelling with Recurrent Neural Networks</em>. Vol. 385. Springer.</p>
 </div>
 <div id="ref-accelerometer_activity">
 <p>Ravi, Nishkam, Nikhil Dandekar, Preetham Mysore, and Michael L Littman. 2005. “Activity Recognition from Accelerometer Data.” In <em>Aaai</em>, 5:1541–6. 2005.</p>
@@ -316,7 +332,7 @@ gitbook.start({
 "link": "https://github.com/rstudio/bookdown-demo/edit/master/index.Rmd",
 "text": "Edit"
 },
-"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"download": ["strayer_qualifying_exam.pdf", "strayer_qualifying_exam.epub"],
 "toc": {
 "collapse": "subsection"
 }
