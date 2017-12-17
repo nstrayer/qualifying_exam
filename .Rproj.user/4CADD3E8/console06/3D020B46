@@ -1,1 +1,75 @@
 [K]0;nick@compooper: ~/quals/report[01;32mnick@compooper[00m:[01;34m~/quals/report[00m$ lgit[K t[K[Kt "finished editing chapter one"
+[matt_edits 4e4cc20] finished editing chapter one
+ 84 files changed, 242 insertions(+), 6816 deletions(-)
+ rewrite .Rproj.user/4CADD3E8/console06/3D020B46 (100%)
+ rewrite .Rproj.user/4CADD3E8/console06/INDEX001 (100%)
+ delete mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/18EAE5BA-contents
+ delete mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/2ABFC372-contents
+ delete mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/2CBA05BF-contents
+ delete mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/2FA1B995-contents
+ delete mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/30693324-contents
+ delete mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/3C6C1100
+ delete mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/3CE12D39-contents
+ delete mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/3E3214B1-contents
+ delete mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/43D5CEAC-contents
+ delete mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/4D8E061D
+ delete mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/5607CFD1-contents
+ delete mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/5A76B209-contents
+ delete mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/5DBC6FE1
+ delete mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/5EE6FCF1-contents
+ delete mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/66427A27-contents
+ delete mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/682756F6-contents
+ delete mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/6A417AB0-contents
+ delete mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/77A4E79E
+ delete mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/7809327B-contents
+ delete mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/7F20BF5B-contents
+ delete mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/8549A7AF-contents
+ delete mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/8626EDFE-contents
+ delete mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/93222CE5
+ delete mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/96EA21A1-contents
+ delete mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/9CC3E002-contents
+ delete mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/A0335D69
+ delete mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/B1F35A2F-contents
+ delete mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/B3794AB3
+ delete mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/BA659C96-contents
+ delete mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/BD4C9B13-contents
+ delete mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/BE689A18-contents
+ delete mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/C012BC11-contents
+ delete mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/C03AE076
+ delete mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/C31F18BC-contents
+ delete mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/CF1B2F7D-contents
+ delete mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/D0BD55A2
+ delete mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/DEB48125-contents
+ delete mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/DF98E92A-contents
+ delete mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/EABF8429-contents
+ delete mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/F02960C9-contents
+ delete mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/F1E508AB
+ delete mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/F41D4404-contents
+ delete mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/F5E31349-contents
+ delete mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/F6AED1DE-contents
+ delete mode 100644 .Rproj.user/4CADD3E8/sources/s-534a5643/FF6C9468-contents
+ delete mode 100644 .Rproj.user/shared/notebooks/23D311B2-04-future_directions/1/4CADD3E8534a5643/chunks.json
+ delete mode 100644 .Rproj.user/shared/notebooks/3D89CDA7-reportother/1/s/chunks.json
+ delete mode 100644 .Rproj.user/shared/notebooks/43E314EC-03-sequence_architectures/1/4CADD3E8534a5643/chunks.json
+ delete mode 100644 .Rproj.user/shared/notebooks/7A7899BE-report/1/s/chunks.json
+ delete mode 100644 .Rproj.user/shared/notebooks/89230BD-03-architectures/1/4CADD3E8534a5643/chunks.json
+ delete mode 100644 .Rproj.user/shared/notebooks/89230BD-03-architectures/1/s/chunks.json
+ delete mode 100644 .Rproj.user/shared/notebooks/B4887F3E-02-deep_learning/1/4CADD3E8534a5643/chunks.json
+ delete mode 100644 .Rproj.user/shared/notebooks/EA93BA34-01-intro/1/s/chunks.json
+ delete mode 100644 .Rproj.user/shared/notebooks/EDBEA361-03-deep_learning/1/4CADD3E8534a5643/chunks.json
+ delete mode 100644 .Rproj.user/shared/notebooks/EDBEA361-03-deep_learning/1/s/chunks.json
+ create mode 100644 .gitignore
+ create mode 100644 _book/figures/convex_optimization.png
+ rewrite _book/search_index.json (99%)
+ create mode 100644 _book/strayer_qualifying_exam_files/figure-html/unnamed-chunk-2-1.png
+ create mode 100644 _bookdown_files/strayer_qualifying_exam_files/figure-html/unnamed-chunk-2-1.png
+ create mode 100644 figures/convex_optimization.png
+Counting objects: 53, done.
+Delta compression using up to 8 threads.
+Compressing objects:   2% (1/40)   Compressing objects:   5% (2/40)   Compressing objects:   7% (3/40)   Compressing objects:  10% (4/40)   Compressing objects:  12% (5/40)   Compressing objects:  15% (6/40)   Compressing objects:  17% (7/40)   Compressing objects:  20% (8/40)   Compressing objects:  22% (9/40)   Compressing objects:  25% (10/40)   Compressing objects:  27% (11/40)   Compressing objects:  30% (12/40)   Compressing objects:  32% (13/40)   Compressing objects:  35% (14/40)   Compressing objects:  37% (15/40)   Compressing objects:  40% (16/40)   Compressing objects:  42% (17/40)   Compressing objects:  45% (18/40)   Compressing objects:  47% (19/40)   Compressing objects:  50% (20/40)   Compressing objects:  52% (21/40)   Compressing objects:  55% (22/40)   Compressing objects:  57% (23/40)   Compressing objects:  60% (24/40)   Compressing objects:  62% (25/40)   Compressing objects:  65% (26/40)   Compressing objects:  67% (27/40)   Compressing objects:  70% (28/40)   Compressing objects:  72% (29/40)   Compressing objects:  75% (30/40)   Compressing objects:  77% (31/40)   Compressing objects:  80% (32/40)   Compressing objects:  82% (33/40)   Compressing objects:  85% (34/40)   Compressing objects:  87% (35/40)   Compressing objects:  90% (36/40)   Compressing objects:  92% (37/40)   Compressing objects:  95% (38/40)   Compressing objects:  97% (39/40)   Compressing objects: 100% (40/40)   Compressing objects: 100% (40/40), done.
+Writing objects:   1% (1/53)   Writing objects:   3% (2/53)   Writing objects:   5% (3/53)   Writing objects:   7% (4/53)   Writing objects:   9% (5/53)   Writing objects:  11% (6/53)   Writing objects:  13% (7/53)   Writing objects:  15% (8/53)   Writing objects:  16% (9/53)   Writing objects:  18% (10/53)   Writing objects:  20% (11/53)   Writing objects:  22% (12/53)   Writing objects:  24% (13/53)   Writing objects:  26% (14/53)   Writing objects:  28% (15/53)   Writing objects:  30% (16/53)   Writing objects:  32% (17/53)   Writing objects:  33% (18/53)   Writing objects:  35% (19/53)   Writing objects:  37% (20/53)   Writing objects:  39% (21/53)   Writing objects:  41% (22/53)   Writing objects:  43% (23/53)   Writing objects:  45% (24/53)   Writing objects:  47% (25/53)   Writing objects:  49% (26/53)   Writing objects:  50% (27/53)   Writing objects:  52% (28/53)   Writing objects:  54% (29/53)   Writing objects:  56% (30/53)   Writing objects:  58% (31/53)   Writing objects:  60% (32/53)   Writing objects:  62% (33/53)   Writing objects:  64% (34/53)   Writing objects:  66% (35/53)   Writing objects:  67% (36/53)   Writing objects:  69% (37/53)   Writing objects:  71% (38/53)   Writing objects:  73% (39/53)   Writing objects:  75% (40/53)   Writing objects:  77% (41/53)   Writing objects:  79% (42/53)   Writing objects:  81% (43/53)   Writing objects:  83% (44/53)   Writing objects:  84% (45/53)   Writing objects:  86% (46/53)   Writing objects:  88% (47/53)   Writing objects:  90% (48/53)   Writing objects:  92% (49/53)   Writing objects:  94% (50/53)   Writing objects:  96% (51/53)   Writing objects:  98% (52/53)   Writing objects: 100% (53/53)   Writing objects: 100% (53/53), 167.76 KiB | 0 bytes/s, done.
+Total 53 (delta 18), reused 0 (delta 0)
+remote: Resolving deltas:   0% (0/18)   [Kremote: Resolving deltas:   5% (1/18)   [Kremote: Resolving deltas:  11% (2/18)   [Kremote: Resolving deltas:  16% (3/18)   [Kremote: Resolving deltas:  22% (4/18)   [Kremote: Resolving deltas:  27% (5/18)   [Kremote: Resolving deltas:  33% (6/18)   [Kremote: Resolving deltas:  38% (7/18)   [Kremote: Resolving deltas:  44% (8/18)   [Kremote: Resolving deltas:  50% (9/18)   [Kremote: Resolving deltas:  55% (10/18)   [Kremote: Resolving deltas:  61% (11/18)   [Kremote: Resolving deltas:  72% (13/18)   [Kremote: Resolving deltas:  77% (14/18)   [Kremote: Resolving deltas:  83% (15/18)   [Kremote: Resolving deltas:  88% (16/18)   [Kremote: Resolving deltas:  94% (17/18)   [Kremote: Resolving deltas: 100% (18/18)   [Kremote: Resolving deltas: 100% (18/18), completed with 17 local objects.[K
+To git@github.com:nstrayer/qualifying_exam.git
+ * [new branch]      matt_edits -> matt_edits
+]0;/home/nick/quals/report]0;nick@compooper: ~/quals/report[01;32mnick@compooper[00m:[01;34m~/quals/report[00m$ [K]0;nick@compooper: ~/quals/report[01;32mnick@compooper[00m:[01;34m~/quals/report[00m$ ,l[K[Klgit "added all of mats changes[K[K[K[K[K[K[K[K[K[Kts[Kts changes"
