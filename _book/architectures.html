@@ -25,7 +25,7 @@
 <meta name="author" content="Nick Strayer">
 
 
-<meta name="date" content="2017-12-08">
+<meta name="date" content="2017-12-17">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -98,9 +98,15 @@
 </ul></li>
 <li class="chapter" data-level="2.7" data-path="neuralnetworks.html"><a href="neuralnetworks.html#activation-functions"><i class="fa fa-check"></i><b>2.7</b> Activation Functions</a></li>
 <li class="chapter" data-level="2.8" data-path="neuralnetworks.html"><a href="neuralnetworks.html#loss-functions"><i class="fa fa-check"></i><b>2.8</b> Loss functions</a><ul>
-<li class="chapter" data-level="2.8.1" data-path="neuralnetworks.html"><a href="neuralnetworks.html#regression-loss-functions"><i class="fa fa-check"></i><b>2.8.1</b> Regression loss functions</a></li>
-<li class="chapter" data-level="2.8.2" data-path="neuralnetworks.html"><a href="neuralnetworks.html#classification-loss-functions"><i class="fa fa-check"></i><b>2.8.2</b> Classification loss functions</a></li>
-<li class="chapter" data-level="2.8.3" data-path="neuralnetworks.html"><a href="neuralnetworks.html#other-loss-functions"><i class="fa fa-check"></i><b>2.8.3</b> Other loss functions</a></li>
+<li class="chapter" data-level="2.8.1" data-path="neuralnetworks.html"><a href="neuralnetworks.html#likelihoods"><i class="fa fa-check"></i><b>2.8.1</b> Likelihoods</a></li>
+<li class="chapter" data-level="2.8.2" data-path="neuralnetworks.html"><a href="neuralnetworks.html#regression-loss-functions"><i class="fa fa-check"></i><b>2.8.2</b> Regression loss functions</a></li>
+<li class="chapter" data-level="2.8.3" data-path="neuralnetworks.html"><a href="neuralnetworks.html#classification-loss-functions"><i class="fa fa-check"></i><b>2.8.3</b> Classification loss functions</a></li>
+<li class="chapter" data-level="2.8.4" data-path="neuralnetworks.html"><a href="neuralnetworks.html#other-loss-functions"><i class="fa fa-check"></i><b>2.8.4</b> Other loss functions</a></li>
+</ul></li>
+<li class="chapter" data-level="2.9" data-path="neuralnetworks.html"><a href="neuralnetworks.html#avoiding-overfitting"><i class="fa fa-check"></i><b>2.9</b> Avoiding Overfitting</a><ul>
+<li class="chapter" data-level="2.9.1" data-path="neuralnetworks.html"><a href="neuralnetworks.html#parameter-penalization"><i class="fa fa-check"></i><b>2.9.1</b> Parameter penalization</a></li>
+<li class="chapter" data-level="2.9.2" data-path="neuralnetworks.html"><a href="neuralnetworks.html#dropout"><i class="fa fa-check"></i><b>2.9.2</b> Dropout</a></li>
+<li class="chapter" data-level="2.9.3" data-path="neuralnetworks.html"><a href="neuralnetworks.html#early-stopping"><i class="fa fa-check"></i><b>2.9.3</b> Early Stopping</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="architectures.html"><a href="architectures.html"><i class="fa fa-check"></i><b>3</b> Architectures For Sequence Learning</a><ul>
@@ -120,6 +126,7 @@
 <li class="chapter" data-level="3.3.3" data-path="architectures.html"><a href="architectures.html#weight-sharing-1"><i class="fa fa-check"></i><b>3.3.3</b> Weight sharing</a></li>
 <li class="chapter" data-level="3.3.4" data-path="architectures.html"><a href="architectures.html#translation-invariance"><i class="fa fa-check"></i><b>3.3.4</b> Translation invariance</a></li>
 </ul></li>
+<li class="chapter" data-level="3.4" data-path="architectures.html"><a href="architectures.html#combinations-of-rnns-and-cnns"><i class="fa fa-check"></i><b>3.4</b> Combinations of RNNs and CNNs</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="future.html"><a href="future.html"><i class="fa fa-check"></i><b>4</b> Opportunities for advancing field</a><ul>
 <li class="chapter" data-level="4.1" data-path="future.html"><a href="future.html#what-to-do-with-all-those-parameters"><i class="fa fa-check"></i><b>4.1</b> What to do with all those parameters</a><ul>
@@ -206,7 +213,7 @@ Figure 3.3: Unrolled view of the RNN shown in previous figure. Each timestep has
 </div>
 <div id="weight-sharing" class="section level3">
 <h3><span class="header-section-number">3.2.4</span> Weight sharing</h3>
-<p>The unrolled graph representation shows that a recurrent neural network is actually a very large neural network, so untuitively it should be hard to train. The secret to RNNs having maintainable parameter quantities is weight sharing. In the unrolled graph every layer has the same weights. This means that the hidden layer always parses the input data with the same affine function and combines it with the previous hidden state in the same way; likewise, with the same hidden state activation, the model output will always be the same<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a>.</p>
+<p>The unrolled graph representation shows that a recurrent neural network is actually a very large neural network, so unintuitively it should be hard to train. The secret to RNNs having maintainable parameter quantities is weight sharing. In the unrolled graph every layer has the same weights. This means that the hidden layer always parses the input data with the same affine function and combines it with the previous hidden state in the same way; likewise, with the same hidden state activation, the model output will always be the same<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a>.</p>
 <p>In order to calculate gradients, first an initial hidden state is defined (usually all zeros) and then forward propagation is carried out through all <span class="math inline">\(t\)</span> time-points of the input. Then, back propagation starts from the last output and proceeds all the way back through the computation graph. The resulting gradient descent updates are a function of the average of all of the gradients calculated. This procedure, although technically no different from plain back propagation, is known as the <em>back-propigation through time</em> (BPTT) algorithm. For a thorough overview of the form of the gradient equations for BPTT see <span class="citation">Goodfellow, Bengio, and Courville (<a href="#ref-goodfellow_DL">2016</a>)</span> chapter 10.2.2.</p>
 </div>
 <div id="problems-with-exploding-and-vanishing-gradients" class="section level3">
@@ -231,7 +238,7 @@ Figure 3.3: Unrolled view of the RNN shown in previous figure. Each timestep has
 \end{align}\]</span>
 <p>The form of the function composition in <a href="architectures.html#eq:simplernn3">(3.3)</a> allows us to see that while the eigen matrix is continuously being raised to the <span class="math inline">\(t\)</span> power, it will cause its eigenvalues with magnitude greater than one to diverge to infinity and those with magnitude less than one to converge to zero.</p>
 <p>This observation leads to the problem that, over any long term sequence, our model will have a very hard time keeping track of dependencies. When applied to back propagation this is essentially means that the gradients associated with parameters linked to longer term dependencies will either vanish (go to zero) or explode (go to infinity).</p>
-<p>Due to the problems caused by this repeated function composition plain RNNs have generally proved unable to learn dependencies longer than a few time-steps<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a>, and when they do, they are outweighed by those closer in time, simply due to mathematical inconveniences and not necessarily information importance (<span class="citation">Bengio and Frasconi (<a href="#ref-bengio_gradient">1994</a>)</span>, <span class="citation">Graves and others (<a href="#ref-graves_rnn">2012</a>)</span>).</p>
+<p>Due to the problems caused by this repeated function composition plain RNNs have generally proved unable to learn dependencies longer than a few time-steps<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a>, and when they do, they are outweighed by those closer in time, simply due to mathematical inconveniences and not necessarily information importance (<span class="citation">Bengio and Frasconi (<a href="#ref-bengio_gradient">1994</a>)</span>, <span class="citation">Graves (<a href="#ref-graves_rnn">2012</a>)</span>).</p>
 </div>
 <div id="modern-extensions" class="section level3">
 <h3><span class="header-section-number">3.2.6</span> Modern Extensions</h3>
@@ -260,7 +267,7 @@ Figure 3.4: The internal structure of an LSTM hidden unit. The gates are all fed
 Figure 3.5: The internal structure of an GRU hidden unit. Unlike the LSTM there are only two gates, with the update and forget get tasks being taken care of by a single gate that controls what proportion to remember and what to forget. In addition, a reset gate controls how much of the hidden state from the previous step to bring into the current.
 </p>
 </div>
-<p>While the GRU has fewer parameters to train, and does appear to perform better in lower data scenarios (<span class="citation">Graves and others (<a href="#ref-graves_rnn">2012</a>)</span>), in many cases the increased expressiveness of the LSTM allows for better performance. A recent large-scale survey of RNN architectures (<span class="citation">Melis, Dyer, and Blunsom (<a href="#ref-rnn_survey">2017</a>)</span>) found that on all benchmarks LSTM networks outperformed GRUs when using a systematic hyper-parameter search.</p>
+<p>While the GRU has fewer parameters to train, and does appear to perform better in lower data scenarios (<span class="citation">Graves (<a href="#ref-graves_rnn">2012</a>)</span>), in many cases the increased expressiveness of the LSTM allows for better performance. A recent large-scale survey of RNN architectures (<span class="citation">Melis, Dyer, and Blunsom (<a href="#ref-rnn_survey">2017</a>)</span>) found that on all benchmarks LSTM networks outperformed GRUs when using a systematic hyper-parameter search.</p>
 </div>
 </div>
 <div id="computational-hurdles" class="section level3">
@@ -306,8 +313,14 @@ Figure 3.7: A diagram of how a convolutions are applied to sequential data.
 <p>A pooling layer acts similarly to a convolutional layer in that it scans sequentially over its input, however in the case of a pooling layer the input is the output of a convolutional layer. In addition, instead of applying some learned linear transformation to its inputs, it performs a predesignated pooling operation such as finding the maximum, or average of the input values for its window and then returning that singular value. By taking steps larger than one between each application of the filter (also known as the stride), this serves to create an indicator for if a feature was ‘seen’ in the region, but it does not care about where in that region it was seen.</p>
 <p>This can be beneficial in many scenarios. For instance, if you were trying to identify the waveform of the word “dog”, one feature detector may be to find the pattern corresponding to the “d” phoneme, and one to the “au” phoneme. Depending on the speed of the speaker, the “d” phoneme might appear two tenths of a second before the “au” one or one tenth. By pooling we help the model getting confused in this case, because it just looks for the “au” phoneme to occur in a flexible window after the “d” one.</p>
 <p>Translation invariance does also have its downsides too. Geoffrey Hinton (coincidentally the inventor of CNNs) has been very open about how he thinks <a href="www.youtube.com%2Fwatch%3Fv%3DrTawFwUvnLE&amp;usg=AOvVaw3CKtrHEhfBZkXdd7xgJ1PM">they are bad models</a>. His main complaint rests with the fact that pooling layers throw away large chunks of information in ways that animal vision systems do not. Recently he published a paper with co-authors Sara Sabour and Nicholas Frosst that introduces a new architecture called the “capsule network” (<span class="citation">Sabour, Frosst, and Hinton (<a href="#ref-capsnet">2017</a>)</span>) which acts similarly to a convolutional network with pooling, but it preserves information about the translation of the feature.</p>
-
 </div>
+</div>
+<div id="combinations-of-rnns-and-cnns" class="section level2">
+<h2><span class="header-section-number">3.4</span> Combinations of RNNs and CNNs</h2>
+<p>When a problem has dependencies that are both potentially many time steps back and complex in their nature one approach is to combine both an recurrent neural network and a convolutional one (<span class="citation">Pinheiro and Collobert (<a href="#ref-rnn_cnn">2014</a>)</span>).</p>
+<p>This can be done in two ways: first by using a convolutional layer at the input to detect patterns in the data and then feeding its lower-dimensional results to an RNN, or (less commonly), having an RNN as the input layer to detect short-term dependencies and using a CNN to tie those together into a larger classification.</p>
+<p>This combination of the two sequence architectures has delivered state of the art results in both time-series modeling (<span class="citation">Ordóñez and Roggen (<a href="#ref-cnn_rnn_time_series">2016</a>)</span>), but also natural language processing tasks (<span class="citation">Zhou et al. (<a href="#ref-crnn_text">2015</a>)</span>).</p>
+
 </div>
 </div>
 <h3>References</h3>
@@ -346,7 +359,7 @@ Figure 3.7: A diagram of how a convolutions are applied to sequential data.
 <p>Bengio, Yoshua, and Paolo Frasconi. 1994. “Credit Assignment Through Time: Alternatives to Backpropagation.” In <em>Advances in Neural Information Processing Systems</em>, 75–82.</p>
 </div>
 <div id="ref-graves_rnn">
-<p>Graves, Alex, and others. 2012. <em>Supervised Sequence Labelling with Recurrent Neural Networks</em>. Vol. 385. Springer.</p>
+<p>Graves, Alex. 2012. <em>Supervised Sequence Labelling with Recurrent Neural Networks</em>. Vol. 385. Springer.</p>
 </div>
 <div id="ref-bounded_gradient_rnn">
 <p>Sussillo, David. 2014. “RANDOM Walks: TRAINING Very Deep Nonlin-Ear Feed-Forward Networks with Smart Ini.” <em>arXiv Preprint arXiv</em> 1412.</p>
@@ -377,6 +390,15 @@ Figure 3.7: A diagram of how a convolutions are applied to sequential data.
 </div>
 <div id="ref-capsnet">
 <p>Sabour, Sara, Nicholas Frosst, and Geoffrey E Hinton. 2017. “Dynamic Routing Between Capsules.” In <em>Advances in Neural Information Processing Systems</em>, 3857–67.</p>
+</div>
+<div id="ref-rnn_cnn">
+<p>Pinheiro, Pedro, and Ronan Collobert. 2014. “Recurrent Convolutional Neural Networks for Scene Labeling.” In <em>International Conference on Machine Learning</em>, 82–90.</p>
+</div>
+<div id="ref-cnn_rnn_time_series">
+<p>Ordóñez, Francisco Javier, and Daniel Roggen. 2016. “Deep Convolutional and Lstm Recurrent Neural Networks for Multimodal Wearable Activity Recognition.” <em>Sensors</em> 16 (1). Multidisciplinary Digital Publishing Institute: 115.</p>
+</div>
+<div id="ref-crnn_text">
+<p>Zhou, Chunting, Chonglin Sun, Zhiyuan Liu, and Francis Lau. 2015. “A c-Lstm Neural Network for Text Classification.” <em>arXiv Preprint arXiv:1511.08630</em>.</p>
 </div>
 </div>
 <div class="footnotes">
@@ -426,7 +448,7 @@ gitbook.start({
 "link": "https://github.com/rstudio/bookdown-demo/edit/master/03-sequence_architectures.Rmd",
 "text": "Edit"
 },
-"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"download": ["strayer_qualifying_exam.pdf", "strayer_qualifying_exam.epub"],
 "toc": {
 "collapse": "subsection"
 }

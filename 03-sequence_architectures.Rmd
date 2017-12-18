@@ -55,7 +55,7 @@ So in fact, we still satisfy the requirement of a directed acyclic computation g
 
 ### Weight sharing
 
-The unrolled graph representation shows that a recurrent neural network is actually a very large neural network, so untuitively it should be hard to train. The secret to RNNs having maintainable parameter quantities is weight sharing. In the unrolled graph every layer has the same weights. This means that the hidden layer always parses the input data with the same affine function and combines it with the previous hidden state in the same way; likewise, with the same hidden state activation, the model output will always be the same^[We rely on the model to learn a hidden state that stores information from the past to avoid the problems with Markov processes]. 
+The unrolled graph representation shows that a recurrent neural network is actually a very large neural network, so unintuitively it should be hard to train. The secret to RNNs having maintainable parameter quantities is weight sharing. In the unrolled graph every layer has the same weights. This means that the hidden layer always parses the input data with the same affine function and combines it with the previous hidden state in the same way; likewise, with the same hidden state activation, the model output will always be the same^[We rely on the model to learn a hidden state that stores information from the past to avoid the problems with Markov processes]. 
 
 In order to calculate gradients, first an initial hidden state is defined (usually all zeros) and then forward propagation is carried out through all $t$ time-points of the input. Then, back propagation starts from the last output and proceeds all the way back through the computation graph. The resulting gradient descent updates are a function of the average of all of the gradients calculated. This procedure, although technically no different from plain back propagation, is known as the _back-propigation through time_ (BPTT) algorithm. For a thorough overview of the form of the gradient equations for BPTT see @goodfellow_DL chapter 10.2.2.
 
@@ -176,3 +176,15 @@ A pooling layer acts similarly to a convolutional layer in that it scans sequent
 This can be beneficial in many scenarios. For instance, if you were trying to identify the waveform of the word "dog", one feature detector may be to find the pattern corresponding to the "d" phoneme, and one to the "au" phoneme. Depending on the speed of the speaker, the "d" phoneme might appear two tenths of a second before the "au" one or one tenth. By pooling we help the model getting confused in this case, because it just looks for the "au" phoneme to occur in a flexible window after the "d" one. 
 
 Translation invariance does also have its downsides too. Geoffrey Hinton (coincidentally the inventor of CNNs) has been very open about how he thinks [they are bad models](www.youtube.com%2Fwatch%3Fv%3DrTawFwUvnLE&usg=AOvVaw3CKtrHEhfBZkXdd7xgJ1PM). His main complaint rests with the fact that pooling layers throw away large chunks of information in ways that animal vision systems do not. Recently he published a paper with co-authors Sara Sabour and Nicholas Frosst that introduces a new architecture called the "capsule network" (@capsnet) which acts similarly to a convolutional network with pooling, but it preserves information about the translation of the feature. 
+
+## Combinations of RNNs and CNNs
+
+When a problem has dependencies that are both potentially many time steps back and complex in their nature one approach is to combine both an recurrent neural network and a convolutional one (@rnn_cnn). 
+
+This can be done in two ways: first by using a convolutional layer at the input to detect patterns in the data and then feeding its lower-dimensional results to an RNN, or (less commonly), having an RNN as the input layer to detect short-term dependencies and using a CNN to tie those together into a larger classification. 
+
+This combination of the two sequence architectures has delivered state of the art results in both time-series modeling (@cnn_rnn_time_series), but also natural language processing tasks (@crnn_text). 
+
+
+
+
