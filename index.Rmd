@@ -40,13 +40,13 @@ More advanced, and potentially impactful, applications include extending the pre
 
 With more and more information on patients being accrued in government and hospital databases we have a clearer than ever picture of a patient's health over long periods of time. Unfortunately, due to a combination of overwhelming quantities and noise levels in the data, our ability to make use of these data has not kept up with their quantity. 
 
-Sequential models can help ease the burden on health practitioners in making use of these data. For instance, a model could be trained on a patient's records to predict the likelihood of cardiovascular events. This model could then alert a doctor of potential risk in order to facilitate timely interventions. This could be especially helpful in large clinical settings where personal doctor-patient relationships may not be common. For a review of the performance of deep learning models in electronic health record contects, see @deep_ehr.
+Sequential models can help ease the burden on health practitioners in making use of these data. For instance, a model could be trained on a patient's records to predict the likelihood of cardiovascular events. This model could then alert a doctor of potential risk in order to facilitate timely interventions. This could be especially helpful in large clinical settings where personal doctor-patient relationships may not be common. For a review of the performance of deep learning models in electronic health record contexts, see @deep_ehr.
 
 ### Hospital Automation
 
-Patient monitoring systems in hospitals have a complex web of sensors constantly reading data from patients. These systems are programed to alert staff if different thresholds are crossed indicating the occurance (, or likely occurance,) of an event such as a heart attack. Continuous classification methods could assist these systems by automatically learning complex patterns related to events of interest and producing a continuous probability of an event in contrast to the traditional thresholding practice. 
+Patient monitoring systems in hospitals have a complex web of sensors constantly reading data from patients. These systems are programmed to alert staff if different thresholds are crossed indicating the occurrence (, or likely occurrence,) of an event such as a heart attack. Continuous classification methods could assist these systems by automatically learning complex patterns related to events of interest and producing a continuous probability of an event in contrast to the traditional thresholding practice. 
 
-By not requiring explicit checks programed into sensors (temperature above $x$ degrees), and easily combining the signals from multiple sensors, continuous classification could both provide more personalized and sensitive detection for outcomes of interest and help hospitals more efficiently allocate resources and potentially save lives. 
+By not requiring explicit checks programmed into sensors (temperature above $x$ degrees), and easily combining the signals from multiple sensors, continuous classification could both provide more personalized and sensitive detection for outcomes of interest and help hospitals more efficiently allocate resources and potentially save lives. 
 
 
 ## History of methods
@@ -103,12 +103,12 @@ There are ways to fix this such as extending the model's transition probabilitie
 Before we dive into the mathematical underpinnings of deep learning methods we will go over how they solve many of the aforementioned issues from traditional methods. 
 
 #### Less Domain Knowledge Needed
-One of the ways that it helps to think about deep learning is as a computer program that programs itself given an objective and examples. In his popular blog post [_Software 2.0_](https://medium.com/@karpathy/software-2-0-a64152b37c35) Andrej Karapathy makes the argument that deep learning is powerful because it helps avoid the tedius process pf explicitly defining the context surrounding cases the computer is supposed to detect. One of the ways this is applicable to our problems is the ability for deep learning models to adapt to a wide range of problem/ data domains without much human-defined customization. 
+One of the ways that it helps to think about deep learning is as a computer program that programs itself given an objective and examples. In his popular blog post [_Software 2.0_](https://medium.com/@karpathy/software-2-0-a64152b37c35) Andrej Karapathy makes the argument that deep learning is powerful because it helps avoid the tedious process pf explicitly defining the context surrounding cases the computer is supposed to detect. One of the ways this is applicable to our problems is the ability for deep learning models to adapt to a wide range of problem/ data domains without much human-defined customization. 
 
 One demonstration of this advantage is less manual manipulation of data is needed before it can be used in models. If you had data from an accelerometer it could be fit with the same neural network as data from a more static heart-rate sensor would. The models are flexible enough to learn how to deal with different input patterns and characteristics without requiring the researcher to explicitly define a transformation. This independence from large amounts of human intervention has the potential to make performance assessments more accurate by automating most parts of the model fitting process (@rms). 
 
 #### Can find and deal with arbitrary time dependencies
-Deep learning models are theoretically capable of learning time dependencies of infinite length and strength (@universal_approximators). While obviously it is impossible to supply a network with enough data to fit the number of parameters neccesary to do so, the fact remains that deep learning methods are capable of handling long-term time dependencies. In addition to being able to model these dependencies they do so without any need for explicitly telling the model the length of the dependencies and also using substantially fewer parameters than an extended hidden Markov model (@graves_rnn).
+Deep learning models are theoretically capable of learning time dependencies of infinite length and strength (@universal_approximators). While obviously it is impossible to supply a network with enough data to fit the number of parameters necessary to do so, the fact remains that deep learning methods are capable of handling long-term time dependencies. In addition to being able to model these dependencies they do so without any need for explicitly telling the model the length of the dependencies and also using substantially fewer parameters than an extended hidden Markov model (@graves_rnn).
 
 For example, a recurrent neural network (RNN) can automatically learn that if a person swims and then runs, they will most likely be biking next, but it could also remember that a patient was given a flu vaccine three months prior and thus their symptoms most likely don't indicate the flu but a cold. This flexibility to automatically learn arbitrary time dependency patterns is powerful in not only its ability to create accurate models, but potentially for exploration of causal patterns. 
 
@@ -121,7 +121,7 @@ In a similar vein, one of the decisions that does need to be made with deep lear
 
 As a result of being so flexible deep learning models require a lot of data to properly tune all their parameters without over fitting. This results in not only more data being needed (with some exceptions such as Bayesian methods.)
 
-In addition, neural network optimization can not be calculated with a closed form solution, thus requiring the use of itterative methods to traverse the objective (or cost/loss) function. The training of neural networks is a non-convex problem. This means that there is no guarentee that a found minima is a global minima and that for any global minima, there is no guarentee that it is unique. 
+In addition, neural network optimization can not be calculated with a closed form solution, thus requiring the use of iterative methods to traverse the objective (or cost/loss) function. The training of neural networks is a non-convex problem. This means that there is no guarantee that a found minima is a global minima and that for any global minima, there is no guarantee that it is unique. 
 
 ```{r,  out.width = '60%', fig.align = "center",  echo = FALSE, label = "convexoptim", fig.cap = "Comparison of the objective surface of a convex and non-convex optimization problem."}
 knitr::include_graphics("figures/convex_optimization.png")
@@ -129,7 +129,7 @@ knitr::include_graphics("figures/convex_optimization.png")
 
 The fact that neural networks need a lot of data and require costly optimization procedures means they are very computationally intensive to train. 
 
-Another downside, although one shared by many other approaches described here, is that neural networks are not amenable to inference on specific factors contributing to their classifications. The nature of neural networks as a "black-box" method can decrease trust in the models and also can hide cases where the model has learned to classify on potential un-intentional characteristics of the training set (such as the instraument that took measurements instead of the measurements themselves).
+Another downside, although one shared by many other approaches described here, is that neural networks are not amenable to inference on specific factors contributing to their classifications. The nature of neural networks as a "black-box" method can decrease trust in the models and also can hide cases where the model has learned to classify on potential un-intentional characteristics of the training set (such as the instrument that took measurements instead of the measurements themselves).
 
 These downsides and potential solutions are explored in the last chapter. 
 
