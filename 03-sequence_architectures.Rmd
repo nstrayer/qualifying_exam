@@ -184,7 +184,3 @@ When a problem has dependencies that are both potentially many time steps back a
 This can be done in two ways: first by using a convolutional layer at the input to detect patterns in the data and then feeding its lower-dimensional results to an RNN, or (less commonly), having an RNN as the input layer to detect short-term dependencies and using a CNN to tie those together into a larger classification. 
 
 This combination of the two sequence architectures has delivered state of the art results in both time-series modeling (@cnn_rnn_time_series), but also natural language processing tasks (@crnn_text). 
-
-
-
-

@@ -25,7 +25,7 @@
 <meta name="author" content="Nick Strayer">
 
 
-<meta name="date" content="2017-12-17">
+<meta name="date" content="2017-12-18">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -126,6 +126,7 @@
 <li class="chapter" data-level="3.3.3" data-path="architectures.html"><a href="architectures.html#weight-sharing-1"><i class="fa fa-check"></i><b>3.3.3</b> Weight sharing</a></li>
 <li class="chapter" data-level="3.3.4" data-path="architectures.html"><a href="architectures.html#translation-invariance"><i class="fa fa-check"></i><b>3.3.4</b> Translation invariance</a></li>
 </ul></li>
+<li class="chapter" data-level="3.4" data-path="architectures.html"><a href="architectures.html#combinations-of-rnns-and-cnns"><i class="fa fa-check"></i><b>3.4</b> Combinations of RNNs and CNNs</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="future.html"><a href="future.html"><i class="fa fa-check"></i><b>4</b> Opportunities for advancing field</a><ul>
 <li class="chapter" data-level="4.1" data-path="future.html"><a href="future.html#what-to-do-with-all-those-parameters"><i class="fa fa-check"></i><b>4.1</b> What to do with all those parameters</a><ul>
@@ -167,8 +168,8 @@
 <blockquote>
 <p>A multilayer perceptron is just a mathematical function mapping some set of input values to output values. The function is formed by composing many simpler function. We can think of each application of a different mathematical function as providing a new representation of the input. (<span class="citation">Goodfellow, Bengio, and Courville (<a href="#ref-goodfellow_DL">2016</a>)</span>)</p>
 </blockquote>
-<p>Neural networks (sometimes referred to as multilayer perceptrons) are at their core very simple models. Traditional modern neural networks simply pass data forward through a “network” that at each layer, performs a linear (also referred to as affine) transformation of its inputs followed by a element-wise non-linear transformation (also called an activation function). In doing this they can build up successively more complex representations of data and use those to make decisions about it.</p>
-<p>This can be thought about in the analogy of recognizing a cat. First you see ears, a nose, two eyes, four feet, and a fluffy tail; next, you recognize the ears, nose and eyes as a head, the tail and legs as a body; and lastly the head and body as a cat. In performing this ‘classification’ of a cat you first constructed small features and successively stacked them to figure out what you were looking at. While this is obviously a stretched definition of how neural networks work, it actually is very close to how a special variant called Convolutional Neural Networks work for computer vision techniques (<span class="citation">Olah, Mordvintsev, and Schubert (<a href="#ref-cnn_vis">2017</a>)</span>).</p>
+<p>Neural networks (sometimes referred to as multilayer perceptrons) are at their core very simple models. Traditional modern neural networks pass data forward through a “network” that at each layer, performs a linear (also referred to as affine) transformation of its inputs followed by a element-wise non-linear transformation (also called an activation function). In doing this they can build up successively more complex representations of data and use those to make decisions about it.</p>
+<p>This can be thought about in the analogy of recognizing a cat. First you see ears, a nose, two eyes, four feet, and a tail; next, you recognize the ears, nose and eyes as a head, the tail and legs as a body; and lastly the head and body as a cat. In performing this ‘classification’ of a cat you first constructed small features and successively stacked them to figure out what you were looking at. While this is obviously a stretched definition of how neural networks work, it actually is very close to how a special variant called Convolutional Neural Networks work for computer vision techniques (<span class="citation">Olah, Mordvintsev, and Schubert (<a href="#ref-cnn_vis">2017</a>)</span>).</p>
 <div id="history" class="section level2">
 <h2><span class="header-section-number">2.1</span> History</h2>
 <p>While neural networks’ popularity has taken off in recent years they are not a new technique. The neuron or smallest unit of a neural network was first introduced in 1943 (<span class="citation">McCulloch and Pitts (<a href="#ref-mcculloch_neuron">1943</a>)</span>). It was then another 15 years until the perceptron (now commonly called ‘neural network’) was introduced (<span class="citation">Rosenblatt (<a href="#ref-rosenblatt_perceptron">1958</a>)</span>) that tied together groups of neurons to represent more complex relationships.</p>
@@ -184,7 +185,7 @@ Figure 2.1: Example of the XOR problem. Classes encoded by color are not linearl
 <div id="biological-inspirations" class="section level3">
 <h3><span class="header-section-number">2.1.1</span> Biological Inspirations</h3>
 <p>The word ‘neural’ in the ‘neural network’ is reference to the fact that these models derive inspiration from how the brain works. With the individual nodes in a hidden ‘layer’ frequently being called a ‘neuron’. While the broad concepts may be similar between the way animal brains and neural networks work, the similarities are minimal. With animal brains relying not only on the connections and firing of the neurons but also the chemical concentrations and interactions of the two not yet fully understood.</p>
-<p>There has however, been some more recent work on trying to more closely mimic the brain structure with architectures such as capsule networks (<span class="citation">Sabour, Frosst, and Hinton (<a href="#ref-capsnet">2017</a>)</span>). These networks introduce another level of architectural hierarchy to the neural network system: the capsule which is a collection of neurons within a given layer. These capsules attempt to recognize the existence of features of the input data, while also modeling the feature’s transformation and position. This deals with the problem of traditional neural networks failing to recognize when input features are transformed (e.g. an upside down mug is not recognized by the same feature detectors as a right side up mug). Neuroscience experiments have demonstrated that at least part of our visual system does truly perform these hierarchical stacks of features when recognizing objects (<span class="citation">Kheradpisheh et al. (<a href="#ref-cnn_animals">2016</a>)</span>).</p>
+<p>There has however, been some recent work trying to more closely mimic brain structure with architectures such as capsule networks (<span class="citation">Sabour, Frosst, and Hinton (<a href="#ref-capsnet">2017</a>)</span>). These networks introduce another level of architectural hierarchy to the neural network system, the capsule: a collection of neurons within a layer. These capsules attempt to recognize the existence of features of the input data, while also modeling the feature’s transformation and position. This deals with the problem of traditional neural networks failing to recognize when input features are transformed (e.g. an upside down mug is not recognized by the same feature detectors as a right side up mug). Neuroscience experiments have demonstrated that at least part of our visual system does truly perform these hierarchical stacks of features when recognizing objects (<span class="citation">Kheradpisheh et al. (<a href="#ref-cnn_animals">2016</a>)</span>).</p>
 </div>
 <div id="geometric-interpretation" class="section level3">
 <h3><span class="header-section-number">2.1.2</span> Geometric Interpretation</h3>
@@ -252,7 +253,7 @@ Figure 2.3: A neural network computation graph at two levels of detail: the neur
 </div>
 <div id="back-propagation" class="section level3">
 <h3><span class="header-section-number">2.5.2</span> Back Propagation</h3>
-<p>If we are just looking to gather predictions from our model we can stop at forward propagation. However, most likely we want to train our model first. The most common technique for training neural networks is using a technique called back propagation (<span class="citation">Rumelhart, Hinton, and Williams (<a href="#ref-backprop_1986">1986</a>)</span>). In this algorithm the chain rule is used to walk back through the layers of the model starting from the loss function to the input weights in order to calculate each weight’s gradient with respect to the average loss over training samples (or expected loss)<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>. This gradient is then descended using any number of gradient descent algorithms.</p>
+<p>If we are just looking to gather predictions from our model we can stop at forward propagation. However, most likely we want to train our model first. The most common technique for training neural networks is using a technique called back propagation (<span class="citation">Rumelhart, Hinton, and Williams (<a href="#ref-backprop_1986">1986</a>)</span>). In this algorithm the chain rule is used to walk back through the layers of the model starting from the loss function to the input weights in order to calculate each weight’s gradient with respect to the average loss over training samples (or expected loss)<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a>. This gradient is then descended using any number of gradient descent algorithms.</p>
 <div id="the-chain-rule" class="section level4">
 <h4><span class="header-section-number">2.5.2.1</span> The Chain Rule</h4>
 <p>Back propagation is nothing more than a repeated application of the chain rule from calculus. Let <span class="math inline">\(x\)</span> be a single dimensional real valued input that is mapped through first equation <span class="math inline">\(f\)</span> and then <span class="math inline">\(g\)</span>, both of which map from a single dimensional real number to another single dimensional real number: <span class="math inline">\(f(x) = z, g(z) = y\)</span> or <span class="math inline">\(g(f(x)) = y\)</span>. The chain rule states that we can calculate the derivative of the outcome with respect to the input by a series of multiplications of the derivatives of the composing functions.</p>
@@ -286,7 +287,7 @@ Figure 2.4: How back Propagation steps back from the output to the input. To cal
 </div>
 <div id="other-methods" class="section level4">
 <h4><span class="header-section-number">2.5.2.4</span> Other methods</h4>
-<p>Non-gradient based techniques have been explored for neural networks but have ultimately proven to slow for any realistic sized network. For instance evolutionary strategies (<span class="citation">Salimans et al. (<a href="#ref-evostrat">2017</a>)</span>), a new technique proposed by a group at OpenAi uses random searches of the parameter space with evolutionary algorithms to tune the model’s parameters. However, since often these parameter spaces are millions of dimensions, an extremely large number of random perturbations are needed to inform a good direction to move.<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a></p>
+<p>Non-gradient based techniques have been explored for neural networks but have ultimately proven to slow for any realistic sized network. For instance evolutionary strategies (<span class="citation">Salimans et al. (<a href="#ref-evostrat">2017</a>)</span>), a new technique proposed by a group at OpenAi uses random searches of the parameter space with evolutionary algorithms to tune the model’s parameters. However, since often these parameter spaces are millions of dimensions, an extremely large number of random perturbations are needed to inform a good direction to move.<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a></p>
 </div>
 </div>
 </div>
@@ -324,6 +325,17 @@ Figure 2.5: Demonstration of steepest descent’s limitations on trough like gra
 <span id="def:relu" class="definition"><strong>Definition 2.2  (Rectified Linear Unit activation function)  </strong></span><span class="math display">\[f(x) = \text{max}(0,x)\]</span>
 </div>
 
+<pre><code>## Warning: replacing previous import by &#39;tidyr::%&gt;%&#39; when loading &#39;broom&#39;</code></pre>
+<pre><code>## Warning: replacing previous import by &#39;tidyr::gather&#39; when loading &#39;broom&#39;</code></pre>
+<pre><code>## Warning: replacing previous import by &#39;tidyr::spread&#39; when loading &#39;broom&#39;</code></pre>
+<pre><code>## ── Attaching packages ────────────────────────────────────────────────────── tidyverse 1.2.1 ──</code></pre>
+<pre><code>## ✔ ggplot2 2.2.1     ✔ purrr   0.2.4
+## ✔ tibble  1.3.4     ✔ dplyr   0.7.4
+## ✔ tidyr   0.7.2     ✔ stringr 1.2.0
+## ✔ readr   1.1.1     ✔ forcats 0.2.0</code></pre>
+<pre><code>## ── Conflicts ───────────────────────────────────────────────────────── tidyverse_conflicts() ──
+## ✖ dplyr::filter() masks stats::filter()
+## ✖ dplyr::lag()    masks stats::lag()</code></pre>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-2"></span>
 <img src="strayer_qualifying_exam_files/figure-html/unnamed-chunk-2-1.png" alt="Comparison of the relu and sigmoid activation functions." width="85%" />
 <p class="caption">
@@ -336,7 +348,7 @@ Figure 2.6: Comparison of the relu and sigmoid activation functions.
 <span id="def:softmax" class="definition"><strong>Definition 2.3  (Softmax activation function.)  </strong></span><span class="math display">\[f(\textbf{o})_i = \frac{\text{exp}(o_i)}{\sum_{j = 1}^m \text{exp}(o_j)}\]</span>
 </div>
 
-<p>This function serves to turn the output of a layer into a multivariate probability vector. The <span class="math inline">\(m\)</span> outputs of the softmax sum to one.<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a></p>
+<p>This function serves to turn the output of a layer into a multivariate probability vector. The <span class="math inline">\(m\)</span> outputs of the softmax sum to one.<a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a></p>
 </div>
 <div id="loss-functions" class="section level2">
 <h2><span class="header-section-number">2.8</span> Loss functions</h2>
@@ -382,7 +394,7 @@ Where <span class="math inline">\(y_i\)</span> represents the outcome of the <sp
 <div id="classification-loss-functions" class="section level3">
 <h3><span class="header-section-number">2.8.3</span> Classification loss functions</h3>
 <p>There are two separate instances of classification that need to be considered. The binary case, where we are classifying a yes or no answer for a single class, or a categorical case, where we have more than two possible classes to choose from and need to place our data into one of them.</p>
-<p>In the single outcome case the approach is to assume the outcome is a Bernoulli distribution over outcome <span class="math inline">\(y\)</span> conditioned on the input <span class="math inline">\(x\)</span>. The resultant loss function is commonly referred to as ‘binary cross entropy.’<a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a></p>
+<p>In the single outcome case the approach is to assume the outcome is a Bernoulli distribution over outcome <span class="math inline">\(y\)</span> conditioned on the input <span class="math inline">\(x\)</span>. The resultant loss function is commonly referred to as ‘binary cross entropy.’<a href="#fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a></p>
 
 <div class="definition">
 <span id="def:crossentropy" class="definition"><strong>Definition 2.9  (Expected binary cross entropy loss)  </strong></span><span class="math display">\[L(\theta) = -\frac{1}{n}\sum_{i = 1}^n\left[ y_i\log(\hat{y}_i) + (1 - y_i)\log(1 - \hat{y}_i)\right]\]</span>
@@ -481,11 +493,11 @@ Where <span class="math inline">\(y_{i,j}\)</span> represents the <span class="m
 </div>
 <div class="footnotes">
 <hr />
-<ol start="1">
-<li id="fn1"><p>Commonly a modification of gradient descent called stochastic gradient descent is used, which relies on using a subset of the data to calculate the expected lost at each step for efficiency.<a href="neuralnetworks.html#fnref1">↩</a></p></li>
-<li id="fn2"><p>These do find use when methods are used when the loss function does not have a gradient. Such as reinforcement learning scenarios.<a href="neuralnetworks.html#fnref2">↩</a></p></li>
-<li id="fn3"><p>It is important to note that, while the values sum to one, it’s not a true probability output, but will help indicate which class is most likely and roughly by what magnitude over other potential class choices.<a href="neuralnetworks.html#fnref3">↩</a></p></li>
-<li id="fn4"><p>It is interesting to note that while we typically only use the term ‘cross entropy’ for categorical outcomes, any time we are minimizing KL or maximizing the likelihood we are minimizing the cross entropy. So technically we could also call the mean squared error the ‘continuous cross entropy loss.’<a href="neuralnetworks.html#fnref4">↩</a></p></li>
+<ol start="2">
+<li id="fn2"><p>Commonly a modification of gradient descent called stochastic gradient descent is used, which relies on using a subset of the data to calculate the expected lost at each step for efficiency.<a href="neuralnetworks.html#fnref2">↩</a></p></li>
+<li id="fn3"><p>These do find use when methods are used when the loss function does not have a gradient. Such as reinforcement learning scenarios.<a href="neuralnetworks.html#fnref3">↩</a></p></li>
+<li id="fn4"><p>It is important to note that, while the values sum to one, it’s not a true probability output, but will help indicate which class is most likely and roughly by what magnitude over other potential class choices.<a href="neuralnetworks.html#fnref4">↩</a></p></li>
+<li id="fn5"><p>It is interesting to note that while we typically only use the term ‘cross entropy’ for categorical outcomes, any time we are minimizing KL or maximizing the likelihood we are minimizing the cross entropy. So technically we could also call the mean squared error the ‘continuous cross entropy loss.’<a href="neuralnetworks.html#fnref5">↩</a></p></li>
 </ol>
 </div>
             </section>

@@ -19,7 +19,7 @@ github-repo: rstudio/bookdown-demo
 ## Continuous Classification 
 Imagine you are watching a movie. A friend walks in late and asks "what did I miss?" You tell them the main character has just escaped from a nasty predicament and has defeated the antagonist. What you have done is classification on a sequence. The sequence in this case is the frames of the movie and your classification was what was occurring in the movie at that moment. You _could_ have given the same answer if you just saw a single frame, but most likely your assessment of the state of the movie depended on events you saw before and the context in which they placed the most recent frame. 
 
-Continuous classification in the context of statistics and machine learning is training models to observe data over time, like you watched the movie, and classify the status of the generating system at any given point. Sometimes seeing the most recent data is all that is needed, but more interesting and challenging problems need the algorithm to be able to make decisions about a current time while leveraging context from previous history to do so. 
+Continuous classification (sometimes called sequence labeling) in the context of statistics and machine learning is training models to observe data over time, like you watched the movie, and classify the status of the generating system at any given point. Sometimes seeing the most recent data is all that is needed, but more interesting and challenging problems need the algorithm to be able to make decisions about a current time while leveraging context from previous history to do so. 
 
 This report is a brief run through past attempts at continuous classification and a deeper exploration of the current state of the art methods. 
 
@@ -62,8 +62,8 @@ By summarizing the multiple data-points into a single (or few) values noise can 
 
 
 
-```{r,  out.width = '30%', fig.align = "center",  echo = FALSE, label = "dynamictimewarp", fig.cap = "Comparison of dynamic time warping and traditional euclidean-based similarity between two time series sequences. Image courtousy of [SFL Scientific](https://sflscientific.com/data-science-blog/2016/6/3/dynamic-time-warping-time-series-analysis-ii)."}
-knitr::include_graphics("https://static1.squarespace.com/static/55ff6aece4b0ad2d251b3fee/t/5751d9dd40261d920b308196/1464982022839/")
+```{r,  out.width = '35%', fig.align = "center",  echo = FALSE, label = "dynamictimewarp", fig.cap = "Comparison of dynamic time warping and traditional euclidean-based similarity between two time series sequences. Image courtousy of [SFL Scientific](https://sflscientific.com/data-science-blog/2016/6/3/dynamic-time-warping-time-series-analysis-ii)."}
+knitr::include_graphics("figures/dtw.jpg")
 ```
   
 If the time dimension of the data are kept intact more advanced methods are available. One common example is dynamic time warping (@dtw, figure \@ref(fig:dynamictimewarp)). In dynamic time warping the shape of a time series signals are matched by either squeezing or stretching the time dimension. This allows for the computation of similarity between signal patterns, rather than scale. Another common approach are kernel methods (see next section). Both of these methods allow more information to be retained in the sample but at the cost of setting a limit on how far back your model can learn dependencies in the data. For instance, if your window is one hour long but an activity lasts two hours your model will have a very hard time recognizing it. 
@@ -94,7 +94,7 @@ This allows the model to learn time dependencies in the data. For instance, if a
 
 HMMs were the state of the art models on continuous classification problems until very recently and are still very valuable for many problems. However, their greatest advantage is also their greatest disadvantage. 
 
-The Markov property (or the first 'M' in HMM) states that the next state of the system being modeled depends exclusively on the current state. This means that the model is 'memory-less.' For instance, returning to our running example, say an individual had been running in the previous time point, the model will most likely pick walking as their next state (ignoring any conditional data for simplicity) but what if before they were running they were swimming? This fact from multiple time-steps before would strongly hint that the next state would in fact be biking and not walking (they are running a triathlon.) 
+The Markov property (or the first 'M' in HMM) implies that the next state of the system being modeled depends exclusively on the current state. This means that the model is 'memory-less.' For instance, returning to our running example, say an individual had been running in the previous time point, the model will most likely pick walking as their next state (ignoring any conditional data for simplicity) but what if before they were running they were swimming? This fact from multiple time-steps before would strongly hint that the next state would in fact be biking and not walking (they are running a triathlon.) 
 
 There are ways to fix this such as extending the model's transition probabilities to multiple time-steps, however the number of parameters needed to estimate transition probabilities for $m$ previous time steps is (# of classes) to the $k^{th}$ power: $m^k$, which rapidly becomes intractable.  In addition, we have to a priori decide the number of time steps in the past that matter.
 
@@ -119,9 +119,9 @@ In a similar vein, one of the decisions that does need to be made with deep lear
 
 #### Downsides
 
-As a result of being so flexible deep learning models require a lot of data to properly tune all their parameters without over fitting. This results in not only more data being needed (with some exceptions such as Bayesian methods.)
+As a result of being so flexible deep learning models require a lot of data to properly tune all their parameters without over fitting. In addition, they require computationaly expensive optimization procedures. 
 
-In addition, neural network optimization can not be calculated with a closed form solution, thus requiring the use of iterative methods to traverse the objective (or cost/loss) function. The training of neural networks is a non-convex problem. This means that there is no guarantee that a found minima is a global minima and that for any global minima, there is no guarantee that it is unique. 
+Neural network optimization can not be calculated with a closed form solution, thus requiring the use of iterative methods to traverse the objective (or cost/loss) function. The training of neural networks is a non-convex problem. Meaning there is no guarantee that a found minima is a global minima and that for any global minima, there is no guarantee that it is unique. 
 
 ```{r,  out.width = '60%', fig.align = "center",  echo = FALSE, label = "convexoptim", fig.cap = "Comparison of the objective surface of a convex and non-convex optimization problem."}
 knitr::include_graphics("figures/convex_optimization.png")
